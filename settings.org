@@ -771,19 +771,6 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 :ID:       cabacb17-121f-436c-a539-2cca134e03cc
 :END:
 
-*** A bunch of requires that IDK why they make it work
-:PROPERTIES:
-:ID:       33196297-4c02-4b29-b0a7-cb9677a64f98
-:END:
-#+begin_src elisp
-  (require 'org-noter-pdftools)
-  (require 'org-pdftools)
-  (require 'pdf-history)
-  (require 'pdf-links)
-  (require 'pdf-sync)
-  (require 'pdf-outline)
-#+end_src
-
 *** Pdf-tools
 :PROPERTIES:
 :ID:       101b700e-cb09-42ec-a8d3-c7978370c2f2
@@ -824,6 +811,19 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 
 #+RESULTS:
 : t
+
+*** A bunch of requires that IDK why they make it work
+:PROPERTIES:
+:ID:       33196297-4c02-4b29-b0a7-cb9677a64f98
+:END:
+#+begin_src elisp
+  (require 'org-noter-pdftools)
+  (require 'org-pdftools)
+  (require 'pdf-history)
+  (require 'pdf-links)
+  (require 'pdf-sync)
+  (require 'pdf-outline)
+#+end_src
 
 ** Org-indent-mode
 :PROPERTIES:
