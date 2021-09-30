@@ -1,9 +1,0 @@
-"df2171b7dde19f18e5721a4994010175583bb759"
-#s(undo-tree [nil ([nil (#1=[nil nil ((360 . 428) (191 . 271) (191 . 280) (#("
-;;;### (autoloads nil \"s\" \"s.el\" (0 0 0 0))
-;;; Generated autoloads from s.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"s\" '(\"s-\")))
-
-;;;***
-" 0 177 (fontified nil)) . -191) (t 24918 12694 608764 133000)) nil (24918 12697 180263 832000) 0 nil]) ((360 . 368) (191 . 271) (191 . 280) (t 24918 12694 582097 479000)) nil (24918 12694 669736 47000) 0 nil]) nil nil (24918 12694 669758 639000) 0 nil] #1# 249 2 nil)
