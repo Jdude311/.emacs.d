@@ -1,0 +1,113 @@
+"de6fcfc46afd2347f7bd8ce6b4a55e85ef45f646"
+#s(undo-tree [nil ([nil (#1=[nil nil ((3908 . 3980) (#("
+;;;### (autoloads nil nil (\"doom-modeline-pkg.el\") (0 0 0 0))
+
+;;;***
+" 0 72 (fontified nil)) . -3908) (3900 . 3908) (3723 . 3778) (3703 . 3711) (3627 . 3715) (3627 . 3749) (#("
+;;;### (autoloads nil \"doom-modeline-segments\" \"doom-modeline-segments.el\"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from doom-modeline-segments.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"doom-modeline-segments\" '(\"doom-modeline-\")))
+
+;;;***
+" 0 281 (fontified nil)) . -3627) (3619 . 3627) (3078 . 3128) (3058 . 3066) (2992 . 3070) (2992 . 3483) (#("
+;;;### (autoloads nil \"doom-modeline-env\" \"doom-modeline-env.el\"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from doom-modeline-env.el
+ (autoload 'doom-modeline-env-setup-python \"doom-modeline-env\")
+ (autoload 'doom-modeline-env-setup-ruby \"doom-modeline-env\")
+ (autoload 'doom-modeline-env-setup-perl \"doom-modeline-env\")
+ (autoload 'doom-modeline-env-setup-go \"doom-modeline-env\")
+ (autoload 'doom-modeline-env-setup-elixir \"doom-modeline-env\")
+ (autoload 'doom-modeline-env-setup-rust \"doom-modeline-env\")
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"doom-modeline-env\" '(\"doom-modeline-\")))
+
+;;;***
+" 0 635 (fontified nil)) . -2992) (2984 . 2992) (2816 . 2867) (2796 . 2804) (2728 . 2808) (2728 . 2845) (#("
+;;;### (autoloads nil \"doom-modeline-core\" \"doom-modeline-core.el\"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from doom-modeline-core.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"doom-modeline-core\" '(\"doom-modeline\")))
+
+;;;***
+" 0 264 (fontified nil)) . -2728) (2720 . 2728) (203 . 319) (2475 . 2604) (2455 . 2456) (1639 . 2474) (1625 . 1626) (464 . 1638) (440 . 441) (203 . 463) (#("
+;;;### (autoloads nil \"doom-modeline\" \"doom-modeline.el\" (0 0 0 0))
+;;; Generated autoloads from doom-modeline.el
+
+(autoload 'doom-modeline-init \"doom-modeline\" \"\\
+Initialize doom mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-main-modeline \"doom-modeline\" \"\\
+Set main mode-line.
+If DEFAULT is non-nil, set the default mode-line for all buffers.
+
+\\(fn &optional DEFAULT)\" nil nil)
+
+(autoload 'doom-modeline-set-minimal-modeline \"doom-modeline\" \"\\
+Set minimal mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-special-modeline \"doom-modeline\" \"\\
+Set special mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-project-modeline \"doom-modeline\" \"\\
+Set project mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-dashboard-modeline \"doom-modeline\" \"\\
+Set dashboard mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-vcs-modeline \"doom-modeline\" \"\\
+Set vcs mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-info-modeline \"doom-modeline\" \"\\
+Set Info mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-package-modeline \"doom-modeline\" \"\\
+Set package mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-media-modeline \"doom-modeline\" \"\\
+Set media mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-message-modeline \"doom-modeline\" \"\\
+Set message mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-pdf-modeline \"doom-modeline\" \"\\
+Set pdf mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-org-src-modeline \"doom-modeline\" \"\\
+Set org-src mode-line.\" nil nil)
+
+(autoload 'doom-modeline-set-helm-modeline \"doom-modeline\" \"\\
+Set helm mode-line.
+
+\\(fn &rest _)\" nil nil)
+
+(autoload 'doom-modeline-set-timemachine-modeline \"doom-modeline\" \"\\
+Set timemachine mode-line.\" nil nil)
+
+(defvar doom-modeline-mode nil \"\\
+Non-nil if Doom-Modeline mode is enabled.
+See the `doom-modeline-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `doom-modeline-mode'.\")
+
+(custom-autoload 'doom-modeline-mode \"doom-modeline\" nil)
+
+(autoload 'doom-modeline-mode \"doom-modeline\" \"\\
+Toggle doom-modeline on or off.
+
+If called interactively, enable Doom-Modeline mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\\(fn &optional ARG)\" t nil)
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"doom-modeline\" '(\"doom-modeline-mode-map\")))
+
+;;;***
+" 0 2525 (fontified nil)) . -203) (t 24918 12696 452096 619000)) nil (24918 12698 685183 241000) 0 nil]) ((3908 . 3980) (2720 . 2728) (203 . 319) (2475 . 2604) (2455 . 2456) (1639 . 2474) (1625 . 1626) (464 . 1638) (440 . 441) (203 . 463) (1375 . 1383) (1198 . 1253) (1178 . 1186) (1102 . 1190) (1094 . 1224) (553 . 603) (533 . 541) (467 . 545) (459 . 958) (291 . 342) (271 . 279) (203 . 283) (203 . 320) (t 24918 12696 348763 333000)) nil (24918 12696 513941 703000) 0 nil]) nil nil (24918 12696 513981 448000) 0 nil] #1# 4217 2 nil)

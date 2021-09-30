@@ -62,7 +62,7 @@
    doom-modeline-mode t)
   (doom-modeline-mode t))
 
-(use-package doom-themes :ensure t)
+(use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
 (load-theme 'doom-one t)
 
 (use-package dashboard

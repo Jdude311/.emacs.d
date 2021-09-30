@@ -1,0 +1,9 @@
+"a83eb2ab5faa83c76b3c9a727871da76d44670c4"
+#s(undo-tree [nil ([nil (#1=[nil nil ((420 . 498) (201 . 311) (201 . 310) (#("
+;;;### (autoloads nil \"shrink-path\" \"shrink-path.el\" (0 0 0 0))
+;;; Generated autoloads from shrink-path.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes \"shrink-path\" '(\"shrink-path-\")))
+
+;;;***
+" 0 227 (fontified nil)) . -201) (t 24918 12695 258763 833000)) nil (24918 12697 808989 742000) 0 nil]) ((420 . 428) (201 . 311) (201 . 310) (t 24918 12695 235430 510000)) nil (24918 12695 321120 694000) 0 nil]) nil nil (24918 12695 321143 798000) 0 nil] #1# 299 2 nil)
