@@ -1,0 +1,1 @@
+((discover-my-major :fetcher git :url "https://framagit.org/steckerhalter/discover-my-major.git") (org-super-links :repo "toshism/org-super-links" :fetcher github :commit "0.3"))

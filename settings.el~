@@ -1,0 +1,239 @@
+(use-package helm
+  :demand t
+  :bind ("M-x" . helm-M-x)
+  ("C-x C-f" . helm-find-files)
+  :config
+  (helm-mode 1))
+
+(load-theme 'dracula t)
+
+(use-package centaur-tabs
+  :ensure t
+  :demand t
+  :config
+  (centaur-tabs-mode t)
+  (setq centaur-tabs-style "wave"
+        centaur-tabs-set-bar nil
+        centaur-tabs-set-icons t
+        centaur-tabs-gray-out-icons 'buffer
+        centaur-tabs-height 26
+        centaur-tabs-set-modified-marker t
+        centaur-tabs-modifier-marker "*")
+  (centaur-tabs-headline-match)
+  (centaur-tabs-mode t)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward))
+
+(use-package powerline
+  :ensure t
+  :demand t
+  :config
+  (setq powerline-default-separator 'contour)
+  (setq powerline-display-hud t))
+(powerline-center-theme)
+
+(use-package dashboard
+  :ensure t
+  :config
+  (setq dashboard-banner-logo-title "Welcome back, Jaden"
+        dashboard-startup-banner 'logo
+        dashboard-center-content t
+        dashboard-set-init-info t
+        dashboard-set-file-icons t
+        dashboard-set-heading-icons t
+        dashboard-set-navigator t)
+  (dashboard-setup-startup-hook))
+(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+
+(setq org-todo-keywords
+   '((sequence "TODO" "NEXT" "STARTED" "ET" "POSTPONED" "DONE")))
+
+(setq org-capture-templates
+      '(("n" "Quick note" entry
+         (file+headline "~/Documents/personal.org" "Quick Notes")
+         "* %^{Headline}
+  ENTERED: %U
+" :prepend t)
+        ("a" "Test/Assessment/Quiz " entry
+         (file "~/org/todo.org")
+         "* %^{Test Name} :school:%^{Tags}:
+  DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
+        ("P" "Project TODO" entry
+         (file "~/org/todo.org")
+         "* TODO %^{Project name} [/] :project:%^{Tags}:
+   SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
+        ("e" "Email TODO" entry
+         (file "~/org/todo.org")
+         "* TODO %^{Task} :email:%^{Tags}:
+  DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
+        ("m" "Meeting entry" entry
+         (file "~/org/todo.org")
+         "* %^{prompt} :meeting:%^{tags}:
+  DEADLINE: %^{Deadline}T ENTERED: %U" :prepend t :time-prompt t)
+        ("h" "Homework entry" entry
+         (file "~/org/todo.org")
+         "* TODO %^{prompt}    :school:homework:
+  SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t ENTERED %U
+  :PROPERTIES:
+  :EFFORT: %^{Effort}
+  :END:" :prepend t :time-prompt t)))
+
+(use-package org-agenda
+    :bind ("<f3>" . org-agenda)
+    :config
+    (setq org-agenda-columns-add-appointments-to-effort-sum t
+          org-agenda-entry-text-maxlines 20
+          org-agenda-include-diary t
+          org-agenda-prefix-format
+          '((agenda . " %i %-12:c%?-8t% s %-6e")
+            (todo . " %i %-12:c %-6e ")
+            (tags . " %i %-12:c %-6e"))
+          org-agenda-skip-scheduled-if-deadline-is-shown t
+          org-agenda-skip-scheduled-if-done t
+          org-agenda-span 'day)
+    (setq org-agenda-custom-commands
+          '(("g" "Good agenda"
+             ((agenda ""
+                      ((org-agenda-overriding-header "Agenda and Tonight's Homework")
+                       (org-super-agenda-groups
+                        '((:time-grid t)
+                          (:name "OVERDUE" :discard
+                                 (:todo "SOMEDAY")
+                                 :deadline past :order 1)
+                          (:name "Today's Schedule" :time-grid t :order 2)
+                          (:name "Meetings" :tag "meeting" :order 2)
+                          (:name "Tests and Quizzes" :tag
+                                 ("test" "quiz" "assessment" "conference")
+                                 :order 3)
+                          (:name "Tonight's Homework" :and
+                                 (:tag "school" :tag "homework" :deadline today)
+                                 :and
+                                 (:tag "school" :tag "project" :deadline today)
+                                 :order 5)
+                          (:name "Upcoming Homework" :and
+                                 (:tag "school" :tag "homework" :deadline future)
+                                 :and
+                                 (:tag "school" :children t :deadline future)
+                                 :order 6)
+                          (:name "Emails" :tag "email" :order 7)))))
+              (alltodo ""
+                       ((org-agenda-overriding-header "PROJECTS")
+                        (org-super-agenda-groups
+                         '((:auto-parent t)
+                           (:discard
+                            (:anything))))))
+              (alltodo ""
+                       ((org-agenda-overriding-header "Other")
+                        (org-super-agenda-groups
+                         '((:name "Bucket List" :and
+                                  (:todo "SOMEDAY" :tag "PERSONAL")
+                                  :order 1)
+                           (:name "Someday Maybe" :todo "SOMEDAY" :order 10)
+                           (:name "Everything Else" :anything t :order 20))))))
+             nil nil)
+            ("n" "Agenda and all TODOs"
+             ((agenda "" nil)
+              (alltodo "" nil))
+             nil))))
+
+(setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+
+(require 'org-noter-pdftools)
+(require 'org-pdftools)
+(require 'pdf-history)
+(require 'pdf-links)
+(require 'pdf-sync)
+(require 'pdf-outline)
+
+(add-hook 'org-mode-hook 'org-indent-mode)
+
+(add-hook 'electric-indent-functions
+	  (lambda (x) (when (eq 'org-mode major-mode) 'no-indent)))
+
+(use-package org-variable-pitch
+:config
+(setq org-variable-pitch-fixed-faces '(org-block
+                                       org-block-begin-line
+                                       org-block-end-line
+                                       org-code
+                                       org-document-info-keyword
+                                       org-done
+                                       org-formula
+                                       org-indent
+                                       org-meta-line
+                                       org-special-keyword
+                                       org-table
+                                       org-todo
+                                       org-verbatim
+                                       org-date
+                                       org-drawer
+                                       org-link
+                                       link
+                                       centaur-tabs-default
+                                       org-property-value
+                                       org-level-1
+                                       org-level-2
+                                       org-level-3
+                                       org-level-4
+                                       org-level-5
+                                       org-level-6
+                                       org-level-7
+                                       org-level-8
+                                       org-hide
+                                       org-target
+                                       org-done))
+:hook ((org-mode) . org-variable-pitch-minor-mode))
+
+(font-lock-add-keywords 'org-mode
+                        '(("^\s*\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+(setq appt-display-interval 3
+      appt-message-warning-time 15
+      org-show-notification-handler "notify-send")
+
+(require 'notifications)
+
+(defcustom appt-notification-bus :session
+  "D-bus bus to use for notification."
+  :group 'appt-notification
+  :type '(choice (const :tag "Session bus" :session) string))
+(defun appt-display (min-to-appt new-time msg)
+  "Send notification."
+  (notifications-notify :bus appt-notification-bus
+                        :title (format "Appointment in %s minutes" min-to-appt)
+                        :body (format "%s" msg)
+                        :replaces-id nil
+                        :app-icon nil
+                        :timeout 5000
+                        :desktop-entry "emacs"))
+(setq appt-disp-window-function 'appt-display)
+
+(use-package company
+  :ensure t
+  :hook
+  (prog-mode . company-mode))
+
+(use-package org
+  :config
+  (setq org-columns-default-format "%50ITEM %TODO %3PRIORITY %6Effort{:} %6CLOCKSUM(Clock) %TAGS "))
+
+(use-package org-super-agenda
+  :ensure t
+  :hook
+  (org-agenda-finalize . org-super-agenda-mode))
+
+(use-package pdf-tools
+  :ensure t
+  :pin manual
+  :config
+  ;;initialize
+  (pdf-tools-install)
+  ;; use normal isearch
+  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+
+(use-package org-noter
+  :ensure t
+  :config
+  (require 'org-noter-pdftools))

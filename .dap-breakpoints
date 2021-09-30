@@ -1,0 +1,1 @@
+#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("/home/jadench/Documents/School/Apocalypse-2021_School_Year/English/ofMiceAndMenNotes.org" ((:point 1)) "/home/jadench/.config/i3/config" ((:point 12923)) "/home/jadench/Dropbox/APCSP/apcsp.org" ((:point 27358))))

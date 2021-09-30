@@ -1,0 +1,34 @@
+((("cl" .
+   [2 0])
+  ("helm-org-rifle-org-directory" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("org-bullets-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("powerline-default-theme" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("helm-org-rifle" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("require" .
+   [4 0 0 0 0 0 0])
+  ("org-toggle-pretty-entities" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("nil" .
+   [1 0 0])
+  ("all" .
+   [1 0 0])
+  ("pause" .
+   [1 0 0 0 0])
+  ("error" .
+   [3 0 0 0 0])
+  ("helm" .
+   [2 0 0 0])
+  ("org" .
+   [1 0 0])
+  ("data" .
+   [3 0 0 0])
+  ("die" .
+   [1 0 0])
+  ("gruvbox" .
+   [1 0 0 0 0 0 0])
+  ("package-initialize" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))

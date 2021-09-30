@@ -1,0 +1,12 @@
+;;; public entries -*- mode: plstore -*- 
+(("bf2c6aed16b51489313bcc4979f55f13" :secret-access-token t :secret-refresh-token t :secret-access-response t))
+;;; secret entries
+"-----BEGIN PGP MESSAGE-----
+
+jA0EBwMCJi4qEGo6xF3/0oQBSCqGHhazhk9B+6D3tS2u2bydTCsqhYrUJMA6XqcS
+aavbk7QJt1LpQLduUlOUIUumBArvCeGoK5MXIqkjZYspnyFQfEDHuTLXmfM22S2y
+w7bvh7luaeaU9W7KcDhey8iWBGuURbFvQnYFzZTsodCkrEM+GIQShcTKAT9ZtIgO
+qDV3ER4=
+=/KU/
+-----END PGP MESSAGE-----
+"

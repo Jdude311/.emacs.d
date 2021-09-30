@@ -1,0 +1,10 @@
+"da39a3ee5e6b4b0d3255bfef95601890afd80709"
+#s(undo-tree [nil (#1=[nil nil ((#(";; This is the sync state from org-caldav
+;; calendar-id: d4b3f5a380769cq8gv1m2gvpck@group.calendar.google.com
+;; Do not modify this file.
+
+(setq org-caldav-event-list
+'nil)
+
+(setq org-caldav-previous-files '(\"~/org/appointments.org\"))
+" 0 3 (fontified t face font-lock-comment-delimiter-face) 3 42 (fontified t face font-lock-comment-face) 42 45 (fontified t face font-lock-comment-delimiter-face) 45 111 (fontified t face font-lock-comment-face) 111 114 (fontified t face font-lock-comment-delimiter-face) 114 139 (fontified t face font-lock-comment-face) 139 141 (fontified t) 141 145 (fontified t face font-lock-keyword-face) 145 176 (fontified t) 176 180 (fontified t face font-lock-keyword-face) 180 209 (fontified t) 209 233 (fontified t face font-lock-string-face) 233 236 (fontified t)) . 1) (undo-tree-id0 . -42) (undo-tree-id1 . -42) (undo-tree-id2 . -42) (undo-tree-id3 . -111) (undo-tree-id4 . -111) (undo-tree-id5 . -139) (undo-tree-id6 . -139) (undo-tree-id7 . -140) (undo-tree-id8 . -140) (undo-tree-id9 . -168) (undo-tree-id10 . -168) (undo-tree-id11 . -174) (undo-tree-id12 . -174) (undo-tree-id13 . -175) (undo-tree-id14 . -175) (undo-tree-id15 . -236) (undo-tree-id16 . -236) (undo-tree-id17 . -236) (undo-tree-id18 . -236) (undo-tree-id19 . -236) (undo-tree-id20 . -236) (t 24721 49309 39802 895000)) nil (24737 35023 307139 894000) 0 nil]) nil nil (24737 35023 307144 41000) 0 nil] #1# 420 1 nil)
