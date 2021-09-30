@@ -5,7 +5,10 @@
   :demand t
   :bind ("M-x" . helm-M-x)
   ("C-x C-f" . helm-find-files)
-  ;("<tab>" . helm-execute-persistent-action)
+  ;; ("<tab>" . helm-execute-persistent-action)
+  :config
+  (setq 
+   helm-completion-style 'emacs)
   :init
   (helm-mode 1))
 
@@ -17,9 +20,15 @@
            (prog-mode . visual-line-mode)))
 
 (use-package evil
-:demand t
-:init
-(evil-mode t))
+  :demand t
+  :init
+  (setq 
+   evil-cross-lines t
+   evil-mode-line-format 'before
+   evil-respect-visual-line-mode t
+   evil-undo-system 'undo-tree
+   evil-want-Y-yank-to-eol t)
+  (evil-mode t))
 
 (use-package evil-org
  :ensure t
@@ -38,21 +47,29 @@
 (setq undo-tree-auto-save-history t)
 (global-undo-tree-mode t))
 
+(setq electric-indent-mode t)
+
 (use-package page-break-lines
   :ensure t)
 
 (use-package doom-modeline
-:ensure t
-:demand t
-:config
-(doom-modeline-mode t))
+  :ensure t
+  :demand t
+  :config
+  (setq
+   doom-modeline-buffer-modification-icon nil
+   doom-modeline-hud nil
+   doom-modeline-mode t)
+  (doom-modeline-mode t))
 
+(use-package doom-themes :ensure t)
 (load-theme 'doom-one t)
 
 (use-package dashboard
   :ensure t
   :config
   (setq dashboard-banner-logo-title "Welcome back, Jaden"
+        dashboard-items '((recents . 10) (bookmarks . 5))
         dashboard-startup-banner 'logo
         dashboard-center-content t
         dashboard-set-init-info t
@@ -138,6 +155,8 @@
     (add-hook 'dap-mode-hook #'dap-ui-mode) ; use a hook so users can remove it
     (dap-mode 1))
 
+(use-package flycheck :ensure t :config (setq flycheck-color-mode-line-face-to-color 'mode-line-buffer-id))
+
 (use-package company
   :ensure t
   :hook
@@ -150,111 +169,133 @@
 
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
+(setq highlight-indent-guides-method 'column)
+
+(setq
+ org-enforce-todo-dependencies t
+ org-export-with-broken-links 'mark
+ org-file-apps
+   '((auto-mode . "setsid -w xdg-open %s")
+     (default . "sleep 1")
+     ("\\.mm\\'" . default)
+     ("\\.x?html?\\'" . default)
+     ("\\.pdf\\'" . "chromium %s")
+     ("\\.docx\\'" . "lowriter %s")
+     ("\\.odt\\'" . system))
+ org-fontify-emphasized-text t
+ org-fontify-quote-and-verse-blocks t
+ org-format-latex-options
+   '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+                 ("begin" "$1" "$" "$$" "\\[")))
+
 (use-package writeroom-mode
   :ensure t
   :defer t
   :bind ("C-x w" . writeroom-mode)
-  ;:hook (org-mode . writeroom-mode)
+										;:hook (org-mode . writeroom-mode)
   :config
   (setq writeroom-width 110 
-        writeroom-mode-line t 
-        ;writeroom-global-effects '(writeroom-set-bottom-divider-width
-                                   ;writeroom-set-internal-border-width)
-))
-
-(use-package org
-  :config
-  (setq org-columns-default-format "%50ITEM %TODO %3PRIORITY %6Effort{:} %6CLOCKSUM(Clock) %TAGS ")
-  :bind (("C-c w" . powerthesaurus-lookup-word-at-point)))
+		writeroom-mode-line t 
+										;writeroom-global-effects '(writeroom-set-bottom-divider-width
+										;writeroom-set-internal-border-width)
+		))
 
 
 
 (use-package org-roam
-:ensure t
-:hook ((after-init . org-roam-setup)
-       (org-roam-backlinks-mode . visual-line-mode))
-:config
-(setq org-roam-v2-ack t)
-(org-roam-setup)
-(setq org-roam-directory "~/notes/")
-(setq org-roam-mode-section-functions
-    (list #'org-roam-backlinks-section
-          #'org-roam-reflinks-section
-          ;; #'org-roam-unlinked-references-section
-          ))
-:bind (("C-c n f" . org-roam-node-find)
-         ("C-c n c" . org-roam-capture)
-         ("C-c n g" . org-roam-ui-mode)
-         ("C-c n r" . org-roam-node-random)		    
-         (:map org-mode-map
-               (("C-c n i" . org-roam-node-insert)
-                ("C-c n o" . org-id-get-create)
-                ("C-c n t" . org-roam-tag-add)
-                ("C-c n a" . org-roam-alias-add)
-                ("C-c n l" . org-roam-buffer-toggle)))))
+  :ensure t
+  :hook ((after-init . org-roam-setup)
+		 (org-roam-backlinks-mode . visual-line-mode))
+  :config
+  (setq org-roam-v2-ack t)
+  (org-roam-setup)
+  (setq org-roam-directory "~/notes/")
+  (setq org-roam-mode-section-functions
+		(list #'org-roam-backlinks-section
+			  #'org-roam-reflinks-section
+			  ;; #'org-roam-unlinked-references-section
+			  ))
+  :bind (("C-c n f" . org-roam-node-find)
+		 ("C-c n c" . org-roam-capture)
+		 ("C-c n g" . org-roam-ui-mode)
+		 ("C-c n r" . org-roam-node-random)		    
+		 (:map org-mode-map
+			   (("C-c n i" . org-roam-node-insert)
+				("C-c n o" . org-id-get-create)
+				("C-c n t" . org-roam-tag-add)
+				("C-c n a" . org-roam-alias-add)
+				("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
 
 (use-package websocket :ensure t)
 (use-package simple-httpd :ensure t)
 (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-(load-library "org-roam-ui")
+;(load-library "org-roam-ui")
 
 (use-package org-autolist
-:ensure t
-:demand t
-:config
-(add-hook 'org-mode-hook 'org-autolist-mode))
+  :ensure t
+  :demand t
+  :config
+  (add-hook 'org-mode-hook 'org-autolist-mode))
+
+(use-package org-drill
+  :ensure t
+  :config
+  (setq 
+   org-drill-cram-hours 0
+   org-drill-hide-item-headings-p t
+   org-drill-scope 'tree))
 
 (setq org-todo-keywords
-  '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "ET(e!)" "POSTPONED(p@!/@!)" "SOMEDAY" "|" "CANCELLED(c@!/@!)" "DONE(d!)")))
+	  '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "ET(e!)" "POSTPONED(p@!/@!)" "SOMEDAY" "|" "CANCELLED(c@!/@!)" "DONE(d!)")))
 
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-capture-templates
-     '(("p" "Personal TODO" entry
-        (file+headline "~/Documents/personal.org" "Personal TODO list")
-        "* TODO %^{Headline} :personal:%^{Tags}:
+	  '(("p" "Personal TODO" entry
+		 (file+headline "~/Documents/personal.org" "Personal TODO list")
+		 "* TODO %^{Headline} :personal:%^{Tags}:
 SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t
 :PROPERTIES:
 :EFFORT: %^{Effort}
 :END:
 ")
-       ("H" "Habit" entry
-        (file+headline "~/Documents/personal.org" "Personal TODO list")
-        "* TODO %^{Headline} :personal:habit:%^{Tags}:
+		("H" "Habit" entry
+		 (file+headline "~/Documents/personal.org" "Personal TODO list")
+		 "* TODO %^{Headline} :personal:habit:%^{Tags}:
 SCHEDULED: %^{Scheduled}t
 :PROPERTIES:
 :EFFORT: %^{Effort}
 :STYLE: habit
 :END:
 ")
-       ("n" "Quick note" entry
-        (file+headline "~/Documents/personal.org" "Quick Notes")
-        "* %^{Headline}
-    ENTERED: %U
+		("n" "Quick note" entry
+		 (file+headline "~/Documents/personal.org" "Quick Notes")
+		 "* %^{Headline}
+	ENTERED: %U
   " :prepend t)
-       ("a" "Test/Assessment/Quiz " entry
-        (file "~/org/todo.org")
-        "* %^{Test Name} :school:%^{Tags}:
+		("a" "Test/Assessment/Quiz " entry
+		 (file "~/org/todo.org")
+		 "* %^{Test Name} :school:%^{Tags}:
 DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
-       ("P" "Project TODO" entry
-        (file "~/org/todo.org")
-        "* TODO %^{Project name} [/] :project:%^{Tags}:
+		("P" "Project TODO" entry
+		 (file "~/org/todo.org")
+		 "* TODO %^{Project name} [/] :project:%^{Tags}:
 SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
-       ("e" "Email TODO" entry
-        (file "~/org/todo.org")
-        "* TODO %^{Task} :email:%^{Tags}:
+		("e" "Email TODO" entry
+		 (file "~/org/todo.org")
+		 "* TODO %^{Task} :email:%^{Tags}:
 DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
-       ("m" "Meeting entry" entry
-        (file "~/org/todo.org")
-        "* %^{prompt} :meeting:%^{tags}:
-    DEADLINE: %^{Deadline}T ENTERED: %U" :prepend t :time-prompt t)
-       ("h" "Homework entry" entry
-        (file "~/org/todo.org")
-        "* TODO %^{prompt}    :school:homework:
+		("m" "Meeting entry" entry
+		 (file "~/org/todo.org")
+		 "* %^{prompt} :meeting:%^{tags}:
+	DEADLINE: %^{Deadline}T ENTERED: %U" :prepend t :time-prompt t)
+		("h" "Homework entry" entry
+		 (file "~/org/todo.org")
+		 "* TODO %^{prompt}    :school:homework:
 DEADLINE: %^{Deadline}t ENTERED %U
-    :PROPERTIES:
-    :EFFORT: %^{Effort}
-    :END:
+	:PROPERTIES:
+	:EFFORT: %^{Effort}
+	:END:
 " :prepend t :time-prompt t)))
 
 (add-hook 'org-mode-hook 'flyspell-mode)
@@ -263,114 +304,81 @@ DEADLINE: %^{Deadline}t ENTERED %U
 ;; Keybinds for powerthesaurus are in the (use-package org) block (under the first org-mode settings header, org-mode)
 
 (use-package org-agenda
-   :ensure nil
-   :bind ("C-c a" . org-agenda)
-   :config
-   (setq org-agenda-columns-add-appointments-to-effort-sum t
-     org-agenda-entry-text-maxlines 20
-     org-agenda-include-diary t
-     org-agenda-prefix-format
-     '((agenda . " %i %-12:c%?-8t% s %-6e")
-       (todo . " %i %-12:c %-6e ")
-       (tags . " %i %-12:c %-6e"))
-     org-agenda-skip-scheduled-if-deadline-is-shown t
-     org-agenda-skip-scheduled-if-done t
-     org-agenda-span 'day)
-   org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
-(todo priority-down category-keep)
-(tags priority-down category-keep)
-(search category-keep)))
- (setq org-agenda-custom-commands
-   '(("g" "Good agenda"
-      ((agenda ""
-           ((org-agenda-overriding-header "Agenda and Tonight's Homework")
-              (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))
-            (org-super-agenda-groups
-             `((:time-grid t)
-           (:name "OVERDUE" :discard
-                  (:todo "SOMEDAY")
-                  :deadline past :order 1)
-           (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
-           (:name "Meetings" :tag "meeting" :order 2)
-           (:name "Today's Schedule" :time-grid t :order 2)
-           (:name "Tests and Quizzes" :tag
-                  ("test" "quiz" "assessment" "conference")
-                  :order 3)
-           (:name "Homework"
-                  :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
-                        :order 5 )
-           (:name "Upcoming Schoolwork/Homework" 
-                        :and (:tag ("school" "homework") :deadline future)
-                  :order 6)
-           (:name "Personal Habits"
-                        :and (:tag "personal" :habit t)
-                        :order 8)
-           (:name "Personal TODO list"
-                        :tag ("personal")
-                        :order 7)
-           (:name "Emails" :tag "email" :order 8)
-                 (:name "Scheduled work"
-                        :scheduled t 
-                        :order 10)
-           (:discard (:tag "drill"))))))
-       (alltodo ""
-           ((org-agenda-overriding-header "PROJECTS")
-            (org-super-agenda-groups
-             '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
-                 (:auto-outline-path t)
-           (:discard
-            (:anything))))))
-       (alltodo ""
-            ((org-agenda-overriding-header "Other")
-             (org-super-agenda-groups
-              '((:name "Bucket List" :and
-               (:todo "SOMEDAY" :tag "PERSONAL")
-               :order 1)
-            (:name "Someday Maybe" :todo "SOMEDAY" :order 10)
-            (:name "Everything Else" :anything t :order 20))))))
-      nil nil)
-     ("n" "Agenda and all TODOs"
-      ((agenda "" nil)
-       (alltodo "" nil))
-      nil)))
+  :ensure nil
+  :bind ("C-c a" . org-agenda)
+  :config
+  (setq org-agenda-columns-add-appointments-to-effort-sum t
+		org-agenda-skip-deadline-if-done nil
+		org-agenda-skip-scheduled-if-deadline-is-shown t
+		org-agenda-skip-timestamp-if-deadline-is-shown t
+		org-agenda-entry-text-maxlines 20
+		org-agenda-include-diary t
+		org-agenda-prefix-format
+		'((agenda . " %i %-12:c%?-8t% s %-6e")
+		  (todo . " %i %-12:c %-6e ")
+		  (tags . " %i %-12:c %-6e"))
+		org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
+									  (todo priority-down category-keep)
+									  (tags priority-down category-keep)
+									  (search category-keep))
+  org-agenda-skip-scheduled-if-deadline-is-shown t
+  org-agenda-skip-scheduled-if-done t
+  org-agenda-span 'day))
+(setq org-agenda-custom-commands
+	  '(("g" "Good agenda"
+		 ((agenda ""
+				  ((org-agenda-overriding-header "Agenda and Tonight's Homework")
+				   (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))
+				   (org-super-agenda-groups
+					`((:time-grid t)
+					  (:name "OVERDUE" :discard
+							 (:todo "SOMEDAY")
+							 :deadline past :order 1)
+					  (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
+					  (:name "Meetings" :tag "meeting" :order 2)
+					  (:name "Today's Schedule" :time-grid t :order 2)
+					  (:name "Tests and Quizzes" :tag
+							 ("test" "quiz" "assessment" "conference")
+							 :order 3)
+					  (:name "Homework"
+							 :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
+							 :order 5 )
+					  (:name "Upcoming Schoolwork/Homework" 
+							 :and (:tag ("school" "homework") :deadline future)
+							 :order 6)
+					  (:name "Personal Habits"
+							 :and (:tag "personal" :habit t)
+							 :order 8)
+					  (:name "Personal TODO list"
+							 :tag ("personal")
+							 :order 7)
+					  (:name "Emails" :tag "email" :order 8)
+					  (:name "Scheduled work"
+							 :scheduled t 
+							 :order 10)
+					  (:discard (:tag "drill"))))))
+		  (alltodo ""
+				   ((org-agenda-overriding-header "PROJECTS")
+					(org-super-agenda-groups
+					 '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
+					   (:auto-outline-path t)
+					   (:discard
+						(:anything))))))
+		  (alltodo ""
+				   ((org-agenda-overriding-header "Other")
+					(org-super-agenda-groups
+					 '((:name "Bucket List" :and
+							  (:todo "SOMEDAY" :tag "PERSONAL")
+							  :order 1)
+					   (:name "Someday Maybe" :todo "SOMEDAY" :order 10)
+					   (:name "Everything Else" :anything t :order 20))))))
+		 nil nil)
+		("n" "Agenda and all TODOs"
+		 ((agenda "" nil)
+		  (alltodo "" nil))
+		 nil)))
 
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
-
-(use-package org-super-agenda
-  :ensure t
-  :config
-  (setq org-super-agenda-header-map (make-sparse-keymap))
-  (setq org-super-agenda-groups
-                        '((:time-grid t)
-                          (:name "OVERDUE" :discard
-                                 (:todo "SOMEDAY")
-                                 :deadline past :order 1)
-                          (:name "Today's Schedule" :time-grid t :order 2)
-                          (:name "Meetings" :tag "meeting" :order 2)
-                          (:name "Tests and Quizzes" :tag
-                                 ("test" "quiz" "assessment" "conference")
-                                 :order 3)
-                          (:name "Ongoing Futuredue Homework" 
-                                 :and
-                                 (:tag "school" :tag "homework" :deadline future :scheduled today :not (:tag "project"))
-                                 :and
-                                 (:tag "school" :tag "homework" :deadline future :scheduled past :not (:tag "project"))
-                                 :order 4)
-                          (:name "Tonight's Homework"
-                                 :and
-                                 (:tag "school" :tag "homework" :deadline today)
-                                 :and
-                                 (:tag "school" :tag "project" :deadline today)
-                                 :and
-                                 (:tag "school" :tag "homework" :scheduled (today past) :not (:tag "project"))
-                                 :order 5)
-                          (:name "Upcoming Homework" 
-                                 :and (:not (:tag "project") :tag "school" :tag "homework" :deadline future)
-                                 :order 6)
-                          (:name "Emails" :tag "email" :order 7)
-                          (:discard (:tag "drill"))))
-  :hook
-  (org-agenda-before-finalize . org-super-agenda-mode))
 
 (require 'org-noter-pdftools)
 (require 'org-pdftools)
@@ -378,23 +386,6 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (require 'pdf-links)
 (require 'pdf-sync)
 (require 'pdf-outline)
-
-(use-package pdf-tools
-  :ensure t
-  :pin manual
-  :config
-  ;;initialize
-  (pdf-tools-install)
-  ;; use normal isearch
-  (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
-  (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
-  (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
-  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
-
-(use-package org-noter
-  :ensure t
-  :config
-  (require 'org-noter-pdftools))
 
 (add-hook 'org-mode-hook 'org-indent-mode)
 
@@ -468,11 +459,6 @@ DEADLINE: %^{Deadline}t ENTERED %U
 :hook
 (org-mode . org-superstar-mode))
 
-(use-package org-super-links
-  :bind (("C-c s l" . sl-link))
-  :config
-  (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
-
 (use-package org-download)
 
 (use-package org-ref)
@@ -494,3 +480,62 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (diminish 'org-roam-ui-mode "RUI")
 (diminish 'org-roam-ui-follow-mode)
 (diminish 'undo-tree-mode))
+
+(use-package org
+  :config
+  (setq org-columns-default-format "%50ITEM %TODO %3PRIORITY %6Effort{:} %6CLOCKSUM(Clock) %TAGS ")
+  :bind (("C-c w" . powerthesaurus-lookup-word-at-point)))
+
+(use-package org-super-agenda
+  :ensure t
+  :config
+  (setq org-super-agenda-header-map (make-sparse-keymap))
+  (setq org-super-agenda-groups
+                        '((:time-grid t)
+                          (:name "OVERDUE" :discard
+                                 (:todo "SOMEDAY")
+                                 :deadline past :order 1)
+                          (:name "Today's Schedule" :time-grid t :order 2)
+                          (:name "Meetings" :tag "meeting" :order 2)
+                          (:name "Tests and Quizzes" :tag
+                                 ("test" "quiz" "assessment" "conference")
+                                 :order 3)
+                          (:name "Ongoing Futuredue Homework" 
+                                 :and
+                                 (:tag "school" :tag "homework" :deadline future :scheduled today :not (:tag "project"))
+                                 :and
+                                 (:tag "school" :tag "homework" :deadline future :scheduled past :not (:tag "project"))
+                                 :order 4)
+                          (:name "Tonight's Homework"
+                                 :and
+                                 (:tag "school" :tag "homework" :deadline today)
+                                 :and
+                                 (:tag "school" :tag "project" :deadline today)
+                                 :and
+                                 (:tag "school" :tag "homework" :scheduled (today past) :not (:tag "project"))
+                                 :order 5)
+                          (:name "Upcoming Homework" 
+                                 :and (:not (:tag "project") :tag "school" :tag "homework" :deadline future)
+                                 :order 6)
+                          (:name "Emails" :tag "email" :order 7)
+                          (:discard (:tag "drill"))))
+  :hook
+  (org-agenda-before-finalize . org-super-agenda-mode))
+
+(use-package pdf-tools
+  :ensure t
+  :pin manual
+  :config
+  ;;initialize
+  (pdf-tools-install)
+  ;; use normal isearch
+  (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
+  (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
+  (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
+  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+
+(use-package org-noter-pdftools :ensure t)
+(use-package org-noter
+  :ensure t
+  :config
+  (require 'org-noter-pdftools))
