@@ -800,11 +800,6 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 #+RESULTS:
 : t
 
-**** DONE fix pdf-tools (pdf-tools-install)
-:PROPERTIES:
-:ID:       52cfd178-e782-45d0-ad0a-75cd219ee454
-:END:
-
 *** Org-noter
 :PROPERTIES:
 :ID:       0b7394c6-cba5-4258-a064-e3648ecade1e

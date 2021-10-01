@@ -1,6 +1,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'load-path "~/.emacs.d/customPrograms/")
+(add-to-list 'load-path "~/.emacs.d/elpa/")
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
