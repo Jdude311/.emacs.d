@@ -39,7 +39,7 @@
  '(org-upcoming-deadline ((t (:inherit font-lock-keyword-face :foreground "black"))))
  '(org-variable-pitch-fixed-face ((t (:family "Iosevka"))))
  '(powerline-evil-base-face ((t (:inherit mode-line :foreground "black"))))
- '(variable-pitch ((t (:weight normal :family "Noto Serif")))))
+ '(variable-pitch ((t (:weight normal :family "Droid Serif")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
