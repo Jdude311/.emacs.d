@@ -29,7 +29,7 @@
  '(org-level-6 ((t (:inherit default :extend nil :weight bold :height 1.5))))
  '(org-level-7 ((t (:inherit default :extend nil :weight bold :height 1.5))))
  '(org-level-8 ((t (:inherit default :extend nil :weight bold :height 1.5))))
- '(org-list-dt ((t nil)))
+ '(org-list-dt ((t (:inherit default :foreground "#bbc2cf"))))
  '(org-roam-header-line ((t (:extend t :foreground "tomato" :weight bold :height 1.25))))
  '(org-roam-shielded ((t (:inherit warning :height 1.5))))
  '(org-roam-title ((t (:weight bold))))
@@ -54,6 +54,7 @@
  '(doom-modeline-buffer-file-name-style 'truncate-upto-project)
  '(fast-but-imprecise-scrolling t)
  '(frame-background-mode nil)
+ '(helm-completion-style 'emacs)
  '(indent-tabs-mode t)
  '(indicate-empty-lines t)
  '(line-spacing 0.2)
@@ -128,7 +129,9 @@
  '(tool-bar-style 'both-horiz)
  '(undo-tree-visualizer-relative-timestamps t)
  '(undo-tree-visualizer-timestamps t)
- '(window-divider-mode nil))
+ '(window-divider-mode nil)
+ '(writeroom-global-effects
+   '(writeroom-set-fullscreen writeroom-set-alpha writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width)))
 
 (org-babel-tangle-file
  (expand-file-name "settings.org"
