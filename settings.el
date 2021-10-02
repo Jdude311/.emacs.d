@@ -13,11 +13,11 @@
   (helm-mode 1))
 
 (use-package visual-line-mode
-    :ensure nil
-    :init
-    (global-visual-line-mode t)
-    :hook ((org-mode . visual-line-mode)
-           (prog-mode . visual-line-mode)))
+  :ensure nil
+  :init
+  (global-visual-line-mode t)
+  :hook ((org-mode . visual-line-mode)
+         (prog-mode . visual-line-mode)))
 
 (use-package evil
   :demand t
@@ -31,21 +31,21 @@
   (evil-mode t))
 
 (use-package evil-org
- :ensure t
- :after org
- :hook (org-mode . evil-org-mode)
- :config
- (require 'evil-org-agenda)
- (evil-org-agenda-set-keys)
- (evil-define-key nil evil-normal-state-map
- "j" 'evil-next-visual-line
- "k" 'evil-previous-visual-line))
+  :ensure t
+  :after org
+  :hook (org-mode . evil-org-mode)
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys)
+  (evil-define-key nil evil-normal-state-map
+    "j" 'evil-next-visual-line
+    "k" 'evil-previous-visual-line))
 
 (use-package undo-tree
-:demand t
-:config
-(setq undo-tree-auto-save-history t)
-(global-undo-tree-mode t))
+  :demand t
+  :config
+  (setq undo-tree-auto-save-history t)
+  (global-undo-tree-mode t))
 
 (setq electric-indent-mode t)
 
@@ -81,8 +81,8 @@
 (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
 
 (use-package highlight-indent-guides
-:hook
-(prog-mode . highlight-indent-guides-mode))
+  :hook
+  (prog-mode . highlight-indent-guides-mode))
 
 (setq-default indicate-empty-lines t)
 (define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
@@ -90,7 +90,7 @@
 (set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
 
 (use-package highlight-numbers
-:hook (prog-mode . highlight-numbers-mode))
+  :hook (prog-mode . highlight-numbers-mode))
 
 (use-package lsp-mode
   :ensure t
@@ -143,17 +143,17 @@
   :hook ((python-mode . lsp-ui-mode)
          (c-mode . lsp-ui-mode)))
 
-  ;; debugger adapter protocol support for emacs
-  ;; https://github.com/emacs-lsp/dap-mode/
-  (use-package dap-mode
-    :ensure t
-    :defer 4
-    :config
-    ;; call dap-hydra when going to the next breakpoint
-    (add-hook 'dap-stopped-hook
-              (lambda (arg) (call-interactively #'dap-hydra)))
-    (add-hook 'dap-mode-hook #'dap-ui-mode) ; use a hook so users can remove it
-    (dap-mode 1))
+;; debugger adapter protocol support for emacs
+;; https://github.com/emacs-lsp/dap-mode/
+(use-package dap-mode
+  :ensure t
+  :defer 4
+  :config
+  ;; call dap-hydra when going to the next breakpoint
+  (add-hook 'dap-stopped-hook
+            (lambda (arg) (call-interactively #'dap-hydra)))
+  (add-hook 'dap-mode-hook #'dap-ui-mode) ; use a hook so users can remove it
+  (dap-mode 1))
 
 (use-package flycheck :ensure t :config (setq flycheck-color-mode-line-face-to-color 'mode-line-buffer-id))
 
@@ -163,9 +163,9 @@
   (prog-mode . company-mode))
 
 (use-package linum-mode
-:ensure nil
-:hook
-(prog-mode . linum-mode))
+  :ensure nil
+  :hook
+  (prog-mode . linum-mode))
 
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
@@ -175,62 +175,73 @@
  org-enforce-todo-dependencies t
  org-export-with-broken-links 'mark
  org-file-apps
-   '((auto-mode . "setsid -w xdg-open %s")
-     (default . "sleep 1")
-     ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . default)
-     ("\\.pdf\\'" . "chromium %s")
-     ("\\.docx\\'" . "lowriter %s")
-     ("\\.odt\\'" . system))
+ '((auto-mode . "setsid -w xdg-open %s")
+   (default . "sleep 1")
+   ("\\.mm\\'" . default)
+   ("\\.x?html?\\'" . default)
+   ("\\.pdf\\'" . "chromium %s")
+   ("\\.docx\\'" . "lowriter %s")
+   ("\\.odt\\'" . system))
  org-fontify-emphasized-text t
  org-fontify-quote-and-verse-blocks t
  org-format-latex-options
-   '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
-                 ("begin" "$1" "$" "$$" "\\[")))
+ '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+               ("begin" "$1" "$" "$$" "\\[")))
+
+(set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+(set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+(set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
+(set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
+(set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
+(set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
+(set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+(set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
 
 (use-package writeroom-mode
-  :ensure t
-  :defer t
-  :bind ("C-x w" . writeroom-mode)
-										;:hook (org-mode . writeroom-mode)
-  :config
-  (setq writeroom-width 110 
-		writeroom-mode-line t 
-										;writeroom-global-effects '(writeroom-set-bottom-divider-width
-										;writeroom-set-internal-border-width)
-		))
+    :ensure t
+    :defer t
+    :bind ("C-x w" . writeroom-mode)
+                                          ;:hook (org-mode . writeroom-mode)
+    :config
+    (setq writeroom-width 120
+          writeroom-mode-line t 
+          writeroom-global-effects '(writeroom-set-alpha writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width)
+                                          ;writeroom-global-effects '(writeroom-set-bottom-divider-width
+                                          ;writeroom-set-internal-border-width)
+          )
+:hook (org-mode . writeroom-mode))
 
 
 
 (use-package org-roam
   :ensure t
   :hook ((after-init . org-roam-setup)
-		 (org-roam-backlinks-mode . visual-line-mode))
+         (org-roam-backlinks-mode . visual-line-mode))
   :config
   (setq org-roam-v2-ack t)
   (org-roam-setup)
   (setq org-roam-directory "~/notes/")
   (setq org-roam-mode-section-functions
-		(list #'org-roam-backlinks-section
-			  #'org-roam-reflinks-section
-			  ;; #'org-roam-unlinked-references-section
-			  ))
+        (list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              ;; #'org-roam-unlinked-references-section
+              ))
   :bind (("C-c n f" . org-roam-node-find)
-		 ("C-c n c" . org-roam-capture)
-		 ("C-c n g" . org-roam-ui-mode)
-		 ("C-c n r" . org-roam-node-random)		    
-		 (:map org-mode-map
-			   (("C-c n i" . org-roam-node-insert)
-				("C-c n o" . org-id-get-create)
-				("C-c n t" . org-roam-tag-add)
-				("C-c n a" . org-roam-alias-add)
-				("C-c n l" . org-roam-buffer-toggle)))))
+         ("C-c n c" . org-roam-capture)
+         ("C-c n g" . org-roam-ui-mode)
+         ("C-c n r" . org-roam-node-random)		    
+         (:map org-mode-map
+               (("C-c n i" . org-roam-node-insert)
+                ("C-c n o" . org-id-get-create)
+                ("C-c n t" . org-roam-tag-add)
+                ("C-c n a" . org-roam-alias-add)
+                ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
 
 (use-package websocket :ensure t)
 (use-package simple-httpd :ensure t)
 (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-;(load-library "org-roam-ui")
+                                        ;(load-library "org-roam-ui")
 
 (use-package org-autolist
   :ensure t
@@ -247,55 +258,55 @@
    org-drill-scope 'tree))
 
 (setq org-todo-keywords
-	  '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "ET(e!)" "POSTPONED(p@!/@!)" "SOMEDAY" "|" "CANCELLED(c@!/@!)" "DONE(d!)")))
+      '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "ET(e!)" "POSTPONED(p@!/@!)" "SOMEDAY" "|" "CANCELLED(c@!/@!)" "DONE(d!)")))
 
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-capture-templates
-	  '(("p" "Personal TODO" entry
-		 (file+headline "~/Documents/personal.org" "Personal TODO list")
-		 "* TODO %^{Headline} :personal:%^{Tags}:
+      '(("p" "Personal TODO" entry
+         (file+headline "~/Documents/personal.org" "Personal TODO list")
+         "* TODO %^{Headline} :personal:%^{Tags}:
 SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t
 :PROPERTIES:
 :EFFORT: %^{Effort}
 :END:
 ")
-		("H" "Habit" entry
-		 (file+headline "~/Documents/personal.org" "Personal TODO list")
-		 "* TODO %^{Headline} :personal:habit:%^{Tags}:
+        ("H" "Habit" entry
+         (file+headline "~/Documents/personal.org" "Personal TODO list")
+         "* TODO %^{Headline} :personal:habit:%^{Tags}:
 SCHEDULED: %^{Scheduled}t
 :PROPERTIES:
 :EFFORT: %^{Effort}
 :STYLE: habit
 :END:
 ")
-		("n" "Quick note" entry
-		 (file+headline "~/Documents/personal.org" "Quick Notes")
-		 "* %^{Headline}
-	ENTERED: %U
+        ("n" "Quick note" entry
+         (file+headline "~/Documents/personal.org" "Quick Notes")
+         "* %^{Headline}
+    ENTERED: %U
   " :prepend t)
-		("a" "Test/Assessment/Quiz " entry
-		 (file "~/org/todo.org")
-		 "* %^{Test Name} :school:%^{Tags}:
+        ("a" "Test/Assessment/Quiz " entry
+         (file "~/org/todo.org")
+         "* %^{Test Name} :school:%^{Tags}:
 DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
-		("P" "Project TODO" entry
-		 (file "~/org/todo.org")
-		 "* TODO %^{Project name} [/] :project:%^{Tags}:
+        ("P" "Project TODO" entry
+         (file "~/org/todo.org")
+         "* TODO %^{Project name} [/] :project:%^{Tags}:
 SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
-		("e" "Email TODO" entry
-		 (file "~/org/todo.org")
-		 "* TODO %^{Task} :email:%^{Tags}:
+        ("e" "Email TODO" entry
+         (file "~/org/todo.org")
+         "* TODO %^{Task} :email:%^{Tags}:
 DEADLINE: %^{Deadline}t ENTERED: %U" :prepend t :time-prompt t)
-		("m" "Meeting entry" entry
-		 (file "~/org/todo.org")
-		 "* %^{prompt} :meeting:%^{tags}:
-	DEADLINE: %^{Deadline}T ENTERED: %U" :prepend t :time-prompt t)
-		("h" "Homework entry" entry
-		 (file "~/org/todo.org")
-		 "* TODO %^{prompt}    :school:homework:
+        ("m" "Meeting entry" entry
+         (file "~/org/todo.org")
+         "* %^{prompt} :meeting:%^{tags}:
+    DEADLINE: %^{Deadline}T ENTERED: %U" :prepend t :time-prompt t)
+        ("h" "Homework entry" entry
+         (file "~/org/todo.org")
+         "* TODO %^{prompt}    :school:homework:
 DEADLINE: %^{Deadline}t ENTERED %U
-	:PROPERTIES:
-	:EFFORT: %^{Effort}
-	:END:
+    :PROPERTIES:
+    :EFFORT: %^{Effort}
+    :END:
 " :prepend t :time-prompt t)))
 
 (add-hook 'org-mode-hook 'flyspell-mode)
@@ -308,75 +319,75 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :bind ("C-c a" . org-agenda)
   :config
   (setq org-agenda-columns-add-appointments-to-effort-sum t
-		org-agenda-skip-deadline-if-done nil
-		org-agenda-skip-scheduled-if-deadline-is-shown t
-		org-agenda-skip-timestamp-if-deadline-is-shown t
-		org-agenda-entry-text-maxlines 20
-		org-agenda-include-diary t
-		org-agenda-prefix-format
-		'((agenda . " %i %-12:c%?-8t% s %-6e")
-		  (todo . " %i %-12:c %-6e ")
-		  (tags . " %i %-12:c %-6e"))
-		org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
-									  (todo priority-down category-keep)
-									  (tags priority-down category-keep)
-									  (search category-keep))
-  org-agenda-skip-scheduled-if-deadline-is-shown t
-  org-agenda-skip-scheduled-if-done t
-  org-agenda-span 'day))
+        org-agenda-skip-deadline-if-done nil
+        org-agenda-skip-scheduled-if-deadline-is-shown t
+        org-agenda-skip-timestamp-if-deadline-is-shown t
+        org-agenda-entry-text-maxlines 20
+        org-agenda-include-diary t
+        org-agenda-prefix-format
+        '((agenda . " %i %-12:c%?-8t% s %-6e")
+          (todo . " %i %-12:c %-6e ")
+          (tags . " %i %-12:c %-6e"))
+        org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
+                                      (todo priority-down category-keep)
+                                      (tags priority-down category-keep)
+                                      (search category-keep))
+        org-agenda-skip-scheduled-if-deadline-is-shown t
+        org-agenda-skip-scheduled-if-done t
+        org-agenda-span 'day))
 (setq org-agenda-custom-commands
-	  '(("g" "Good agenda"
-		 ((agenda ""
-				  ((org-agenda-overriding-header "Agenda and Tonight's Homework")
-				   (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))
-				   (org-super-agenda-groups
-					`((:time-grid t)
-					  (:name "OVERDUE" :discard
-							 (:todo "SOMEDAY")
-							 :deadline past :order 1)
-					  (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
-					  (:name "Meetings" :tag "meeting" :order 2)
-					  (:name "Today's Schedule" :time-grid t :order 2)
-					  (:name "Tests and Quizzes" :tag
-							 ("test" "quiz" "assessment" "conference")
-							 :order 3)
-					  (:name "Homework"
-							 :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
-							 :order 5 )
-					  (:name "Upcoming Schoolwork/Homework" 
-							 :and (:tag ("school" "homework") :deadline future)
-							 :order 6)
-					  (:name "Personal Habits"
-							 :and (:tag "personal" :habit t)
-							 :order 8)
-					  (:name "Personal TODO list"
-							 :tag ("personal")
-							 :order 7)
-					  (:name "Emails" :tag "email" :order 8)
-					  (:name "Scheduled work"
-							 :scheduled t 
-							 :order 10)
-					  (:discard (:tag "drill"))))))
-		  (alltodo ""
-				   ((org-agenda-overriding-header "PROJECTS")
-					(org-super-agenda-groups
-					 '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
-					   (:auto-outline-path t)
-					   (:discard
-						(:anything))))))
-		  (alltodo ""
-				   ((org-agenda-overriding-header "Other")
-					(org-super-agenda-groups
-					 '((:name "Bucket List" :and
-							  (:todo "SOMEDAY" :tag "PERSONAL")
-							  :order 1)
-					   (:name "Someday Maybe" :todo "SOMEDAY" :order 10)
-					   (:name "Everything Else" :anything t :order 20))))))
-		 nil nil)
-		("n" "Agenda and all TODOs"
-		 ((agenda "" nil)
-		  (alltodo "" nil))
-		 nil)))
+      '(("g" "Good agenda"
+         ((agenda ""
+                  ((org-agenda-overriding-header "Agenda and Tonight's Homework")
+                   (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))
+                   (org-super-agenda-groups
+                    `((:time-grid t)
+                      (:name "OVERDUE" :discard
+                             (:todo "SOMEDAY")
+                             :deadline past :order 1)
+                      (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
+                      (:name "Meetings" :tag "meeting" :order 2)
+                      (:name "Today's Schedule" :time-grid t :order 2)
+                      (:name "Tests and Quizzes" :tag
+                             ("test" "quiz" "assessment" "conference")
+                             :order 3)
+                      (:name "Homework"
+                             :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
+                             :order 5 )
+                      (:name "Upcoming Schoolwork/Homework" 
+                             :and (:tag ("school" "homework") :deadline future)
+                             :order 6)
+                      (:name "Personal Habits"
+                             :and (:tag "personal" :habit t)
+                             :order 8)
+                      (:name "Personal TODO list"
+                             :tag ("personal")
+                             :order 7)
+                      (:name "Emails" :tag "email" :order 8)
+                      (:name "Scheduled work"
+                             :scheduled t 
+                             :order 10)
+                      (:discard (:tag "drill"))))))
+          (alltodo ""
+                   ((org-agenda-overriding-header "PROJECTS")
+                    (org-super-agenda-groups
+                     '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
+                       (:auto-outline-path t)
+                       (:discard
+                        (:anything))))))
+          (alltodo ""
+                   ((org-agenda-overriding-header "Other")
+                    (org-super-agenda-groups
+                     '((:name "Bucket List" :and
+                              (:todo "SOMEDAY" :tag "PERSONAL")
+                              :order 1)
+                       (:name "Someday Maybe" :todo "SOMEDAY" :order 10)
+                       (:name "Everything Else" :anything t :order 20))))))
+         nil nil)
+        ("n" "Agenda and all TODOs"
+         ((agenda "" nil)
+          (alltodo "" nil))
+         nil)))
 
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
@@ -390,40 +401,40 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (add-hook 'org-mode-hook 'org-indent-mode)
 
 (use-package org-variable-pitch
-:config
-(setq org-variable-pitch-fixed-faces '(org-block
-                                       org-block-begin-line
-                                       org-block-end-line
-                                       org-code
-                                       org-document-info-keyword
-                                       ;; org-done
-                                       org-formula
-                                       org-indent
-                                       org-meta-line
-                                       org-special-keyword
-                                       org-table
-                                       ;org-todo
-                                       org-verbatim
-                                       org-date
-                                       org-drawer
-                                       ;org-link
-                                       link
-                                       centaur-tabs-default
-                                       org-property-value
-                                       org-priority
-                                       ;; org-level-1
-                                       ;; org-level-2
-                                       ;; org-level-3
-                                       ;; org-level-4
-                                       ;; org-level-5
-                                       ;; org-level-6
-                                       ;; org-level-7
-                                       ;; org-level-8
-                                       org-hide
-                                       org-superstar-leading
-                                       org-superstar-bullet
-                                       org-target))
-:hook ((org-mode) . org-variable-pitch-minor-mode))
+  :config
+  (setq org-variable-pitch-fixed-faces '(org-block
+                                         org-block-begin-line
+                                         org-block-end-line
+                                         org-code
+                                         org-document-info-keyword
+                                         ;; org-done
+                                         org-formula
+                                         org-indent
+                                         org-meta-line
+                                         org-special-keyword
+                                         org-table
+                                        ;org-todo
+                                         org-verbatim
+                                         org-date
+                                         org-drawer
+                                        ;org-link
+                                        ;link
+                                         centaur-tabs-default
+                                         org-property-value
+                                         org-priority
+                                         ;; org-level-1
+                                         ;; org-level-2
+                                         ;; org-level-3
+                                         ;; org-level-4
+                                         ;; org-level-5
+                                         ;; org-level-6
+                                         ;; org-level-7
+                                         ;; org-level-8
+                                         org-hide
+                                         org-superstar-leading
+                                         ;; org-superstar-bullet
+                                         org-target))
+  :hook ((org-mode) . org-variable-pitch-minor-mode))
 
 (require 'calendar)
 (setq appt-display-interval 3
@@ -452,12 +463,12 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (use-package ox-pandoc)
 
 (use-package org-notebook
-:config
-(setq org-notebook-drawing-program "kolourpaint"))
+  :config
+  (setq org-notebook-drawing-program "kolourpaint"))
 
 (use-package org-superstar
-:hook
-(org-mode . org-superstar-mode))
+  :hook
+  (org-mode . org-superstar-mode))
 
 (use-package org-download)
 
@@ -468,18 +479,18 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 (use-package diminish
   :demand t
-:init
-(diminish 'evil-org-mode)
-(diminish 'buffer-face-mode)
-(diminish 'org-indent-mode)
-(diminish 'helm-mode)
-(diminish 'org-autolist-mode)
-(diminish 'undo-tree-mode)
-(diminish 'visual-line-mode "VL")
-(diminish 'flyspell-mode "SPL")
-(diminish 'org-roam-ui-mode "RUI")
-(diminish 'org-roam-ui-follow-mode)
-(diminish 'undo-tree-mode))
+  :init
+  (diminish 'evil-org-mode)
+  (diminish 'buffer-face-mode)
+  (diminish 'org-indent-mode)
+  (diminish 'helm-mode)
+  (diminish 'org-autolist-mode)
+  (diminish 'undo-tree-mode)
+  (diminish 'visual-line-mode "VL")
+  (diminish 'flyspell-mode "SPL")
+  (diminish 'org-roam-ui-mode "RUI")
+  (diminish 'org-roam-ui-follow-mode)
+  (diminish 'undo-tree-mode))
 
 (use-package org
   :config
@@ -491,34 +502,34 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :config
   (setq org-super-agenda-header-map (make-sparse-keymap))
   (setq org-super-agenda-groups
-                        '((:time-grid t)
-                          (:name "OVERDUE" :discard
-                                 (:todo "SOMEDAY")
-                                 :deadline past :order 1)
-                          (:name "Today's Schedule" :time-grid t :order 2)
-                          (:name "Meetings" :tag "meeting" :order 2)
-                          (:name "Tests and Quizzes" :tag
-                                 ("test" "quiz" "assessment" "conference")
-                                 :order 3)
-                          (:name "Ongoing Futuredue Homework" 
-                                 :and
-                                 (:tag "school" :tag "homework" :deadline future :scheduled today :not (:tag "project"))
-                                 :and
-                                 (:tag "school" :tag "homework" :deadline future :scheduled past :not (:tag "project"))
-                                 :order 4)
-                          (:name "Tonight's Homework"
-                                 :and
-                                 (:tag "school" :tag "homework" :deadline today)
-                                 :and
-                                 (:tag "school" :tag "project" :deadline today)
-                                 :and
-                                 (:tag "school" :tag "homework" :scheduled (today past) :not (:tag "project"))
-                                 :order 5)
-                          (:name "Upcoming Homework" 
-                                 :and (:not (:tag "project") :tag "school" :tag "homework" :deadline future)
-                                 :order 6)
-                          (:name "Emails" :tag "email" :order 7)
-                          (:discard (:tag "drill"))))
+        '((:time-grid t)
+          (:name "OVERDUE" :discard
+                 (:todo "SOMEDAY")
+                 :deadline past :order 1)
+          (:name "Today's Schedule" :time-grid t :order 2)
+          (:name "Meetings" :tag "meeting" :order 2)
+          (:name "Tests and Quizzes" :tag
+                 ("test" "quiz" "assessment" "conference")
+                 :order 3)
+          (:name "Ongoing Futuredue Homework" 
+                 :and
+                 (:tag "school" :tag "homework" :deadline future :scheduled today :not (:tag "project"))
+                 :and
+                 (:tag "school" :tag "homework" :deadline future :scheduled past :not (:tag "project"))
+                 :order 4)
+          (:name "Tonight's Homework"
+                 :and
+                 (:tag "school" :tag "homework" :deadline today)
+                 :and
+                 (:tag "school" :tag "project" :deadline today)
+                 :and
+                 (:tag "school" :tag "homework" :scheduled (today past) :not (:tag "project"))
+                 :order 5)
+          (:name "Upcoming Homework" 
+                 :and (:not (:tag "project") :tag "school" :tag "homework" :deadline future)
+                 :order 6)
+          (:name "Emails" :tag "email" :order 7)
+          (:discard (:tag "drill"))))
   :hook
   (org-agenda-before-finalize . org-super-agenda-mode))
 

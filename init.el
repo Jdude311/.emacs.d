@@ -37,7 +37,7 @@
  '(org-super-agenda-header ((t (:inherit org-level-1 :underline t :weight bold :height 0.8))))
  '(org-superstar-leading ((t (:inherit org-hide :height 0.4))))
  '(org-target ((t (:inherit nil :underline t))))
- '(org-upcoming-deadline ((t (:inherit font-lock-keyword-face :foreground "black"))))
+ '(org-upcoming-deadline ((t (:inherit font-lock-keyword-face))))
  '(org-variable-pitch-fixed-face ((t (:family "Iosevka"))))
  '(powerline-evil-base-face ((t (:inherit mode-line :foreground "black"))))
  '(variable-pitch ((t (:weight normal :family "Droid Serif")))))
@@ -107,7 +107,7 @@
  '(org-variable-pitch-fixed-faces
    '(org-block org-block-begin-line org-block-end-line org-code org-document-info-keyword org-formula org-indent org-meta-line org-special-keyword org-table org-verbatim org-date org-drawer centaur-tabs-default org-property-value org-priority org-hide org-superstar-leading org-superstar-bullet org-target org-headline-done org-done))
  '(package-selected-packages
-   '(page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme smooth-scrolling right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui lsp-treemacs ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company centaur-tabs ccls buffer-move babel all-the-icons alert))
+   '(lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme smooth-scrolling right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui lsp-treemacs ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company centaur-tabs ccls buffer-move babel all-the-icons alert))
  '(pdf-view-continuous t)
  '(pdf-view-display-size 'fit-page)
  '(powerline-display-buffer-size nil)
@@ -141,3 +141,4 @@
  (expand-file-name "settings.org"
                    user-emacs-directory))
 (server-start)
+(put 'narrow-to-region 'disabled nil)
