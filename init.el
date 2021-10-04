@@ -61,7 +61,8 @@
  '(line-spacing 0.2)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((meta)) ((control) . text-scale)))
  '(org-agenda-files
-   '("/home/jadench/Dropbox/todo-two.org" "/home/jadench/Dropbox/APCSP/apcsp.org" "/home/jadench/Dropbox/non_school_academics.org" "/home/jadench/.emacs.d/settings.org"))
+   '("~/notes/pages/science_research/CO2_monitor_project/Science Research CO2 Monitor Project Proposal.org" "/home/jadench/Dropbox/todo-two.org" "/home/jadench/Dropbox/APCSP/apcsp.org" "/home/jadench/Dropbox/non_school_academics.org" "/home/jadench/.emacs.d/settings.org"))
+ '(org-agenda-skip-scheduled-if-deadline-is-shown nil)
  '(org-ascii-paragraph-spacing 'auto)
  '(org-blank-before-new-entry '((heading . t) (plain-list-item)))
  '(org-cycle-include-plain-lists t)
@@ -107,7 +108,7 @@
  '(org-variable-pitch-fixed-faces
    '(org-block org-block-begin-line org-block-end-line org-code org-document-info-keyword org-formula org-indent org-meta-line org-special-keyword org-table org-verbatim org-date org-drawer centaur-tabs-default org-property-value org-priority org-hide org-superstar-leading org-superstar-bullet org-target org-headline-done org-done))
  '(package-selected-packages
-   '(lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme smooth-scrolling right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui lsp-treemacs ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company centaur-tabs ccls buffer-move babel all-the-icons alert))
+   '(org-ql lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme smooth-scrolling right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui lsp-treemacs ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company centaur-tabs ccls buffer-move babel all-the-icons alert))
  '(pdf-view-continuous t)
  '(pdf-view-display-size 'fit-page)
  '(powerline-display-buffer-size nil)

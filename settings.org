@@ -774,6 +774,14 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 #+RESULTS:
 | org-super-agenda-mode |
 
+** Org-ql                                                             :test:
+#+begin_src elisp
+  (use-package org-ql
+:ensure t)
+#+end_src
+
+#+RESULTS:
+
 ** Org-noter stuff
 :PROPERTIES:
 :ID:       cabacb17-121f-436c-a539-2cca134e03cc
