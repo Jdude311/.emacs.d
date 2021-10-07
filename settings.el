@@ -391,6 +391,9 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
+(use-package org-ql
+:ensure t)
+
 (require 'org-noter-pdftools)
 (require 'org-pdftools)
 (require 'pdf-history)

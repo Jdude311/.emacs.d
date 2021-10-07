@@ -9,7 +9,7 @@
  (position . 54800))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "*  TODO Finish R")
+ (front-context-string . "* TODO sketch th")
  (rear-context-string)
  (position . 1))
 ("settings.org"
