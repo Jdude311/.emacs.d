@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "* TODO sketch th")
- (rear-context-string)
- (position . 1))
+ (filename . "~/notes/20211005215907-complex_numbers.org")
+ (front-context-string . "#+filetags: :mat")
+ (rear-context-string . "Complex Numbers\n")
+ (position . 93))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")
