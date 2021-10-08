@@ -250,7 +250,7 @@
 (use-package websocket :ensure t)
 (use-package simple-httpd :ensure t)
 (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-(load-library "org-roam-ui")
+;(load-library "org-roam-ui/")
 
 (use-package org-autolist
   :ensure t
