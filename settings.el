@@ -214,29 +214,38 @@
 
 
 (use-package org-roam
-  :ensure t
-  :hook ((after-init . org-roam-setup)
-         (org-roam-backlinks-mode . visual-line-mode))
-  :config
-  (setq org-roam-v2-ack t)
-  (org-roam-setup)
-  (setq org-roam-directory "~/notes/")
-  (setq org-roam-mode-section-functions
-        (list #'org-roam-backlinks-section
-              #'org-roam-reflinks-section
-              ;; #'org-roam-unlinked-references-section
-              ))
-  :bind (("C-c n f" . org-roam-node-find)
-         ("C-c n c" . org-roam-capture)
-         ("C-c n g" . org-roam-ui-mode)
-         ("C-c n r" . org-roam-node-random)		    
-         (:map org-mode-map
-               (("C-c n i" . org-roam-node-insert)
-                ("C-c n o" . org-id-get-create)
-                ("C-c n t" . org-roam-tag-add)
-                ("C-c n a" . org-roam-alias-add)
-                ("C-c n l" . org-roam-buffer-toggle)))))
-(org-roam-db-autosync-mode)
+      :ensure t
+      :hook ((after-init . org-roam-setup)
+             (org-roam-backlinks-mode . visual-line-mode))
+      :config
+      '(org-roam-dailies-capture-templates
+        '(("d" "default" entry "* %?\
+" :target
+    (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
+      ")
+    :empty-lines-after 1
+    :empty-lines-before 1)))
+      (setq org-roam-v2-ack t)
+      (org-roam-setup)
+      (setq org-roam-directory "~/notes/")
+      (setq org-roam-mode-section-functions
+            (list #'org-roam-backlinks-section
+                  #'org-roam-reflinks-section
+                  ;; #'org-roam-unlinked-references-section
+                  ))
+      :bind (("C-c n f" . org-roam-node-find)
+             ("C-c n c" . org-roam-capture)
+             ("C-c n g" . org-roam-ui-mode)
+             ("C-c n r" . org-roam-node-random)		    
+             ("C-c n d" . org-roam-dailies-capture-today)
+             (:map org-mode-map
+                   (("C-c n i" . org-roam-node-insert)
+                    ("C-c C-w" . org-roam-refile)
+                    ("C-c n o" . org-id-get-create)
+                    ("C-c n t" . org-roam-tag-add)
+                    ("C-c n a" . org-roam-alias-add)
+                    ("C-c n l" . org-roam-buffer-toggle)))))
+    (org-roam-db-autosync-mode)
 
 (use-package websocket :ensure t)
 (use-package simple-httpd :ensure t)
@@ -325,9 +334,9 @@ DEADLINE: %^{Deadline}t ENTERED %U
         org-agenda-entry-text-maxlines 20
         org-agenda-include-diary t
         org-agenda-prefix-format
-        '((agenda . " %i %-12:c%?-8t% s %-6e")
-          (todo . " %i %-12:c %-6e ")
-          (tags . " %i %-12:c %-6e"))
+        '((agenda . " %i%?5t%s%4e  ")
+          (todo . " %i%?4e  ")
+          (tags . " %i%?4e  "))
         org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
                                       (todo priority-down category-keep)
                                       (tags priority-down category-keep)
@@ -342,11 +351,11 @@ DEADLINE: %^{Deadline}t ENTERED %U
                    (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))
                    (org-super-agenda-groups
                     `((:time-grid t)
+                      (:name "Meetings" :tag "meeting" :tag "clubs" :tag "club" :order 2)
                       (:name "OVERDUE" :discard
                              (:todo "SOMEDAY")
                              :deadline past :order 1)
                       (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
-                      (:name "Meetings" :tag "meeting" :order 2)
                       (:name "Today's Schedule" :time-grid t :order 2)
                       (:name "Tests and Quizzes" :tag
                              ("test" "quiz" "assessment" "conference")
