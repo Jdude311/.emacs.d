@@ -334,9 +334,9 @@ DEADLINE: %^{Deadline}t ENTERED %U
         org-agenda-entry-text-maxlines 20
         org-agenda-include-diary t
         org-agenda-prefix-format
-        '((agenda . " %i%?5t%s%4e  ")
-          (todo . " %i%?4e  ")
-          (tags . " %i%?4e  "))
+        '((agenda . "  %i%?5t%s%4e  ")
+          (todo . "  %?-i%?4e  ")
+          (tags . "  %?-i%?4e  "))
         org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
                                       (todo priority-down category-keep)
                                       (tags priority-down category-keep)

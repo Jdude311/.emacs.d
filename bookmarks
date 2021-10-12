@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "* TODO study for")
- (rear-context-string)
- (position . 1))
+ (filename . "~/notes/20211010155257-gaming.org")
+ (front-context-string . "Video games are ")
+ (rear-context-string . "#+title: Gaming\n")
+ (position . 84))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")
