@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/notes/20211010155257-gaming.org")
- (front-context-string . "Video games are ")
- (rear-context-string . "#+title: Gaming\n")
- (position . 84))
+ (filename . "~/notes/20211005215907-complex_numbers.org")
+ (front-context-string . "#+filetags: :mat")
+ (rear-context-string . "Complex Numbers\n")
+ (position . 93))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")
