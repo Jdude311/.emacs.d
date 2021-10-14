@@ -1,4 +1,9 @@
 elpa
 auto-save-list
+<<<<<<< HEAD
 *.~undo-tree~
 
+=======
+*.~undo-tree-~
+MobileOrg
+>>>>>>> f38d393c9c3f1e3b67005bcfafa27661544c8da0
