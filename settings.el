@@ -63,7 +63,7 @@
   (doom-modeline-mode t))
 
 (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
-(load-theme 'doom-one t)
+(load-theme 'doom-monokai-pro t)
 
 (use-package dashboard
   :ensure t
@@ -187,15 +187,23 @@
  org-format-latex-options
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                ("begin" "$1" "$" "$$" "\\[")))
+(set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5)
 
-(set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-(set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
-(set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
-(set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
-(set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
-(set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
-(set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-(set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+;; (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
+;; (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
+;; (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
+;; (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
+;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
 
 (use-package writeroom-mode
     :ensure t
@@ -250,7 +258,7 @@
 (use-package websocket :ensure t)
 (use-package simple-httpd :ensure t)
 (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-;(load-library "org-roam-ui/")
+(load-library "org-roam-ui/org-roam-ui.el")
 
 (use-package org-autolist
   :ensure t
@@ -333,10 +341,15 @@ DEADLINE: %^{Deadline}t ENTERED %U
         org-agenda-skip-timestamp-if-deadline-is-shown t
         org-agenda-entry-text-maxlines 20
         org-agenda-include-diary t
-        org-agenda-prefix-format
-        '((agenda . "  %i%?5t%s%4e  ")
-          (todo . "  %?-i%?4e  ")
-          (tags . "  %?-i%?4e  "))
+
+        org-agenda-prefix-format " %?-i %?-2 t%?-s %2e "
+        org-agenda-keyword-format '("")
+        org-agenda-remove-tags t
+
+        ;; '((agenda . "%i%?5t%s%4e  ")
+        ;;   (todo . "  %?-i%?4e  ")
+        ;;   (tags . "  %?-i%?4e  "))
+
         org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
                                       (todo priority-down category-keep)
                                       (tags priority-down category-keep)

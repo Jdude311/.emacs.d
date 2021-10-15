@@ -9,9 +9,9 @@
  (position . 54800))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "* TODO study for")
- (rear-context-string)
- (position . 1))
+ (front-context-string . "* TODO Finish el")
+ (rear-context-string . "+CATEGORY: TODO\n")
+ (position . 18))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")

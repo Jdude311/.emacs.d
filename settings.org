@@ -150,7 +150,7 @@ shit test blah blah blah
 :END:
 #+begin_src elisp
   (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
-  (load-theme 'doom-one t)
+  (load-theme 'doom-monokai-pro t)
 #+end_src
 
 #+RESULTS:
@@ -422,15 +422,23 @@ shit test blah blah blah
    org-format-latex-options
    '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                  ("begin" "$1" "$" "$$" "\\[")))
+  (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5)
+  (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5)
+  (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5)
+  (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5)
+  (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5)
+  (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5)
+  (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5)
+  (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5)
 
-  (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-  (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
-  (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
-  (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
-  (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
-  (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
-  (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-  (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+  ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+  ;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+  ;; (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
+  ;; (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
+  ;; (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
+  ;; (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
+  ;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+  ;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
 #+end_src
 
 #+RESULTS:
@@ -456,9 +464,12 @@ shit test blah blah blah
 #+RESULTS:
 : writeroom-mode
 
-** TODO Org-mode
+** DONE Org-mode
 :PROPERTIES:
 :ID:       feba8f0d-3670-4310-ae78-7f53a9e950c5
+:END:
+:LOGBOOK:
+- State "DONE"       from "TODO"       [2021-10-14 Thu 18:23]
 :END:
 #+begin_src emacs-lisp
   (use-package org
@@ -521,7 +532,7 @@ shit test blah blah blah
   (use-package websocket :ensure t)
   (use-package simple-httpd :ensure t)
   (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-  ;(load-library "org-roam-ui/")
+  (load-library "org-roam-ui/org-roam-ui.el")
 #+end_src
 
 #+RESULTS:
@@ -660,10 +671,15 @@ The agenda files are maintained by customize-variable, and are not defined or ma
           org-agenda-skip-timestamp-if-deadline-is-shown t
           org-agenda-entry-text-maxlines 20
           org-agenda-include-diary t
-          org-agenda-prefix-format
-          '((agenda . "  %i%?5t%s%4e  ")
-            (todo . "  %?-i%?4e  ")
-            (tags . "  %?-i%?4e  "))
+
+          org-agenda-prefix-format " %?-i %?-2 t%?-s %2e "
+          org-agenda-keyword-format '("")
+          org-agenda-remove-tags t
+
+          ;; '((agenda . "%i%?5t%s%4e  ")
+          ;;   (todo . "  %?-i%?4e  ")
+          ;;   (tags . "  %?-i%?4e  "))
+
           org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
                                         (todo priority-down category-keep)
                                         (tags priority-down category-keep)
@@ -1007,7 +1023,7 @@ Provides image download functionality and stuff.
   (use-package calfw-org)
 #+end_src
 
-* Centaur Tabs                                                    :disabled:
+* TODO Centaur Tabs                                                :disabled:
 :PROPERTIES:
 :ID:       bfe02ca7-adf3-46fd-8db2-f5a7c0e119a4
 :END:
