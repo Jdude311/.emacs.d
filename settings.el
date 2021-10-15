@@ -63,7 +63,7 @@
   (doom-modeline-mode t))
 
 (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
-(load-theme 'doom-monokai-pro t)
+(load-theme 'doom-zenburn t)
 
 (use-package dashboard
   :ensure t
@@ -187,14 +187,14 @@
  org-format-latex-options
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                ("begin" "$1" "$" "$$" "\\[")))
-(set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5)
-(set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5)
-(set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5)
-(set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5)
-(set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5)
-(set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5)
-(set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5)
-(set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5)
+(set-face-attribute 'org-level-1 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-2 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-3 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-4 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-5 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-6 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-7 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-8 nil :extend nil :height 1.5)
 
 ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
 ;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
