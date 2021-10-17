@@ -218,11 +218,14 @@ shit test blah blah blah
 :END:
 #+begin_src elisp
   (setq-default indicate-empty-lines t)
-  (define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
-  (setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
-  (set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
+  ;(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
+  ;(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
+  ;(set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
 
 #+end_src
+
+#+RESULTS:
+: t
 
 ** Highlight numbers
 #+begin_src elisp
@@ -446,8 +449,25 @@ shit test blah blah blah
 
 #+RESULTS:
 
-** Write-Room Mode                                                    :test:
+** Olivetti Mode                                                      :test:
 #+begin_src elisp
+  (use-package olivetti
+    :ensure t
+    :defer t
+    :bind ("C-x w" . olivetti-mode)
+    :config
+    (setq olivetti-body-width 122)
+    (setq olivett-style 'fancy)
+    (setq olivetti-margin-width 20)
+    :hook (org-mode . olivetti-mode))
+
+
+#+end_src
+
+#+RESULTS:
+: olivetti-mode
+** Write-Room Mode                                           :disabled:test:
+#+begin_src elisp :tangle no 
     (use-package writeroom-mode
       :ensure t
       :defer t
@@ -492,39 +512,46 @@ shit test blah blah blah
 
 ** ORG-ROAM                                                           :test:
 #+begin_src elisp
-    (use-package org-roam
-      :ensure t
-      :hook ((after-init . org-roam-setup)
-             (org-roam-backlinks-mode . visual-line-mode))
-      :config
-      '(org-roam-dailies-capture-templates
-        '(("d" "default" entry "* %?\
-" :target
+  (use-package org-roam
+    :ensure t
+    :hook ((after-init . org-roam-setup)
+           (org-roam-backlinks-mode . visual-line-mode))
+    :config
+    '(org-roam-dailies-capture-templates
+      '(("d" "default" entry "* %?\
+    " :target
     (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
-      ")
+          ")
     :empty-lines-after 1
     :empty-lines-before 1)))
-      (setq org-roam-v2-ack t)
-      (org-roam-setup)
-      (setq org-roam-directory "~/notes/")
-      (setq org-roam-mode-section-functions
-            (list #'org-roam-backlinks-section
-                  #'org-roam-reflinks-section
-                  ;; #'org-roam-unlinked-references-section
-                  ))
-      :bind (("C-c n f" . org-roam-node-find)
-             ("C-c n c" . org-roam-capture)
-             ("C-c n g" . org-roam-ui-mode)
-             ("C-c n r" . org-roam-node-random)		    
-             ("C-c n d" . org-roam-dailies-capture-today)
-             (:map org-mode-map
-                   (("C-c n i" . org-roam-node-insert)
-                    ("C-c C-w" . org-roam-refile)
-                    ("C-c n o" . org-id-get-create)
-                    ("C-c n t" . org-roam-tag-add)
-                    ("C-c n a" . org-roam-alias-add)
-                    ("C-c n l" . org-roam-buffer-toggle)))))
-    (org-roam-db-autosync-mode)
+
+    (setq org-roam-capture-templates
+          '(("d" "default" plain "%?" :target
+             (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}
+  ")
+             :unnarrowed t)))
+    (setq org-roam-v2-ack t)
+    (org-roam-setup)
+    (setq org-roam-directory "~/notes")
+    (setq org-roam-dailies-directory "journals/")
+    (setq org-roam-mode-section-functions
+          (list #'org-roam-backlinks-section
+                #'org-roam-reflinks-section
+                ;; #'org-roam-unlinked-references-section
+                ))
+    :bind (("C-c n f" . org-roam-node-find)
+           ("C-c n c" . org-roam-capture)
+           ("C-c n g" . org-roam-ui-mode)
+           ("C-c n r" . org-roam-node-random)		    
+           ("C-c n d" . org-roam-dailies-capture-today)
+           (:map org-mode-map
+                 (("C-c n i" . org-roam-node-insert)
+                  ("C-c C-w" . org-roam-refile)
+                  ("C-c n o" . org-id-get-create)
+                  ("C-c n t" . org-roam-tag-add)
+                  ("C-c n a" . org-roam-alias-add)
+                  ("C-c n l" . org-roam-buffer-toggle)))))
+  (org-roam-db-autosync-mode)
 #+end_src
 
 #+RESULTS:
@@ -570,8 +597,20 @@ shit test blah blah blah
 :END:
 #+begin_src elisp
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "ET(e!)" "POSTPONED(p@!/@!)" "SOMEDAY" "|" "CANCELLED(c@!/@!)" "DONE(d!)")))
+        '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
 #+end_src
+
+#+RESULTS:
+| sequence | TODO(t) | NEXT(n) | PROG(r) | EXTD(e!) | POST(p@!/@!) |   |   | CNCL(c@!/@!) | DONE(d!) | FAIL(f!) |
+
+- TODO :: Not done yet
+- NEXT :: Next up
+- PROG :: Progress made--Started, but not finished
+- EXTD :: Extended deadline. Already asked for extra time
+- POST :: Postponed deadline.
+- CNCL :: Cancelled--don't have to worry about it anymore
+- DONE :: Successfully finished
+- FAIL :: Task failed successfully.
 
 #+RESULTS:
 | sequence | TODO(t) | NEXT(n) | STARTED(s) | ET(e!) | POSTPONED(p@!/@!) | SOMEDAY |   |   | CANCELLED(c@!/@!) | DONE(d!) |
@@ -885,13 +924,13 @@ The agenda files are maintained by customize-variable, and are not defined or ma
                                            org-block-end-line
                                            org-code
                                            org-document-info-keyword
-                                           ;; org-done
+                                           org-done
                                            org-formula
                                            org-indent
                                            org-meta-line
                                            org-special-keyword
                                            org-table
-                                          ;org-todo
+                                          org-todo
                                            org-verbatim
                                            org-date
                                            org-drawer
@@ -916,7 +955,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 #+end_src
 
 #+RESULTS:
-| writeroom-mode | #[0 \205 \301 \205 \302\303\301 !\304P!\305!\205 \306!\262\207 [org-ctags-enabled-p buffer-file-name expand-file-name file-name-directory /TAGS file-exists-p visit-tags-table] 3] | org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | org-autolist-mode | org-ref-org-menu | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | org-ref-setup-label-finders |
+| org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | org-ref-setup-label-finders |
 
 ** Notifications and reminders
 :PROPERTIES:

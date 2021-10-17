@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/notes/20211015140410-test_file.org")
- (front-context-string)
- (rear-context-string . "itle: Test File\n")
- (position . 87))
+ (filename . "~/Dropbox/todo-two.org")
+ (front-context-string . "* Bio Unit Test ")
+ (rear-context-string . "+CATEGORY: TODO\n")
+ (position . 18))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")

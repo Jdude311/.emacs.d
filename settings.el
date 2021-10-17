@@ -85,9 +85,9 @@
   (prog-mode . highlight-indent-guides-mode))
 
 (setq-default indicate-empty-lines t)
-(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
-(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
-(set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
+;(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
+;(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
+;(set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
 
 (use-package highlight-numbers
   :hook (prog-mode . highlight-numbers-mode))
@@ -195,6 +195,9 @@
 (set-face-attribute 'org-level-6 nil :extend nil :height 1.5)
 (set-face-attribute 'org-level-7 nil :extend nil :height 1.5)
 (set-face-attribute 'org-level-8 nil :extend nil :height 1.5)
+(set-face-attribute 'org-todo nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
+(set-face-attribute 'org-done nil :foreground nil :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
+(set-face-attribute 'org-headline-done nil :foreground nil)
 
 ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
 ;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
@@ -205,19 +208,15 @@
 ;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
 ;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
 
-(use-package writeroom-mode
-    :ensure t
-    :defer t
-    :bind ("C-x w" . writeroom-mode)
-                                          ;:hook (org-mode . writeroom-mode)
-    :config
-    (setq writeroom-width 120
-          writeroom-mode-line t 
-          writeroom-global-effects '(writeroom-set-alpha writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width)
-                                          ;writeroom-global-effects '(writeroom-set-bottom-divider-width
-                                          ;writeroom-set-internal-border-width)
-          )
-:hook (org-mode . writeroom-mode))
+(use-package olivetti
+  :ensure t
+  :defer t
+  :bind ("C-x w" . olivetti-mode)
+  :config
+  (setq olivetti-body-width 110)
+  (setq olivett-style 'fancy)
+  (setq olivetti-margin-width 20)
+  :hook (org-mode . olivetti-mode))
 
 
 
@@ -275,7 +274,7 @@
    org-drill-scope 'tree))
 
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "ET(e!)" "POSTPONED(p@!/@!)" "SOMEDAY" "|" "CANCELLED(c@!/@!)" "DONE(d!)")))
+      '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
 
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-capture-templates
@@ -432,13 +431,13 @@ DEADLINE: %^{Deadline}t ENTERED %U
                                          org-block-end-line
                                          org-code
                                          org-document-info-keyword
-                                         ;; org-done
+                                         org-done
                                          org-formula
                                          org-indent
                                          org-meta-line
                                          org-special-keyword
                                          org-table
-                                        ;org-todo
+                                        org-todo
                                          org-verbatim
                                          org-date
                                          org-drawer
