@@ -23,7 +23,7 @@
  '(org-agenda-column-dateline ((t (:inherit (org-column default)))))
  '(org-agenda-done ((t (:inherit org-done :background "nil" :foreground "#666" :box nil))))
  '(org-block-begin-line ((t (:inherit org-block :extend t :background "#282828" :foreground "#7F9F7F"))))
- '(org-checkbox ((t (:inherit org-todo :box (:line-width -1 :color "nil") :height 0.8))))
+ '(org-checkbox ((t (:inherit org-todo :box nil :height 1.0))))
  '(org-column ((t (:inherit default))))
  '(org-document-title ((t (:foreground "#DCDCDC" :weight bold :height 1.75))))
  '(org-meta-line ((t (:background "#282828" :foreground "#9FC59F"))))
@@ -36,7 +36,7 @@
  '(org-todo ((t (:background "#494949" :foreground "#7F9F7F" :box (:line-width 2 :color "#303030") :weight bold))))
  '(org-variable-pitch-fixed-face ((t (:family "Iosevka"))))
  '(powerline-evil-base-face ((t (:inherit mode-line :foreground "black"))))
- '(variable-pitch ((t (:extend t :family "ETBembo")))))
+ '(variable-pitch ((t (:family "ETBookOT")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
