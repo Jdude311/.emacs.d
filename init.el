@@ -36,7 +36,7 @@
  '(org-todo ((t (:background "#494949" :foreground "#7F9F7F" :box (:line-width 2 :color "#303030") :weight bold))))
  '(org-variable-pitch-fixed-face ((t (:family "Iosevka"))))
  '(powerline-evil-base-face ((t (:inherit mode-line :foreground "black"))))
- '(variable-pitch ((t (:family "ETBookOT")))))
+ '(variable-pitch ((t (:inherit default :height 1.0 :family "source sans pro")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -56,7 +56,7 @@
  '(helm-completion-style 'emacs)
  '(indent-tabs-mode t)
  '(indicate-empty-lines t)
- '(line-spacing 3)
+ '(line-spacing 1)
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((meta)) ((control) . text-scale)))
  '(olivetti-body-width 110)
