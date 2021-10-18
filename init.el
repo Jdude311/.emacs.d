@@ -56,12 +56,12 @@
  '(helm-completion-style 'emacs)
  '(indent-tabs-mode t)
  '(indicate-empty-lines t)
- '(line-spacing 7)
+ '(line-spacing 3)
  '(menu-bar-mode nil)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((meta)) ((control) . text-scale)))
  '(olivetti-body-width 110)
  '(org-agenda-files
-   '("/home/jadench/notes/daily/2021-10-07.org" "/home/jadench/notes/daily/2021-10-08.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "/home/jadench/notes/20210921110418-how_to_science_research_presentations.org" "/home/jadench/notes/20210921110743-science_research_co2_monitor_project_presentation.org" "/home/jadench/notes/20210928124526-abigail_finan_psilocybin_presentation_notes.org" "/home/jadench/notes/20210929180741-something.org" "/home/jadench/notes/20211005212814-sketching_polynomials.org" "/home/jadench/notes/20211005212849-math.org" "/home/jadench/notes/20211005213010-synthetic_division.org" "/home/jadench/notes/20211005213056-polynomial_long_division.org" "/home/jadench/notes/20211005213445-multiplicity_polynomials.org" "/home/jadench/notes/20211005214032-rational_root_theorem.org" "/home/jadench/notes/20211005215139-remainder_theorem.org" "/home/jadench/notes/20211005215907-complex_numbers.org" "/home/jadench/notes/20211007174547-columbia_science_honors_program.org" "/home/jadench/notes/20211007181548-computer_science_club.org" "/home/jadench/notes/asdfadsfasdf.org" "~/notes/pages/science_research/CO2_monitor_project/Science Research CO2 Monitor Project Proposal.org" "/home/jadench/Dropbox/todo-two.org" "/home/jadench/Dropbox/APCSP/apcsp.org" "/home/jadench/Dropbox/non_school_academics.org" "/home/jadench/.emacs.d/settings.org"))
+   '("/home/jadench/notes/daily/2021-10-07.org" "/home/jadench/notes/daily/2021-10-08.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "/home/jadench/Dropbox/todo-two.org" "/home/jadench/Dropbox/APCSP/apcsp.org" "/home/jadench/Dropbox/non_school_academics.org" "/home/jadench/.emacs.d/settings.org"))
  '(org-agenda-prefix-format
    ''((agenda . " %i %-12:c%?-12t% s")
 	  (todo . " %i %-12:c")

@@ -213,7 +213,7 @@
   :defer t
   :bind ("C-x w" . olivetti-mode)
   :config
-  (setq olivetti-body-width 110)
+  (setq olivetti-body-width 122)
   (setq olivett-style 'fancy)
   (setq olivetti-margin-width 20)
   :hook (org-mode . olivetti-mode))
@@ -221,38 +221,45 @@
 
 
 (use-package org-roam
-      :ensure t
-      :hook ((after-init . org-roam-setup)
-             (org-roam-backlinks-mode . visual-line-mode))
-      :config
-      '(org-roam-dailies-capture-templates
-        '(("d" "default" entry "* %?\
-" :target
-    (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
-      ")
-    :empty-lines-after 1
-    :empty-lines-before 1)))
-      (setq org-roam-v2-ack t)
-      (org-roam-setup)
-      (setq org-roam-directory "~/notes/")
-      (setq org-roam-mode-section-functions
-            (list #'org-roam-backlinks-section
-                  #'org-roam-reflinks-section
-                  ;; #'org-roam-unlinked-references-section
-                  ))
-      :bind (("C-c n f" . org-roam-node-find)
-             ("C-c n c" . org-roam-capture)
-             ("C-c n g" . org-roam-ui-mode)
-             ("C-c n r" . org-roam-node-random)		    
-             ("C-c n d" . org-roam-dailies-capture-today)
-             (:map org-mode-map
-                   (("C-c n i" . org-roam-node-insert)
-                    ("C-c C-w" . org-roam-refile)
-                    ("C-c n o" . org-id-get-create)
-                    ("C-c n t" . org-roam-tag-add)
-                    ("C-c n a" . org-roam-alias-add)
-                    ("C-c n l" . org-roam-buffer-toggle)))))
-    (org-roam-db-autosync-mode)
+  :ensure t
+  :hook ((after-init . org-roam-setup)
+         (org-roam-backlinks-mode . visual-line-mode))
+  :config
+  '(org-roam-dailies-capture-templates
+    '(("d" "default" entry "* %?\
+  " :target
+  (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
+        ")
+  :empty-lines-after 1
+  :empty-lines-before 1)))
+
+  (setq org-roam-capture-templates
+        '(("d" "default" plain "%?" :target
+           (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}
+")
+           :unnarrowed t)))
+  (setq org-roam-v2-ack t)
+  (org-roam-setup)
+  (setq org-roam-directory "~/notes")
+  (setq org-roam-dailies-directory "journals/")
+  (setq org-roam-mode-section-functions
+        (list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              ;; #'org-roam-unlinked-references-section
+              ))
+  :bind (("C-c n f" . org-roam-node-find)
+         ("C-c n c" . org-roam-capture)
+         ("C-c n g" . org-roam-ui-mode)
+         ("C-c n r" . org-roam-node-random)		    
+         ("C-c n d" . org-roam-dailies-capture-today)
+         (:map org-mode-map
+               (("C-c n i" . org-roam-node-insert)
+                ("C-c C-w" . org-roam-refile)
+                ("C-c n o" . org-id-get-create)
+                ("C-c n t" . org-roam-tag-add)
+                ("C-c n a" . org-roam-alias-add)
+                ("C-c n l" . org-roam-buffer-toggle)))))
+(org-roam-db-autosync-mode)
 
 (use-package websocket :ensure t)
 (use-package simple-httpd :ensure t)
