@@ -187,16 +187,16 @@
  org-format-latex-options
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                ("begin" "$1" "$" "$$" "\\[")))
-(set-face-attribute 'org-level-1 nil :extend nil :height 1.5)
-(set-face-attribute 'org-level-2 nil :extend nil :height 1.5)
-(set-face-attribute 'org-level-3 nil :extend nil :height 1.5)
-(set-face-attribute 'org-level-4 nil :extend nil :height 1.5)
-(set-face-attribute 'org-level-5 nil :extend nil :height 1.5)
-(set-face-attribute 'org-level-6 nil :extend nil :height 1.5)
-(set-face-attribute 'org-level-7 nil :extend nil :height 1.5)
-(set-face-attribute 'org-level-8 nil :extend nil :height 1.5)
+(set-face-attribute 'org-level-1 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-2 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-3 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-4 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-5 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-6 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-7 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-8 nil :extend nil :height 1.5 :weight 'bold)
 (set-face-attribute 'org-todo nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
-(set-face-attribute 'org-done nil :foreground nil :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
+(set-face-attribute 'org-done nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
 (set-face-attribute 'org-headline-done nil :foreground nil)
 
 ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
@@ -343,12 +343,12 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :config
   (setq org-agenda-columns-add-appointments-to-effort-sum t
         org-agenda-skip-deadline-if-done nil
-        org-agenda-skip-scheduled-if-deadline-is-shown t
-        org-agenda-skip-timestamp-if-deadline-is-shown t
+        org-agenda-skip-scheduled-if-deadline-is-shown 'not-today
+        org-agenda-skip-timestamp-if-deadline-is-shown nil
         org-agenda-entry-text-maxlines 20
         org-agenda-include-diary t
 
-        org-agenda-prefix-format " %?-i %?-2 t%?-s %2e "
+        org-agenda-prefix-format " %?-i %?-2 t%?-s %3e "
         org-agenda-keyword-format '("")
         org-agenda-remove-tags t
 
@@ -360,9 +360,9 @@ DEADLINE: %^{Deadline}t ENTERED %U
                                       (todo priority-down category-keep)
                                       (tags priority-down category-keep)
                                       (search category-keep))
-        org-agenda-skip-scheduled-if-deadline-is-shown t
         org-agenda-skip-scheduled-if-done t
         org-agenda-span 'day))
+(setq org-agenda-skip-scheduled-if-deadline-is-shown 'always)
 (setq org-agenda-custom-commands
       '(("g" "Good agenda"
          ((agenda ""
