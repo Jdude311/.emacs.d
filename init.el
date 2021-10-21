@@ -16,6 +16,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#3F3F3F" :foreground "#DCDCDC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 118 :width normal :family "Iosevka"))))
  '(dashboard-items-face ((t (:inherit widget-button :height 1.0))))
  '(fixed-pitch ((t (:family "Iosevka"))))
  '(fixed-pitch-serif ((t (:family "Iosevka"))))
@@ -27,10 +28,12 @@
  '(org-column ((t (:inherit default))))
  '(org-document-title ((t (:foreground "#DCDCDC" :weight bold :height 1.75))))
  '(org-meta-line ((t (:background "#282828" :foreground "#9FC59F"))))
+ '(org-ref-cite-face ((t (:foreground "#F0DFAF" :underline t))))
  '(org-roam-header-line ((t (:extend t :foreground "tomato" :weight bold :height 1.25))))
  '(org-roam-shielded ((t (:inherit warning :height 1.5))))
  '(org-roam-title ((t (:weight bold))))
  '(org-super-agenda-header ((t (:foreground "LightCoral" :weight bold))))
+ '(org-superstar-header-bullet ((t (:inherit fixed-pitch))))
  '(org-superstar-leading ((t (:inherit org-hide :height 0.4))))
  '(org-target ((t (:inherit nil :underline t))))
  '(org-todo ((t (:background "#494949" :foreground "#7F9F7F" :box (:line-width 2 :color "#303030") :weight bold))))
@@ -111,13 +114,21 @@
  '(org-superstar-item-bullet-alist '((42 . 9702) (43 . 8227) (45 . 8226)))
  '(org-superstar-prettify-item-bullets t)
  '(org-superstar-special-todo-items t)
- '(org-superstar-todo-bullet-alist '(("TODO" . 9744) ("DONE" . 9745)))
+ '(org-superstar-todo-bullet-alist
+   '(("TODO" . 9744)
+	 ("NEXT" "→" 9673)
+	 ("PROG" "☐~" 9673)
+	 ("EXTD" "☐" 9673)
+	 ("POST" "🕣" 9673)
+	 ("DONE" "☑" 9673)
+	 ("CNCL" "☐X" 9673)
+	 ("FAIL" "☐X" 9673)))
  '(org-use-fast-tag-selection t)
  '(org-use-fast-todo-selection 'expert)
  '(org-variable-pitch-fixed-faces
    '(org-block org-block-begin-line org-block-end-line org-code org-document-info-keyword org-formula org-indent org-meta-line org-special-keyword org-table org-verbatim org-date org-drawer centaur-tabs-default org-property-value org-priority org-hide org-superstar-leading org-superstar-bullet org-target org-headline-done org-done))
  '(package-selected-packages
-   '(ligature olivetti org-ql lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme smooth-scrolling right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui lsp-treemacs ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company centaur-tabs ccls buffer-move babel all-the-icons alert))
+   '(org-roam-bibtex ligature olivetti org-ql lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme smooth-scrolling right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui lsp-treemacs ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company centaur-tabs ccls buffer-move babel all-the-icons alert))
  '(pdf-view-continuous t)
  '(pdf-view-display-size 'fit-page)
  '(pdf-view-midnight-colors (cons "#383a42" "#fafafa"))

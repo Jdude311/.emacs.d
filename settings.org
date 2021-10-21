@@ -1065,6 +1065,15 @@ Provides image download functionality and stuff.
   (use-package calfw-org)
 #+end_src
 
+** Org-roam-bibtex                                                    :test:
+#+begin_src elisp :tangle no
+    (use-package org-roam-bibtex
+  :after org-roam
+:config (require 'org-ref))
+#+end_src
+
+#+RESULTS:
+
 * TODO Centaur Tabs                                                :disabled:
 :PROPERTIES:
 :ID:       bfe02ca7-adf3-46fd-8db2-f5a7c0e119a4
