@@ -220,6 +220,11 @@
 
 
 
+(use-package websocket :ensure t)
+(use-package simple-httpd :ensure t)
+(add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
+(load-library "org-roam-ui/org-roam-ui.el")
+
 (use-package org-roam
   :ensure t
   :hook ((after-init . org-roam-setup)
@@ -260,11 +265,6 @@
                 ("C-c n a" . org-roam-alias-add)
                 ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
-
-(use-package websocket :ensure t)
-(use-package simple-httpd :ensure t)
-(add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-(load-library "org-roam-ui/org-roam-ui.el")
 
 (use-package org-autolist
   :ensure t
@@ -343,7 +343,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :config
   (setq org-agenda-columns-add-appointments-to-effort-sum t
         org-agenda-skip-deadline-if-done nil
-        org-agenda-skip-scheduled-if-deadline-is-shown 'not-today
+        org-agenda-skip-scheduled-if-deadline-is-shown 'repeated-after-deadline
         org-agenda-skip-timestamp-if-deadline-is-shown nil
         org-agenda-entry-text-maxlines 20
         org-agenda-include-diary t
@@ -362,7 +362,6 @@ DEADLINE: %^{Deadline}t ENTERED %U
                                       (search category-keep))
         org-agenda-skip-scheduled-if-done t
         org-agenda-span 'day))
-(setq org-agenda-skip-scheduled-if-deadline-is-shown 'always)
 (setq org-agenda-custom-commands
       '(("g" "Good agenda"
          ((agenda ""
@@ -569,12 +568,12 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :pin manual
   :config
   ;;initialize
-  (pdf-tools-install)
   ;; use normal isearch
   (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
   (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
   (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+  (pdf-tools-install)
 
 (use-package org-noter-pdftools :ensure t)
 (use-package org-noter

@@ -510,6 +510,17 @@ shit test blah blah blah
 
 #+RESULTS:
 
+** Org-Roam-ui                                                        :test:
+#+begin_src elisp
+  (use-package websocket :ensure t)
+  (use-package simple-httpd :ensure t)
+  (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
+  (load-library "org-roam-ui/org-roam-ui.el")
+#+end_src
+
+#+RESULTS:
+: t
+
 ** ORG-ROAM                                                           :test:
 #+begin_src elisp
   (use-package org-roam
@@ -552,17 +563,6 @@ shit test blah blah blah
                   ("C-c n a" . org-roam-alias-add)
                   ("C-c n l" . org-roam-buffer-toggle)))))
   (org-roam-db-autosync-mode)
-#+end_src
-
-#+RESULTS:
-: t
-
-** Org-Roam-ui                                                        :test:
-#+begin_src elisp
-  (use-package websocket :ensure t)
-  (use-package simple-httpd :ensure t)
-  (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-  (load-library "org-roam-ui/org-roam-ui.el")
 #+end_src
 
 #+RESULTS:
@@ -709,7 +709,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
     :config
     (setq org-agenda-columns-add-appointments-to-effort-sum t
           org-agenda-skip-deadline-if-done nil
-          org-agenda-skip-scheduled-if-deadline-is-shown 'not-today
+          org-agenda-skip-scheduled-if-deadline-is-shown 'repeated-after-deadline
           org-agenda-skip-timestamp-if-deadline-is-shown nil
           org-agenda-entry-text-maxlines 20
           org-agenda-include-diary t
@@ -728,7 +728,6 @@ The agenda files are maintained by customize-variable, and are not defined or ma
                                         (search category-keep))
           org-agenda-skip-scheduled-if-done t
           org-agenda-span 'day))
-  (setq org-agenda-skip-scheduled-if-deadline-is-shown 'always)
   (setq org-agenda-custom-commands
         '(("g" "Good agenda"
            ((agenda ""
@@ -864,12 +863,12 @@ The agenda files are maintained by customize-variable, and are not defined or ma
     :pin manual
     :config
     ;;initialize
-    (pdf-tools-install)
     ;; use normal isearch
     (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
     (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
     (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
     (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+    (pdf-tools-install)
 #+end_src
 
 #+RESULTS:
