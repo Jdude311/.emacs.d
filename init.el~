@@ -30,13 +30,15 @@
  '(org-roam-header-line ((t (:extend t :foreground "tomato" :weight bold :height 1.25))))
  '(org-roam-shielded ((t (:inherit warning :height 1.5))))
  '(org-roam-title ((t (:weight bold))))
+ '(org-scheduled-today ((t (:foreground "#f0dfaf"))))
  '(org-super-agenda-header ((t (:foreground "LightCoral" :weight bold))))
  '(org-superstar-leading ((t (:inherit org-hide :height 0.4))))
  '(org-target ((t (:inherit nil :underline t))))
- '(org-todo ((t (:background "#494949" :foreground "#7F9F7F" :box (:line-width 2 :color "#303030") :weight bold))))
+ '(org-todo ((t (:background "#222" :foreground "#7f9f7f" :box (:line-width -6 :color "#222") :weight bold))))
  '(org-variable-pitch-fixed-face ((t (:family "Iosevka"))))
+ '(org-warning ((t (:foreground "#CC9393"))))
  '(powerline-evil-base-face ((t (:inherit mode-line :foreground "black"))))
- '(variable-pitch ((t (:inherit default :extend t :inverse-video nil :height 1.0 :family "ETBookOT")))))
+ '(variable-pitch ((t (:inherit default :height 1.0 :family "source sans pro")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -67,7 +69,6 @@
 	  (todo . " %i %-12:c")
 	  (tags . " %i %-12:c")
 	  (search . " %i %-12:c")))
- '(org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
  '(org-ascii-paragraph-spacing 'auto)
  '(org-blank-before-new-entry '((heading . t) (plain-list-item)))
  '(org-cycle-include-plain-lists t)

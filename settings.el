@@ -196,7 +196,7 @@
 (set-face-attribute 'org-level-7 nil :extend nil :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-8 nil :extend nil :height 1.5 :weight 'bold)
 (set-face-attribute 'org-todo nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
-(set-face-attribute 'org-done nil :foreground nil :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
+(set-face-attribute 'org-done nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
 (set-face-attribute 'org-headline-done nil :foreground nil)
 
 ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
@@ -219,6 +219,11 @@
   :hook (org-mode . olivetti-mode))
 
 
+
+(use-package websocket :ensure t)
+(use-package simple-httpd :ensure t)
+(add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
+(load-library "org-roam-ui/org-roam-ui.el")
 
 (use-package org-roam
   :ensure t
@@ -260,11 +265,6 @@
                 ("C-c n a" . org-roam-alias-add)
                 ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
-
-(use-package websocket :ensure t)
-(use-package simple-httpd :ensure t)
-(add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-(load-library "org-roam-ui/org-roam-ui.el")
 
 (use-package org-autolist
   :ensure t
@@ -343,12 +343,12 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :config
   (setq org-agenda-columns-add-appointments-to-effort-sum t
         org-agenda-skip-deadline-if-done nil
-        org-agenda-skip-scheduled-if-deadline-is-shown t
-        org-agenda-skip-timestamp-if-deadline-is-shown t
+        org-agenda-skip-scheduled-if-deadline-is-shown 'repeated-after-deadline
+        org-agenda-skip-timestamp-if-deadline-is-shown nil
         org-agenda-entry-text-maxlines 20
         org-agenda-include-diary t
 
-        org-agenda-prefix-format " %?-i %?-2 t%?-s %2e "
+        org-agenda-prefix-format " %?-i %?-2 t%?-s %3e "
         org-agenda-keyword-format '("")
         org-agenda-remove-tags t
 
@@ -360,7 +360,6 @@ DEADLINE: %^{Deadline}t ENTERED %U
                                       (todo priority-down category-keep)
                                       (tags priority-down category-keep)
                                       (search category-keep))
-        org-agenda-skip-scheduled-if-deadline-is-shown t
         org-agenda-skip-scheduled-if-done t
         org-agenda-span 'day))
 (setq org-agenda-custom-commands
@@ -569,12 +568,12 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :pin manual
   :config
   ;;initialize
-  (pdf-tools-install)
   ;; use normal isearch
   (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
   (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
   (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+  (pdf-tools-install)
 
 (use-package org-noter-pdftools :ensure t)
 (use-package org-noter
