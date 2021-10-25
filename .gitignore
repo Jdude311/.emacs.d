@@ -2,4 +2,5 @@ elpa
 auto-save-list
 *.~undo-tree~
 recentf
+recentf~
 org-roam.db
