@@ -72,13 +72,15 @@
     :config
     (require 'evil-org-agenda)
     (evil-org-agenda-set-keys)
+    (evil-define-key 'motion org-agenda-mode-map
+      "e" 'org-agenda-set-effort)
     (evil-define-key nil evil-normal-state-map
       "j" 'evil-next-visual-line
       "k" 'evil-previous-visual-line))
 #+end_src
 
 #+RESULTS:
-| evil-org-mode | org-ref-org-menu | org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | org-ref-setup-label-finders |
+| org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
 ** Undo tree
 :PROPERTIES:
