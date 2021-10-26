@@ -570,6 +570,13 @@ shit test blah blah blah
 #+RESULTS:
 : t
 
+** Org-roam-bibtex
+#+begin_src elisp
+(use-package org-roam-bibtex)
+#+end_src
+
+#+RESULTS:
+
 ** Org-auto-list
 #+begin_src elisp
   (use-package org-autolist
@@ -1052,7 +1059,16 @@ Provides image download functionality and stuff.
 :ID:       402f2292-d0d8-4a56-9608-d9bd69798465
 :END:
 #+begin_src elisp
-  (use-package org-ref)
+      (use-package org-ref
+  :bind ("C-c r i" . org-ref-insert-link))
+#+end_src
+
+#+RESULTS:
+: org-ref-insert-link
+
+** Helm-bibtex
+#+begin_src elisp
+(use-package helm-bibtex)
 #+end_src
 
 #+RESULTS:

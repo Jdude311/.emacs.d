@@ -37,6 +37,8 @@
   :config
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys)
+  (evil-define-key 'motion org-agenda-mode-map
+    "e" 'org-agenda-set-effort)
   (evil-define-key nil evil-normal-state-map
     "j" 'evil-next-visual-line
     "k" 'evil-previous-visual-line))
