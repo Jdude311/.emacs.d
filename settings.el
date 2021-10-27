@@ -268,6 +268,8 @@
                 ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
 
+(use-package org-roam-bibtex)
+
 (use-package org-autolist
   :ensure t
   :demand t
@@ -504,7 +506,10 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 (use-package org-download)
 
-(use-package org-ref)
+(use-package org-ref
+:bind ("C-c r i" . org-ref-insert-link))
+
+(use-package helm-bibtex)
 
 (use-package calfw)
 (use-package calfw-org)
