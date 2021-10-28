@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "* TODO Sketch pg")
- (rear-context-string . "+CATEGORY: TODO\n")
- (position . 18))
+ (filename . "~/notes/pages/20211023141802-sketching_rational_expressions.org")
+ (front-context-string . "#+filetags: :mat")
+ (rear-context-string . "nal Expressions\n")
+ (position . 108))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")
