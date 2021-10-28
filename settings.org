@@ -1064,6 +1064,7 @@ Provides image download functionality and stuff.
 :END:
 #+begin_src elisp
       (use-package org-ref
+:config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
   :bind ("C-c r i" . org-ref-insert-link))
 #+end_src
 
