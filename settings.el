@@ -511,7 +511,8 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (use-package org-download)
 
 (use-package org-ref
-:bind ("C-c r i" . org-ref-insert-link))
+:config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+  :bind ("C-c r i" . org-ref-insert-link))
 
 (use-package helm-bibtex)
 

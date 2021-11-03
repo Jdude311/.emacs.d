@@ -152,7 +152,7 @@ shit test blah blah blah
 :END:
 #+begin_src elisp
   (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
-  (load-theme 'doom-zenburn t)
+  (load-theme 'doom-gruvbox t)
 #+end_src
 
 #+RESULTS:
@@ -408,8 +408,17 @@ shit test blah blah blah
   (setq highlight-indent-guides-method 'column)
 #+end_src
 
-* DONE Org-mode
+** Origami-mode
+#+begin_src elisp
+  (use-package origami
+    :hook
+    (prog-mode . origami-mode))
+#+end_src
 
+#+RESULTS:
+| origami-mode | hl-line-mode | linum-mode | company-mode | highlight-numbers-mode | highlight-indent-guides-mode | visual-line-mode |
+
+* DONE Org-mode
 #+begin_src elisp
   (setq
    org-enforce-todo-dependencies t
@@ -427,6 +436,7 @@ shit test blah blah blah
    org-format-latex-options
    '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                  ("begin" "$1" "$" "$$" "\\[")))
+  (set-face-attribute 'org-block-begin-line nil :background "#504945")
   (set-face-attribute 'org-level-1 nil :extend nil :height 1.5 :weight 'bold)
   (set-face-attribute 'org-level-2 nil :extend nil :height 1.5 :weight 'bold)
   (set-face-attribute 'org-level-3 nil :extend nil :height 1.5 :weight 'bold)
@@ -435,8 +445,9 @@ shit test blah blah blah
   (set-face-attribute 'org-level-6 nil :extend nil :height 1.5 :weight 'bold)
   (set-face-attribute 'org-level-7 nil :extend nil :height 1.5 :weight 'bold)
   (set-face-attribute 'org-level-8 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-todo nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
-  (set-face-attribute 'org-done nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
+  (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+  (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+  (set-face-attribute 'org-link nil :foreground "Dark Sea Green")
   (set-face-attribute 'org-headline-done nil :foreground nil)
 
   ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
@@ -459,30 +470,28 @@ shit test blah blah blah
     :bind ("C-x w" . olivetti-mode)
     :config
     (setq olivetti-body-width 122)
-    (setq olivett-style 'fancy)
-    (setq olivetti-margin-width 20)
+    (setq olivetti-margin-width 10)
+    (setq olivetti-style 'fancy)
     :hook (org-mode . olivetti-mode))
-
-
 #+end_src
 
 #+RESULTS:
 : olivetti-mode
 ** Write-Room Mode                                           :disabled:test:
 #+begin_src elisp :tangle no 
-    (use-package writeroom-mode
-      :ensure t
-      :defer t
-      :bind ("C-x w" . writeroom-mode)
-                                            ;:hook (org-mode . writeroom-mode)
-      :config
-      (setq writeroom-width 120
-            writeroom-mode-line t 
-            writeroom-global-effects '(writeroom-set-alpha writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width)
-                                            ;writeroom-global-effects '(writeroom-set-bottom-divider-width
-                                            ;writeroom-set-internal-border-width)
-            )
-  :hook (org-mode . writeroom-mode))
+  (use-package writeroom-mode
+    :ensure t
+    :defer t
+    :bind ("C-x w" . writeroom-mode)
+                                          ;:hook (org-mode . writeroom-mode)
+    :config
+    (setq writeroom-width 120
+          writeroom-mode-line t 
+          writeroom-global-effects '(writeroom-set-alpha writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width)
+                                          ;writeroom-global-effects '(writeroom-set-bottom-divider-width
+                                          ;writeroom-set-internal-border-width)
+          )
+    :hook (org-mode . writeroom-mode))
 
 #+end_src
 
@@ -569,13 +578,6 @@ shit test blah blah blah
 
 #+RESULTS:
 : t
-
-** Org-roam-bibtex
-#+begin_src elisp
-(use-package org-roam-bibtex)
-#+end_src
-
-#+RESULTS:
 
 ** Org-auto-list
 #+begin_src elisp
@@ -774,7 +776,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
                         (:discard (:tag "drill"))))))
             (alltodo ""
                      ((org-agenda-overriding-header "PROJECTS")
-          (org-agenda-prefix-format " %?-3t %?-11s %3e ")
+                      (org-agenda-prefix-format " %?-3t %?-11s %3e ")
                       (org-super-agenda-groups
                        '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
                          (:auto-outline-path t)
@@ -782,7 +784,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
                           (:anything))))))
             (alltodo ""
                      ((org-agenda-overriding-header "Other")
-          (org-agenda-prefix-format " %?-3t %3e ")
+                      (org-agenda-prefix-format " %?-3t %3e ")
                       (org-super-agenda-groups
                        '((:name "Bucket List" :and
                                 (:todo "SOMEDAY" :tag "PERSONAL")
@@ -856,7 +858,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 ** Org-ql                                                             :test:
 #+begin_src elisp
   (use-package org-ql
-:ensure t)
+    :ensure t)
 #+end_src
 
 #+RESULTS:
@@ -881,7 +883,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
     (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
     (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
     (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
-    (pdf-tools-install)
+  (pdf-tools-install)
 #+end_src
 
 #+RESULTS:
@@ -942,7 +944,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
                                            org-meta-line
                                            org-special-keyword
                                            org-table
-                                          org-todo
+                                           org-todo
                                            org-verbatim
                                            org-date
                                            org-drawer
@@ -1058,26 +1060,6 @@ Provides image download functionality and stuff.
 
 #+RESULTS:
 
-** Org-ref
-:PROPERTIES:
-:ID:       402f2292-d0d8-4a56-9608-d9bd69798465
-:END:
-#+begin_src elisp
-      (use-package org-ref
-:config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-  :bind ("C-c r i" . org-ref-insert-link))
-#+end_src
-
-#+RESULTS:
-: org-ref-insert-link
-
-** Helm-bibtex
-#+begin_src elisp
-(use-package helm-bibtex)
-#+end_src
-
-#+RESULTS:
-
 ** Calfw
 :PROPERTIES:
 :ID:       f857e22e-4113-4b27-a539-0a2217ac7b67
@@ -1086,6 +1068,28 @@ Provides image download functionality and stuff.
   (use-package calfw)
   (use-package calfw-org)
 #+end_src
+
+** Helm-bibtex
+#+begin_src elisp
+  (use-package helm-bibtex)
+#+end_src
+
+#+RESULTS:
+
+** Org-ref
+:PROPERTIES:
+:ID:       402f2292-d0d8-4a56-9608-d9bd69798465
+:END:
+#+begin_src elisp
+  (use-package org-ref
+    :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+    :init
+    (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
+    :bind ("C-c r i" . org-ref-insert-link))
+#+end_src
+
+#+RESULTS:
+: org-ref-insert-link
 
 ** Org-roam-bibtex                                                    :test:
 #+begin_src elisp :tangle no
