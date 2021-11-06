@@ -65,7 +65,7 @@
   (doom-modeline-mode t))
 
 (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
-(load-theme 'doom-zenburn t)
+(load-theme 'doom-gruvbox t)
 
 (use-package dashboard
   :ensure t
@@ -173,6 +173,10 @@
 
 (setq highlight-indent-guides-method 'column)
 
+(use-package origami
+  :hook
+  (prog-mode . origami-mode))
+
 (setq
  org-enforce-todo-dependencies t
  org-export-with-broken-links 'mark
@@ -189,6 +193,7 @@
  org-format-latex-options
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                ("begin" "$1" "$" "$$" "\\[")))
+(set-face-attribute 'org-block-begin-line nil :background "#504945")
 (set-face-attribute 'org-level-1 nil :extend nil :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-2 nil :extend nil :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-3 nil :extend nil :height 1.5 :weight 'bold)
@@ -197,8 +202,9 @@
 (set-face-attribute 'org-level-6 nil :extend nil :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-7 nil :extend nil :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-8 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-todo nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
-(set-face-attribute 'org-done nil :foreground "#7f9f7f" :background "#222" :weight 'bold :box '(:line-width -6 :color "#222"))
+(set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+(set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+(set-face-attribute 'org-link nil :foreground "Dark Sea Green")
 (set-face-attribute 'org-headline-done nil :foreground nil)
 
 ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
@@ -216,8 +222,8 @@
   :bind ("C-x w" . olivetti-mode)
   :config
   (setq olivetti-body-width 122)
-  (setq olivett-style 'fancy)
-  (setq olivetti-margin-width 20)
+  (setq olivetti-margin-width 10)
+  (setq olivetti-style 'fancy)
   :hook (org-mode . olivetti-mode))
 
 
@@ -267,8 +273,6 @@
                 ("C-c n a" . org-roam-alias-add)
                 ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
-
-(use-package org-roam-bibtex)
 
 (use-package org-autolist
   :ensure t
@@ -403,7 +407,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
                       (:discard (:tag "drill"))))))
           (alltodo ""
                    ((org-agenda-overriding-header "PROJECTS")
-        (org-agenda-prefix-format " %?-3t %?-11s %3e ")
+                    (org-agenda-prefix-format " %?-3t %?-11s %3e ")
                     (org-super-agenda-groups
                      '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
                        (:auto-outline-path t)
@@ -411,7 +415,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
                         (:anything))))))
           (alltodo ""
                    ((org-agenda-overriding-header "Other")
-        (org-agenda-prefix-format " %?-3t %3e ")
+                    (org-agenda-prefix-format " %?-3t %3e ")
                     (org-super-agenda-groups
                      '((:name "Bucket List" :and
                               (:todo "SOMEDAY" :tag "PERSONAL")
@@ -427,7 +431,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
 
 (use-package org-ql
-:ensure t)
+  :ensure t)
 
 (require 'org-noter-pdftools)
 (require 'org-pdftools)
@@ -451,7 +455,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
                                          org-meta-line
                                          org-special-keyword
                                          org-table
-                                        org-todo
+                                         org-todo
                                          org-verbatim
                                          org-date
                                          org-drawer
@@ -510,14 +514,16 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 (use-package org-download)
 
-(use-package org-ref
-:config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-  :bind ("C-c r i" . org-ref-insert-link))
+(use-package calfw)
+(use-package calfw-org)
 
 (use-package helm-bibtex)
 
-(use-package calfw)
-(use-package calfw-org)
+(use-package org-ref
+  :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+  :init
+  (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
+  :bind ("C-c r i" . org-ref-insert-link))
 
 (use-package diminish
   :demand t
@@ -585,7 +591,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
   (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
   (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
   (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
-  (pdf-tools-install)
+(pdf-tools-install)
 
 (use-package org-noter-pdftools :ensure t)
 (use-package org-noter

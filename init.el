@@ -22,6 +22,7 @@
  '(olivetti-fringe ((t (:inherit fringe :background "#3c3836"))))
  '(org-agenda-column-dateline ((t (:inherit (org-column default)))))
  '(org-column ((t (:inherit default))))
+ '(org-document-title ((t (:foreground "#fb4934" :weight bold :height 1.5))))
  '(org-roam-header-line ((t (:extend t :foreground "tomato" :weight bold :height 1.25))))
  '(org-roam-shielded ((t (:inherit warning :height 1.5))))
  '(org-roam-title ((t (:weight bold))))
