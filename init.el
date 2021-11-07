@@ -52,6 +52,7 @@
  '(doom-modeline-hud t)
  '(doom-modeline-mode t)
  '(fast-but-imprecise-scrolling t)
+ '(fit-frame-to-buffer-margins '(10 10 10 10))
  '(frame-background-mode nil)
  '(helm-completion-style 'emacs)
  '(indent-tabs-mode t)
