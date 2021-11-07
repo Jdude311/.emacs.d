@@ -16,8 +16,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#282828" :foreground "#ebdbb2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 101 :width normal :family "Source Code Pro"))))
  '(dashboard-items-face ((t (:inherit widget-button :height 1.0))))
- '(fixed-pitch ((t (:family "Iosevka"))))
+ '(fixed-pitch ((t (:family "Source Code Pro"))))
  '(fixed-pitch-serif ((t (:family "Iosevka"))))
  '(olivetti-fringe ((t (:inherit fringe :background "#3c3836"))))
  '(org-agenda-column-dateline ((t (:inherit (org-column default)))))
@@ -27,7 +28,7 @@
  '(org-roam-shielded ((t (:inherit warning :height 1.5))))
  '(org-roam-title ((t (:weight bold))))
  '(org-super-agenda-header ((t (:foreground "LightCoral" :weight bold))))
- '(org-superstar-header-bullet ((t (:inherit fixed-pitch :family "Iosevka"))))
+ '(org-superstar-header-bullet ((t (:family "Source Code Pro"))))
  '(org-superstar-leading ((t (:inherit org-hide :height 0.4))))
  '(org-target ((t (:inherit nil :underline t))))
  '(org-variable-pitch-fixed-face ((t (:family "Iosevka"))))
@@ -116,7 +117,7 @@
 	 ("NEXT" "→" 9673)
 	 ("PROG" "☐~" 9673)
 	 ("EXTD" "☐" 9673)
-	 ("POST" "⏰" 9673)
+	 ("POST" "☐/" 9673)
 	 ("DONE" "☑" 9673)
 	 ("CNCL" "☐X" 9673)
 	 ("FAIL" "☐X" 9673)))
