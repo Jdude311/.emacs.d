@@ -16,7 +16,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#282828" :foreground "#ebdbb2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 101 :width normal :family "Source Code Pro"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#282828" :foreground "#ebdbb2" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 118 :width normal :foundry "ADBO" :family "Source Code Pro"))))
  '(dashboard-items-face ((t (:inherit widget-button :height 1.0))))
  '(fixed-pitch ((t (:family "Source Code Pro"))))
  '(fixed-pitch-serif ((t (:family "Iosevka"))))
@@ -24,6 +24,8 @@
  '(org-agenda-column-dateline ((t (:inherit (org-column default)))))
  '(org-column ((t (:inherit default))))
  '(org-document-title ((t (:foreground "#fb4934" :weight bold :height 1.5))))
+ '(org-drawer ((t (:foreground "#484848" :slant italic :height 0.75))))
+ '(org-ref-cite-face ((t (:foreground "#fabd2f" :underline t :weight normal))))
  '(org-roam-header-line ((t (:extend t :foreground "tomato" :weight bold :height 1.25))))
  '(org-roam-shielded ((t (:inherit warning :height 1.5))))
  '(org-roam-title ((t (:weight bold))))
@@ -44,6 +46,7 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(beacon-color "#cc6666")
  '(bibtex-completion-bibliography '("~/notes/pages/sources.bib"))
+ '(bibtex-completion-library-path '("~/notes/pages/bibtex-pdfs/"))
  '(custom-enabled-themes '(doom-zenburn))
  '(custom-safe-themes
    '("333958c446e920f5c350c4b4016908c130c3b46d590af91e1e7e2a0611f1e8c5" "a9a67b318b7417adbedaab02f05fa679973e9718d9d26075c6235b1f0db703c8" "5784d048e5a985627520beb8a101561b502a191b52fa401139f4dd20acb07607" "3d54650e34fa27561eb81fc3ceed504970cc553cfd37f46e8a80ec32254a3ec3" "e19ac4ef0f028f503b1ccafa7c337021834ce0d1a2bca03fcebc1ef635776bea" "1278c5f263cdb064b5c86ab7aa0a76552082cf0189acf6df17269219ba496053" "b5803dfb0e4b6b71f309606587dd88651efe0972a5be16ece6a958b197caeed8" "b0e446b48d03c5053af28908168262c3e5335dcad3317215d9fdeb8bac5bacf9" "a82ab9f1308b4e10684815b08c9cac6b07d5ccb12491f44a942d845b406b0296" "1d44ec8ec6ec6e6be32f2f73edf398620bb721afeed50f75df6b12ccff0fbb15" "23c806e34594a583ea5bbf5adf9a964afe4f28b4467d28777bcba0d35aa0872e" "8d7b028e7b7843ae00498f68fad28f3c6258eda0650fe7e17bfb017d51d0e2a2" "97db542a8a1731ef44b60bc97406c1eb7ed4528b0d7296997cbb53969df852d6" "da186cce19b5aed3f6a2316845583dbee76aea9255ea0da857d1c058ff003546" "028c226411a386abc7f7a0fba1a2ebfae5fe69e2a816f54898df41a6a3412bb5" "835868dcd17131ba8b9619d14c67c127aa18b90a82438c8613586331129dda63" "246a9596178bb806c5f41e5b571546bb6e0f4bd41a9da0df5dfbca7ec6e2250c" "0d01e1e300fcafa34ba35d5cf0a21b3b23bc4053d388e352ae6a901994597ab1" "c2aeb1bd4aa80f1e4f95746bda040aafb78b1808de07d340007ba898efa484f5" "7a7b1d475b42c1a0b61f3b1d1225dd249ffa1abb1b7f726aec59ac7ca3bf4dae" "cf922a7a5c514fad79c483048257c5d8f242b21987af0db813d3f0b138dfaf53" "1d5e33500bc9548f800f9e248b57d1b2a9ecde79cb40c0b1398dec51ee820daf" "6bdcff29f32f85a2d99f48377d6bfa362768e86189656f63adbf715ac5c1340b" "7eea50883f10e5c6ad6f81e153c640b3a288cd8dc1d26e4696f7d40f754cc703" "6b1abd26f3e38be1823bd151a96117b288062c6cde5253823539c6926c3bb178" "7661b762556018a44a29477b84757994d8386d6edee909409fabe0631952dad9" "75b8719c741c6d7afa290e0bb394d809f0cc62045b93e1d66cd646907f8e6d43" "a37d20710ab581792b7c9f8a075fcbb775d4ffa6c8bce9137c84951b1b453016" "e6df46d5085fde0ad56a46ef69ebb388193080cc9819e2d6024c9c6e27388ba9" "93ed23c504b202cf96ee591138b0012c295338f38046a1f3c14522d4a64d7308" "0e2a7e1e632dd38a8e0227d2227cb8849f877dd878afb8219cb6bcdd02068a52" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "aaa4c36ce00e572784d424554dcc9641c82d1155370770e231e10c649b59a074" "27a1dd6378f3782a593cc83e108a35c2b93e5ecc3bd9057313e1d88462701fcd" "f703efe04a108fcd4ad104e045b391c706035bce0314a30d72fbf0840b355c2c" "1623aa627fecd5877246f48199b8e2856647c99c6acdab506173f9bb8b0a41ac" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "95d0ed21bb0e919be7687a25ad59a1c2c8df78cbe98c9e369d44e65bfd65b167" "ca70827910547eb99368db50ac94556bbd194b7e8311cfbdbdcad8da65e803be" "5b809c3eae60da2af8a8cfba4e9e04b4d608cb49584cb5998f6e4a1c87c057c4" "d74c5485d42ca4b7f3092e50db687600d0e16006d8fa335c69cf4f379dbd0eee" "0fe24de6d37ea5a7724c56f0bb01efcbb3fe999a6e461ec1392f3c3b105cc5ac" "4a8d4375d90a7051115db94ed40e9abb2c0766e80e228ecad60e06b3b397acab" "cae81b048b8bccb7308cdcb4a91e085b3c959401e74a0f125e7c5b173b916bf9" "79278310dd6cacf2d2f491063c4ab8b129fee2a498e4c25912ddaa6c3c5b621e" "3df5335c36b40e417fec0392532c1b82b79114a05d5ade62cfe3de63a59bc5c6" "fd22c8c803f2dac71db953b93df6560b6b058cb931ac12f688def67f08c10640" "3c2f28c6ba2ad7373ea4c43f28fcf2eed14818ec9f0659b1c97d4e89c99e091e" "d6603a129c32b716b3d3541fc0b6bfe83d0e07f1954ee64517aa62c9405a3441" "4bca89c1004e24981c840d3a32755bf859a6910c65b829d9441814000cf6c3d0" "fce3524887a0994f8b9b047aef9cc4cc017c5a93a5fb1f84d300391fba313743" "be9645aaa8c11f76a10bcf36aaf83f54f4587ced1b9b679b55639c87404e2499" "990e24b406787568c592db2b853aa65ecc2dcd08146c0d22293259d400174e37" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "76bfa9318742342233d8b0b42e824130b3a50dcc732866ff8e47366aed69de11" default))
@@ -57,7 +60,7 @@
  '(helm-completion-style 'emacs)
  '(indent-tabs-mode t)
  '(indicate-empty-lines t)
- '(line-spacing 1)
+ '(line-spacing nil)
  '(menu-bar-mode nil)
  '(minibuffer-auto-raise t)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((meta)) ((control) . text-scale)))
@@ -137,7 +140,8 @@
  '(rustic-ansi-faces
    ["#fafafa" "#e45649" "#50a14f" "#986801" "#4078f2" "#a626a4" "#0184bc" "#383a42"])
  '(safe-local-variable-values
-   '((org-ref-default-bibliography "./sources.bib")
+   '((org-ref-default-bibliography "~/notes/pages/sources.bib")
+	 (org-ref-default-bibliography "./sources.bib")
 	 (org-ref-default-bibliography . "./sources.bib")
 	 (org-ref-default-bibliography "./references.bib")
 	 (org-ref-default-bibliography . "./references.bib")
