@@ -59,8 +59,8 @@
   :demand t
   :config
   (setq
-   doom-modeline-buffer-modification-icon nil
-   doom-modeline-hud nil
+   doom-modeline-buffer-modification-icon t
+   doom-modeline-hud t
    doom-modeline-mode t)
   (doom-modeline-mode t))
 
