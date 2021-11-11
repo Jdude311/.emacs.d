@@ -184,7 +184,7 @@
  '((auto-mode . "setsid -w xdg-open %s")
    (default . "sleep 1")
    ("\\.mm\\'" . default)
-   ("\\.x?html?\\'" . default)
+   ("\\.x?html?\\'" . "chromium %s")
    ("\\.pdf\\'" . "chromium %s")
    ("\\.docx\\'" . "lowriter %s")
    ("\\.odt\\'" . system))
@@ -255,6 +255,9 @@
   (org-roam-setup)
   (setq org-roam-directory "~/notes")
   (setq org-roam-dailies-directory "journals/")
+  (setq org-roam-db-node-include-function
+    (lambda ()
+      (not (member "roam_exclude" (org-get-tags)))))
   (setq org-roam-mode-section-functions
         (list #'org-roam-backlinks-section
               #'org-roam-reflinks-section
