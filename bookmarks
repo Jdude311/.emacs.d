@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "* TODO study for")
- (rear-context-string . "+CATEGORY: TODO\n")
- (position . 18))
+ (filename . "~/notes/journals/2021-11-10.org")
+ (front-context-string . "* ELIC Phone Dec")
+ (rear-context-string . "tle: 2021-11-10\n")
+ (position . 88))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")
