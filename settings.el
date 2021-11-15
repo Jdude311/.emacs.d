@@ -528,6 +528,12 @@ DEADLINE: %^{Deadline}t ENTERED %U
   (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
   :bind ("C-c r i" . org-ref-insert-link))
 
+(use-package org-gcal
+  :config
+  (setq org-gcal-client-id "716547616009-8j2for90djnj0girfasatlsogdnmt44t.apps.googleusercontent.com"
+        org-gcal-client-secret "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"
+        org-gcal-file-alist '(("d4b3f5a380769cq8gv1m2gvpck@group.calendar.google.com" . ""))))
+
 (use-package diminish
   :demand t
   :init
