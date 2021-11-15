@@ -146,18 +146,6 @@ shit test blah blah blah
 #+RESULTS:
 : t
 
-** Load theme
-:PROPERTIES:
-:ID:       b56326ad-0713-4091-b60e-94df3810177d
-:END:
-#+begin_src elisp
-  (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
-  (load-theme 'doom-gruvbox t)
-#+end_src
-
-#+RESULTS:
-: t
-
 ** Dashboard
 :PROPERTIES:
 :ID:       e51457fa-700b-4765-aa36-2506db3af7f1
@@ -523,14 +511,14 @@ shit test blah blah blah
 
 ** Org-Roam-ui                                                        :test:
 #+begin_src elisp
-  (use-package websocket :ensure t)
-  (use-package simple-httpd :ensure t)
-;  (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-; (load-library "org-roam-ui/org-roam-ui.el")
+    ;(use-package websocket :ensure t)
+    ;(use-package simple-httpd :ensure t)
+    ;(use-package org-roam-ui :ensure t)
+  ; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
+  ; (load-library "org-roam-ui/org-roam-ui.el")
 #+end_src
 
 #+RESULTS:
-: t
 
 ** ORG-ROAM                                                           :test:
 #+begin_src elisp
@@ -1164,3 +1152,14 @@ Provides image download functionality and stuff.
 
 #+RESULTS:
 
+* Load theme
+  :PROPERTIES:
+  :ID:       b56326ad-0713-4091-b60e-94df3810177d
+  :END:
+#+begin_src elisp
+  (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
+  ;(load-theme 'doom-gruvbox t)
+#+end_src
+
+#+RESULTS:
+: t

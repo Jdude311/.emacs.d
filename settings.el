@@ -64,9 +64,6 @@
    doom-modeline-mode t)
   (doom-modeline-mode t))
 
-(use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
-(load-theme 'doom-gruvbox t)
-
 (use-package dashboard
   :ensure t
   :config
@@ -228,10 +225,11 @@
 
 
 
-(use-package websocket :ensure t)
-(use-package simple-httpd :ensure t)
-(add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-(load-library "org-roam-ui/org-roam-ui.el")
+;(use-package websocket :ensure t)
+  ;(use-package simple-httpd :ensure t)
+  ;(use-package org-roam-ui :ensure t)
+; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
+; (load-library "org-roam-ui/org-roam-ui.el")
 
 (use-package org-roam
   :ensure t
@@ -548,6 +546,9 @@ DEADLINE: %^{Deadline}t ENTERED %U
   (diminish 'org-roam-ui-mode "RUI")
   (diminish 'org-roam-ui-follow-mode)
   (diminish 'undo-tree-mode))
+
+(use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
+;(load-theme 'doom-gruvbox t)
 
 (use-package org
   :config
