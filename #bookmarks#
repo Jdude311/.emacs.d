@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/notes/journals/2021-11-08.org")
- (front-context-string . "* Email to Dr. V")
- (rear-context-string . "tle: 2021-11-08\n")
- (position . 88))
+ (filename . "~/notes/pages/20211111211405-meeting_with_dr_van_essen_2021_11_11.org")
+ (front-context-string . "#+filetags: :mee")
+ (rear-context-string . "ssen 2021-11-11\n")
+ (position . 115))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")

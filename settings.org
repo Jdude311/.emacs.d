@@ -1103,6 +1103,21 @@ Provides image download functionality and stuff.
 
 #+RESULTS:
 
+** Org-gcal                                                           :test:
+:PROPERTIES:
+:org-gcal-managed: org
+:END:
+#+begin_src elisp
+  (use-package org-gcal
+    :config
+    (setq org-gcal-client-id "716547616009-8j2for90djnj0girfasatlsogdnmt44t.apps.googleusercontent.com"
+          org-gcal-client-secret "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"
+          org-gcal-file-alist '(("d4b3f5a380769cq8gv1m2gvpck@group.calendar.google.com" . "")))) 
+#+end_src
+
+#+RESULTS:
+: t
+
 * TODO Centaur Tabs                                                :disabled:
 :PROPERTIES:
 :ID:       bfe02ca7-adf3-46fd-8db2-f5a7c0e119a4
