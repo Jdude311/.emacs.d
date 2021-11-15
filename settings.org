@@ -450,7 +450,7 @@ shit test blah blah blah
     (set-face-attribute 'org-level-5 nil :extend t :height 1.5 :weight 'bold)
     (set-face-attribute 'org-level-6 nil :extend t :height 1.5 :weight 'bold)
     (set-face-attribute 'org-level-7 nil :extend t :height 1.5 :weight 'bold)
-    (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
+    ;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
     (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
     (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
     (set-face-attribute 'org-link nil :foreground "Dark Sea Green")
