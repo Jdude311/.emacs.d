@@ -83,13 +83,19 @@
   :hook
   (prog-mode . highlight-indent-guides-mode))
 
-(setq-default indicate-empty-lines t)
+;(setq-default indicate-empty-lines t)
 ;(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
 ;(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
 ;(set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
 
 (use-package highlight-numbers
   :hook (prog-mode . highlight-numbers-mode))
+
+(setq-default header-line-format " ")
+(set-face-attribute 'header-line nil :inherit 'olivetti-fringe)
+
+(set-face-attribute 'scroll-bar nil :inherit 'olivetti-fringe)
+(scroll-bar-mode 0)
 
 (use-package lsp-mode
   :ensure t
@@ -189,16 +195,24 @@
  org-fontify-quote-and-verse-blocks t
  org-format-latex-options
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
-               ("begin" "$1" "$" "$$" "\\[")))
+			   ("begin" "$1" "$" "$$" "\\[")))
 (set-face-attribute 'org-block-begin-line nil :background "#504945")
-(set-face-attribute 'org-level-1 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-2 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-3 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-4 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-5 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-6 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-7 nil :extend nil :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-8 nil :extend nil :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-1 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-2 nil :inherit 'org-level-1)
+(set-face-attribute 'org-level-3 nil :inherit 'org-level-1)
+(set-face-attribute 'org-level-4 nil :inherit 'org-level-1)
+(set-face-attribute 'org-level-5 nil :inherit 'org-level-1)
+(set-face-attribute 'org-level-6 nil :inherit 'org-level-1)
+(set-face-attribute 'org-level-7 nil :inherit 'org-level-1)
+(set-face-attribute 'org-level-8 nil :inherit 'org-level-1)
+;; (set-face-attribute 'org-level-1 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-2 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-3 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-4 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-5 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-6 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-7 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
 (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
 (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
 (set-face-attribute 'org-link nil :foreground "Dark Sea Green")
@@ -219,7 +233,7 @@
   :bind ("C-x w" . olivetti-mode)
   :config
   (setq olivetti-body-width 122)
-  (setq olivetti-margin-width 10)
+  (setq olivetti-margin-width 5)
   (setq olivetti-style 'fancy)
   :hook (org-mode . olivetti-mode))
 
@@ -227,7 +241,7 @@
 
 ;(use-package websocket :ensure t)
   ;(use-package simple-httpd :ensure t)
-  ;(use-package org-roam-ui :ensure t)
+  (use-package org-roam-ui :ensure t :config (setq org-roam-ui-mode nil))
 ; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
 ; (load-library "org-roam-ui/org-roam-ui.el")
 
@@ -475,6 +489,8 @@ DEADLINE: %^{Deadline}t ENTERED %U
                                          ;; org-level-8
                                          org-hide
                                          org-superstar-leading
+                                         org-ellipsis
+                                         org-tag
                                          ;; org-superstar-bullet
                                          org-target))
   :hook ((org-mode) . org-variable-pitch-minor-mode))
@@ -531,6 +547,9 @@ DEADLINE: %^{Deadline}t ENTERED %U
   (setq org-gcal-client-id "716547616009-8j2for90djnj0girfasatlsogdnmt44t.apps.googleusercontent.com"
         org-gcal-client-secret "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"
         org-gcal-file-alist '(("d4b3f5a380769cq8gv1m2gvpck@group.calendar.google.com" . ""))))
+
+(setq org-ellipsis "▾")
+(set-face-attribute 'org-ellipsis nil :foreground nil)
 
 (use-package diminish
   :demand t

@@ -1,3 +1,4 @@
+
 #+PROPERTY: header-args :tangle yes
 * Use-package configuration
 :PROPERTIES:
@@ -207,7 +208,7 @@ shit test blah blah blah
 :ID:       695da9cc-f747-4d25-8757-e37196d0bb7e
 :END:
 #+begin_src elisp
-  (setq-default indicate-empty-lines t)
+  ;(setq-default indicate-empty-lines t)
   ;(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
   ;(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
   ;(set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
@@ -225,6 +226,22 @@ shit test blah blah blah
 
 #+RESULTS:
 | highlight-numbers-mode | hl-line-mode | linum-mode | company-mode | highlight-indent-guides-mode | visual-line-mode |
+
+** Padding/margins
+#+begin_src elisp
+  (setq-default header-line-format " ")
+  (set-face-attribute 'header-line nil :inherit 'olivetti-fringe)
+#+end_src
+
+#+RESULTS:
+
+** Disable scroll bar
+#+begin_src elisp
+  (set-face-attribute 'scroll-bar nil :inherit 'olivetti-fringe)
+(scroll-bar-mode 0) 
+#+end_src
+
+#+RESULTS:
 
 * Prog-mode settings
 ** LSP
@@ -408,49 +425,50 @@ shit test blah blah blah
 
 * DONE Org-mode
 #+begin_src elisp
-  (setq
-   org-enforce-todo-dependencies t
-   org-export-with-broken-links 'mark
-   org-file-apps
-   '((auto-mode . "setsid -w xdg-open %s")
-     (default . "sleep 1")
-     ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . "chromium %s")
-     ("\\.pdf\\'" . "chromium %s")
-     ("\\.docx\\'" . "lowriter %s")
-     ("\\.odt\\'" . system))
-   org-fontify-emphasized-text t
-   org-fontify-quote-and-verse-blocks t
-   org-format-latex-options
-   '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
-                 ("begin" "$1" "$" "$$" "\\[")))
-  (set-face-attribute 'org-block-begin-line nil :background "#504945")
-  (set-face-attribute 'org-level-1 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-2 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-3 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-4 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-5 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-6 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-7 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-8 nil :extend nil :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
-  (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
-  (set-face-attribute 'org-link nil :foreground "Dark Sea Green")
-  (set-face-attribute 'org-headline-done nil :foreground nil)
+    (setq
+     org-enforce-todo-dependencies t
+     org-export-with-broken-links 'mark
+     org-file-apps
+     '((auto-mode . "setsid -w xdg-open %s")
+       (default . "sleep 1")
+       ("\\.mm\\'" . default)
+       ("\\.x?html?\\'" . "chromium %s")
+       ("\\.pdf\\'" . "chromium %s")
+       ("\\.docx\\'" . "lowriter %s")
+       ("\\.odt\\'" . system))
+     org-fontify-emphasized-text t
+     org-fontify-quote-and-verse-blocks t
+     org-format-latex-option
+  s
+     '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+                   ("begin" "$1" "$" "$$" "\\[")))
+    (set-face-attribute 'org-block-begin-line nil :background "#504945")
+    (set-face-attribute 'org-level-1 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-level-2 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-level-3 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-level-4 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-level-5 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-level-6 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-level-7 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
+    (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+    (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+    (set-face-attribute 'org-link nil :foreground "Dark Sea Green")
+    (set-face-attribute 'org-headline-done nil :foreground nil)
 
-  ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-  ;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
-  ;; (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
-  ;; (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
-  ;; (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
-  ;; (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
-  ;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-  ;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+    ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+    ;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+    ;; (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
+    ;; (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
+    ;; (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
+    ;; (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
+    ;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+    ;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
 #+end_src
 
 #+RESULTS:
 
-** Olivetti Mode                                                      :test:
+** Olivetti Mode
 #+begin_src elisp
   (use-package olivetti
     :ensure t
@@ -458,14 +476,14 @@ shit test blah blah blah
     :bind ("C-x w" . olivetti-mode)
     :config
     (setq olivetti-body-width 122)
-    (setq olivetti-margin-width 10)
+    (setq olivetti-margin-width 5)
     (setq olivetti-style 'fancy)
     :hook (org-mode . olivetti-mode))
 #+end_src
 
 #+RESULTS:
 : olivetti-mode
-** Write-Room Mode                                           :disabled:test:
+** Write-Room Mode                                                :disabled:
 #+begin_src elisp :tangle no 
   (use-package writeroom-mode
     :ensure t
@@ -509,18 +527,19 @@ shit test blah blah blah
 
 #+RESULTS:
 
-** Org-Roam-ui                                                        :test:
+** Org-Roam-ui
 #+begin_src elisp
     ;(use-package websocket :ensure t)
     ;(use-package simple-httpd :ensure t)
-    ;(use-package org-roam-ui :ensure t)
+    (use-package org-roam-ui :ensure t :config (setq org-roam-ui-mode nil))
   ; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
   ; (load-library "org-roam-ui/org-roam-ui.el")
 #+end_src
 
 #+RESULTS:
+: t
 
-** ORG-ROAM                                                           :test:
+** ORG-ROAM
 #+begin_src elisp
     (use-package org-roam
       :ensure t
@@ -846,7 +865,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 #+RESULTS:
 | org-super-agenda-mode |
 
-** Org-ql                                                             :test:
+** Org-ql
 #+begin_src elisp
   (use-package org-ql
     :ensure t)
@@ -954,13 +973,15 @@ The agenda files are maintained by customize-variable, and are not defined or ma
                                            ;; org-level-8
                                            org-hide
                                            org-superstar-leading
+                                           org-ellipsis
+                                           org-tag
                                            ;; org-superstar-bullet
                                            org-target))
     :hook ((org-mode) . org-variable-pitch-minor-mode))
 #+end_src
 
 #+RESULTS:
-| org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | org-ref-setup-label-finders |
+| org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
 ** Notifications and reminders
 :PROPERTIES:
@@ -1084,9 +1105,9 @@ Provides image download functionality and stuff.
 
 ** Org-roam-bibtex                                                    :test:
 #+begin_src elisp :tangle no
-    (use-package org-roam-bibtex
-  :after org-roam
-:config (require 'org-ref))
+  (use-package org-roam-bibtex
+    :after org-roam
+    :config (require 'org-ref))
 #+end_src
 
 #+RESULTS:
@@ -1105,6 +1126,14 @@ Provides image download functionality and stuff.
 
 #+RESULTS:
 : t
+
+** Org ellipsis
+#+begin_src elisp
+  (setq org-ellipsis "▾")
+  (set-face-attribute 'org-ellipsis nil :foreground nil)
+#+end_src
+
+#+RESULTS:
 
 * TODO Centaur Tabs                                                :disabled:
 :PROPERTIES:
