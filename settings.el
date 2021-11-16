@@ -181,44 +181,43 @@
   (prog-mode . origami-mode))
 
 (setq
-   org-enforce-todo-dependencies t
-   org-export-with-broken-links 'mark
-   org-file-apps
-   '((auto-mode . "setsid -w xdg-open %s")
-     (default . "sleep 1")
-     ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . "chromium %s")
-     ("\\.pdf\\'" . "chromium %s")
-     ("\\.docx\\'" . "lowriter %s")
-     ("\\.odt\\'" . system))
-   org-fontify-emphasized-text t
-   org-fontify-quote-and-verse-blocks t
-   org-format-latex-option
-s
-   '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
-                 ("begin" "$1" "$" "$$" "\\[")))
-  (set-face-attribute 'org-block-begin-line nil :background "#504945")
-  (set-face-attribute 'org-level-1 nil :extend t :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-2 nil :extend t :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-3 nil :extend t :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-4 nil :extend t :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-5 nil :extend t :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-6 nil :extend t :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-level-7 nil :extend t :height 1.5 :weight 'bold)
-  ;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
-  (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
-  (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
-  (set-face-attribute 'org-link nil :foreground "Dark Sea Green")
-  (set-face-attribute 'org-headline-done nil :foreground nil)
+ org-enforce-todo-dependencies t
+ org-export-with-broken-links 'mark
+ org-file-apps
+ '((auto-mode . "setsid -w xdg-open %s")
+   (default . "sleep 1")
+   ("\\.mm\\'" . default)
+   ("\\.x?html?\\'" . "chromium %s")
+   ("\\.pdf\\'" . "chromium %s")
+   ("\\.docx\\'" . "lowriter %s")
+   ("\\.odt\\'" . system))
+ org-fontify-emphasized-text t
+ org-fontify-quote-and-verse-blocks t
+ org-format-latex-options 
+ '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+               ("begin" "$1" "$" "$$" "\\[")))
+(set-face-attribute 'org-block-begin-line nil :background "#504945")
+(set-face-attribute 'org-level-1 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-2 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-3 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-4 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-5 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-6 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-7 nil :extend t :height 1.5 :weight 'bold)
+;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+(set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+(set-face-attribute 'org-link nil :foreground "Dark Sea Green")
+(set-face-attribute 'org-headline-done nil :foreground nil)
 
-  ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-  ;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
-  ;; (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
-  ;; (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
-  ;; (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
-  ;; (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
-  ;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
-  ;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
+;; (set-face-attribute 'org-level-3 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGoldenrod")
+;; (set-face-attribute 'org-level-4 nil :extend nil :weight 'bold :height 1.5 :foreground "LightGreen")
+;; (set-face-attribute 'org-level-5 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSeaGreen")
+;; (set-face-attribute 'org-level-6 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSlateBlue")
+;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
+;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
 
 (use-package olivetti
   :ensure t
