@@ -92,7 +92,9 @@
   :hook (prog-mode . highlight-numbers-mode))
 
 (setq-default header-line-format " ")
+(setq internal-border-width 10)
 (set-face-attribute 'header-line nil :inherit 'olivetti-fringe)
+(set-face-attribute 'fringe nil :inherit 'olivetti-fringe)
 
 (set-face-attribute 'scroll-bar nil :inherit 'olivetti-fringe)
 (scroll-bar-mode 0)
@@ -197,18 +199,17 @@
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                ("begin" "$1" "$" "$$" "\\[")))
 (set-face-attribute 'org-block-begin-line nil :background "#504945")
-(set-face-attribute 'org-level-1 nil :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-2 nil :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-3 nil :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-4 nil :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-5 nil :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-6 nil :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-7 nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-1 nil :underline t :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-2 nil :underline t :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-3 nil :underline t :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-4 nil :underline t :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-5 nil :underline t :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-6 nil :underline t :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-7 nil :underline t :extend t :height 1.5 :weight 'bold)
 ;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
 (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
 (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
-(set-face-attribute 'org-link nil :foreground "Dark Sea Green")
-(set-face-attribute 'org-headline-done nil :foreground nil)
+;(set-face-attribute 'org-link nil :foreground "#d3869b")
 
 ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
 ;; (set-face-attribute 'org-level-2 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
@@ -224,7 +225,7 @@
   :defer t
   :bind ("C-x w" . olivetti-mode)
   :config
-  (setq olivetti-body-width 122)
+  (setq olivetti-body-width 120)
   (setq olivetti-margin-width 5)
   (setq olivetti-style 'fancy)
   :hook (org-mode . olivetti-mode))
