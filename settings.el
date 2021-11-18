@@ -93,11 +93,15 @@
 
 (setq-default header-line-format " ")
 (setq internal-border-width 10)
-(set-face-attribute 'header-line nil :inherit 'olivetti-fringe)
-(set-face-attribute 'fringe nil :inherit 'olivetti-fringe)
+(set-face-attribute 'header-line nil :inherit 'org-hide);'olivetti-fringe)
+(set-face-attribute 'fringe nil :inherit 'org-hide);'olivetti-fringe)
 
 (set-face-attribute 'scroll-bar nil :inherit 'olivetti-fringe)
 (scroll-bar-mode 0)
+
+(use-package good-scroll
+  :config
+  (good-scroll-mode t))
 
 (use-package lsp-mode
   :ensure t
@@ -199,13 +203,13 @@
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                ("begin" "$1" "$" "$$" "\\[")))
 (set-face-attribute 'org-block-begin-line nil :background "#504945")
-(set-face-attribute 'org-level-1 nil :underline t :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-2 nil :underline t :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-3 nil :underline t :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-4 nil :underline t :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-5 nil :underline t :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-6 nil :underline t :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-level-7 nil :underline t :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-1 nil :underline nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-2 nil :underline nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-3 nil :underline nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-4 nil :underline nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-5 nil :underline nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-6 nil :underline nil :extend t :height 1.5 :weight 'bold)
+(set-face-attribute 'org-level-7 nil :underline nil :extend t :height 1.5 :weight 'bold)
 ;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
 (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
 (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))

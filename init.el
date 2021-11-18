@@ -115,7 +115,7 @@
  '(org-startup-shrink-all-tables t)
  '(org-startup-with-inline-images t)
  '(org-stuck-projects '("+LEVEL=2/-DONE" ("TODO" "NEXT" "NEXTACTION" "") nil ""))
- '(org-super-agenda-mode nil)
+ '(org-super-agenda-mode t)
  '(org-superstar-cycle-headline-bullets nil)
  '(org-superstar-headline-bullets-list '(9679 9673 9675))
  '(org-superstar-item-bullet-alist '((42 . 9702) (43 . 8227) (45 . 8226)))
@@ -135,9 +135,10 @@
  '(org-variable-pitch-fixed-faces
    '(org-block org-block-begin-line org-block-end-line org-code org-document-info-keyword org-formula org-indent org-meta-line org-special-keyword org-table org-verbatim org-date org-drawer centaur-tabs-default org-property-value org-priority org-hide org-superstar-leading org-superstar-bullet org-target org-headline-done org-done))
  '(package-selected-packages
-   '(lorem-ipsum org-roam-ui org-gcal origami origami-mode org-ref-cite helm-bibtex org-roam-bibtex ligature olivetti org-ql lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme smooth-scrolling right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company ccls buffer-move babel all-the-icons alert))
+   '(good-scroll-mode good-scroll lorem-ipsum org-roam-ui org-gcal origami origami-mode org-ref-cite helm-bibtex org-roam-bibtex ligature olivetti org-ql lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download general org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company ccls buffer-move babel all-the-icons alert))
  '(pdf-view-continuous t)
  '(pdf-view-display-size 'fit-page)
+ '(pixel-scroll-mode t)
  '(powerline-display-buffer-size nil)
  '(python-indent-guess-indent-offset nil)
  '(python-indent-offset 4)
