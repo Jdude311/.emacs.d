@@ -168,31 +168,6 @@ shit test blah blah blah
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
 #+end_src
 
-** Ligatures (causes crash for some reason)                       :disabled:
-:PROPERTIES:
-:ID:       adaa80bb-05c5-4848-93df-eb4c0506f1c2
-:END:
-#+begin_src elisp :tangle no
-  (add-to-list 'load-path "~/.emacs.d/lisp/")
-
-  (require 'ligature)
-  ;; Enable the www ligature in every possible major mode
-  (ligature-set-ligatures 't '("www"))
-
-  ;; Enable ligatures in programming modes                                                           
-  (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
-                                       ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
-                                       "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
-                                       "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
-                                       "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
-                                       "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
-                                       "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
-                                       "<+>" "<=" "<==" ">=" ">==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
-                                       "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
-
-  (global-ligature-mode 't)
-#+end_src
-
 ** Highlight indent guides
 :PROPERTIES:
 :ID:       f334eb32-bc02-4879-8f67-ff337c28ee09
@@ -453,7 +428,7 @@ shit test blah blah blah
      org-format-latex-options 
      '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                    ("begin" "$1" "$" "$$" "\\[")))
-    (set-face-attribute 'org-block-begin-line nil :background "#504945")
+    (set-face-attribute 'org-block-begin-line nil :background "#1c1f24")
     (set-face-attribute 'org-level-1 nil :underline nil :extend t :height 1.5 :weight 'bold)
     (set-face-attribute 'org-level-2 nil :underline nil :extend t :height 1.5 :weight 'bold)
     (set-face-attribute 'org-level-3 nil :underline nil :extend t :height 1.5 :weight 'bold)
@@ -462,8 +437,8 @@ shit test blah blah blah
     (set-face-attribute 'org-level-6 nil :underline nil :extend t :height 1.5 :weight 'bold)
     (set-face-attribute 'org-level-7 nil :underline nil :extend t :height 1.5 :weight 'bold)
     ;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
-    (set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
-    (set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+    (set-face-attribute 'org-todo nil :background "#1c1f24" :weight 'bold :box '(:line-width -6 :color "#1c1f24" ))
+    (set-face-attribute 'org-done nil :background "#1c1f24" :weight 'bold :box '(:line-width -6 :color "#1c1f24"))
     ;(set-face-attribute 'org-link nil :foreground "#d3869b")
 
     ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
@@ -514,7 +489,7 @@ shit test blah blah blah
 #+RESULTS:
 : writeroom-mode
 
-** TODO Org-mode
+** Org-mode
 :PROPERTIES:
 :ID:       feba8f0d-3670-4310-ae78-7f53a9e950c5
 :END:
@@ -1117,10 +1092,13 @@ Provides image download functionality and stuff.
 #+begin_src elisp :tangle no
   (use-package org-roam-bibtex
     :after org-roam
-    :config (require 'org-ref))
+    :hook (org-roam-mode . org-roam-bibtex-mode)
+    :config (require 'org-ref)
+    (org-roam-bibtex-mode t))
 #+end_src
 
 #+RESULTS:
+| org-roam-bibtex-mode |
 
 ** Org-gcal                                                           :test:
 :PROPERTIES:
@@ -1139,7 +1117,7 @@ Provides image download functionality and stuff.
 
 ** Org ellipsis
 #+begin_src elisp
-  (setq org-ellipsis "▾")
+  (setq org-ellipsis " ▾")
   (set-face-attribute 'org-ellipsis nil :foreground nil)
 #+end_src
 

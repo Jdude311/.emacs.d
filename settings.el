@@ -202,7 +202,7 @@
  org-format-latex-options 
  '(:foreground default :background default :scale 1.5 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
                ("begin" "$1" "$" "$$" "\\[")))
-(set-face-attribute 'org-block-begin-line nil :background "#504945")
+(set-face-attribute 'org-block-begin-line nil :background "#1c1f24")
 (set-face-attribute 'org-level-1 nil :underline nil :extend t :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-2 nil :underline nil :extend t :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-3 nil :underline nil :extend t :height 1.5 :weight 'bold)
@@ -211,8 +211,8 @@
 (set-face-attribute 'org-level-6 nil :underline nil :extend t :height 1.5 :weight 'bold)
 (set-face-attribute 'org-level-7 nil :underline nil :extend t :height 1.5 :weight 'bold)
 ;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
-(set-face-attribute 'org-todo nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
-(set-face-attribute 'org-done nil :background "#504945" :weight 'bold :box '(:line-width -6 :color "#504945"))
+(set-face-attribute 'org-todo nil :background "#1c1f24" :weight 'bold :box '(:line-width -6 :color "#1c1f24" ))
+(set-face-attribute 'org-done nil :background "#1c1f24" :weight 'bold :box '(:line-width -6 :color "#1c1f24"))
 ;(set-face-attribute 'org-link nil :foreground "#d3869b")
 
 ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
@@ -545,7 +545,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
         org-gcal-client-secret "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"
         org-gcal-file-alist '(("d4b3f5a380769cq8gv1m2gvpck@group.calendar.google.com" . ""))))
 
-(setq org-ellipsis "▾")
+(setq org-ellipsis " ▾")
 (set-face-attribute 'org-ellipsis nil :foreground nil)
 
 (use-package diminish

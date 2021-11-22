@@ -1,0 +1,991 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sun Nov 21 22:43:28 2021
+;; Desktop file format version 208
+;; Emacs version 27.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (24987 4576 802675 539000) (desktop . "208") "jadench@trapdoor" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-CTDB-Fira Code-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 71) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (environment "_=/usr/bin/rofi" "CADENCE_AUTO_STARTED=true" "LADSPA_PATH=/home/jadench/.ladspa:/usr/lib/ladspa:/usr/local/lib/ladspa" "LC_NUMERIC=en_US.UTF-8" "MAIL=/var/spool/mail/jadench" "LV2_PATH=/home/jadench/.lv2:/usr/lib/lv2:/usr/local/lib/lv2" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "GDMSESSION=i3" "PATH=/home/jadench/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin" "XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GTK3_MODULES=xapp-gtk3-module" "LC_TIME=en_US.UTF-8" "XDG_RUNTIME_DIR=/run/user/1000" "MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins" "XDG_SESSION_ID=7" "XDG_VTNR=7" "LC_MEASUREMENT=en_US.UTF-8" "LC_TELEPHONE=en_US.UTF-8" "SHLVL=0" "DISPLAY=:0" "USER=jadench" "LC_IDENTIFICATION=en_US.UTF-8" "XDG_SESSION_CLASS=user" "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0" "XDG_CURRENT_DESKTOP=i3" "VST_PATH=/home/jadench/.vst:/usr/lib/vst:/usr/local/lib/vst" "LANG=en_US.UTF-8" "LC_PAPER=en_US.UTF-8" "HOME=/home/jadench" "MOTD_SHOWN=pam" "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/jadench" "XAUTHORITY=/home/jadench/.Xauthority" "DSSI_PATH=/home/jadench/.dssi:/usr/lib/dssi:/usr/local/lib/dssi" "XDG_SESSION_TYPE=x11" "QT_QPA_PLATFORMTHEME=qt5ct" "XDG_SESSION_DESKTOP=i3" "LOGNAME=jadench" "PWD=/home/jadench" "XDG_SEAT=seat0" "GTK_MODULES=canberra-gtk-module" "LC_MONETARY=en_US.UTF-8" "DESKTOP_SESSION=i3" "LC_NAME=en_US.UTF-8" "LC_ADDRESS=en_US.UTF-8" "I3SOCK=/run/user/1000/i3/ipc-socket.2057" "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0" "SHELL=/bin/zsh") (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (sticky) (last-focus-update) (frameset--id . "4922-2743-3755-6048") (frameset--mini t) (width . 249) (modeline . t) (unsplittable) (left . 0) (top . 0) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 80) (min-pixel-width . 100) (min-pixel-height-ignore . 80) (min-pixel-width-ignore . 80) (min-pixel-height-safe . 20) (min-pixel-width-safe . 20)) leaf (pixel-width . 2550) (pixel-height . 1410) (total-width . 255) (total-height . 70) (normal-height . 1.0) (normal-width . 1.0) (buffer "*Org Agenda*" (selected . t) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 256) (start . 1)) (prev-buffers ("todo-two.org" 1 999) ("*Org Agenda*" 1 219))) (((minibuffer . t) (undecorated) (override-redirect) (font . "-CTDB-Fira Code-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 67) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (sticky) (last-focus-update) (frameset--id . "2D28-970B-61B3-8189") (frameset--mini t) (width . 121) (modeline . t) (unsplittable) (left . 3840) (top . 36) (icon-name) (display . ":0") (explicit-name . t)) ((min-height . 4) (min-width . 20) (min-height-ignore . 4) (min-width-ignore . 10) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 80) (min-pixel-width . 200) (min-pixel-height-ignore . 80) (min-pixel-width-ignore . 100) (min-pixel-height-safe . 20) (min-pixel-width-safe . 40)) hc (pixel-width . 1270) (pixel-height . 1338) (total-width . 127) (total-height . 67) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 630) (pixel-height . 1338) (total-width . 63) (total-height . 67) (normal-height . 1.0) (normal-width . 0.49822064056939497) (buffer "Notes" (selected) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated . t) (point . 1) (start . 1)) (prev-buffers ("20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org" 1 571))) (leaf (last . t) (pixel-width . 640) (pixel-height . 1338) (total-width . 64) (total-height . 67) (normal-height . 1.0) (normal-width . 0.501779359430605) (buffer "Notes of Notes" (selected) (hscroll . 0) (fringes 0 0 t nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 5357) (start . 567)))) (((minibuffer . t) (undecorated) (override-redirect) (font . "-CTDB-Fira Code-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 67) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (environment "_=/usr/bin/rofi" "CADENCE_AUTO_STARTED=true" "LADSPA_PATH=/home/jadench/.ladspa:/usr/lib/ladspa:/usr/local/lib/ladspa" "LC_NUMERIC=en_US.UTF-8" "MAIL=/var/spool/mail/jadench" "LV2_PATH=/home/jadench/.lv2:/usr/lib/lv2:/usr/local/lib/lv2" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "GDMSESSION=i3" "PATH=/home/jadench/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin" "XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GTK3_MODULES=xapp-gtk3-module" "LC_TIME=en_US.UTF-8" "XDG_RUNTIME_DIR=/run/user/1000" "MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins" "XDG_SESSION_ID=7" "XDG_VTNR=7" "LC_MEASUREMENT=en_US.UTF-8" "LC_TELEPHONE=en_US.UTF-8" "SHLVL=0" "DISPLAY=:0" "USER=jadench" "LC_IDENTIFICATION=en_US.UTF-8" "XDG_SESSION_CLASS=user" "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0" "XDG_CURRENT_DESKTOP=i3" "VST_PATH=/home/jadench/.vst:/usr/lib/vst:/usr/local/lib/vst" "LANG=en_US.UTF-8" "LC_PAPER=en_US.UTF-8" "HOME=/home/jadench" "MOTD_SHOWN=pam" "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/jadench" "XAUTHORITY=/home/jadench/.Xauthority" "DSSI_PATH=/home/jadench/.dssi:/usr/lib/dssi:/usr/local/lib/dssi" "XDG_SESSION_TYPE=x11" "QT_QPA_PLATFORMTHEME=qt5ct" "XDG_SESSION_DESKTOP=i3" "LOGNAME=jadench" "PWD=/home/jadench" "XDG_SEAT=seat0" "GTK_MODULES=canberra-gtk-module" "LC_MONETARY=en_US.UTF-8" "DESKTOP_SESSION=i3" "LC_NAME=en_US.UTF-8" "LC_ADDRESS=en_US.UTF-8" "I3SOCK=/run/user/1000/i3/ipc-socket.2057" "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0" "SHELL=/bin/zsh") (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (sticky) (frameset--id . "BEC9-48AA-1177-9463") (frameset--mini t . t) (last-focus-update) (tabs (current-tab (name . "*dashboard*") (explicit-name))) (width . 121) (modeline . t) (unsplittable) (left . 2560) (top . 36) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 20) (min-height-ignore . 4) (min-width-ignore . 16) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 80) (min-pixel-width . 200) (min-pixel-height-ignore . 80) (min-pixel-width-ignore . 160) (min-pixel-height-safe . 20) (min-pixel-width-safe . 40)) hc (pixel-width . 1270) (pixel-height . 1338) (total-width . 127) (total-height . 67) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 640) (pixel-height . 1338) (total-width . 64) (total-height . 67) (normal-height . 1.0) (normal-width . 0.5) (buffer "20211121134239-science_research_presentation_2021_11_22.org" (selected) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 743) (start . 514)) (prev-buffers ("20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org" 1 571) ("20211121134239-science_research_presentation_2021_11_22.org" 1 438) ("*dashboard*" 1 1) ("di21:_co_sars_cov.pdf" 1 1))) (leaf (last . t) (pixel-width . 630) (pixel-height . 1338) (total-width . 63) (total-height . 67) (normal-height . 1.0) (normal-width . 0.5) (buffer "20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org" (selected) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 718) (start . 1)))) (((minibuffer . t) (display-type . mono) (background-mode . dark) (cursor-color . "white") (background-color . "#282c34") (foreground-color . "#bbc2cf") (right-fringe . 30) (left-fringe . 30) (menu-bar-lines . 0) (tool-bar-lines . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (font . "tty") (height . 11) (width . 10) (modeline . t) (unsplittable) (tab-bar-lines . 0) (frameset--id . "BFAD-ADDA-88B5-D009") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 10) (total-width . 10) (total-height . 10) (normal-height . 1.0) (normal-width . 1.0) (buffer "*dashboard*" (selected) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org" 1 768))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '(#("doom-themes-" 0 12 (isearch-regexp-function nil isearch-case-fold-search t)) #("doom-themes" 0 11 (isearch-regexp-function nil isearch-case-fold-search t))))
+(setq regexp-search-ring nil)
+(setq register-alist '((48 . #("s" 0 1 (face org-level-4 org-category "20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission" fontified t)))))
+(setq file-name-history '("~/notes/pages/bibtex-pdfs/di21:_co_sars_cov.pdf" "/home/jadench/.emacs.d" "~/.emacs.d/settings.org" "~/.emacs.d/elpa/citeproc-20211121.1149/citeproc-autoloads.el" "~/.emacs.d/elpa/company-20211118.1007/company-autoloads.el" "~/.emacs.d/elpa/dap-mode-20211117.1555/dap-mode-autoloads.el" "~/.emacs.d/elpa/evil-20211117.2157/evil-autoloads.el" "~/.emacs.d/elpa/evil-org-20211117.2046/evil-org-autoloads.el" "~/.emacs.d/elpa/helm-20211120.1339/helm-autoloads.el" "~/.emacs.d/elpa/lsp-mode-20211118.24/lsp-mode-autoloads.el" "~/.emacs.d/elpa/org-ref-20211119.134/org-ref-autoloads.el" "~/.emacs.d/elpa/org-roam-20211120.833/org-roam-autoloads.el" "~/.emacs.d/elpa/org-roam-bibtex-20211118.1726/org-roam-bibtex-autoloads.el" "~/.emacs.d/elpa/org-roam-ui-20211117.1208/org-roam-ui-autoloads.el" "~/.emacs.d/elpa/ox-pandoc-20211009.1414/ox-pandoc-autoloads.el" "~/.emacs.d/elpa/treemacs-20211115.2031/treemacs-autoloads.el" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/Dropbox/todo-two.org" "~/Dropbox/non_school_academics.org" "~/Dropbox/APCSP/apcsp.org" "~/notes/daily/2021-10-08.org" "~/notes/daily/2021-10-07.org"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/jadench/Dropbox/todo-two.org"
+  "todo-two.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  261
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24987 4438 245894 402000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org"
+  "20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  5357
+  '(5357 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24987 4327 730126 214000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1013 847 4931 4932 79 567 255 466 78 272))))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211121134239-science_research_presentation_2021_11_22.org"
+  "20211121134239-science_research_presentation_2021_11_22.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode evil-org-mode dap-mode)
+  743
+  '(683 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24987 885 130294 854000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (438 436 745 687))))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org"
+  "20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode evil-org-mode dap-mode)
+  718
+  '(571 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24987 885 130295 495000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (5357 847 4931 4932 79 567 255 466 78 272))))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/bibtex-pdfs/di21:_co_sars_cov.pdf"
+  "di21:_co_sars_cov.pdf"
+  'pdf-view-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  1
+  '(1 nil)
+  t
+  nil
+  '((buffer-display-time 24986 65108 82059 164000) (buffer-file-coding-system . no-conversion) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "bibtex-pdfs"
+  'dired-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode dap-mode)
+  250
+  '(nil nil)
+  t
+  '("/home/jadench/notes/pages/bibtex-pdfs/")
+  '((buffer-display-time 24986 62456 777458 784000) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/bibtex-pdfs/di21:_co_sars_cov.pdf"
+  "di21:_co_sars_cov.pdf"
+  'pdf-view-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  1
+  '(1 nil)
+  t
+  nil
+  '((buffer-display-time 24986 62435 195168 562000) (buffer-file-coding-system . no-conversion) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211107192710-interim_guidance_for_ventilation_filtration_and_air_quality_in_indoor_environments.org"
+  "20211107192710-interim_guidance_for_ventilation_filtration_and_air_quality_in_indoor_environments.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  338
+  '(186 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24986 62228 920872 844000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/sources.bib"
+  "sources.bib"
+  'bibtex-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  3218
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24986 58038 719484 811000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/.emacs.d/settings.org"
+  "settings.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  41860
+  '(224 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24986 57734 769911 86000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (39990 1126))))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/Science Research CO2 Monitor Project Proposal.org"
+  "Science Research CO2 Monitor Project Proposal.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  6182
+  '(6182 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 24986 57734 662869 690000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6182 6124 6074 6069))))
+
+(desktop-create-buffer 208
+  "/home/jadench/.emacs.d/diary"
+  "diary"
+  'fundamental-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24986 57734 862673 651000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/journals/2021-11-21.org"
+  "2021-11-21.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211121135742-health_stress_poster.org"
+  "20211121135742-health_stress_poster.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211111211405-meeting_with_dr_van_essen_2021_11_11.org"
+  "20211111211405-meeting_with_dr_van_essen_2021_11_11.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/journals/2021-11-01.org"
+  "2021-11-01.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/journals/2021-10-17.org"
+  "2021-10-17.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/journals/2021_09_20.org"
+  "2021_09_20.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20210921110418-how_to_science_research_presentations.org"
+  "20210921110418-how_to_science_research_presentations.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20210921110743-science_research_co2_monitor_project_presentation.org"
+  "20210921110743-science_research_co2_monitor_project_presentation.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20210928124526-abigail_finan_psilocybin_presentation_notes.org"
+  "20210928124526-abigail_finan_psilocybin_presentation_notes.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20210929180741-something.org"
+  "20210929180741-something.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005212814-sketching_polynomials.org"
+  "20211005212814-sketching_polynomials.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005212849-math.org"
+  "20211005212849-math.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005213010-synthetic_division.org"
+  "20211005213010-synthetic_division.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005213056-polynomial_long_division.org"
+  "20211005213056-polynomial_long_division.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005213445-multiplicity_polynomials.org"
+  "20211005213445-multiplicity_polynomials.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005214032-rational_root_theorem.org"
+  "20211005214032-rational_root_theorem.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005215139-remainder_theorem.org"
+  "20211005215139-remainder_theorem.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211005215907-complex_numbers.org"
+  "20211005215907-complex_numbers.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211007174547-columbia_science_honors_program.org"
+  "20211007174547-columbia_science_honors_program.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211007181548-computer_science_club.org"
+  "20211007181548-computer_science_club.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009100017-columbia_shp_introduction_to_algorithms.org"
+  "20211009100017-columbia_shp_introduction_to_algorithms.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009101036-insertion_sort.org"
+  "20211009101036-insertion_sort.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009101111-algorithm.org"
+  "20211009101111-algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009101307-computers.org"
+  "20211009101307-computers.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009101319-programming.org"
+  "20211009101319-programming.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009101702-sorting_problem.org"
+  "20211009101702-sorting_problem.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009101920-substring_matching_problem.org"
+  "20211009101920-substring_matching_problem.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009102140-shortest_path_problem.org"
+  "20211009102140-shortest_path_problem.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009102410-largest_common_substring.org"
+  "20211009102410-largest_common_substring.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009102514-dynamic_programming.org"
+  "20211009102514-dynamic_programming.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009102622-topological_sort_problem.org"
+  "20211009102622-topological_sort_problem.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009110344-bubble_sort.org"
+  "20211009110344-bubble_sort.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009111219-in_place_sorting.org"
+  "20211009111219-in_place_sorting.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009111627-worst_case_analysis.org"
+  "20211009111627-worst_case_analysis.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009111859-average_case_analysis.org"
+  "20211009111859-average_case_analysis.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009114137-selection_sort_algorithm.org"
+  "20211009114137-selection_sort_algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009114325-merge_sort_algorithm.org"
+  "20211009114325-merge_sort_algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009114412-quick_sort_algorithm.org"
+  "20211009114412-quick_sort_algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009114620-heap_sort_algorithm.org"
+  "20211009114620-heap_sort_algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009114652-counting_sort_algorithm.org"
+  "20211009114652-counting_sort_algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009114717-radix_sort_algorithm.org"
+  "20211009114717-radix_sort_algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211009114729-bucket_sort_algorithm.org"
+  "20211009114729-bucket_sort_algorithm.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211010144854-keyboard_lubrication.org"
+  "20211010144854-keyboard_lubrication.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211010144923-mechanical_keyboards.org"
+  "20211010144923-mechanical_keyboards.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211010144952-computer_projects.org"
+  "20211010144952-computer_projects.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211010145035-mechanical_keyswitches.org"
+  "20211010145035-mechanical_keyswitches.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211010155257-gaming.org"
+  "20211010155257-gaming.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211010155325-hobbies.org"
+  "20211010155325-hobbies.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211015140410-test_file.org"
+  "20211015140410-test_file.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211017151707-yes.org"
+  "20211017151707-yes.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211023094336-big_o_notation.org"
+  "20211023094336-big_o_notation.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211023101235-lower_bound_of_sorting.org"
+  "20211023101235-lower_bound_of_sorting.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211023101517-solving_recursions.org"
+  "20211023101517-solving_recursions.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211023104904-master_s_theorem.org"
+  "20211023104904-master_s_theorem.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211023141802-sketching_rational_expressions.org"
+  "20211023141802-sketching_rational_expressions.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211023151759-rational_expression.org"
+  "20211023151759-rational_expression.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20211025183045-head_tracking.org"
+  "20211025183045-head_tracking.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/How To_ Science Research Project Proposals.org"
+  "How To_ Science Research Project Proposals.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/How-To--Research Project Proposals.org"
+  "How-To--Research Project Proposals.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/Science Research CO2 Monitor Project.org"
+  "Science Research CO2 Monitor Project.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/Science Research.org"
+  "Science Research.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/asdfadsfasdf.org"
+  "asdfadsfasdf.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/contents.org"
+  "contents.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org"
+  "somethingasdfasdfasdfasdfasdf.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/test.org"
+  "test.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/daily/2021-10-07.org"
+  "2021-10-07.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/daily/2021-10-08.org"
+  "2021-10-08.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/Dropbox/APCSP/apcsp.org"
+  "apcsp.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/Dropbox/non_school_academics.org"
+  "non_school_academics.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
