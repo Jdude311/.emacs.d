@@ -36,7 +36,7 @@
  '(org-target ((t (:inherit nil :underline t))))
  '(org-variable-pitch-fixed-face ((t (:weight normal :family "Fira Code"))))
  '(powerline-evil-base-face ((t (:inherit mode-line :foreground "black"))))
- '(variable-pitch ((t (:family "Droid Sans")))))
+ '(variable-pitch ((t (:family "Fira Sans")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

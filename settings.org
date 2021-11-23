@@ -437,8 +437,8 @@ shit test blah blah blah
     (set-face-attribute 'org-level-6 nil :underline nil :extend t :height 1.5 :weight 'bold)
     (set-face-attribute 'org-level-7 nil :underline nil :extend t :height 1.5 :weight 'bold)
     ;; (set-face-attribute 'org-level-8 nil :extend t :height 1.5 :weight 'bold)
-    (set-face-attribute 'org-todo nil :background "#1c1f24" :weight 'bold :box '(:line-width -6 :color "#1c1f24" ))
-    (set-face-attribute 'org-done nil :background "#1c1f24" :weight 'bold :box '(:line-width -6 :color "#1c1f24"))
+    (set-face-attribute 'org-todo nil :background "#1c1f24" :weight 'extrabold :box '(:line-width -6 :color "#1c1f24" ))
+    (set-face-attribute 'org-done nil :background "#1c1f24" :weight 'extrabold :box '(:line-width -6 :color "#1c1f24"))
     ;(set-face-attribute 'org-link nil :foreground "#d3869b")
 
     ;; (set-face-attribute 'org-level-1 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
