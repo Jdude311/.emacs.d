@@ -47,17 +47,27 @@
 :ID:       d7417cdf-b545-45f1-98b6-251c90fb224d
 :END:
 #+begin_src elisp
-    (use-package evil
-      :demand t
-      :init
-      (setq 
-       evil-cross-lines t
-       evil-mode-line-format 'before
-       evil-respect-visual-line-mode t
-       evil-undo-system 'undo-tree
-       evil-want-Y-yank-to-eol t)
-      (evil-mode t)
-      (evil-set-leader 'normal (kbd "SPC")))
+  (use-package evil
+    :demand t
+    :init
+    (setq 
+     evil-cross-lines t
+     evil-mode-line-format 'before
+     evil-respect-visual-line-mode t
+     evil-undo-system 'undo-tree
+     evil-want-Y-yank-to-eol t)
+    (evil-mode t)
+    (evil-set-leader 'normal (kbd "SPC")))   
+(defun my/send-C-x ()
+(interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
+(defun my/send-C-c ()
+(interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
+  (evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
+  (evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
+  ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
+  ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
 #+end_src
 
 #+RESULTS:

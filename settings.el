@@ -20,15 +20,19 @@
          (prog-mode . visual-line-mode)))
 
 (use-package evil
-  :demand t
-  :init
-  (setq 
-   evil-cross-lines t
-   evil-mode-line-format 'before
-   evil-respect-visual-line-mode t
-   evil-undo-system 'undo-tree
-   evil-want-Y-yank-to-eol t)
-  (evil-mode t))
+      :demand t
+      :init
+      (setq 
+       evil-cross-lines t
+       evil-mode-line-format 'before
+       evil-respect-visual-line-mode t
+       evil-undo-system 'undo-tree
+       evil-want-Y-yank-to-eol t)
+      (evil-mode t)
+      (evil-set-leader 'normal (kbd "SPC")))
+; (evil-define-key 'normal 'global (kbd "leader xf") 'find-file)
+; (define-key 'normal 'global (kbd "leader xf") 'find-file)
+; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
 
 (use-package evil-org
   :ensure t
