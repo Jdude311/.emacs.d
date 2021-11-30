@@ -20,19 +20,26 @@
          (prog-mode . visual-line-mode)))
 
 (use-package evil
-      :demand t
-      :init
-      (setq 
-       evil-cross-lines t
-       evil-mode-line-format 'before
-       evil-respect-visual-line-mode t
-       evil-undo-system 'undo-tree
-       evil-want-Y-yank-to-eol t)
-      (evil-mode t)
-      (evil-set-leader 'normal (kbd "SPC")))
-; (evil-define-key 'normal 'global (kbd "leader xf") 'find-file)
-; (define-key 'normal 'global (kbd "leader xf") 'find-file)
-; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
+    :demand t
+    :init
+    (setq 
+     evil-cross-lines t
+     evil-mode-line-format 'before
+     evil-respect-visual-line-mode t
+     evil-undo-system 'undo-tree
+     evil-want-Y-yank-to-eol t)
+    (evil-mode t)
+    (evil-set-leader 'normal (kbd "SPC")))   
+(defun my/send-C-x ()
+(interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
+(defun my/send-C-c ()
+(interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
+  (evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
+  (evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
+  ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
+  ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
 
 (use-package evil-org
   :ensure t

@@ -47,27 +47,54 @@
 :ID:       d7417cdf-b545-45f1-98b6-251c90fb224d
 :END:
 #+begin_src elisp
-  (use-package evil
-    :demand t
-    :init
-    (setq 
-     evil-cross-lines t
-     evil-mode-line-format 'before
-     evil-respect-visual-line-mode t
-     evil-undo-system 'undo-tree
-     evil-want-Y-yank-to-eol t)
-    (evil-mode t)
-    (evil-set-leader 'normal (kbd "SPC")))   
-(defun my/send-C-x ()
-(interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
-(defun my/send-C-c ()
-(interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
-  (evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
-  (evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
-  ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
-  ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
+    (use-package evil
+      :demand t
+      :init
+      (setq 
+       evil-cross-lines t
+       evil-mode-line-format 'before
+       evil-respect-visual-line-mode t
+       evil-undo-system 'undo-tree
+       evil-want-Y-yank-to-eol t)
+      (evil-mode t)
+      (evil-set-leader 'normal (kbd "SPC")))   
+    (defun my/send-C-x ()
+      (interactive)
+      (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
+    (evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
+
+    (defun my/send-C-c ()
+      (interactive)
+      (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
+    (evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
+
+    (defun my/send-C-x_C-f ()
+      (interactive)
+      (setq unread-command-events (listify-key-sequence (kbd "C-x C-f"))))
+    (evil-define-key 'normal 'global (kbd "C-x SPC f") 'my/send-C-x_C-f)
+
+    (defun my/send-C-s ()
+      (interactive)
+      (setq unread-command-events (listify-key-sequence (kbd "C-s"))))
+    (evil-define-key 'normal 'global (kbd "<leader> s") 'my/send-C-s)
+
+    (defun my/send-C-c_C-c ()
+      (interactive)
+      (setq unread-command-events (listify-key-sequence (kbd "C-c C-c"))))
+    (evil-define-key 'normal 'global (kbd "C-c SPC c") 'my/send-C-c_C-c)
+
+    (defun my/send-C-c_C-d ()
+      (interactive)
+      (setq unread-command-events (listify-key-sequence (kbd "C-c C-d"))))
+    (evil-define-key 'normal 'global (kbd "C-c SPC d") 'my/send-C-c_C-d)
+
+    (defun my/send-C-c_C-s ()
+      (interactive)
+      (setq unread-command-events (listify-key-sequence (kbd "C-c C-s"))))
+    (evil-define-key 'normal 'global (kbd "C-c SPC s") 'my/send-C-c_C-s)
+
+      ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
+      ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
 #+end_src
 
 #+RESULTS:
