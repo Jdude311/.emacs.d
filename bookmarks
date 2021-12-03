@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "* TODO Study for")
- (rear-context-string . "15500000\"\n:END:\n")
- (position . 157))
+ (filename . "~/notes/pages/20211201202723-meeting_with_dr_van_essen_2021_12_02.org")
+ (front-context-string . "#+title: Meeting")
+ (rear-context-string . "onitor_project:\n")
+ (position . 127))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")

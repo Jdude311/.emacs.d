@@ -9,7 +9,7 @@
  (position . 54800))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/todo-two.org")
- (front-context-string . "* TODO Kinases b")
+ (front-context-string . "* TODO Study for")
  (rear-context-string . "15500000\"\n:END:\n")
  (position . 157))
 ("settings.org"

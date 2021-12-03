@@ -85,6 +85,7 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
+ '(js-indent-level 2)
  '(line-spacing 0.3)
  '(lsp-enable-indentation nil)
  '(menu-bar-mode nil)
