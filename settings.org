@@ -93,8 +93,6 @@
     (setq unread-command-events (listify-key-sequence (kbd "C-c C-s"))))
   (evil-define-key 'normal 'global (kbd "C-c SPC s") 'my/send-C-c_C-s)
 
-(unbind-key (kbd "SPC") evil-org-agenda-mode-map)
-
     ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
     ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
 #+end_src
