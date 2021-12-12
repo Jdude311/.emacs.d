@@ -123,7 +123,7 @@
  '(org-latex-pdf-process '("latexmk -shell-escape -bibtex -f -pdf %f"))
  '(org-list-demote-modify-bullet '(("-" . "+") ("+" . "*") ("*" . "*")))
  '(org-log-into-drawer t)
- '(org-noter-pdftools-markup-pointer-color "#FFFF00")
+ '(org-noter-pdftools-markup-pointer-color "cyan")
  '(org-outline-path-complete-in-steps nil)
  '(org-pandoc-command "pandoc")
  '(org-pandoc-options
