@@ -2,31 +2,67 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Nov 30 19:31:47 2021
+;; Created Sun Dec 19 18:45:24 2021
 ;; Desktop file format version 208
 ;; Emacs version 27.2
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (24998 49779 573343 120000) (desktop . "208") "jadench@trapdoor" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-CTDB-Fira Code-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 67) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (environment "_=/usr/bin/rofi" "CADENCE_AUTO_STARTED=true" "LADSPA_PATH=/home/jadench/.ladspa:/usr/lib/ladspa:/usr/local/lib/ladspa" "LC_NUMERIC=en_US.UTF-8" "MAIL=/var/spool/mail/jadench" "LV2_PATH=/home/jadench/.lv2:/usr/lib/lv2:/usr/local/lib/lv2" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "GDMSESSION=i3" "PATH=/home/jadench/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin" "XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GTK3_MODULES=xapp-gtk3-module" "LC_TIME=en_US.UTF-8" "XDG_RUNTIME_DIR=/run/user/1000" "MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins" "XDG_SESSION_ID=7" "XDG_VTNR=7" "LC_MEASUREMENT=en_US.UTF-8" "LC_TELEPHONE=en_US.UTF-8" "SHLVL=0" "DISPLAY=:0" "USER=jadench" "LC_IDENTIFICATION=en_US.UTF-8" "XDG_SESSION_CLASS=user" "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0" "XDG_CURRENT_DESKTOP=i3" "VST_PATH=/home/jadench/.vst:/usr/lib/vst:/usr/local/lib/vst" "LANG=en_US.UTF-8" "LC_PAPER=en_US.UTF-8" "HOME=/home/jadench" "MOTD_SHOWN=pam" "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/jadench" "XAUTHORITY=/home/jadench/.Xauthority" "DSSI_PATH=/home/jadench/.dssi:/usr/lib/dssi:/usr/local/lib/dssi" "XDG_SESSION_TYPE=x11" "QT_QPA_PLATFORMTHEME=qt5ct" "XDG_SESSION_DESKTOP=i3" "LOGNAME=jadench" "PWD=/home/jadench" "XDG_SEAT=seat0" "GTK_MODULES=canberra-gtk-module" "LC_MONETARY=en_US.UTF-8" "DESKTOP_SESSION=i3" "LC_NAME=en_US.UTF-8" "LC_ADDRESS=en_US.UTF-8" "I3SOCK=/run/user/1000/i3/ipc-socket.2047" "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0" "SHELL=/bin/zsh") (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (sticky) (frameset--id . "2B03-4C4C-3CEA-652A") (frameset--mini t . t) (last-focus-update) (width . 249) (modeline . t) (unsplittable) (left . 2560) (top . 36) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 80) (min-pixel-width . 100) (min-pixel-height-ignore . 80) (min-pixel-width-ignore . 80) (min-pixel-height-safe . 20) (min-pixel-width-safe . 20)) leaf (pixel-width . 2550) (pixel-height . 1338) (total-width . 255) (total-height . 66) (normal-height . 1.0) (normal-width . 1.0) (buffer "*Org Agenda*" (selected . t) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (((minibuffer . t) (display-type . mono) (background-mode . dark) (cursor-color . "white") (background-color . "#282c34") (foreground-color . "#bbc2cf") (right-fringe . 30) (left-fringe . 30) (menu-bar-lines . 0) (tool-bar-lines . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (font . "tty") (height . 11) (width . 10) (modeline . t) (unsplittable) (tab-bar-lines . 0) (frameset--id . "082C-E90B-A78C-6B6A") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 10) (total-width . 10) (total-height . 10) (normal-height . 1.0) (normal-width . 1.0) (buffer "*dashboard*" (selected) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("Science Research CO2 Monitor Project.org" 1 1044))))])
+(setq desktop-saved-frameset [frameset 1 (25023 50196 605109 314000) (desktop . "208") "jadench@trapdoor" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-CTDB-Fira Code-normal-normal-normal-*-16-*-*-*-*-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 64) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . icon) (skip-taskbar) (z-group) (environment "_=/usr/bin/rofi" "CADENCE_AUTO_STARTED=true" "LADSPA_PATH=/home/jadench/.ladspa:/usr/lib/ladspa:/usr/local/lib/ladspa" "LC_NUMERIC=en_US.UTF-8" "MAIL=/var/spool/mail/jadench" "LV2_PATH=/home/jadench/.lv2:/usr/lib/lv2:/usr/local/lib/lv2" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "GDMSESSION=i3" "PATH=/home/jadench/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin" "XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GTK3_MODULES=xapp-gtk3-module" "QT_AUTO_SCREEN_SCALE_FACTOR=1" "LC_TIME=en_US.UTF-8" "XDG_RUNTIME_DIR=/run/user/1000" "MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins" "XDG_SESSION_ID=7" "XDG_VTNR=7" "LC_MEASUREMENT=en_US.UTF-8" "LC_TELEPHONE=en_US.UTF-8" "SHLVL=0" "DISPLAY=:0" "USER=jadench" "LC_IDENTIFICATION=en_US.UTF-8" "XDG_SESSION_CLASS=user" "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0" "XDG_CURRENT_DESKTOP=i3" "VST_PATH=/home/jadench/.vst:/usr/lib/vst:/usr/local/lib/vst" "LANG=en_US.UTF-8" "LC_PAPER=en_US.UTF-8" "HOME=/home/jadench" "MOTD_SHOWN=pam" "QT_STYLE_OVERRIDE=kvantum" "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/jadench" "XAUTHORITY=/home/jadench/.Xauthority" "DSSI_PATH=/home/jadench/.dssi:/usr/lib/dssi:/usr/local/lib/dssi" "XDG_SESSION_TYPE=x11" "QT_QPA_PLATFORMTHEME=qt5ct" "XDG_SESSION_DESKTOP=i3" "LOGNAME=jadench" "PWD=/home/jadench" "XDG_SEAT=seat0" "GTK_MODULES=canberra-gtk-module" "LC_MONETARY=en_US.UTF-8" "DESKTOP_SESSION=i3" "LC_NAME=en_US.UTF-8" "LC_ADDRESS=en_US.UTF-8" "I3SOCK=/run/user/1000/i3/ipc-socket.2019" "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0" "SHELL=/bin/zsh") (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (sticky) (last-focus-update) (frameset--id . "AC3E-142B-F061-3F0E") (frameset--mini t . t) (width . 121) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 80) (min-pixel-width . 100) (min-pixel-height-ignore . 80) (min-pixel-width-ignore . 80) (min-pixel-height-safe . 20) (min-pixel-width-safe . 20)) leaf (pixel-width . 1270) (pixel-height . 1271) (total-width . 127) (total-height . 63) (normal-height . 1.0) (normal-width . 1.0) (buffer "*Org Agenda*" (selected . t) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 301) (start . 1)) (prev-buffers ("todo-two.org" 387 690) ("*Org Agenda*" 1 1) ("*Calendar*" 1 416) ("*dashboard*" 1 1))) (((minibuffer . t) (display-type . mono) (background-mode . dark) (cursor-color . "white") (background-color . "#282c34") (foreground-color . "#bbc2cf") (right-fringe . 30) (left-fringe . 30) (menu-bar-lines . 0) (tool-bar-lines . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (font . "tty") (height . 11) (width . 10) (modeline . t) (unsplittable) (tab-bar-lines . 0) (frameset--id . "2BF7-EA4B-AF44-A754") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 10) (total-width . 10) (total-height . 10) (normal-height . 1.0) (normal-width . 1.0) (buffer "*dashboard*" (selected) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("20211130190621-the_man_who_loved_flowers.org" 1 274))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring nil)
+(setq search-ring '(#("session" 0 7 (isearch-regexp-function nil isearch-case-fold-search t)) #("xfce4" 0 5 (isearch-regexp-function nil isearch-case-fold-search t))))
 (setq regexp-search-ring nil)
 (setq register-alist '((48 . #("    (evil-define-key 'normal 'global (kbd \"<leader> x\") 'my/send-C-x)\n" 0 4 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 4 5 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 5 20 (display nil face (font-lock-keyword-face org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 20 42 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 42 54 (display nil face (font-lock-string-face org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 54 70 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t))))))
-(setq file-name-history '("/home/jadench/notes/pages/the man who loved flowers1.pdf" "~/notes/pages/the man who loved flowers.pdf" "~/.emacs.d/settings.org" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.org" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.odt" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/Dropbox/todo-two.org" "~/notes/pages/20211123201039-english.org" "~/.emacs.d/elpa/general-20211008.1651/general-autoloads.el" "~/.emacs.d/elpa/evil-leader-20140606.1243/evil-leader-autoloads.el" "~/.emacs.d/elpa/evil-space-20151208.1228/evil-space-autoloads.el" "~/Dropbox/non_school_academics.org" "~/Dropbox/APCSP/apcsp.org" "~/notes/daily/2021-10-08.org" "~/notes/daily/2021-10-07.org" "~/notes/pages/test.org" "~/notes/pages/somethingasdfasdfasdfasdfasdf.org" "~/notes/pages/contents.org" "~/notes/pages/asdfadsfasdf.org" "~/notes/pages/Science Research.org" "~/notes/pages/Science Research CO2 Monitor Project.org" "~/notes/pages/How-To--Research Project Proposals.org"))
+(setq file-name-history '("~/.config/picom/config" "~/.config/i3/config" "/home/jadench/notes/pages/the man who loved flowers1.pdf" "~/notes/pages/the man who loved flowers.pdf" "~/.emacs.d/settings.org" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.org" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.odt" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/Dropbox/todo-two.org" "~/notes/pages/20211123201039-english.org" "~/.emacs.d/elpa/general-20211008.1651/general-autoloads.el" "~/.emacs.d/elpa/evil-leader-20140606.1243/evil-leader-autoloads.el" "~/.emacs.d/elpa/evil-space-20151208.1228/evil-space-autoloads.el" "~/Dropbox/non_school_academics.org" "~/Dropbox/APCSP/apcsp.org" "~/notes/daily/2021-10-08.org" "~/notes/daily/2021-10-07.org" "~/notes/pages/test.org" "~/notes/pages/somethingasdfasdfasdfasdfasdf.org" "~/notes/pages/contents.org" "~/notes/pages/asdfadsfasdf.org" "~/notes/pages/Science Research.org" "~/notes/pages/Science Research CO2 Monitor Project.org" "~/notes/pages/How-To--Research Project Proposals.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/jadench/Dropbox/todo-two.org"
+  "todo-two.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  690
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25023 40224 509024 135000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/.config/i3/config"
+  "config"
+  'conf-space-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  1114
+  '(14537 nil)
+  nil
+  nil
+  '((buffer-display-time 25023 36745 127336 566000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1))))
+
+(desktop-create-buffer 208
+  "/home/jadench/.config/picom/config"
+  "config"
+  'conf-unix-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  2933
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25023 36743 15427 451000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211130190621-the_man_who_loved_flowers.org"
   "20211130190621-the_man_who_loved_flowers.org"
   'org-mode
   '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
-  275
-  '(275 nil)
+  274
+  '(274 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 49749 198882 526000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25023 33739 232404 26000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -38,7 +74,7 @@
   '(1501 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 48786 664596 568000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 42227 96672 945000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1689 1719 1012 1012 1012 1012 1012 1012 1012))))
 
 (desktop-create-buffer 208
@@ -50,19 +86,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 48466 507764 792000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/jadench/Dropbox/todo-two.org"
-  "todo-two.org"
-  'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
-  59961
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 24998 48198 876461 616000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25022 28450 55981 547000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -70,11 +94,11 @@
   "Science Research CO2 Monitor Project.org"
   'org-mode
   '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
-  748
+  1867
   '(748 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 48136 97059 210000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25022 28450 634707 80000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (748 960 1397 1148))))
 
 (desktop-create-buffer 208
@@ -82,11 +106,11 @@
   "Science Research CO2 Monitor Project Proposal.org"
   'org-mode
   '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
-  8927
-  '(8927 nil)
+  8598
+  '(8598 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 39647 727994 557000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 33091 511212 809000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1642))))
 
 (desktop-create-buffer 208
@@ -98,7 +122,7 @@
   '(244 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 29398 884359 325000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25022 28453 521293 746000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (156))))
 
 (desktop-create-buffer 208
@@ -110,7 +134,7 @@
   '(576 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 9577 536173 707000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 3021 883182 687000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -122,7 +146,7 @@
   '(292 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 9540 21438 560000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 2984 527926 186000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (82 126))))
 
 (desktop-create-buffer 208
@@ -134,7 +158,7 @@
   '(nil nil)
   nil
   nil
-  '((buffer-display-time 24998 8901 959986 639000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25019 2346 548014 729000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -146,7 +170,7 @@
   '(359 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 8888 351818 192000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 2333 296518 308000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -158,7 +182,7 @@
   '(252 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4659 950387 416000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25022 28455 79696 536000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1448 836))))
 
 (desktop-create-buffer 208
@@ -170,7 +194,7 @@
   '(3734 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 1455 19107 859000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25018 60438 475261 864000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1))))
 
 (desktop-create-buffer 208
@@ -182,7 +206,7 @@
   '(nil nil)
   nil
   nil
-  '((buffer-display-time 24997 62564 712189 803000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25018 56012 181005 95000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -194,7 +218,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4655 459266 318000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16103 167010 993000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -206,7 +230,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4655 624608 4000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16103 478002 303000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -218,7 +242,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4655 913681 624000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16103 892342 423000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -230,7 +254,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4656 48580 281000) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16104 152204 610000) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -242,7 +266,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4656 199574 750000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16104 439506 1000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -254,7 +278,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4656 450449 357000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16104 916007 776000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -266,7 +290,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4656 600386 844000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16105 202969 343000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -278,7 +302,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4656 732594 175000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16105 463836 439000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -290,7 +314,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4656 909617 195000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16105 813507 206000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -302,7 +326,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4657 44344 448000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16106 199907 345000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -314,7 +338,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4657 219882 969000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16106 875819 50000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -326,7 +350,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4657 774381 560000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16107 567496 635000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -338,7 +362,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4657 910460 619000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16107 850711 872000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -350,7 +374,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4658 195952 510000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16108 289836 600000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -362,7 +386,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4658 334193 488000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16108 562841 751000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -374,7 +398,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4658 466976 19000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16108 829453 569000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -386,7 +410,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4658 601912 503000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16109 98478 727000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -398,7 +422,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4658 856770 165000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16109 535098 529000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -410,7 +434,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4662 334892 749000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16116 646709 915000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -422,7 +446,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4662 667538 143000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16117 141755 285000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -434,7 +458,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4662 803721 948000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16117 407077 636000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -446,7 +470,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4663 236791 740000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16117 969062 315000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -458,7 +482,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4663 554885 482000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16118 468892 624000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -470,7 +494,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4663 695747 454000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16118 741399 191000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -482,7 +506,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4663 842431 971000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16119 27711 747000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -494,7 +518,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4663 988990 713000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16119 434558 283000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -506,7 +530,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4664 145501 769000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16119 730379 957000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -518,7 +542,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4664 299740 284000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16120 31575 324000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -530,7 +554,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4664 455925 865000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16120 691636 218000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -542,7 +566,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4664 616296 110000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16120 994736 993000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -554,7 +578,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4664 789014 695000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16121 313312 674000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -566,7 +590,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4665 100911 728000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16121 769873 721000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -578,7 +602,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4665 260897 740000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16122 65567 802000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -590,7 +614,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4665 588807 827000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16122 549455 842000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -602,7 +626,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4666 50699 808000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16123 167967 140000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -614,7 +638,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4666 211309 163000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16123 590219 923000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -626,7 +650,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4666 379820 269000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16123 918341 123000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -638,7 +662,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4666 532352 280000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16124 213318 633000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -650,7 +674,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4666 684645 521000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16124 760506 988000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -662,7 +686,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4666 862540 340000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16125 242345 917000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -674,7 +698,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4667 10195 610000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16125 535011 236000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -686,7 +710,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4667 157013 917000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16125 820744 514000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -698,7 +722,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4667 314044 11000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16126 130019 885000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -710,7 +734,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4667 615372 599000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16126 579936 677000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -722,7 +746,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4667 762794 85000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16126 868552 334000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -734,7 +758,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4668 75360 581000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16127 328535 874000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -746,7 +770,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4668 397211 734000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16127 910778 551000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -758,7 +782,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4668 702653 749000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16128 366297 379000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -770,7 +794,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4668 870135 209000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16128 680695 9000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -782,7 +806,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4669 66945 855000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16129 434015 102000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -794,7 +818,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4669 267560 65000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16129 824846 689000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -806,7 +830,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4669 613429 317000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16130 502138 888000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -818,7 +842,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4669 774395 646000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16130 808571 809000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -830,7 +854,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4670 75983 487000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16131 389695 749000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -842,7 +866,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4670 291184 242000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16131 806809 323000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -854,7 +878,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4670 845232 544000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16132 566104 211000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -866,7 +890,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4671 184501 238000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16133 54250 198000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -878,7 +902,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4671 454085 472000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16133 466473 600000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -890,7 +914,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4671 601742 608000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16134 128616 417000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -902,7 +926,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4671 752849 69000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16134 415593 152000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -914,7 +938,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4671 900247 997000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16134 705647 862000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -926,7 +950,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4672 68690 946000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16135 26609 512000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -938,7 +962,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4672 225356 671000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16135 328078 904000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -950,7 +974,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 4679 530766 297000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 16148 254187 157000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -962,7 +986,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22681 603792 349000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34152 57402 879000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -974,7 +998,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22681 772731 266000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34152 386922 978000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -986,7 +1010,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22681 929632 816000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34152 694904 507000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -998,7 +1022,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22682 140743 242000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34155 754064 552000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -1010,7 +1034,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22682 264146 281000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34156 11177 863000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -1022,7 +1046,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22682 587624 684000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34156 480641 350000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -1034,7 +1058,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22682 904781 103000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34157 89298 154000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -1046,7 +1070,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 22683 64430 247000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34157 397462 819000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -1058,7 +1082,7 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 24998 23753 525884 122000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35227 999172 917000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
@@ -1070,6 +1094,6 @@
   '(nil nil)
   t
   nil
-  '((buffer-display-time) (buffer-file-coding-system . no-conversion) (truncate-lines))
+  '((buffer-display-time 25022 46484 902709 155000) (buffer-file-coding-system . no-conversion) (truncate-lines))
   '((mark-ring nil)))
 

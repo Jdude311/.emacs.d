@@ -66,8 +66,9 @@
  '(evil-digit-bound-motions '(evil-beginning-of-visual-line))
  '(evil-indent-convert-tabs nil)
  '(evil-org-key-theme
-   '(navigation insert return textobjects additional shift todo heading calendar))
+   '(navigation insert return textobjects additional shift todo calendar))
  '(evil-org-retain-visual-state-on-shift t)
+ '(evil-org-special-o/O '(table-row))
  '(exwm-floating-border-color "#191b20")
  '(fast-but-imprecise-scrolling t)
  '(fci-rule-color "#5B6268")
