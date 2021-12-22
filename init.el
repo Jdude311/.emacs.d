@@ -20,6 +20,7 @@
  '(dashboard-items-face ((t (:inherit widget-button :height 1.0))))
  '(fixed-pitch ((t (:inherit default))))
  '(fixed-pitch-serif ((t (:family "Iosevka"))))
+ '(highlight-indent-guides-character-face ((t (:foreground "#5b6268"))))
  '(link ((t (:foreground "#a9a1e1" :underline t :weight bold))))
  '(olivetti-fringe ((t (:inherit fringe))))
  '(org-agenda-column-dateline ((t (:inherit (org-column default)))))
@@ -60,15 +61,17 @@
  '(doom-modeline-hud t)
  '(doom-modeline-mode t)
  '(doom-one-brighter-modeline t)
- '(electric-pair-mode t)
+ '(electric-pair-mode nil)
+ '(electric-pair-preserve-balance nil)
  '(electric-pair-skip-self 'electric-pair-default-skip-self)
  '(evil-auto-indent nil)
  '(evil-digit-bound-motions '(evil-beginning-of-visual-line))
  '(evil-indent-convert-tabs nil)
  '(evil-org-key-theme
-   '(navigation insert return textobjects additional shift todo calendar))
+   '(navigation insert textobjects additional shift todo calendar))
  '(evil-org-retain-visual-state-on-shift t)
  '(evil-org-special-o/O '(table-row))
+ '(evil-want-keybinding nil)
  '(exwm-floating-border-color "#191b20")
  '(fast-but-imprecise-scrolling t)
  '(fci-rule-color "#5B6268")
@@ -77,6 +80,8 @@
  '(fringe-mode 30 nil (fringe))
  '(helm-completion-style 'emacs)
  '(helm-left-margin-width 0)
+ '(helm-minibuffer-history-key "M-p")
+ '(highlight-indent-guides-method 'character)
  '(highlight-tail-colors
    ((("#333a38" "#99bb66" "green")
      . 0)
@@ -166,7 +171,7 @@
  '(org-variable-pitch-fixed-faces
    '(org-block org-block-begin-line org-block-end-line org-code org-document-info-keyword org-formula org-indent org-meta-line org-special-keyword org-table org-verbatim org-date org-drawer centaur-tabs-default org-property-value org-priority org-hide org-superstar-leading org-superstar-bullet org-target org-headline-done org-done))
  '(package-selected-packages
-   '(general good-scroll-mode good-scroll lorem-ipsum org-roam-ui org-gcal origami origami-mode org-ref-cite helm-bibtex org-roam-bibtex ligature olivetti org-ql lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company ccls buffer-move babel all-the-icons alert))
+   '(hs-mode tagedit evil-collection general good-scroll-mode good-scroll lorem-ipsum org-roam-ui org-gcal origami origami-mode org-ref-cite helm-bibtex org-roam-bibtex ligature olivetti org-ql lsp-java page-break-lines doom-modeline simple-httpd websocket org-autolist org-roam pdf-view org hc-zenburn-theme color-theme-sanityinc-tomorrow moe-theme dark-souls figlet latex-unicode-math-mode org-caldav polymode org-brain vterm org-superstar-mode bibtex-utils bibtex-actions org-ref org-drill org-download org-sidebar haxe-mode flyspell-mode undo-tree calfw-org calfw diminish org-superstar dic-lookup-w3m helm-w3m org-notebook gnuplot latex-extra pandoc ob-ipython evil-org spaceline-config linum-mode highlight-indent-guides powerline-evil ox-pandoc lsp-mode org-babel-eval-in-repl org-agenda doom-themes dap-mode helm-lsp exwm magithub magit writeroom-mode which-key use-package typing soothe-theme right-click-context quelpa powerthesaurus paper-theme org-variable-pitch org-super-links org-super-agenda org-preview-html org-noter-pdftools org-bullets neotree monokai-theme monokai-pro-theme lsp-ui ivy image+ highlight-numbers helm-org-rifle gruvbox-theme grandshell-theme flyspell-correct flycheck evil emacsql-sqlite3 eglot dracula-theme dashboard company ccls buffer-move babel all-the-icons alert))
  '(pdf-view-continuous t)
  '(pdf-view-display-size 'fit-page)
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
@@ -218,6 +223,8 @@
     (cons 360 "#5B6268")))
  '(vc-annotate-very-old-color nil)
  '(visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
+ '(whitespace-style
+   '(face trailing tabs spaces lines newline empty indentation space-after-tab space-before-tab space-mark tab-mark newline-mark))
  '(window-divider-mode nil))
 
 (org-babel-tangle-file

@@ -8,10 +8,10 @@
  (rear-context-string . "cts of 1867]]\n\n\n")
  (position . 54800))
 ("org-capture-last-stored"
- (filename . "~/notes/pages/20211201202723-meeting_with_dr_van_essen_2021_12_02.org")
- (front-context-string . "#+title: Meeting")
- (rear-context-string . "onitor_project:\n")
- (position . 127))
+ (filename . "~/notes/pages/20211204120326-adhd_medication_types.org")
+ (front-context-string . "ADHD]] \nInformat")
+ (rear-context-string . "9-01ef32410264][")
+ (position . 183))
 ("settings.org"
  (filename . "~/.emacs.d/settings.org")
  (front-context-string . "* Global utiliti")

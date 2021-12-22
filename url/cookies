@@ -2,23 +2,26 @@
 ;; Automatically generated file!!! DO NOT EDIT!!!
 
 (setq url-cookie-storage
- '(("linkinghub.elsevier.com"
-  [url-cookie "visitorId" "pDE5jzjdyoKEoO0SxxYh" "Sat Dec 10 03:31:52 2089 GMT" "/" "linkinghub.elsevier.com" nil])
- (".sciencedirect.com"
-  [url-cookie "mbox" "session%230b0cee414fc8403da8f950646750bd86%231637542125%7CPC%230b0cee414fc8403da8f950646750bd86.34_0%231700785065" "Fri Nov 24 00:17:45 2023 GMT" "/" ".sciencedirect.com" nil]
-  [url-cookie "mboxes" "%7B%22universal-view-pdf%22%3A%7B%22variation%22%3A%22A%22%7D%7D" "Fri Nov 24 00:17:45 2023 GMT" "/" ".sciencedirect.com" nil]))
+ '((".sciencedirect.com"
+  [url-cookie "mboxes" "%7B%22universal-view-pdf%22%3A%7B%22variation%22%3A%22A%22%7D%7D" "Fri Nov 24 00:17:45 2023 GMT" "/" ".sciencedirect.com" nil]
+  [url-cookie "mbox" "session%230b0cee414fc8403da8f950646750bd86%231637542125%7CPC%230b0cee414fc8403da8f950646750bd86.34_0%231700785065" "Fri Nov 24 00:17:45 2023 GMT" "/" ".sciencedirect.com" nil])
+ ("linkinghub.elsevier.com"
+  [url-cookie "visitorId" "pDE5jzjdyoKEoO0SxxYh" "Sat Dec 10 03:31:52 2089 GMT" "/" "linkinghub.elsevier.com" nil]))
 )
 (setq url-cookie-secure-storage
- '((".reddit.com"
-  [url-cookie "loid" "00000000008nwu75x7.2.1603930564140.Z0FBQUFBQmZtZ25FZjA2OVJmblF4YnBjaExBd2RfQzEzZ1ZGVkNLV0Jmdm80dzQtaWV1YlFOXzZCWHR4azF2bkVZUVAyR1NvY3dsX3ZTSWR2ck9vS05NSTJxVTZCY25zLW9KR25GRUNhMFVaN0o5UGlGdC05WjA3VmZvWEdjNVZsYkhLVUw4R1FEZXc" "Sat, 29 Oct 2022 00:16:04 GMT" "/" ".reddit.com" t]
-  [url-cookie "d2_token" "3.3c94915d847cc519563cff038e53c5588a8a20e4dde10a7577113b8e12627223.eyJhY2Nlc3NUb2tlbiI6Ii02STBMa0NYQml4Ujktd2JYekRkeC01SkNFTjAiLCJleHBpcmVzIjoiMjAyMC0xMC0yOVQwMToxNjowNC4wMDBaIiwibG9nZ2VkT3V0Ijp0cnVlLCJzY29wZXMiOlsiKiIsImVtYWlsIl19" "Sat, 29 Oct 2022 00:16:04 GMT" "/" ".reddit.com" t]
-  [url-cookie "csv" "1" "Sat Oct 29 00:16:05 2022 GMT" "/" ".reddit.com" t])
+ '((".sciencedirect.com"
+  [url-cookie "id_ab" "AEG" "Fri, 22 Nov 2041 00:17:44 GMT" "/" ".sciencedirect.com" t]
+  [url-cookie "EUID" "cb156d5b-a9f9-4caf-93b3-f9a5a2fb0369" "Fri, 22 Nov 2041 00:17:23 GMT" "/" ".sciencedirect.com" t])
  ("reddit.com"
-  [url-cookie "edgebucket" "mp3gFoIA9jhz0XM7Js" "Sat Oct 29 00:16:04 2022 GMT" "/" "reddit.com" t]
-  [url-cookie "token_v2" "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDM5MzQxMDQsInN1YiI6Ii1aMC1XQXlfTUd1N0NPSFNwVGM4YjhSUFMxM3ciLCJsb2dnZWRJbiI6ZmFsc2UsInNjb3BlcyI6WyIqIiwiZW1haWwiXX0.VwqpvtkFbb65RKRRGUTdEqDKJSywonGzWACRB9vDCBw" "Sat, 29 Oct 2022 00:17:04 GMT" "/" "reddit.com" t])
- (".sciencedirect.com"
-  [url-cookie "EUID" "cb156d5b-a9f9-4caf-93b3-f9a5a2fb0369" "Fri, 22 Nov 2041 00:17:23 GMT" "/" ".sciencedirect.com" t]
-  [url-cookie "id_ab" "AEG" "Fri, 22 Nov 2041 00:17:44 GMT" "/" ".sciencedirect.com" t]))
+  [url-cookie "token_v2" "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDM5MzQxMDQsInN1YiI6Ii1aMC1XQXlfTUd1N0NPSFNwVGM4YjhSUFMxM3ciLCJsb2dnZWRJbiI6ZmFsc2UsInNjb3BlcyI6WyIqIiwiZW1haWwiXX0.VwqpvtkFbb65RKRRGUTdEqDKJSywonGzWACRB9vDCBw" "Sat, 29 Oct 2022 00:17:04 GMT" "/" "reddit.com" t]
+  [url-cookie "edgebucket" "mp3gFoIA9jhz0XM7Js" "Sat Oct 29 00:16:04 2022 GMT" "/" "reddit.com" t])
+ ("github.com"
+  [url-cookie "_octo" "GH1.1.70828609.1640097405" "Wed, 21 Dec 2022 14:36:45 GMT" "/" "github.com" t]
+  [url-cookie "logged_in" "no" "Wed, 21 Dec 2022 14:36:45 GMT" "/" "github.com" t])
+ (".reddit.com"
+  [url-cookie "csv" "1" "Sat Oct 29 00:16:05 2022 GMT" "/" ".reddit.com" t]
+  [url-cookie "d2_token" "3.3c94915d847cc519563cff038e53c5588a8a20e4dde10a7577113b8e12627223.eyJhY2Nlc3NUb2tlbiI6Ii02STBMa0NYQml4Ujktd2JYekRkeC01SkNFTjAiLCJleHBpcmVzIjoiMjAyMC0xMC0yOVQwMToxNjowNC4wMDBaIiwibG9nZ2VkT3V0Ijp0cnVlLCJzY29wZXMiOlsiKiIsImVtYWlsIl19" "Sat, 29 Oct 2022 00:16:04 GMT" "/" ".reddit.com" t]
+  [url-cookie "loid" "00000000008nwu75x7.2.1603930564140.Z0FBQUFBQmZtZ25FZjA2OVJmblF4YnBjaExBd2RfQzEzZ1ZGVkNLV0Jmdm80dzQtaWV1YlFOXzZCWHR4azF2bkVZUVAyR1NvY3dsX3ZTSWR2ck9vS05NSTJxVTZCY25zLW9KR25GRUNhMFVaN0o5UGlGdC05WjA3VmZvWEdjNVZsYkhLVUw4R1FEZXc" "Sat, 29 Oct 2022 00:16:04 GMT" "/" ".reddit.com" t]))
 )
 
 ;; Local Variables:

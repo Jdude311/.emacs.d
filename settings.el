@@ -20,53 +20,54 @@
          (prog-mode . visual-line-mode)))
 
 (use-package evil
-  :demand t
-  :init
-  (setq 
-   evil-cross-lines t
-   evil-mode-line-format 'before
-   evil-respect-visual-line-mode t
-   evil-undo-system 'undo-tree
-   evil-want-Y-yank-to-eol t)
-  (evil-mode t)
-  (evil-set-leader 'normal (kbd "SPC")))   
-(defun my/send-C-x ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
-(evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
+    :demand t
+    :init
+    (setq 
+     evil-cross-lines t
+     evil-mode-line-format 'before
+     evil-respect-visual-line-mode t
+     evil-undo-system 'undo-tree
+     evil-want-Y-yank-to-eol t)
+    (evil-mode t)
+    (evil-set-leader 'normal (kbd "SPC")))   
+  (defun my/send-C-x ()
+    (interactive)
+    (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
+  (evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
 
-(defun my/send-C-c ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
-(evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
+  (defun my/send-C-c ()
+    (interactive)
+    (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
+  (evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
 
-(defun my/send-C-x_C-f ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-x C-f"))))
-(evil-define-key 'normal 'global (kbd "C-x SPC f") 'my/send-C-x_C-f)
+  (defun my/send-C-x_C-f ()
+    (interactive)
+    (setq unread-command-events (listify-key-sequence (kbd "C-x C-f"))))
+  (evil-define-key 'normal 'global (kbd "C-x SPC f") 'my/send-C-x_C-f)
 
-(defun my/send-C-s ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-s"))))
-(evil-define-key 'normal 'global (kbd "<leader> s") 'my/send-C-s)
+  (defun my/send-C-s ()
+    (interactive)
+    (setq unread-command-events (listify-key-sequence (kbd "C-s"))))
+  (evil-define-key 'normal 'global (kbd "<leader> s") 'my/send-C-s)
 
-(defun my/send-C-c_C-c ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-c C-c"))))
-(evil-define-key 'normal 'global (kbd "C-c SPC c") 'my/send-C-c_C-c)
+  (defun my/send-C-c_C-c ()
+    (interactive)
+    (setq unread-command-events (listify-key-sequence (kbd "C-c C-c"))))
+  (evil-define-key 'normal 'global (kbd "C-c SPC c") 'my/send-C-c_C-c)
 
-(defun my/send-C-c_C-d ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-c C-d"))))
-(evil-define-key 'normal 'global (kbd "C-c SPC d") 'my/send-C-c_C-d)
+  (defun my/send-C-c_C-d ()
+    (interactive)
+    (setq unread-command-events (listify-key-sequence (kbd "C-c C-d"))))
+  (evil-define-key 'normal 'global (kbd "C-c SPC d") 'my/send-C-c_C-d)
 
-(defun my/send-C-c_C-s ()
-  (interactive)
-  (setq unread-command-events (listify-key-sequence (kbd "C-c C-s"))))
-(evil-define-key 'normal 'global (kbd "C-c SPC s") 'my/send-C-c_C-s)
+  (defun my/send-C-c_C-s ()
+    (interactive)
+    (setq unread-command-events (listify-key-sequence (kbd "C-c C-s"))))
+  (evil-define-key 'normal 'global (kbd "C-c SPC s") 'my/send-C-c_C-s)
 
-  ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
-  ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
+    ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
+    ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
+(evil-define-key 'visual 'prog-mode (kbd "<tab>") 'indent-region)
 
 (use-package evil-org
   :ensure t
@@ -81,6 +82,12 @@
     "j" 'evil-next-visual-line
     "k" 'evil-previous-visual-line))
 
+(use-package evil-collection
+  :ensure t
+  :config
+  (evil-collection-init)
+(unbind-key "SPC" magit-mode-map))
+
 (use-package undo-tree
   :demand t
   :config
@@ -88,6 +95,12 @@
   (global-undo-tree-mode t))
 
 (setq electric-indent-mode t)
+
+(use-package magit
+:ensure t)
+
+(use-package vterm
+:ensure t)
 
 (use-package page-break-lines
   :ensure t)
@@ -220,9 +233,29 @@
 
 (setq highlight-indent-guides-method 'column)
 
-(use-package origami
-  :hook
-  (prog-mode . origami-mode))
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+(defun mhtml-forward (arg)
+  (interactive "P")
+  (pcase (get-text-property (point) 'mhtml-submode)
+    ('nil (sgml-skip-tag-forward 1))
+    (submode (forward-sexp))))
+
+;; Adds the tag and curly-brace detection to hs-minor-mode for mhtml.
+(add-to-list 'hs-special-modes-alist
+             '(mhtml-mode
+               "{\\|<[^/>]+?"
+               "}\\|</[^/>]*[^/]>"
+               "<!--"
+               mhtml-forward
+               nil))
+
+(add-hook 'prog-mode-hook 'electric-pair-mode)
+
+(use-package tagedit
+  :ensure t
+  :config
+  (tagedit-add-experimental-features)
+  :hook (html . tagedit-mode))
 
 (setq
  org-enforce-todo-dependencies t
@@ -296,7 +329,7 @@
       (setq org-roam-capture-templates
             '(("d" "default" plain "%?" :target
                (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
-#+filetags: ${tags}
+#+filetags: 
 #+title: ${title}
 - Links :: 
 

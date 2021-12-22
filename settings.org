@@ -95,6 +95,7 @@
 
     ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
     ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
+(evil-define-key 'visual 'prog-mode (kbd "<tab>") 'indent-region)
 #+end_src
 
 #+RESULTS:
@@ -121,6 +122,18 @@
 #+RESULTS:
 | org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
+** Evil collection (keybinds)
+#+begin_src elisp
+      (use-package evil-collection
+        :ensure t
+        :config
+        (evil-collection-init)
+      (unbind-key "SPC" magit-mode-map))
+#+end_src
+
+#+RESULTS:
+: t
+
 ** Undo tree
 :PROPERTIES:
 :ID:       b0b02143-47e7-49f6-9813-5c19a8f5e285
@@ -137,6 +150,22 @@ shit test blah blah blah
 #+begin_src elisp
   (setq electric-indent-mode t)
 #+end_src
+
+** Magit
+#+begin_src elisp
+  (use-package magit
+  :ensure t)
+#+end_src
+
+#+RESULTS:
+
+** Vterm
+#+begin_src elisp
+  (use-package vterm
+  :ensure t)
+#+end_src
+
+#+RESULTS:
 
 * Themes, startup, and ricing
 ** Page-break-lines stuff
@@ -269,6 +298,7 @@ shit test blah blah blah
 : t
 
 * Prog-mode settings
+
 ** LSP
 :PROPERTIES:
 :ID:       83b996c0-05d9-4522-803a-ac9d39aafd97
@@ -438,15 +468,110 @@ shit test blah blah blah
   (setq highlight-indent-guides-method 'column)
 #+end_src
 
-** Origami-mode
-#+begin_src elisp
+** Origami-mode                                                   :disabled:
+#+begin_src elisp :tangle no
   (use-package origami
     :hook
-    (prog-mode . origami-mode))
+    (prog-mode . origami-mode)
+    :config
+    (defun origami-html-parser (create)
+      "Parser for html."
+      (rx-let ((ignore-tags (&rest tags) (seq "<" (or tags) word-end)))
+        ;; Self-closing tags (void elements) without closing slash would throw off parser, ignore
+        (let ((ignore-tags-rx
+               (rx (ignore-tags "area" "base" "br" "col" "command" "embed" "hr" "img" "input"
+                                "keygen" "link" "menuitem" "meta" "param" "source" "track" "wbr"))))
+          (origami-xml-base-parser create nil ignore-tags-rx))))
+    (setq origami-parser-alist
+          `((actionscript-mode     . origami-java-parser)
+            (bat-mode              . origami-batch-parser)
+            (c-mode                . origami-c-parser)
+            (c++-mode              . origami-c++-parser)
+            (clojure-mode          . origami-clj-parser)
+            (cperl-mode            . origami-c-style-parser)
+            (csharp-mode           . origami-csharp-parser)
+            (dart-mode             . origami-c-style-parser)
+            (emacs-lisp-mode       . origami-elisp-parser)
+            (go-mode               . origami-go-parser)
+            (html-mode             . origami-html-parser)
+            (java-mode             . origami-java-parser)
+            (javascript-mode       . origami-js-parser)
+            (js-mode               . origami-js-parser)
+            (js2-mode              . origami-js-parser)
+            (js3-mode              . origami-js-parser)
+            (json-mode             . origami-json-parser)
+            (kotlin-mode           . origami-java-parser)
+            (lisp-mode             . origami-elisp-parser)
+            (lisp-interaction-mode . origami-elisp-parser)
+            (lua-mode              . origami-lua-parser)
+            (markdown-mode         . origami-markdown-parser)
+            (nxml-mode             . origami-xml-parser)
+            (objc-mode             . origami-objc-parser)
+            (org-mode              . origami-org-parser)
+            (perl-mode             . origami-c-style-parser)
+            (php-mode              . origami-java-parser)
+            (python-mode           . origami-python-parser)
+            (rjsx-mode             . origami-js-parser)
+            (ruby-mode             . origami-ruby-parser)
+            (rust-mode             . origami-rust-parser)
+            (scala-mode            . origami-scala-parser)
+            (sh-mode               . origami-sh-parser)
+            (swift-mode            . origami-swift-parser)
+            (triple-braces         . ,(origami-markers-parser "{{{" "}}}"))
+            (typescript-mode       . origami-js-parser)
+            (web-mode              . origami-html-parser))))
 #+end_src
 
 #+RESULTS:
-| origami-mode | hl-line-mode | linum-mode | company-mode | highlight-numbers-mode | highlight-indent-guides-mode | visual-line-mode |
+| electric-pair-mode | origami-mode | hl-line-mode | linum-mode | company-mode | highlight-numbers-mode | highlight-indent-guides-mode | visual-line-mode |
+
+** Hide-Show mode
+#+begin_src elisp
+  (add-hook 'prog-mode-hook 'hs-minor-mode)
+  (defun mhtml-forward (arg)
+    (interactive "P")
+    (pcase (get-text-property (point) 'mhtml-submode)
+      ('nil (sgml-skip-tag-forward 1))
+      (submode (forward-sexp))))
+
+  ;; Adds the tag and curly-brace detection to hs-minor-mode for mhtml.
+  (add-to-list 'hs-special-modes-alist
+               '(mhtml-mode
+                 "{\\|<[^/>]+?"
+                 "}\\|</[^/>]*[^/]>"
+                 "<!--"
+                 mhtml-forward
+                 nil))
+#+end_src
+
+#+RESULTS:
+| mhtml-mode  | {\              | <[^/>]+?   | }\    | </[^/>]*[^/]> | <!--                                  | mhtml-forward | nil |
+| python-mode | \s-*\_<\(?:def\ | class\)\_> |       | #             | python-hideshow-forward-sexp-function | nil           |     |
+| c-mode      | {               | }          | /[*/] | nil           | nil                                   |               |     |
+| c++-mode    | {               | }          | /[*/] | nil           | nil                                   |               |     |
+| bibtex-mode | (@\S(*\(\s(\) 1) |            |       |               |                                       |               |     |
+| java-mode   | {               | }          | /[*/] | nil           | nil                                   |               |     |
+| js-mode     | {               | }          | /[*/] | nil           |                                       |               |     |
+
+** Electric
+#+begin_src elisp
+(add-hook 'prog-mode-hook 'electric-pair-mode)
+#+end_src
+
+#+RESULTS:
+| electric-pair-mode | origami-mode | hl-line-mode | linum-mode | company-mode | highlight-numbers-mode | highlight-indent-guides-mode | visual-line-mode |
+
+** HTML automatically closing tags (tagedit)
+#+begin_src elisp
+  (use-package tagedit
+    :ensure t
+    :config
+    (tagedit-add-experimental-features)
+    :hook (html . tagedit-mode))
+#+end_src
+
+#+RESULTS:
+| tagedit-mode | tagedit |
 
 * DONE Org-mode
 #+begin_src elisp
@@ -580,7 +705,7 @@ shit test blah blah blah
       (setq org-roam-capture-templates
             '(("d" "default" plain "%?" :target
                (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
-#+filetags: ${tags}
+#+filetags: 
 #+title: ${title}
 - Links :: 
 
