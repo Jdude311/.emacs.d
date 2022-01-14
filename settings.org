@@ -93,9 +93,9 @@
     (setq unread-command-events (listify-key-sequence (kbd "C-c C-s"))))
   (evil-define-key 'normal 'global (kbd "C-c SPC s") 'my/send-C-c_C-s)
 
-    ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
-    ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
-(evil-define-key 'visual 'prog-mode (kbd "<tab>") 'indent-region)
+      ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
+      ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
+  (evil-define-key 'visual 'prog-mode (kbd "<tab>") 'indent-region)
 #+end_src
 
 #+RESULTS:
@@ -124,11 +124,11 @@
 
 ** Evil collection (keybinds)
 #+begin_src elisp
-      (use-package evil-collection
-        :ensure t
-        :config
-        (evil-collection-init)
-      (unbind-key "SPC" magit-mode-map))
+  (use-package evil-collection
+    :ensure t
+    :config
+    (evil-collection-init)
+    (unbind-key "SPC" magit-mode-map))
 #+end_src
 
 #+RESULTS:
@@ -154,7 +154,7 @@ shit test blah blah blah
 ** Magit
 #+begin_src elisp
   (use-package magit
-  :ensure t)
+    :ensure t)
 #+end_src
 
 #+RESULTS:
@@ -162,7 +162,7 @@ shit test blah blah blah
 ** Vterm
 #+begin_src elisp
   (use-package vterm
-  :ensure t)
+    :ensure t)
 #+end_src
 
 #+RESULTS:
@@ -250,10 +250,10 @@ shit test blah blah blah
 :ID:       695da9cc-f747-4d25-8757-e37196d0bb7e
 :END:
 #+begin_src elisp
-  ;(setq-default indicate-empty-lines t)
-  ;(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
-  ;(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
-  ;(set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
+                                          ;(setq-default indicate-empty-lines t)
+                                          ;(define-fringe-bitmap 'tilde [0 0 0 113 219 142 0 0] nil nil 'center)
+                                          ;(setcdr (assq 'empty-line fringe-indicator-alist) 'tilde)
+                                          ;(set-fringe-bitmap-face 'tilde 'font-lock-function-name-face)
 
 #+end_src
 
@@ -282,7 +282,7 @@ shit test blah blah blah
 ** Disable scroll bar
 #+begin_src elisp
   (set-face-attribute 'scroll-bar nil :inherit 'olivetti-fringe)
-(scroll-bar-mode 0) 
+  (scroll-bar-mode 0) 
 #+end_src
 
 #+RESULTS:
@@ -292,6 +292,52 @@ shit test blah blah blah
   (use-package good-scroll
     :config
     (good-scroll-mode t)) 
+#+end_src
+
+#+RESULTS:
+: t
+
+** Ligatures
+#+begin_src elisp
+  (use-package ligature
+    :load-path "lisp"
+    :config
+    ;; Enable the "www" ligature in every possible major mode
+    (ligature-set-ligatures 't '("www"))
+    ;; Enable traditional ligature support in eww-mode, if the
+    ;; `variable-pitch' face supports it
+    (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+    ;; Because org-mode has some code in it, use ligatures there too
+    (ligature-set-ligatures 'org-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                         ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                         "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                         "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                         "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                         "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                         "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                         "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                         ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                         "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                         "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                         "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                         "\\\\" "://"))
+    ;; Enable all Cascadia Code ligatures in programming modes
+    (ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                         ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                         "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                         "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                         "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                         "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                         "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                         "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                         ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                         "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                         "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                         "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                         "\\\\" "://"))
+    ;; Enables ligature checks globally in all buffers. You can also do it
+    ;; per mode with `ligature-mode'.
+    (global-ligature-mode t))
 #+end_src
 
 #+RESULTS:
@@ -623,9 +669,9 @@ shit test blah blah blah
     :defer t
     :bind ("C-x w" . olivetti-mode)
     :config
-    (setq olivetti-body-width 120)
-    (setq olivetti-margin-width 5)
-    (setq olivetti-style 'fancy)
+    (setq olivetti-body-width 100)
+    (setq olivetti-margin-width 20)
+    (setq olivetti-style 't)
     :hook (org-mode . olivetti-mode))
 #+end_src
 
@@ -983,33 +1029,33 @@ The agenda files are maintained by customize-variable, and are not defined or ma
     :config
     (setq org-super-agenda-header-map (make-sparse-keymap))
     (setq org-super-agenda-groups
-          '((:time-grid t)
+          `(
+            (:name "Meetings" :tag "meeting" :tag "clubs" :tag "club" :order 2)
             (:name "OVERDUE" :discard
                    (:todo "SOMEDAY")
                    :deadline past :order 1)
+            (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
+            (:name "Homework"
+                   :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
+                   :order 5 )
             (:name "Today's Schedule" :time-grid t :order 2)
-            (:name "Meetings" :tag "meeting" :order 2)
             (:name "Tests and Quizzes" :tag
                    ("test" "quiz" "assessment" "conference")
                    :order 3)
-            (:name "Ongoing Futuredue Homework" 
-                   :and
-                   (:tag "school" :tag "homework" :deadline future :scheduled today :not (:tag "project"))
-                   :and
-                   (:tag "school" :tag "homework" :deadline future :scheduled past :not (:tag "project"))
-                   :order 4)
-            (:name "Tonight's Homework"
-                   :and
-                   (:tag "school" :tag "homework" :deadline today)
-                   :and
-                   (:tag "school" :tag "project" :deadline today)
-                   :and
-                   (:tag "school" :tag "homework" :scheduled (today past) :not (:tag "project"))
-                   :order 5)
-            (:name "Upcoming Homework" 
-                   :and (:not (:tag "project") :tag "school" :tag "homework" :deadline future)
+            (:name "Upcoming Schoolwork/Homework" 
+                   :and (:tag ("school" "homework") :deadline future)
                    :order 6)
-            (:name "Emails" :tag "email" :order 7)
+            (:name "Personal Habits"
+                   :and (:tag "personal" :habit t)
+                   :order 8)
+            (:name "Personal TODO list"
+                   :tag ("personal")
+                   :order 7)
+            (:name "Emails" :tag "email" :order 8)
+            (:name "Scheduled work"
+                   :scheduled t 
+                   :order 10)
+            (:time-grid t)
             (:discard (:tag "drill"))))
     :hook
     (org-agenda-before-finalize . org-super-agenda-mode))

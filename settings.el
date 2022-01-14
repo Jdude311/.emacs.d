@@ -20,50 +20,50 @@
          (prog-mode . visual-line-mode)))
 
 (use-package evil
-    :demand t
-    :init
-    (setq 
-     evil-cross-lines t
-     evil-mode-line-format 'before
-     evil-respect-visual-line-mode t
-     evil-undo-system 'undo-tree
-     evil-want-Y-yank-to-eol t)
-    (evil-mode t)
-    (evil-set-leader 'normal (kbd "SPC")))   
-  (defun my/send-C-x ()
-    (interactive)
-    (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
-  (evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
+  :demand t
+  :init
+  (setq 
+   evil-cross-lines t
+   evil-mode-line-format 'before
+   evil-respect-visual-line-mode t
+   evil-undo-system 'undo-tree
+   evil-want-Y-yank-to-eol t)
+  (evil-mode t)
+  (evil-set-leader 'normal (kbd "SPC")))   
+(defun my/send-C-x ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-x"))))
+(evil-define-key 'normal 'global (kbd "<leader> x") 'my/send-C-x)
 
-  (defun my/send-C-c ()
-    (interactive)
-    (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
-  (evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
+(defun my/send-C-c ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-c"))))
+(evil-define-key 'normal 'global (kbd "<leader> c") 'my/send-C-c)
 
-  (defun my/send-C-x_C-f ()
-    (interactive)
-    (setq unread-command-events (listify-key-sequence (kbd "C-x C-f"))))
-  (evil-define-key 'normal 'global (kbd "C-x SPC f") 'my/send-C-x_C-f)
+(defun my/send-C-x_C-f ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-x C-f"))))
+(evil-define-key 'normal 'global (kbd "C-x SPC f") 'my/send-C-x_C-f)
 
-  (defun my/send-C-s ()
-    (interactive)
-    (setq unread-command-events (listify-key-sequence (kbd "C-s"))))
-  (evil-define-key 'normal 'global (kbd "<leader> s") 'my/send-C-s)
+(defun my/send-C-s ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-s"))))
+(evil-define-key 'normal 'global (kbd "<leader> s") 'my/send-C-s)
 
-  (defun my/send-C-c_C-c ()
-    (interactive)
-    (setq unread-command-events (listify-key-sequence (kbd "C-c C-c"))))
-  (evil-define-key 'normal 'global (kbd "C-c SPC c") 'my/send-C-c_C-c)
+(defun my/send-C-c_C-c ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-c C-c"))))
+(evil-define-key 'normal 'global (kbd "C-c SPC c") 'my/send-C-c_C-c)
 
-  (defun my/send-C-c_C-d ()
-    (interactive)
-    (setq unread-command-events (listify-key-sequence (kbd "C-c C-d"))))
-  (evil-define-key 'normal 'global (kbd "C-c SPC d") 'my/send-C-c_C-d)
+(defun my/send-C-c_C-d ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-c C-d"))))
+(evil-define-key 'normal 'global (kbd "C-c SPC d") 'my/send-C-c_C-d)
 
-  (defun my/send-C-c_C-s ()
-    (interactive)
-    (setq unread-command-events (listify-key-sequence (kbd "C-c C-s"))))
-  (evil-define-key 'normal 'global (kbd "C-c SPC s") 'my/send-C-c_C-s)
+(defun my/send-C-c_C-s ()
+  (interactive)
+  (setq unread-command-events (listify-key-sequence (kbd "C-c C-s"))))
+(evil-define-key 'normal 'global (kbd "C-c SPC s") 'my/send-C-c_C-s)
 
     ;;; (define-key 'normal 'global (kbd "leader xf") 'find-file)
     ;;; (evil-define-key 'normal (kbd "<leader>-c") (kbd "C-c"))
@@ -86,7 +86,7 @@
   :ensure t
   :config
   (evil-collection-init)
-(unbind-key "SPC" magit-mode-map))
+  (unbind-key "SPC" magit-mode-map))
 
 (use-package undo-tree
   :demand t
@@ -97,10 +97,10 @@
 (setq electric-indent-mode t)
 
 (use-package magit
-:ensure t)
+  :ensure t)
 
 (use-package vterm
-:ensure t)
+  :ensure t)
 
 (use-package page-break-lines
   :ensure t)
@@ -153,6 +153,46 @@
 (use-package good-scroll
   :config
   (good-scroll-mode t))
+
+(use-package ligature
+  :load-path "lisp"
+  :config
+  ;; Enable the "www" ligature in every possible major mode
+  (ligature-set-ligatures 't '("www"))
+  ;; Enable traditional ligature support in eww-mode, if the
+  ;; `variable-pitch' face supports it
+  (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+  ;; Because org-mode has some code in it, use ligatures there too
+  (ligature-set-ligatures 'org-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                       ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                       "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                       "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                       "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                       "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                       "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                       "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                       ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                       "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                       "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                       "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                       "\\\\" "://"))
+  ;; Enable all Cascadia Code ligatures in programming modes
+  (ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                       ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                       "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                       "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                       "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                       "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                       "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                       "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                       ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                       "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                       "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                       "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                       "\\\\" "://"))
+  ;; Enables ligature checks globally in all buffers. You can also do it
+  ;; per mode with `ligature-mode'.
+  (global-ligature-mode t))
 
 (use-package lsp-mode
   :ensure t
@@ -300,9 +340,9 @@
   :defer t
   :bind ("C-x w" . olivetti-mode)
   :config
-  (setq olivetti-body-width 120)
-  (setq olivetti-margin-width 5)
-  (setq olivetti-style 'fancy)
+  (setq olivetti-body-width 100)
+  (setq olivetti-margin-width 20)
+  (setq olivetti-style 't)
   :hook (org-mode . olivetti-mode))
 
 
@@ -649,33 +689,33 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :config
   (setq org-super-agenda-header-map (make-sparse-keymap))
   (setq org-super-agenda-groups
-        '((:time-grid t)
+        `(
+          (:name "Meetings" :tag "meeting" :tag "clubs" :tag "club" :order 2)
           (:name "OVERDUE" :discard
                  (:todo "SOMEDAY")
                  :deadline past :order 1)
+          (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
+          (:name "Homework"
+                 :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
+                 :order 5 )
           (:name "Today's Schedule" :time-grid t :order 2)
-          (:name "Meetings" :tag "meeting" :order 2)
           (:name "Tests and Quizzes" :tag
                  ("test" "quiz" "assessment" "conference")
                  :order 3)
-          (:name "Ongoing Futuredue Homework" 
-                 :and
-                 (:tag "school" :tag "homework" :deadline future :scheduled today :not (:tag "project"))
-                 :and
-                 (:tag "school" :tag "homework" :deadline future :scheduled past :not (:tag "project"))
-                 :order 4)
-          (:name "Tonight's Homework"
-                 :and
-                 (:tag "school" :tag "homework" :deadline today)
-                 :and
-                 (:tag "school" :tag "project" :deadline today)
-                 :and
-                 (:tag "school" :tag "homework" :scheduled (today past) :not (:tag "project"))
-                 :order 5)
-          (:name "Upcoming Homework" 
-                 :and (:not (:tag "project") :tag "school" :tag "homework" :deadline future)
+          (:name "Upcoming Schoolwork/Homework" 
+                 :and (:tag ("school" "homework") :deadline future)
                  :order 6)
-          (:name "Emails" :tag "email" :order 7)
+          (:name "Personal Habits"
+                 :and (:tag "personal" :habit t)
+                 :order 8)
+          (:name "Personal TODO list"
+                 :tag ("personal")
+                 :order 7)
+          (:name "Emails" :tag "email" :order 8)
+          (:name "Scheduled work"
+                 :scheduled t 
+                 :order 10)
+          (:time-grid t)
           (:discard (:tag "drill"))))
   :hook
   (org-agenda-before-finalize . org-super-agenda-mode))
