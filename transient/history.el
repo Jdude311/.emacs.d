@@ -1,7 +1,8 @@
 ((magit-branch nil)
- (magit-commit nil
-               ("--all"))
- (magit-diff nil)
- (magit-merge nil)
- (magit-pull nil)
- (magit-push nil))
+ (magit-commit
+  ("--all"))
+ (magit-merge
+  ("--ff-only"))
+ (magit-push nil)
+ (magit-stash
+  ("--include-untracked")))

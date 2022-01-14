@@ -307,20 +307,6 @@ shit test blah blah blah
     ;; Enable traditional ligature support in eww-mode, if the
     ;; `variable-pitch' face supports it
     (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
-    ;; Because org-mode has some code in it, use ligatures there too
-    (ligature-set-ligatures 'org-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
-                                         ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
-                                         "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
-                                         "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
-                                         "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
-                                         "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
-                                         "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
-                                         "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
-                                         ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
-                                         "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
-                                         "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
-                                         "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
-                                         "\\\\" "://"))
     ;; Enable all Cascadia Code ligatures in programming modes
     (ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
                                          ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
@@ -624,14 +610,6 @@ shit test blah blah blah
     (setq
      org-enforce-todo-dependencies t
      org-export-with-broken-links 'mark
-     org-file-apps
-     '((auto-mode . "setsid -w xdg-open %s")
-       (default . "sleep 1")
-       ("\\.mm\\'" . default)
-       ("\\.x?html?\\'" . "chromium %s")
-       ("\\.pdf\\'" . "chromium %s")
-       ("\\.docx\\'" . "lowriter %s")
-       ("\\.odt\\'" . system))
      org-fontify-emphasized-text t
      org-fontify-quote-and-verse-blocks t
      org-format-latex-options 
@@ -662,43 +640,7 @@ shit test blah blah blah
 
 #+RESULTS:
 
-** Olivetti Mode
-#+begin_src elisp
-  (use-package olivetti
-    :ensure t
-    :defer t
-    :bind ("C-x w" . olivetti-mode)
-    :config
-    (setq olivetti-body-width 100)
-    (setq olivetti-margin-width 20)
-    (setq olivetti-style 't)
-    :hook (org-mode . olivetti-mode))
-#+end_src
-
-#+RESULTS:
-: olivetti-mode
-** Write-Room Mode                                                :disabled:
-#+begin_src elisp :tangle no 
-  (use-package writeroom-mode
-    :ensure t
-    :defer t
-    :bind ("C-x w" . writeroom-mode)
-                                          ;:hook (org-mode . writeroom-mode)
-    :config
-    (setq writeroom-width 120
-          writeroom-mode-line t 
-          writeroom-global-effects '(writeroom-set-alpha writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width)
-                                          ;writeroom-global-effects '(writeroom-set-bottom-divider-width
-                                          ;writeroom-set-internal-border-width)
-          )
-    :hook (org-mode . writeroom-mode))
-
-#+end_src
-
-#+RESULTS:
-: writeroom-mode
-
-** Org-mode
+** Configuration
 :PROPERTIES:
 :ID:       feba8f0d-3670-4310-ae78-7f53a9e950c5
 :END:
@@ -706,136 +648,24 @@ shit test blah blah blah
 - State "DONE"       from "TODO"       [2021-10-14 Thu 18:23]
 :END:
 #+begin_src emacs-lisp
-  (use-package org
-    :config
-    (setq org-columns-default-format "%50ITEM %TODO %3PRIORITY %6Effort{:} %6CLOCKSUM(Clock) %TAGS ")
-    :bind (("C-c w" . powerthesaurus-lookup-word-at-point)))
+  (use-package org :ensure t)
 #+end_src
 
 #+RESULTS:
-: powerthesaurus-lookup-word-at-point
 
-*** Org version 9.5 fontification fix--run as a hook for now
+*** Default Applications
 #+begin_src elisp
+  (setq org-file-apps
+        '((auto-mode . "setsid -w xdg-open %s")
+          (default . "sleep 1")
+          ("\\.mm\\'" . default)
+          ("\\.x?html?\\'" . "chromium %s")
+          ("\\.pdf\\'" . "chromium %s")
+          ("\\.docx\\'" . "lowriter %s")
+          ("\\.odt\\'" . system)))
 #+end_src
 
-#+RESULTS:
-
-** Org-Roam-ui
-#+begin_src elisp
-    ;(use-package websocket :ensure t)
-    ;(use-package simple-httpd :ensure t)
-    (use-package org-roam-ui :ensure t :config (setq org-roam-ui-mode nil))
-  ; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-  ; (load-library "org-roam-ui/org-roam-ui.el")
-#+end_src
-
-#+RESULTS:
-: t
-
-** ORG-ROAM
-#+begin_src elisp
-    (use-package org-roam
-      :ensure t
-      :hook ((after-init . org-roam-setup)
-             (org-roam-backlinks-mode . visual-line-mode))
-      :config
-      '(org-roam-dailies-capture-templates
-        '(("d" "default" entry "* %?\
-      " :target
-      (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
-            ")
-      :empty-lines-after 1
-      :empty-lines-before 1)))
-
-      (setq org-roam-capture-templates
-            '(("d" "default" plain "%?" :target
-               (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
-#+filetags: 
-#+title: ${title}
-- Links :: 
-
-
-    ")
-               :unnarrowed t)))
-      (setq org-roam-v2-ack t)
-      (org-roam-setup)
-      (setq org-roam-directory "~/notes")
-      (setq org-roam-dailies-directory "journals/")
-      (setq org-roam-db-node-include-function
-        (lambda ()
-          (not (member "roam_exclude" (org-get-tags)))))
-      (setq org-roam-mode-section-functions
-            (list #'org-roam-backlinks-section
-                  #'org-roam-reflinks-section
-                  ;; #'org-roam-unlinked-references-section
-                  ))
-      :bind (("C-c n f" . org-roam-node-find)
-             ("C-c n c" . org-roam-capture)
-             ("C-c n g" . org-roam-ui-mode)
-             ("C-c n r" . org-roam-node-random)		    
-             ("C-c n d" . org-roam-dailies-capture-today)
-             (:map org-mode-map
-                   (("C-c n i" . org-roam-node-insert)
-                    ("C-c C-w" . org-roam-refile)
-                    ("C-c n o" . org-id-get-create)
-                    ("C-c n t" . org-roam-tag-add)
-                    ("C-c n a" . org-roam-alias-add)
-                    ("C-c n l" . org-roam-buffer-toggle)))))
-    (org-roam-db-autosync-mode)
-#+end_src
-
-#+RESULTS:
-: t
-
-** Org-auto-list
-#+begin_src elisp
-  (use-package org-autolist
-    :ensure t
-    :demand t
-    :config
-    (add-hook 'org-mode-hook 'org-autolist-mode))
-#+end_src
-
-#+RESULTS:
-: t
-
-** Org-drill
-#+begin_src elisp
-  (use-package org-drill
-    :ensure t
-    :config
-    (setq 
-     org-drill-cram-hours 0
-     org-drill-hide-item-headings-p t
-     org-drill-scope 'tree))
-#+end_src
-
-** Org-todo keywords and stuff
-:PROPERTIES:
-:ID:       c8bb328a-7b93-45e9-a44e-5b67e91ad3c7
-:END:
-#+begin_src elisp
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
-#+end_src
-
-#+RESULTS:
-| sequence | TODO(t) | NEXT(n) | PROG(r) | EXTD(e!) | POST(p@!/@!) |   |   | CNCL(c@!/@!) | DONE(d!) | FAIL(f!) |
-
-- TODO :: Not done yet
-- NEXT :: Next up
-- PROG :: Progress made--Started, but not finished
-- EXTD :: Extended deadline. Already asked for extra time
-- POST :: Postponed deadline.
-- CNCL :: Cancelled--don't have to worry about it anymore
-- DONE :: Successfully finished
-- FAIL :: Task failed successfully.
-
-#+RESULTS:
-| sequence | TODO(t) | NEXT(n) | STARTED(s) | ET(e!) | POSTPONED(p@!/@!) | SOMEDAY |   |   | CANCELLED(c@!/@!) | DONE(d!) |
-
-** Org-capture
+*** Capture
 :PROPERTIES:
 :ID:       2698de88-4357-4b92-b7b7-e252794cae20
 :END:
@@ -893,7 +723,99 @@ shit test blah blah blah
 #+RESULTS:
 | p | Personal TODO | entry | (file+headline ~/Documents/personal.org Personal TODO list) | * TODO %^{Headline} :personal:%^{Tags}: |
 
-** Flyspell
+*** Notifications and reminders
+:PROPERTIES:
+:ID:       06a9d01f-8b3f-4ee4-902d-cd340f6d1c8e
+:END:
+#+begin_src elisp
+  (require 'calendar)
+  (setq appt-display-interval 3
+        appt-message-warning-time 15
+        org-show-notification-handler "notify-send")
+
+  (require 'notifications)
+
+  (defcustom appt-notification-bus :session
+    "D-bus bus to use for notification."
+    :group 'appt-notification
+    :type '(choice (const :tag "Session bus" :session) string))
+  (defun appt-display (min-to-appt new-time msg)
+    "Send notification."
+    (notifications-notify :bus appt-notification-bus
+                          :title (format "Appointment in %s minutes" min-to-appt)
+                          :body (format "%s" msg)
+                          :replaces-id nil
+                          :app-icon nil
+                          :timeout 5000
+                          :desktop-entry "emacs"))
+  (setq appt-disp-window-function 'appt-display)
+  (add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
+  (appt-activate)
+#+end_src
+
+#+RESULTS:
+: Appointment reminders enabled
+
+*** Columns
+#+begin_src elisp
+  (setq org-columns-default-format "%50ITEM %TODO %3PRIORITY %6Effort{:} %6CLOCKSUM(Clock) %TAGS ")
+#+end_src
+
+** Use-augmenting
+
+*** Misc QOL
+
+**** Org-auto-list
+#+begin_src elisp
+  (use-package org-autolist
+    :ensure t
+    :demand t
+    :config
+    (add-hook 'org-mode-hook 'org-autolist-mode))
+#+end_src
+
+#+RESULTS:
+: t
+
+*** Writing
+
+**** Olivetti
+#+begin_src elisp
+  (use-package olivetti
+    :ensure t
+    :defer t
+    :bind ("C-x w" . olivetti-mode)
+    :config
+    (setq olivetti-body-width 100)
+    (setq olivetti-margin-width 20)
+    (setq olivetti-style 't)
+    :hook (org-mode . olivetti-mode))
+#+end_src
+
+#+RESULTS:
+: olivetti-mode
+**** Write-Room Mode                                            :disabled:
+#+begin_src elisp :tangle no 
+  (use-package writeroom-mode
+    :ensure t
+    :defer t
+    :bind ("C-x w" . writeroom-mode)
+                                          ;:hook (org-mode . writeroom-mode)
+    :config
+    (setq writeroom-width 120
+          writeroom-mode-line t 
+          writeroom-global-effects '(writeroom-set-alpha writeroom-set-menu-bar-lines writeroom-set-tool-bar-lines writeroom-set-vertical-scroll-bars writeroom-set-bottom-divider-width)
+                                          ;writeroom-global-effects '(writeroom-set-bottom-divider-width
+                                          ;writeroom-set-internal-border-width)
+          )
+    :hook (org-mode . writeroom-mode))
+
+#+end_src
+
+#+RESULTS:
+: writeroom-mode
+
+**** Flyspell
 :PROPERTIES:
 :ID:       9eed08c8-9578-43d9-a5a8-1ba8d534a047
 :END:
@@ -901,16 +823,274 @@ shit test blah blah blah
   (add-hook 'org-mode-hook 'flyspell-mode)
 #+end_src
 
-** Thesaurus
+**** Thesaurus
 :PROPERTIES:
 :ID:       191ec399-20aa-474d-9887-899b0d29cc12
 :END:
 #+begin_src elisp
-  (use-package powerthesaurus)
-  ;; Keybinds for powerthesaurus are in the (use-package org) block (under the first org-mode settings header, org-mode)
+  (use-package powerthesaurus
+    :bind (("C-c w" . powerthesaurus-lookup-word-at-point)))
+#+end_src
+
+*** Notetaking
+**** Roam
+
+***** Org-Roam-ui
+#+begin_src elisp
+                                          ;(use-package websocket :ensure t)
+                                          ;(use-package simple-httpd :ensure t)
+  (use-package org-roam-ui :ensure t :config (setq org-roam-ui-mode nil))
+                                          ; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
+                                          ; (load-library "org-roam-ui/org-roam-ui.el")
 #+end_src
 
 #+RESULTS:
+: t
+
+***** ORG-ROAM
+#+begin_src elisp
+  (use-package org-roam
+    :ensure t
+    :hook ((after-init . org-roam-setup)
+           (org-roam-backlinks-mode . visual-line-mode))
+    :config
+    '(org-roam-dailies-capture-templates
+      '(("d" "default" entry "* %?\
+        " :target
+        (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
+              ")
+        :empty-lines-after 1
+        :empty-lines-before 1)))
+
+    (setq org-roam-capture-templates
+          '(("d" "default" plain "%?" :target
+             (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
+  ,#+filetags: 
+  ,#+title: ${title}
+  - Links :: 
+
+
+      ")
+             :unnarrowed t)))
+    (setq org-roam-v2-ack t)
+    (org-roam-setup)
+    (setq org-roam-directory "~/notes")
+    (setq org-roam-dailies-directory "journals/")
+    (setq org-roam-db-node-include-function
+          (lambda ()
+            (not (member "roam_exclude" (org-get-tags)))))
+    (setq org-roam-mode-section-functions
+          (list #'org-roam-backlinks-section
+                #'org-roam-reflinks-section
+                ;; #'org-roam-unlinked-references-section
+                ))
+    :bind (("C-c n f" . org-roam-node-find)
+           ("C-c n c" . org-roam-capture)
+           ("C-c n g" . org-roam-ui-mode)
+           ("C-c n r" . org-roam-node-random)		    
+           ("C-c n d" . org-roam-dailies-capture-today)
+           (:map org-mode-map
+                 (("C-c n i" . org-roam-node-insert)
+                  ("C-c C-w" . org-roam-refile)
+                  ("C-c n o" . org-id-get-create)
+                  ("C-c n t" . org-roam-tag-add)
+                  ("C-c n a" . org-roam-alias-add)
+                  ("C-c n l" . org-roam-buffer-toggle)))))
+  (org-roam-db-autosync-mode)
+#+end_src
+
+#+RESULTS:
+: t
+
+**** Org-noter stuff
+:PROPERTIES:
+:ID:       cabacb17-121f-436c-a539-2cca134e03cc
+:END:
+
+***** Pdf-tools
+:PROPERTIES:
+:ID:       101b700e-cb09-42ec-a8d3-c7978370c2f2
+:END:
+#+begin_src emacs-lisp
+  (use-package pdf-tools
+    :ensure t
+    :pin manual
+    :config
+    ;;initialize
+    ;; use normal isearch
+    (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
+    (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
+    (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
+    (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+  (pdf-tools-install)
+#+end_src
+
+#+RESULTS:
+: t
+
+***** Org-noter
+:PROPERTIES:
+:ID:       0b7394c6-cba5-4258-a064-e3648ecade1e
+:END:
+#+begin_src emacs-lisp
+  (use-package org-noter-pdftools :ensure t)
+  (use-package org-noter
+    :ensure t
+    :config
+    (require 'org-noter-pdftools))
+#+end_src
+
+#+RESULTS:
+: t
+
+***** A bunch of requires that IDK why they make it work
+:PROPERTIES:
+:ID:       33196297-4c02-4b29-b0a7-cb9677a64f98
+:END:
+#+begin_src elisp
+  (require 'org-noter-pdftools)
+  (require 'org-pdftools)
+  (require 'pdf-history)
+  (require 'pdf-links)
+  (require 'pdf-sync)
+  (require 'pdf-outline)
+#+end_src
+
+**** Org-ref
+:PROPERTIES:
+:ID:       402f2292-d0d8-4a56-9608-d9bd69798465
+:END:
+#+begin_src elisp
+  (use-package org-ref
+    :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+    :init
+    (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
+    :bind ("C-c r i" . org-ref-insert-link))
+#+end_src
+
+#+RESULTS:
+: org-ref-insert-link
+
+**** Org-notebook                                               :disabled:
+:PROPERTIES:
+:ID:       12b58aff-1c85-467f-990e-3646fa3a8a0c
+:END:
+#+begin_src elisp :results quiet :tangle no
+  (use-package org-notebook
+    :config
+    (setq org-notebook-drawing-program "kolourpaint"))
+#+end_src
+
+#+RESULTS:
+: t
+
+** Org-todo keywords and stuff
+:PROPERTIES:
+:ID:       c8bb328a-7b93-45e9-a44e-5b67e91ad3c7
+:END:
+#+begin_src elisp
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
+#+end_src
+
+#+RESULTS:
+| sequence | TODO(t) | NEXT(n) | PROG(r) | EXTD(e!) | POST(p@!/@!) |   |   | CNCL(c@!/@!) | DONE(d!) | FAIL(f!) |
+
+- TODO :: Not done yet
+- NEXT :: Next up
+- PROG :: Progress made--Started, but not finished
+- EXTD :: Extended deadline. Already asked for extra time
+- POST :: Postponed deadline.
+- CNCL :: Cancelled--don't have to worry about it anymore
+- DONE :: Successfully finished
+- FAIL :: Task failed successfully.
+
+#+RESULTS:
+| sequence | TODO(t) | NEXT(n) | STARTED(s) | ET(e!) | POSTPONED(p@!/@!) | SOMEDAY |   |   | CANCELLED(c@!/@!) | DONE(d!) |
+
+** Misc Utilities/Plugins
+
+*** Org-drill
+#+begin_src elisp
+  (use-package org-drill
+    :ensure t
+    :config
+    (setq 
+     org-drill-cram-hours 0
+     org-drill-hide-item-headings-p t
+     org-drill-scope 'tree))
+#+end_src
+
+*** Ox-pandoc
+:PROPERTIES:
+:ID:       e88ba805-fd6d-4ebe-b9cb-5e9a7b406487
+:END:
+#+begin_src elisp
+  (use-package ox-pandoc)
+#+end_src
+
+*** Org-download
+:PROPERTIES:
+:ID:       c53fe1c3-fa53-4266-b8c3-82cb32978475
+:END:
+Provides image download functionality and stuff.
+#+begin_src elisp
+  (use-package org-download)
+#+end_src
+
+#+RESULTS:
+
+*** Super links                                                  :disabled:
+:PROPERTIES:
+:ID:       c60f1f32-e63e-4be9-a386-e784124a5d2f
+:END:
+#+begin_src elisp :tangle no
+  (use-package org-super-links
+    :bind (("C-c s l" . sl-link))
+    :config
+    (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
+#+end_src
+
+*** Helm-bibtex
+#+begin_src elisp
+  (use-package helm-bibtex)
+#+end_src
+
+#+RESULTS:
+
+*** Calfw
+:PROPERTIES:
+:ID:       f857e22e-4113-4b27-a539-0a2217ac7b67
+:END:
+#+begin_src elisp
+  (use-package calfw)
+  (use-package calfw-org)
+#+end_src
+
+*** Org-gcal                                                         :test:
+:PROPERTIES:
+:org-gcal-managed: org
+:END:
+#+begin_src elisp
+  (use-package org-gcal
+    :config
+    (load "~/.emacs.d/org-gcal-secret-stuff.el")) 
+#+end_src
+
+#+RESULTS:
+: t
+
+*** Org-roam-bibtex                                                  :test:
+#+begin_src elisp :tangle no
+  (use-package org-roam-bibtex
+    :after org-roam
+    :hook (org-roam-mode . org-roam-bibtex-mode)
+    :config (require 'org-ref)
+    (org-roam-bibtex-mode t))
+#+end_src
+
+#+RESULTS:
+| org-roam-bibtex-mode |
 
 ** Org-agenda
 :PROPERTIES:
@@ -1064,7 +1244,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 #+RESULTS:
 | org-super-agenda-mode |
 
-** Org-ql
+*** Org-ql
 #+begin_src elisp
   (use-package org-ql
     :ensure t)
@@ -1072,61 +1252,9 @@ The agenda files are maintained by customize-variable, and are not defined or ma
 
 #+RESULTS:
 
-** Org-noter stuff
-:PROPERTIES:
-:ID:       cabacb17-121f-436c-a539-2cca134e03cc
-:END:
+** Ricing
 
-*** Pdf-tools
-:PROPERTIES:
-:ID:       101b700e-cb09-42ec-a8d3-c7978370c2f2
-:END:
-#+begin_src emacs-lisp
-  (use-package pdf-tools
-    :ensure t
-    :pin manual
-    :config
-    ;;initialize
-    ;; use normal isearch
-    (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
-    (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
-    (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
-    (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
-  (pdf-tools-install)
-#+end_src
-
-#+RESULTS:
-: t
-
-*** Org-noter
-:PROPERTIES:
-:ID:       0b7394c6-cba5-4258-a064-e3648ecade1e
-:END:
-#+begin_src emacs-lisp
-  (use-package org-noter-pdftools :ensure t)
-  (use-package org-noter
-    :ensure t
-    :config
-    (require 'org-noter-pdftools))
-#+end_src
-
-#+RESULTS:
-: t
-
-*** A bunch of requires that IDK why they make it work
-:PROPERTIES:
-:ID:       33196297-4c02-4b29-b0a7-cb9677a64f98
-:END:
-#+begin_src elisp
-  (require 'org-noter-pdftools)
-  (require 'org-pdftools)
-  (require 'pdf-history)
-  (require 'pdf-links)
-  (require 'pdf-sync)
-  (require 'pdf-outline)
-#+end_src
-
-** Org-indent-mode
+*** Org-indent-mode
 :PROPERTIES:
 :ID:       11ebf78e-cd30-4fcb-ba47-bf90d6c96cf2
 :END:
@@ -1134,108 +1262,57 @@ The agenda files are maintained by customize-variable, and are not defined or ma
   (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
 
-** Org-variable-pitch
+#+RESULTS:
+| org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
+
+*** Org-variable-pitch
 :PROPERTIES:
 :ID:       caae4a05-17aa-4265-98e4-a5340b9a1f20
 :END:
 #+begin_src elisp
-
   (use-package org-variable-pitch
     :config
-    (setq org-variable-pitch-fixed-faces '(org-block
-                                           org-block-begin-line
-                                           org-block-end-line
-                                           org-code
-                                           org-document-info-keyword
-                                           org-done
-                                           org-formula
-                                           org-indent
-                                           org-meta-line
-                                           org-special-keyword
-                                           org-table
-                                           org-todo
-                                           org-verbatim
-                                           org-date
-                                           org-drawer
-                                          ;org-link
-                                          ;link
-                                           org-property-value
-                                           org-priority
-                                           ;; org-level-1
-                                           ;; org-level-2
-                                           ;; org-level-3
-                                           ;; org-level-4
-                                           ;; org-level-5
-                                           ;; org-level-6
-                                           ;; org-level-7
-                                           ;; org-level-8
-                                           org-hide
-                                           org-superstar-leading
-                                           org-ellipsis
-                                           org-tag
-                                           ;; org-superstar-bullet
-                                           org-target))
+    (setq org-variable-pitch-fixed-faces
+          '(org-block
+            org-block-begin-line
+            org-block-end-line
+            org-code
+            org-document-info-keyword
+            org-done
+            org-formula
+            org-indent
+            org-meta-line
+            org-special-keyword
+            org-table
+            org-todo
+            org-verbatim
+            org-date
+            org-drawer
+            ;org-link
+            ;link
+            org-property-value
+            org-priority
+            ;; org-level-1
+            ;; org-level-2
+            ;; org-level-3
+            ;; org-level-4
+            ;; org-level-5
+            ;; org-level-6
+            ;; org-level-7
+            ;; org-level-8
+            org-hide
+            org-superstar-leading
+            org-ellipsis
+            org-tag
+            ;; org-superstar-bullet
+            org-target))
     :hook ((org-mode) . org-variable-pitch-minor-mode))
 #+end_src
 
 #+RESULTS:
-| org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
+| org-superstar-mode | org-variable-pitch-minor-mode | org-indent-mode | flyspell-mode | org-autolist-mode | org-ref-org-menu | olivetti-mode | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | evil-org-mode | visual-line-mode | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes |
 
-** Notifications and reminders
-:PROPERTIES:
-:ID:       06a9d01f-8b3f-4ee4-902d-cd340f6d1c8e
-:END:
-#+begin_src elisp
-  (require 'calendar)
-  (setq appt-display-interval 3
-        appt-message-warning-time 15
-        org-show-notification-handler "notify-send")
-
-  (require 'notifications)
-
-  (defcustom appt-notification-bus :session
-    "D-bus bus to use for notification."
-    :group 'appt-notification
-    :type '(choice (const :tag "Session bus" :session) string))
-  (defun appt-display (min-to-appt new-time msg)
-    "Send notification."
-    (notifications-notify :bus appt-notification-bus
-                          :title (format "Appointment in %s minutes" min-to-appt)
-                          :body (format "%s" msg)
-                          :replaces-id nil
-                          :app-icon nil
-                          :timeout 5000
-                          :desktop-entry "emacs"))
-  (setq appt-disp-window-function 'appt-display)
-  (add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
-  (appt-activate)
-#+end_src
-
-#+RESULTS:
-: Appointment reminders enabled
-
-** Ox-pandoc
-:PROPERTIES:
-:ID:       e88ba805-fd6d-4ebe-b9cb-5e9a7b406487
-:END:
-#+begin_src elisp
-  (use-package ox-pandoc)
-#+end_src
-
-** Org-notebook
-:PROPERTIES:
-:ID:       12b58aff-1c85-467f-990e-3646fa3a8a0c
-:END:
-#+begin_src elisp :results quiet
-  (use-package org-notebook
-    :config
-    (setq org-notebook-drawing-program "kolourpaint"))
-#+end_src
-
-#+RESULTS:
-: t
-
-** Org-superstar-mode
+*** Org-superstar-mode
 :PROPERTIES:
 :ID:       bcbf7dc5-5ba2-4543-a380-b6928f4bda82
 :END:
@@ -1248,85 +1325,7 @@ The agenda files are maintained by customize-variable, and are not defined or ma
     (org-mode . org-superstar-mode))
 #+end_src
 
-** Super links                                                     :disabled:
-:PROPERTIES:
-:ID:       c60f1f32-e63e-4be9-a386-e784124a5d2f
-:END:
-#+begin_src elisp :tangle no
-  (use-package org-super-links
-    :bind (("C-c s l" . sl-link))
-    :config
-    (setq org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id))
-#+end_src
-
-** Org-download
-:PROPERTIES:
-:ID:       c53fe1c3-fa53-4266-b8c3-82cb32978475
-:END:
-Provides image download functionality and stuff.
-#+begin_src elisp
-  (use-package org-download)
-#+end_src
-
-#+RESULTS:
-
-** Calfw
-:PROPERTIES:
-:ID:       f857e22e-4113-4b27-a539-0a2217ac7b67
-:END:
-#+begin_src elisp
-  (use-package calfw)
-  (use-package calfw-org)
-#+end_src
-
-** Helm-bibtex
-#+begin_src elisp
-  (use-package helm-bibtex)
-#+end_src
-
-#+RESULTS:
-
-** Org-ref
-:PROPERTIES:
-:ID:       402f2292-d0d8-4a56-9608-d9bd69798465
-:END:
-#+begin_src elisp
-  (use-package org-ref
-    :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-    :init
-    (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
-    :bind ("C-c r i" . org-ref-insert-link))
-#+end_src
-
-#+RESULTS:
-: org-ref-insert-link
-
-** Org-roam-bibtex                                                    :test:
-#+begin_src elisp :tangle no
-  (use-package org-roam-bibtex
-    :after org-roam
-    :hook (org-roam-mode . org-roam-bibtex-mode)
-    :config (require 'org-ref)
-    (org-roam-bibtex-mode t))
-#+end_src
-
-#+RESULTS:
-| org-roam-bibtex-mode |
-
-** Org-gcal                                                           :test:
-:PROPERTIES:
-:org-gcal-managed: org
-:END:
-#+begin_src elisp
-  (use-package org-gcal
-    :config
-    (load "~/.emacs.d/org-gcal-secret-stuff.el")) 
-#+end_src
-
-#+RESULTS:
-: t
-
-** Org ellipsis
+*** Org ellipsis
 #+begin_src elisp
   (setq org-ellipsis " ▾")
   (set-face-attribute 'org-ellipsis nil :foreground nil)

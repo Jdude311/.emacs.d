@@ -16,7 +16,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#282c34" :foreground "#bbc2cf" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 126 :width normal :foundry "mlss" :family "Cascadia Code"))))
+ '(default ((t (:background nil))))
  '(dashboard-items-face ((t (:inherit widget-button :height 1.0))))
  '(fixed-pitch ((t (:inherit default))))
  '(fixed-pitch-serif ((t (:family "Iosevka"))))
@@ -184,6 +184,7 @@
  '(powerline-display-buffer-size nil)
  '(python-indent-guess-indent-offset nil)
  '(python-indent-offset 4)
+ '(ring-bell-function 'ignore)
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
  '(safe-local-variable-values

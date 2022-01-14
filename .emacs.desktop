@@ -2,1098 +2,1110 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Dec 19 18:45:24 2021
+;; Created Fri Jan 14 10:59:07 2022
 ;; Desktop file format version 208
 ;; Emacs version 27.2
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (25023 50196 605109 314000) (desktop . "208") "jadench@trapdoor" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-CTDB-Fira Code-normal-normal-normal-*-16-*-*-*-*-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 64) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . icon) (skip-taskbar) (z-group) (environment "_=/usr/bin/rofi" "CADENCE_AUTO_STARTED=true" "LADSPA_PATH=/home/jadench/.ladspa:/usr/lib/ladspa:/usr/local/lib/ladspa" "LC_NUMERIC=en_US.UTF-8" "MAIL=/var/spool/mail/jadench" "LV2_PATH=/home/jadench/.lv2:/usr/lib/lv2:/usr/local/lib/lv2" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "GDMSESSION=i3" "PATH=/home/jadench/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin" "XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GTK3_MODULES=xapp-gtk3-module" "QT_AUTO_SCREEN_SCALE_FACTOR=1" "LC_TIME=en_US.UTF-8" "XDG_RUNTIME_DIR=/run/user/1000" "MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins" "XDG_SESSION_ID=7" "XDG_VTNR=7" "LC_MEASUREMENT=en_US.UTF-8" "LC_TELEPHONE=en_US.UTF-8" "SHLVL=0" "DISPLAY=:0" "USER=jadench" "LC_IDENTIFICATION=en_US.UTF-8" "XDG_SESSION_CLASS=user" "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0" "XDG_CURRENT_DESKTOP=i3" "VST_PATH=/home/jadench/.vst:/usr/lib/vst:/usr/local/lib/vst" "LANG=en_US.UTF-8" "LC_PAPER=en_US.UTF-8" "HOME=/home/jadench" "MOTD_SHOWN=pam" "QT_STYLE_OVERRIDE=kvantum" "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/jadench" "XAUTHORITY=/home/jadench/.Xauthority" "DSSI_PATH=/home/jadench/.dssi:/usr/lib/dssi:/usr/local/lib/dssi" "XDG_SESSION_TYPE=x11" "QT_QPA_PLATFORMTHEME=qt5ct" "XDG_SESSION_DESKTOP=i3" "LOGNAME=jadench" "PWD=/home/jadench" "XDG_SEAT=seat0" "GTK_MODULES=canberra-gtk-module" "LC_MONETARY=en_US.UTF-8" "DESKTOP_SESSION=i3" "LC_NAME=en_US.UTF-8" "LC_ADDRESS=en_US.UTF-8" "I3SOCK=/run/user/1000/i3/ipc-socket.2019" "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0" "SHELL=/bin/zsh") (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (sticky) (last-focus-update) (frameset--id . "AC3E-142B-F061-3F0E") (frameset--mini t . t) (width . 121) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 80) (min-pixel-width . 100) (min-pixel-height-ignore . 80) (min-pixel-width-ignore . 80) (min-pixel-height-safe . 20) (min-pixel-width-safe . 20)) leaf (pixel-width . 1270) (pixel-height . 1271) (total-width . 127) (total-height . 63) (normal-height . 1.0) (normal-width . 1.0) (buffer "*Org Agenda*" (selected . t) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 301) (start . 1)) (prev-buffers ("todo-two.org" 387 690) ("*Org Agenda*" 1 1) ("*Calendar*" 1 416) ("*dashboard*" 1 1))) (((minibuffer . t) (display-type . mono) (background-mode . dark) (cursor-color . "white") (background-color . "#282c34") (foreground-color . "#bbc2cf") (right-fringe . 30) (left-fringe . 30) (menu-bar-lines . 0) (tool-bar-lines . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (font . "tty") (height . 11) (width . 10) (modeline . t) (unsplittable) (tab-bar-lines . 0) (frameset--id . "2BF7-EA4B-AF44-A754") (frameset--mini t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 3) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 10) (pixel-height . 10) (total-width . 10) (total-height . 10) (normal-height . 1.0) (normal-width . 1.0) (buffer "*dashboard*" (selected) (hscroll . 0) (fringes 0 0 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("20211130190621-the_man_who_loved_flowers.org" 1 274))))])
+(setq desktop-saved-frameset [frameset 1 (25057 40395 939123 592000) (desktop . "208") "jadench@trapdoor" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-SAJA-Cascadia Code-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 11) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility) (skip-taskbar) (z-group) (display-type . mono) (background-mode . dark) (cursor-color . "white") (modeline . t) (unsplittable) (frameset--id . "2BF7-EA4B-AF44-A754") (frameset--mini t) (display . ":0") (width . 10) (left . 0) (top . 0) (icon-name) (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 9) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 76) (min-pixel-width . 90) (min-pixel-height-ignore . 57) (min-pixel-width-ignore . 81) (min-pixel-height-safe . 19) (min-pixel-width-safe . 18)) leaf (pixel-width . 150) (pixel-height . 190) (total-width . 17) (total-height . 10) (normal-height . 1.0) (normal-width . 1.0) (buffer "*dashboard*" (selected) (hscroll . 0) (fringes 30 30 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (prev-buffers ("20211130190621-the_man_who_loved_flowers.org" 1 274))) (((minibuffer . t) (undecorated) (override-redirect) (font . "-SAJA-Cascadia Code-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 30) (right-fringe . 30) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tab-bar-lines . 0) (height . 71) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (sticky) (environment "_=/usr/bin/rofi" "CADENCE_AUTO_STARTED=true" "LADSPA_PATH=/home/jadench/.ladspa:/usr/lib/ladspa:/usr/local/lib/ladspa" "LC_NUMERIC=en_US.UTF-8" "MAIL=/var/spool/mail/jadench" "LV2_PATH=/home/jadench/.lv2:/usr/lib/lv2:/usr/local/lib/lv2" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus" "GDMSESSION=i3" "PATH=/home/jadench/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin" "XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop" "GTK3_MODULES=xapp-gtk3-module" "QT_AUTO_SCREEN_SCALE_FACTOR=1" "LC_TIME=en_US.UTF-8" "XDG_RUNTIME_DIR=/run/user/1000" "MOZ_PLUGIN_PATH=/usr/lib/mozilla/plugins" "XDG_SESSION_ID=7" "XDG_VTNR=7" "LC_MEASUREMENT=en_US.UTF-8" "LC_TELEPHONE=en_US.UTF-8" "SHLVL=0" "DISPLAY=:0" "USER=jadench" "LC_IDENTIFICATION=en_US.UTF-8" "XDG_SESSION_CLASS=user" "XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0" "XDG_CURRENT_DESKTOP=i3" "VST_PATH=/home/jadench/.vst:/usr/lib/vst:/usr/local/lib/vst" "LANG=en_US.UTF-8" "LC_PAPER=en_US.UTF-8" "HOME=/home/jadench" "MOTD_SHOWN=pam" "QT_STYLE_OVERRIDE=kvantum" "XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/jadench" "XAUTHORITY=/home/jadench/.Xauthority" "DSSI_PATH=/home/jadench/.dssi:/usr/lib/dssi:/usr/local/lib/dssi" "XDG_SESSION_TYPE=x11" "QT_QPA_PLATFORMTHEME=qt5ct" "XDG_SESSION_DESKTOP=i3" "LOGNAME=jadench" "PWD=/home/jadench" "XDG_SEAT=seat0" "GTK_MODULES=canberra-gtk-module" "LC_MONETARY=en_US.UTF-8" "DESKTOP_SESSION=i3" "LC_NAME=en_US.UTF-8" "LC_ADDRESS=en_US.UTF-8" "I3SOCK=/run/user/1000/i3/ipc-socket.2019" "XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0" "SHELL=/bin/zsh") (last-focus-update) (frameset--id . "AC3E-142B-F061-3F0E") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (tabs (current-tab (name . "settings.org") (explicit-name))) (width . 134) (left . 3840) (top . 36)) ((min-height . 5) (min-width . 34) (min-height-ignore . 5) (min-width-ignore . 34) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 95) (min-pixel-width . 306) (min-pixel-height-ignore . 95) (min-pixel-width-ignore . 306) (min-pixel-height-safe . 19) (min-pixel-width-safe . 18)) leaf (pixel-width . 1270) (pixel-height . 1339) (total-width . 141) (total-height . 70) (normal-height . 1.0) (normal-width . 1.0) (buffer "settings.org" (selected . t) (hscroll . 0) (fringes 140 140 t nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 46638) (start . 16236)) (prev-buffers ("*Customize Option: Visible Bell*" 1 1) ("*Customize Option: Ring Bell Function*" 1 235) ("settings.org" 45839 48675) ("*dashboard*" 1 1) ("the man who loved flowers.pdf" 1 1) ("20211128132549-scratch.org" 1 85) ("20211115180241-meeting_with_dr_van_essen_2021_11_18.org" 1 1) ("2021-11-02.org" 1 1) ("2021-11-10.org" 1 1) ("apcsp.org_archive" 1 1) ("todo-two.org_archive" 1 1) ("somethingasdfasdfasdfasdfasdf.org_archive" 1 1) ("20211015140410-test_file.org_archive" 1 1) ("non_school_academics.org" 1 1) ("apcsp.org" 1 1) ("2021-10-08.org" 1 1) ("2021-10-07.org" 1 1) ("test.org" 1 1) ("somethingasdfasdfasdfasdfasdf.org" 1 1) ("contents.org" 1 1) ("asdfadsfasdf.org" 1 1) ("Science Research.org" 1 1) ("How-To--Research Project Proposals.org" 1 1) ("How To_ Science Research Project Proposals.org" 1 1) ("20211025183045-head_tracking.org" 1 1) ("20211023151759-rational_expression.org" 1 1) ("20211023141802-sketching_rational_expressions.org" 1 1) ("20211023104904-master_s_theorem.org" 1 1) ("20211023101517-solving_recursions.org" 1 1) ("20211023101235-lower_bound_of_sorting.org" 1 1) ("20211023094336-big_o_notation.org" 1 1) ("20211017151707-yes.org" 1 1) ("20211015140410-test_file.org" 1 1) ("20211010155325-hobbies.org" 1 1) ("20211010155257-gaming.org" 1 1) ("20211010145035-mechanical_keyswitches.org" 1 1) ("20211010144952-computer_projects.org" 1 1) ("20211010144923-mechanical_keyboards.org" 1 1) ("20211010144854-keyboard_lubrication.org" 1 1) ("20211009114729-bucket_sort_algorithm.org" 1 1) ("20211009114717-radix_sort_algorithm.org" 1 1) ("20211009114652-counting_sort_algorithm.org" 1 1) ("20211009114620-heap_sort_algorithm.org" 1 1) ("20211009114412-quick_sort_algorithm.org" 1 1) ("20211009114325-merge_sort_algorithm.org" 1 1) ("20211009114137-selection_sort_algorithm.org" 1 1) ("20211009111859-average_case_analysis.org" 1 1) ("20211009111627-worst_case_analysis.org" 1 1) ("20211009111219-in_place_sorting.org" 1 1) ("20211009110344-bubble_sort.org" 1 1) ("20211009102622-topological_sort_problem.org" 1 1) ("20211009102514-dynamic_programming.org" 1 1) ("20211009102410-largest_common_substring.org" 1 1) ("20211009102140-shortest_path_problem.org" 1 1) ("20211009101920-substring_matching_problem.org" 1 1) ("20211009101702-sorting_problem.org" 1 1) ("20211009101319-programming.org" 1 1) ("20211009101307-computers.org" 1 1) ("20211009101111-algorithm.org" 1 1) ("20211009101036-insertion_sort.org" 1 1) ("20211009100017-columbia_shp_introduction_to_algorithms.org" 1 1) ("20211007174547-columbia_science_honors_program.org" 1 1) ("20211005215907-complex_numbers.org" 1 1) ("20211005215139-remainder_theorem.org" 1 1) ("20211005214032-rational_root_theorem.org" 1 1) ("20211005213445-multiplicity_polynomials.org" 1 1) ("20211005213056-polynomial_long_division.org" 1 1) ("20211005213010-synthetic_division.org" 1 1) ("20211005212849-math.org" 1 1) ("20211005212814-sketching_polynomials.org" 1 1) ("20210929180741-something.org" 1 1) ("20210928124526-abigail_finan_psilocybin_presentation_notes.org" 1 1) ("20210921110743-science_research_co2_monitor_project_presentation.org" 1 1) ("20210921110418-how_to_science_research_presentations.org" 1 1) ("2021_09_20.org" 1 1) ("2021-10-17.org" 1 1) ("2021-11-01.org" 1 1) ("20211111211405-meeting_with_dr_van_essen_2021_11_11.org" 1 1) ("diary" 1 1) ("20211121134239-science_research_presentation_2021_11_22.org" 1 3734) ("20211121135742-health_stress_poster.org" 1 258) ("20211107192710-interim_guidance_for_ventilation_filtration_and_air_quality_in_indoor_environments.org" 1 739) ("sources.bib" 1 1204) ("20211107185800-airborne_transmission_of_sars_cov_2.org" 1 520) ("20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org" 1 814) ("20211007181548-computer_science_club.org" 1 247) ("Science Research CO2 Monitor Project Proposal.org" 1 8598) ("Science Research CO2 Monitor Project.org" 1 1867) ("20211130190943-reading.org" 1 85) ("20211130190621-the_man_who_loved_flowers.org" 1 274) ("config<picom>" 1 2933) ("config<i3>" 1 1114) ("todo-two.org" 1 690) ("*scratch*" 1 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '(#("session" 0 7 (isearch-regexp-function nil isearch-case-fold-search t)) #("xfce4" 0 5 (isearch-regexp-function nil isearch-case-fold-search t))))
-(setq regexp-search-ring nil)
-(setq register-alist '((48 . #("    (evil-define-key 'normal 'global (kbd \"<leader> x\") 'my/send-C-x)\n" 0 4 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 4 5 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 5 20 (display nil face (font-lock-keyword-face org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 20 42 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 42 54 (display nil face (font-lock-string-face org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 54 70 (display nil face (org-block) font-lock-multiline t org-category "settings" src-block t help-echo nil font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t))))))
-(setq file-name-history '("~/.config/picom/config" "~/.config/i3/config" "/home/jadench/notes/pages/the man who loved flowers1.pdf" "~/notes/pages/the man who loved flowers.pdf" "~/.emacs.d/settings.org" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.org" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.odt" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/Dropbox/todo-two.org" "~/notes/pages/20211123201039-english.org" "~/.emacs.d/elpa/general-20211008.1651/general-autoloads.el" "~/.emacs.d/elpa/evil-leader-20140606.1243/evil-leader-autoloads.el" "~/.emacs.d/elpa/evil-space-20151208.1228/evil-space-autoloads.el" "~/Dropbox/non_school_academics.org" "~/Dropbox/APCSP/apcsp.org" "~/notes/daily/2021-10-08.org" "~/notes/daily/2021-10-07.org" "~/notes/pages/test.org" "~/notes/pages/somethingasdfasdfasdfasdfasdf.org" "~/notes/pages/contents.org" "~/notes/pages/asdfadsfasdf.org" "~/notes/pages/Science Research.org" "~/notes/pages/Science Research CO2 Monitor Project.org" "~/notes/pages/How-To--Research Project Proposals.org"))
+(setq search-ring '(#("session" 0 7 (isearch-case-fold-search t isearch-regexp-function nil)) #("xfce4" 0 5 (isearch-case-fold-search t isearch-regexp-function nil))))
+(setq regexp-search-ring '(#("ricing" 0 6 (isearch-case-fold-search t)) #("evil-co" 0 7 (isearch-case-fold-search t))))
+(setq register-alist '((48 . #(" " 0 1 (fontified t font-lock-fontified t help-echo nil src-block t font-lock-multiline t face (org-block) display nil)))))
+(setq file-name-history '("~/.emacs.d/settings.org" "~/.config/picom/config" "~/.config/i3/config" "/home/jadench/notes/pages/the man who loved flowers1.pdf" "~/notes/pages/the man who loved flowers.pdf" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.org" "~/notes/pages/20211123201008-english_creative_writing_2021_11_23.odt" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/Dropbox/todo-two.org" "~/notes/pages/20211123201039-english.org" "~/.emacs.d/elpa/general-20211008.1651/general-autoloads.el" "~/.emacs.d/elpa/evil-leader-20140606.1243/evil-leader-autoloads.el" "~/.emacs.d/elpa/evil-space-20151208.1228/evil-space-autoloads.el" "~/Dropbox/non_school_academics.org" "~/Dropbox/APCSP/apcsp.org" "~/notes/daily/2021-10-08.org" "~/notes/daily/2021-10-07.org" "~/notes/pages/test.org" "~/notes/pages/somethingasdfasdfasdfasdfasdf.org" "~/notes/pages/contents.org" "~/notes/pages/asdfadsfasdf.org" "~/notes/pages/Science Research.org" "~/notes/pages/Science Research CO2 Monitor Project.org" "~/notes/pages/How-To--Research Project Proposals.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/jadench/.emacs.d/settings.org"
+  "settings.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  46638
+  '(29860 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25057 40363 373015 463000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (4558 36648 4362 48676 1501 1689 1719 1012 1012 1012 1012 1012 1012 1012))))
+
 (desktop-create-buffer 208
   "/home/jadench/Dropbox/todo-two.org"
   "todo-two.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   690
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25023 40224 509024 135000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25023 41211 154088 474000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/.config/i3/config"
   "config"
   'conf-space-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode evil-collection-unimpaired-mode undo-tree-mode dap-mode)
   1114
   '(14537 nil)
   nil
   nil
-  '((buffer-display-time 25023 36745 127336 566000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25023 37731 808891 600000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1))))
 
 (desktop-create-buffer 208
   "/home/jadench/.config/picom/config"
   "config"
   'conf-unix-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode evil-collection-unimpaired-mode undo-tree-mode dap-mode)
   2933
   '(nil nil)
   nil
   nil
-  '((buffer-display-time 25023 36743 15427 451000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25057 37052 443626 167000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211130190621-the_man_who_loved_flowers.org"
   "20211130190621-the_man_who_loved_flowers.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   274
   '(274 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25023 33739 232404 26000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25023 34726 107798 784000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/jadench/.emacs.d/settings.org"
-  "settings.org"
-  'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
-  1501
-  '(1501 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25019 42227 96672 945000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (1689 1719 1012 1012 1012 1012 1012 1012 1012))))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211130190943-reading.org"
   "20211130190943-reading.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   85
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25022 28450 55981 547000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25057 37053 933711 327000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/Science Research CO2 Monitor Project.org"
   "Science Research CO2 Monitor Project.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1867
   '(748 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25022 28450 634707 80000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25057 37054 130837 135000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (748 960 1397 1148))))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/Science Research CO2 Monitor Project Proposal.org"
   "Science Research CO2 Monitor Project Proposal.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   8598
   '(8598 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 33091 511212 809000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 34080 841807 544000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1642))))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211007181548-computer_science_club.org"
   "20211007181548-computer_science_club.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   247
   '(244 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25022 28453 521293 746000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25057 37055 118214 523000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (156))))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org"
   "20211121190650-co_2_concentration_monitoring_inside_educational_buildings_as_a_strategic_tool_to_reduce_the_risk_of_sars_cov_2_airborne_transmission.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   814
   '(576 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 3021 883182 687000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 4011 449105 3000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211107185800-airborne_transmission_of_sars_cov_2.org"
   "20211107185800-airborne_transmission_of_sars_cov_2.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   520
   '(292 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 2984 527926 186000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 3974 137366 922000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (82 126))))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/sources.bib"
   "sources.bib"
   'bibtex-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode dap-mode)
   1204
   '(nil nil)
   nil
   nil
-  '((buffer-display-time 25019 2346 548014 729000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25019 3336 182923 471000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211107192710-interim_guidance_for_ventilation_filtration_and_air_quality_in_indoor_environments.org"
   "20211107192710-interim_guidance_for_ventilation_filtration_and_air_quality_in_indoor_environments.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   739
   '(359 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 2333 296518 308000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 3323 26433 993000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211121135742-health_stress_poster.org"
   "20211121135742-health_stress_poster.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   258
   '(252 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25022 28455 79696 536000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25057 37055 528154 260000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1448 836))))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211121134239-science_research_presentation_2021_11_22.org"
   "20211121134239-science_research_presentation_2021_11_22.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   3734
   '(3734 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25018 60438 475261 864000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25018 61429 88135 165000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1))))
 
 (desktop-create-buffer 208
   "/home/jadench/.emacs.d/diary"
   "diary"
   'fundamental-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((buffer-display-time 25018 56012 181005 95000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25018 57002 799940 894000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211111211405-meeting_with_dr_van_essen_2021_11_11.org"
   "20211111211405-meeting_with_dr_van_essen_2021_11_11.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16103 167010 993000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17094 67577 274000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/journals/2021-11-01.org"
   "2021-11-01.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16103 478002 303000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17094 418382 811000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/journals/2021-10-17.org"
   "2021-10-17.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16103 892342 423000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17094 868765 778000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/journals/2021_09_20.org"
   "2021_09_20.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16104 152204 610000) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17095 164450 7000) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20210921110418-how_to_science_research_presentations.org"
   "20210921110418-how_to_science_research_presentations.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16104 439506 1000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17095 491426 692000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20210921110743-science_research_co2_monitor_project_presentation.org"
   "20210921110743-science_research_co2_monitor_project_presentation.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16104 916007 776000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17096 26811 488000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20210928124526-abigail_finan_psilocybin_presentation_notes.org"
   "20210928124526-abigail_finan_psilocybin_presentation_notes.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16105 202969 343000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17096 353363 370000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20210929180741-something.org"
   "20210929180741-something.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16105 463836 439000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17096 650033 922000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005212814-sketching_polynomials.org"
   "20211005212814-sketching_polynomials.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16105 813507 206000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17097 46581 218000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005212849-math.org"
   "20211005212849-math.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16106 199907 345000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17097 596176 998000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005213010-synthetic_division.org"
   "20211005213010-synthetic_division.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16106 875819 50000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17098 317066 82000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005213056-polynomial_long_division.org"
   "20211005213056-polynomial_long_division.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16107 567496 635000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17099 45781 750000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005213445-multiplicity_polynomials.org"
   "20211005213445-multiplicity_polynomials.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16107 850711 872000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17099 368232 952000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005214032-rational_root_theorem.org"
   "20211005214032-rational_root_theorem.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16108 289836 600000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17099 849972 354000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005215139-remainder_theorem.org"
   "20211005215139-remainder_theorem.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16108 562841 751000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17100 162884 566000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211005215907-complex_numbers.org"
   "20211005215907-complex_numbers.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16108 829453 569000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17100 468703 516000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211007174547-columbia_science_honors_program.org"
   "20211007174547-columbia_science_honors_program.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16109 98478 727000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17100 777065 410000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009100017-columbia_shp_introduction_to_algorithms.org"
   "20211009100017-columbia_shp_introduction_to_algorithms.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16109 535098 529000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17101 265323 83000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009101036-insertion_sort.org"
   "20211009101036-insertion_sort.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16116 646709 915000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17109 338590 155000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009101111-algorithm.org"
   "20211009101111-algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16117 141755 285000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17109 893663 300000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009101307-computers.org"
   "20211009101307-computers.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16117 407077 636000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17110 197780 403000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009101319-programming.org"
   "20211009101319-programming.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16117 969062 315000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17110 799853 74000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009101702-sorting_problem.org"
   "20211009101702-sorting_problem.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16118 468892 624000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17111 354185 471000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009101920-substring_matching_problem.org"
   "20211009101920-substring_matching_problem.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16118 741399 191000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17111 668051 837000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009102140-shortest_path_problem.org"
   "20211009102140-shortest_path_problem.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16119 27711 747000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17111 994441 92000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009102410-largest_common_substring.org"
   "20211009102410-largest_common_substring.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16119 434558 283000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17112 443942 588000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009102514-dynamic_programming.org"
   "20211009102514-dynamic_programming.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16119 730379 957000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17112 782703 46000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009102622-topological_sort_problem.org"
   "20211009102622-topological_sort_problem.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16120 31575 324000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17113 299798 767000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009110344-bubble_sort.org"
   "20211009110344-bubble_sort.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16120 691636 218000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17114 4761 375000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009111219-in_place_sorting.org"
   "20211009111219-in_place_sorting.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16120 994736 993000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17114 349097 192000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009111627-worst_case_analysis.org"
   "20211009111627-worst_case_analysis.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16121 313312 674000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17114 709563 82000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009111859-average_case_analysis.org"
   "20211009111859-average_case_analysis.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16121 769873 721000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17115 206888 644000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009114137-selection_sort_algorithm.org"
   "20211009114137-selection_sort_algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16122 65567 802000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17115 544209 204000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009114325-merge_sort_algorithm.org"
   "20211009114325-merge_sort_algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16122 549455 842000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17116 72501 48000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009114412-quick_sort_algorithm.org"
   "20211009114412-quick_sort_algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16123 167967 140000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17116 735951 160000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009114620-heap_sort_algorithm.org"
   "20211009114620-heap_sort_algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16123 590219 923000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17117 198653 514000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009114652-counting_sort_algorithm.org"
   "20211009114652-counting_sort_algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16123 918341 123000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17117 571744 114000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009114717-radix_sort_algorithm.org"
   "20211009114717-radix_sort_algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16124 213318 633000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17117 907579 455000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211009114729-bucket_sort_algorithm.org"
   "20211009114729-bucket_sort_algorithm.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16124 760506 988000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17118 630864 4000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211010144854-keyboard_lubrication.org"
   "20211010144854-keyboard_lubrication.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16125 242345 917000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17119 164416 916000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211010144923-mechanical_keyboards.org"
   "20211010144923-mechanical_keyboards.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16125 535011 236000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17119 510100 707000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211010144952-computer_projects.org"
   "20211010144952-computer_projects.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16125 820744 514000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17119 838146 847000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211010145035-mechanical_keyswitches.org"
   "20211010145035-mechanical_keyswitches.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16126 130019 885000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17120 194603 878000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211010155257-gaming.org"
   "20211010155257-gaming.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16126 579936 677000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17120 687236 344000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211010155325-hobbies.org"
   "20211010155325-hobbies.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16126 868552 334000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17121 17348 765000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211015140410-test_file.org"
   "20211015140410-test_file.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16127 328535 874000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17121 520802 300000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211017151707-yes.org"
   "20211017151707-yes.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16127 910778 551000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17122 143103 751000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211023094336-big_o_notation.org"
   "20211023094336-big_o_notation.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16128 366297 379000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17122 642421 624000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211023101235-lower_bound_of_sorting.org"
   "20211023101235-lower_bound_of_sorting.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16128 680695 9000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17122 998766 57000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211023101517-solving_recursions.org"
   "20211023101517-solving_recursions.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16129 434015 102000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17123 940606 58000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211023104904-master_s_theorem.org"
   "20211023104904-master_s_theorem.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16129 824846 689000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17124 383782 265000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211023141802-sketching_rational_expressions.org"
   "20211023141802-sketching_rational_expressions.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16130 502138 888000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17125 144033 638000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211023151759-rational_expression.org"
   "20211023151759-rational_expression.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16130 808571 809000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17125 494812 763000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211025183045-head_tracking.org"
   "20211025183045-head_tracking.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16131 389695 749000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17126 120386 964000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/How To_ Science Research Project Proposals.org"
   "How To_ Science Research Project Proposals.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16131 806809 323000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17126 594069 341000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/How-To--Research Project Proposals.org"
   "How-To--Research Project Proposals.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16132 566104 211000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17127 411488 522000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/Science Research.org"
   "Science Research.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16133 54250 198000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17127 940627 484000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/asdfadsfasdf.org"
   "asdfadsfasdf.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16133 466473 600000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17128 532758 349000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/contents.org"
   "contents.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16134 128616 417000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17129 234032 120000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org"
   "somethingasdfasdfasdfasdfasdf.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16134 415593 152000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17129 561470 989000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/test.org"
   "test.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16134 705647 862000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17129 893519 691000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/daily/2021-10-07.org"
   "2021-10-07.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16135 26609 512000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17130 257361 952000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/daily/2021-10-08.org"
   "2021-10-08.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16135 328078 904000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17130 600083 146000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/Dropbox/APCSP/apcsp.org"
   "apcsp.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 16148 254187 157000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 17144 769955 891000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/Dropbox/non_school_academics.org"
   "non_school_academics.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34152 57402 879000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35149 163964 60000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211015140410-test_file.org_archive"
   "20211015140410-test_file.org_archive"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34152 386922 978000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35149 540779 981000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org_archive"
   "somethingasdfasdfasdfasdfasdf.org_archive"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34152 694904 507000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35149 899014 986000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/Dropbox/todo-two.org_archive"
   "todo-two.org_archive"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34155 754064 552000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35153 520091 344000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/Dropbox/APCSP/apcsp.org_archive"
   "apcsp.org_archive"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34156 11177 863000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35153 973111 619000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/journals/2021-11-10.org"
   "2021-11-10.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34156 480641 350000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35154 485681 872000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/journals/2021-11-02.org"
   "2021-11-02.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34157 89298 154000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35155 177829 995000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211115180241-meeting_with_dr_van_essen_2021_11_18.org"
   "20211115180241-meeting_with_dr_van_essen_2021_11_18.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 34157 397462 819000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 35155 531148 904000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/20211128132549-scratch.org"
   "20211128132549-scratch.org"
   'org-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode undo-tree-mode org-autolist-mode org-variable-pitch-minor-mode buffer-face-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
   85
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25019 35227 999172 917000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25019 36226 174475 158000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/jadench/notes/pages/the man who loved flowers.pdf"
   "the man who loved flowers.pdf"
   'pdf-view-mode
-  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode undo-tree-mode dap-mode)
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode dap-mode)
   1
   '(nil nil)
   t
   nil
-  '((buffer-display-time 25022 46484 902709 155000) (buffer-file-coding-system . no-conversion) (truncate-lines))
+  '((buffer-display-time 25057 37065 635248 937000) (buffer-file-coding-system . no-conversion) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/jadench/notes/pages/20220112171535-english_top_nine_writing_2022_01_12.org"
+  "20220112171535-english_top_nine_writing_2022_01_12.org"
+  'org-mode
+  '(visual-line-mode override-global-mode org-roam-bibtex-mode org-roam-ui-follow-mode helm-mode flyspell-mode evil-collection-unimpaired-mode undo-tree-mode auto-revert-mode buffer-face-mode org-autolist-mode org-variable-pitch-minor-mode org-indent-mode olivetti-mode evil-org-mode dap-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
