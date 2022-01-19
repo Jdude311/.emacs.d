@@ -286,14 +286,6 @@
 (setq
  org-enforce-todo-dependencies t
  org-export-with-broken-links 'mark
- org-file-apps
- '((auto-mode . "setsid -w xdg-open %s")
-   (default . "sleep 1")
-   ("\\.mm\\'" . default)
-   ("\\.x?html?\\'" . "chromium %s")
-   ("\\.pdf\\'" . "chromium %s")
-   ("\\.docx\\'" . "lowriter %s")
-   ("\\.odt\\'" . system))
  org-fontify-emphasized-text t
  org-fontify-quote-and-verse-blocks t
  org-format-latex-options 
@@ -321,89 +313,14 @@
 ;; (set-face-attribute 'org-level-7 nil :extend nil :weight 'bold :height 1.5 :foreground "LightCoral")
 ;; (set-face-attribute 'org-level-8 nil :extend nil :weight 'bold :height 1.5 :foreground "LightSalmon")
 
-(use-package olivetti
-  :ensure t
-  :defer t
-  :bind ("C-x w" . olivetti-mode)
-  :config
-  (setq olivetti-body-width 100)
-  (setq olivetti-margin-width 20)
-  (setq olivetti-style 't)
-  :hook (org-mode . olivetti-mode))
-
-
-
-;(use-package websocket :ensure t)
-  ;(use-package simple-httpd :ensure t)
-  (use-package org-roam-ui :ensure t :config (setq org-roam-ui-mode nil))
-; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
-; (load-library "org-roam-ui/org-roam-ui.el")
-
-(use-package org-roam
-      :ensure t
-      :hook ((after-init . org-roam-setup)
-             (org-roam-backlinks-mode . visual-line-mode))
-      :config
-      '(org-roam-dailies-capture-templates
-        '(("d" "default" entry "* %?\
-      " :target
-      (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
-            ")
-      :empty-lines-after 1
-      :empty-lines-before 1)))
-
-      (setq org-roam-capture-templates
-            '(("d" "default" plain "%?" :target
-               (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
-#+filetags: 
-#+title: ${title}
-- Links :: 
-
-
-    ")
-               :unnarrowed t)))
-      (setq org-roam-v2-ack t)
-      (org-roam-setup)
-      (setq org-roam-directory "~/notes")
-      (setq org-roam-dailies-directory "journals/")
-      (setq org-roam-db-node-include-function
-        (lambda ()
-          (not (member "roam_exclude" (org-get-tags)))))
-      (setq org-roam-mode-section-functions
-            (list #'org-roam-backlinks-section
-                  #'org-roam-reflinks-section
-                  ;; #'org-roam-unlinked-references-section
-                  ))
-      :bind (("C-c n f" . org-roam-node-find)
-             ("C-c n c" . org-roam-capture)
-             ("C-c n g" . org-roam-ui-mode)
-             ("C-c n r" . org-roam-node-random)		    
-             ("C-c n d" . org-roam-dailies-capture-today)
-             (:map org-mode-map
-                   (("C-c n i" . org-roam-node-insert)
-                    ("C-c C-w" . org-roam-refile)
-                    ("C-c n o" . org-id-get-create)
-                    ("C-c n t" . org-roam-tag-add)
-                    ("C-c n a" . org-roam-alias-add)
-                    ("C-c n l" . org-roam-buffer-toggle)))))
-    (org-roam-db-autosync-mode)
-
-(use-package org-autolist
-  :ensure t
-  :demand t
-  :config
-  (add-hook 'org-mode-hook 'org-autolist-mode))
-
-(use-package org-drill
-  :ensure t
-  :config
-  (setq 
-   org-drill-cram-hours 0
-   org-drill-hide-item-headings-p t
-   org-drill-scope 'tree))
-
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
+(setq org-file-apps
+      '((auto-mode . "setsid -w xdg-open %s")
+        (default . "sleep 1")
+        ("\\.mm\\'" . default)
+        ("\\.x?html?\\'" . "chromium %s")
+        ("\\.pdf\\'" . "chromium %s")
+        ("\\.docx\\'" . "lowriter %s")
+        ("\\.odt\\'" . system)))
 
 (global-set-key (kbd "C-c c") 'org-capture)
 (setq org-capture-templates
@@ -454,15 +371,152 @@ DEADLINE: %^{Deadline}t ENTERED %U
     :END:
 " :prepend t :time-prompt t)))
 
+(require 'calendar)
+(setq appt-display-interval 3
+      appt-message-warning-time 15
+      org-show-notification-handler "notify-send")
+
+(require 'notifications)
+
+(defcustom appt-notification-bus :session
+  "D-bus bus to use for notification."
+  :group 'appt-notification
+  :type '(choice (const :tag "Session bus" :session) string))
+(defun appt-display (min-to-appt new-time msg)
+  "Send notification."
+  (notifications-notify :bus appt-notification-bus
+                        :title (format "Appointment in %s minutes" min-to-appt)
+                        :body (format "%s" msg)
+                        :replaces-id nil
+                        :app-icon nil
+                        :timeout 5000
+                        :desktop-entry "emacs"))
+(setq appt-disp-window-function 'appt-display)
+(add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
+(appt-activate)
+
+(setq org-columns-default-format "%50ITEM %TODO %3PRIORITY %6Effort{:} %6CLOCKSUM(Clock) %TAGS ")
+
+(use-package org-autolist
+  :ensure t
+  :demand t
+  :config
+  (add-hook 'org-mode-hook 'org-autolist-mode))
+
+(use-package olivetti
+  :ensure t
+  :defer t
+  :bind ("C-x w" . olivetti-mode)
+  :config
+  (setq olivetti-body-width 100)
+  (setq olivetti-margin-width 20)
+  (setq olivetti-style 't)
+  :hook (org-mode . olivetti-mode))
+
 (add-hook 'org-mode-hook 'flyspell-mode)
 
-(use-package powerthesaurus)
-;; Keybinds for powerthesaurus are in the (use-package org) block (under the first org-mode settings header, org-mode)
+(use-package powerthesaurus
+  :bind (("C-c w" . powerthesaurus-lookup-word-at-point)))
+
+;(use-package websocket :ensure t)
+                                        ;(use-package simple-httpd :ensure t)
+(use-package org-roam-ui :ensure t :config (setq org-roam-ui-mode nil))
+                                        ; (add-to-list 'load-path "~/.emacs.d/lisp/org-roam-ui")
+                                        ; (load-library "org-roam-ui/org-roam-ui.el")
+
+(use-package org-roam
+  :ensure t
+  :hook ((after-init . org-roam-setup)
+         (org-roam-backlinks-mode . visual-line-mode))
+  :config
+  '(org-roam-dailies-capture-templates
+    '(("d" "default" entry "* %?\
+      " :target
+      (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>
+            ")
+      :empty-lines-after 1
+      :empty-lines-before 1)))
+
+  (setq org-roam-capture-templates
+        '(("d" "default" plain "%?" :target
+           (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
+#+filetags: 
+#+title: ${title}
+- Links :: 
+
+
+    ")
+           :unnarrowed t)))
+  (setq org-roam-v2-ack t)
+  (org-roam-setup)
+  (setq org-roam-directory "~/notes")
+  (setq org-roam-dailies-directory "journals/")
+  (setq org-roam-db-node-include-function
+        (lambda ()
+          (not (member "roam_exclude" (org-get-tags)))))
+  (setq org-roam-mode-section-functions
+        (list #'org-roam-backlinks-section
+              #'org-roam-reflinks-section
+              ;; #'org-roam-unlinked-references-section
+              ))
+  :bind (("C-c n f" . org-roam-node-find)
+         ("C-c n c" . org-roam-capture)
+         ("C-c n g" . org-roam-ui-mode)
+         ("C-c n r" . org-roam-node-random)		    
+         ("C-c n d" . org-roam-dailies-capture-today)
+         (:map org-mode-map
+               (("C-c n i" . org-roam-node-insert)
+                ("C-c C-w" . org-roam-refile)
+                ("C-c n o" . org-id-get-create)
+                ("C-c n t" . org-roam-tag-add)
+                ("C-c n a" . org-roam-alias-add)
+                ("C-c n l" . org-roam-buffer-toggle)))))
+(org-roam-db-autosync-mode)
+
+(require 'org-noter-pdftools)
+(require 'org-pdftools)
+(require 'pdf-history)
+(require 'pdf-links)
+(require 'pdf-sync)
+(require 'pdf-outline)
+
+(use-package org-ref
+  :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+  :init
+  (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
+  :bind ("C-c r i" . org-ref-insert-link))
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
+
+(use-package org-drill
+  :ensure t
+  :config
+  (setq 
+   org-drill-cram-hours 0
+   org-drill-hide-item-headings-p t
+   org-drill-scope 'tree))
+
+(use-package ox-pandoc)
+
+(use-package org-download)
+
+(use-package helm-bibtex)
+
+(use-package calfw)
+(use-package calfw-org)
+
+(use-package org-gcal
+  :config
+  (load "~/.emacs.d/org-gcal-secret-stuff.el"))
 
 (use-package org-agenda
   :ensure nil
   :bind ("C-c a" . org-agenda)
+  :hook (org-agenda-mode . org-agenda-to-appt)
   :config
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
   (setq org-agenda-columns-add-appointments-to-effort-sum t
         org-agenda-skip-deadline-if-done nil
         org-agenda-skip-scheduled-if-deadline-is-shown 'not-today;'repeated-after-deadline
@@ -489,36 +543,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
       '(("g" "Good agenda"
          ((agenda ""
                   ((org-agenda-overriding-header "Agenda and Tonight's Homework")
-                   (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))
-                   (org-super-agenda-groups
-                    `(
-                      (:name "Meetings" :tag "meeting" :tag "clubs" :tag "club" :order 2)
-                      (:name "OVERDUE" :discard
-                             (:todo "SOMEDAY")
-                             :deadline past :order 1)
-                      (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
-                      (:name "Homework"
-                             :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
-                             :order 5 )
-                      (:name "Today's Schedule" :time-grid t :order 2)
-                      (:name "Tests and Quizzes" :tag
-                             ("test" "quiz" "assessment" "conference")
-                             :order 3)
-                      (:name "Upcoming Schoolwork/Homework" 
-                             :and (:tag ("school" "homework") :deadline future)
-                             :order 6)
-                      (:name "Personal Habits"
-                             :and (:tag "personal" :habit t)
-                             :order 8)
-                      (:name "Personal TODO list"
-                             :tag ("personal")
-                             :order 7)
-                      (:name "Emails" :tag "email" :order 8)
-                      (:name "Scheduled work"
-                             :scheduled t 
-                             :order 10)
-                      (:time-grid t)
-                      (:discard (:tag "drill"))))))
+                   (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))))
           (alltodo ""
                    ((org-agenda-overriding-header "PROJECTS")
                     (org-agenda-prefix-format " %?-3t %?-11s %3e ")
@@ -547,102 +572,49 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (use-package org-ql
   :ensure t)
 
-(require 'org-noter-pdftools)
-(require 'org-pdftools)
-(require 'pdf-history)
-(require 'pdf-links)
-(require 'pdf-sync)
-(require 'pdf-outline)
-
 (add-hook 'org-mode-hook 'org-indent-mode)
 
 (use-package org-variable-pitch
   :config
-  (setq org-variable-pitch-fixed-faces '(org-block
-                                         org-block-begin-line
-                                         org-block-end-line
-                                         org-code
-                                         org-document-info-keyword
-                                         org-done
-                                         org-formula
-                                         org-indent
-                                         org-meta-line
-                                         org-special-keyword
-                                         org-table
-                                         org-todo
-                                         org-verbatim
-                                         org-date
-                                         org-drawer
-                                        ;org-link
-                                        ;link
-                                         org-property-value
-                                         org-priority
-                                         ;; org-level-1
-                                         ;; org-level-2
-                                         ;; org-level-3
-                                         ;; org-level-4
-                                         ;; org-level-5
-                                         ;; org-level-6
-                                         ;; org-level-7
-                                         ;; org-level-8
-                                         org-hide
-                                         org-superstar-leading
-                                         org-ellipsis
-                                         org-tag
-                                         ;; org-superstar-bullet
-                                         org-target))
+  (setq org-variable-pitch-fixed-faces
+        '(org-block
+          org-block-begin-line
+          org-block-end-line
+          org-code
+          org-document-info-keyword
+          org-done
+          org-formula
+          org-indent
+          org-meta-line
+          org-special-keyword
+          org-table
+          org-todo
+          org-verbatim
+          org-date
+          org-drawer
+          ;org-link
+          ;link
+          org-property-value
+          org-priority
+          ;; org-level-1
+          ;; org-level-2
+          ;; org-level-3
+          ;; org-level-4
+          ;; org-level-5
+          ;; org-level-6
+          ;; org-level-7
+          ;; org-level-8
+          org-hide
+          org-superstar-leading
+          org-ellipsis
+          org-tag
+          ;; org-superstar-bullet
+          org-target))
   :hook ((org-mode) . org-variable-pitch-minor-mode))
-
-(require 'calendar)
-(setq appt-display-interval 3
-      appt-message-warning-time 15
-      org-show-notification-handler "notify-send")
-
-(require 'notifications)
-
-(defcustom appt-notification-bus :session
-  "D-bus bus to use for notification."
-  :group 'appt-notification
-  :type '(choice (const :tag "Session bus" :session) string))
-(defun appt-display (min-to-appt new-time msg)
-  "Send notification."
-  (notifications-notify :bus appt-notification-bus
-                        :title (format "Appointment in %s minutes" min-to-appt)
-                        :body (format "%s" msg)
-                        :replaces-id nil
-                        :app-icon nil
-                        :timeout 5000
-                        :desktop-entry "emacs"))
-(setq appt-disp-window-function 'appt-display)
-(add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
-(appt-activate)
-
-(use-package ox-pandoc)
-
-(use-package org-notebook
-  :config
-  (setq org-notebook-drawing-program "kolourpaint"))
 
 (use-package org-superstar
   :hook
   (org-mode . org-superstar-mode))
-
-(use-package org-download)
-
-(use-package calfw)
-(use-package calfw-org)
-
-(use-package helm-bibtex)
-
-(use-package org-ref
-  :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-  :init
-  (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
-  :bind ("C-c r i" . org-ref-insert-link))
-
-(use-package org-gcal
-  :config
-  (load "~/.emacs.d/org-gcal-secret-stuff.el"))
 
 (setq org-ellipsis " ▾")
 (set-face-attribute 'org-ellipsis nil :foreground nil)
@@ -665,10 +637,25 @@ DEADLINE: %^{Deadline}t ENTERED %U
 (use-package doom-themes :ensure t :demand t :config (doom-themes-org-config))
 ;(load-theme 'doom-gruvbox t)
 
-(use-package org
+(use-package org :ensure t)
+
+(use-package pdf-tools
+  :ensure t
+  :pin manual
   :config
-  (setq org-columns-default-format "%50ITEM %TODO %3PRIORITY %6Effort{:} %6CLOCKSUM(Clock) %TAGS ")
-  :bind (("C-c w" . powerthesaurus-lookup-word-at-point)))
+  ;;initialize
+  ;; use normal isearch
+  (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
+  (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
+  (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
+  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
+(pdf-tools-install)
+
+(use-package org-noter-pdftools :ensure t)
+(use-package org-noter
+  :ensure t
+  :config
+  (require 'org-noter-pdftools))
 
 (use-package org-super-agenda
   :ensure t
@@ -676,15 +663,15 @@ DEADLINE: %^{Deadline}t ENTERED %U
   (setq org-super-agenda-header-map (make-sparse-keymap))
   (setq org-super-agenda-groups
         `(
+          (:name "Today's Schedule" :time-grid t :order 2)
           (:name "Meetings" :tag "meeting" :tag "clubs" :tag "club" :order 2)
           (:name "OVERDUE" :discard
-                 (:todo "SOMEDAY")
+                 (:todo "SOMEDAY" :todo "DONE" :todo "CNCL" :todo "FAIL")
                  :deadline past :order 1)
           (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
           (:name "Homework"
                  :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
                  :order 5 )
-          (:name "Today's Schedule" :time-grid t :order 2)
           (:name "Tests and Quizzes" :tag
                  ("test" "quiz" "assessment" "conference")
                  :order 3)
@@ -705,21 +692,3 @@ DEADLINE: %^{Deadline}t ENTERED %U
           (:discard (:tag "drill"))))
   :hook
   (org-agenda-before-finalize . org-super-agenda-mode))
-
-(use-package pdf-tools
-  :ensure t
-  :pin manual
-  :config
-  ;;initialize
-  ;; use normal isearch
-  (define-key pdf-view-mode-map (kbd "h") 'pdf-annot-add-highlight-markup-annotation)
-  (define-key pdf-view-mode-map (kbd "d") 'pdf-annot-delete)
-  (define-key pdf-view-mode-map (kbd "s") 'save-buffer)
-  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward))
-(pdf-tools-install)
-
-(use-package org-noter-pdftools :ensure t)
-(use-package org-noter
-  :ensure t
-  :config
-  (require 'org-noter-pdftools))

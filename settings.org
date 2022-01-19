@@ -1092,7 +1092,7 @@ Provides image download functionality and stuff.
 #+RESULTS:
 | org-roam-bibtex-mode |
 
-** Org-agenda
+** Agenda
 :PROPERTIES:
 :ID:       2d0c099f-ae7f-44ba-a9ed-0f5d8ae915eb
 :END:
@@ -1103,94 +1103,68 @@ Provides image download functionality and stuff.
 :END:
 The agenda files are maintained by customize-variable, and are not defined or managed here.
 #+begin_src elisp
-  (use-package org-agenda
-    :ensure nil
-    :bind ("C-c a" . org-agenda)
-    :config
-    (setq org-agenda-columns-add-appointments-to-effort-sum t
-          org-agenda-skip-deadline-if-done nil
-          org-agenda-skip-scheduled-if-deadline-is-shown 'not-today;'repeated-after-deadline
-          org-agenda-skip-timestamp-if-deadline-is-shown nil
-          org-agenda-entry-text-maxlines 20
-          org-agenda-include-diary t
+      (use-package org-agenda
+        :ensure nil
+        :bind ("C-c a" . org-agenda)
+        :hook (org-agenda-mode . org-agenda-to-appt)
+        :config
+        (setq org-todo-keywords
+              '((sequence "TODO(t)" "NEXT(n)" "PROG(r)" "EXTD(e!)" "POST(p@!/@!)" "|" "CNCL(c@!/@!)" "DONE(d!)" "FAIL(f!)")))
+        (setq org-agenda-columns-add-appointments-to-effort-sum t
+              org-agenda-skip-deadline-if-done nil
+              org-agenda-skip-scheduled-if-deadline-is-shown 'not-today;'repeated-after-deadline
+              org-agenda-skip-timestamp-if-deadline-is-shown nil
+              org-agenda-entry-text-maxlines 20
+              org-agenda-include-diary t
 
-          org-agenda-prefix-format " %?-3t %-11s %3e "
-          org-agenda-prefix-format " %?-3t %-11s %3e "
-          org-agenda-keyword-format '("")
-          org-agenda-remove-tags t
+              org-agenda-prefix-format " %?-3t %-11s %3e "
+              org-agenda-prefix-format " %?-3t %-11s %3e "
+              org-agenda-keyword-format '("")
+              org-agenda-remove-tags t
 
-          ;; '((agenda . "%i%?5t%s%4e  ")
-          ;;   (todo . "  %?-i%?4e  ")
-          ;;   (tags . "  %?-i%?4e  "))
+              ;; '((agenda . "%i%?5t%s%4e  ")
+              ;;   (todo . "  %?-i%?4e  ")
+              ;;   (tags . "  %?-i%?4e  "))
 
-          org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
-                                        (todo priority-down category-keep)
-                                        (tags priority-down category-keep)
-                                        (search category-keep))
-          org-agenda-skip-scheduled-if-done t
-          org-agenda-span 'day))
-  (setq org-agenda-custom-commands
-        '(("g" "Good agenda"
-           ((agenda ""
-                    ((org-agenda-overriding-header "Agenda and Tonight's Homework")
-                     (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))
-                     (org-super-agenda-groups
-                      `(
-                        (:name "Meetings" :tag "meeting" :tag "clubs" :tag "club" :order 2)
-                        (:name "OVERDUE" :discard
-                               (:todo "SOMEDAY")
-                               :deadline past :order 1)
-                        (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
-                        (:name "Homework"
-                               :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
-                               :order 5 )
-                        (:name "Today's Schedule" :time-grid t :order 2)
-                        (:name "Tests and Quizzes" :tag
-                               ("test" "quiz" "assessment" "conference")
-                               :order 3)
-                        (:name "Upcoming Schoolwork/Homework" 
-                               :and (:tag ("school" "homework") :deadline future)
-                               :order 6)
-                        (:name "Personal Habits"
-                               :and (:tag "personal" :habit t)
-                               :order 8)
-                        (:name "Personal TODO list"
-                               :tag ("personal")
-                               :order 7)
-                        (:name "Emails" :tag "email" :order 8)
-                        (:name "Scheduled work"
-                               :scheduled t 
-                               :order 10)
-                        (:time-grid t)
-                        (:discard (:tag "drill"))))))
-            (alltodo ""
-                     ((org-agenda-overriding-header "PROJECTS")
-                      (org-agenda-prefix-format " %?-3t %?-11s %3e ")
-                      (org-super-agenda-groups
-                       '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
-                         (:auto-outline-path t)
-                         (:discard
-                          (:anything))))))
-            (alltodo ""
-                     ((org-agenda-overriding-header "Other")
-                      (org-agenda-prefix-format " %?-3t %3e ")
-                      (org-super-agenda-groups
-                       '((:name "Bucket List" :and
-                                (:todo "SOMEDAY" :tag "PERSONAL")
-                                :order 1)
-                         (:name "Someday Maybe" :todo "SOMEDAY" :order 10)
-                         (:name "Everything Else" :anything t :order 20))))))
-           nil nil)
-          ("n" "Agenda and all TODOs"
-           ((agenda "" nil)
-            (alltodo "" nil))
-           nil)))
+              org-agenda-sorting-strategy '((agenda deadline-down todo-state-up priority-down category-keep)
+                                            (todo priority-down category-keep)
+                                            (tags priority-down category-keep)
+                                            (search category-keep))
+              org-agenda-skip-scheduled-if-done t
+              org-agenda-span 'day))
+      (setq org-agenda-custom-commands
+            '(("g" "Good agenda"
+               ((agenda ""
+                        ((org-agenda-overriding-header "Agenda and Tonight's Homework")
+                         (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down))))
+                (alltodo ""
+                         ((org-agenda-overriding-header "PROJECTS")
+                          (org-agenda-prefix-format " %?-3t %?-11s %3e ")
+                          (org-super-agenda-groups
+                           '((:discard (:todo "SOMEDAY" :not (:tag "PROJECT")))
+                             (:auto-outline-path t)
+                             (:discard
+                              (:anything))))))
+                (alltodo ""
+                         ((org-agenda-overriding-header "Other")
+                          (org-agenda-prefix-format " %?-3t %3e ")
+                          (org-super-agenda-groups
+                           '((:name "Bucket List" :and
+                                    (:todo "SOMEDAY" :tag "PERSONAL")
+                                    :order 1)
+                             (:name "Someday Maybe" :todo "SOMEDAY" :order 10)
+                             (:name "Everything Else" :anything t :order 20))))))
+               nil nil)
+              ("n" "Agenda and all TODOs"
+               ((agenda "" nil)
+                (alltodo "" nil))
+               nil)))
 #+end_src
 
 #+RESULTS:
-| g | Good agenda          | ((agenda  ((org-agenda-overriding-header Agenda and Tonight's Homework) (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down)) (org-super-agenda-groups `((:name Meetings :tag meeting :tag clubs :tag club :order 2) (:name OVERDUE :discard (:todo SOMEDAY) :deadline past :order 1) (:name School Habits :and (:tag school :tag habit) :order 4) (:name Homework :and (:tag school :tag homework :deadline (before ,(org-read-date nil nil +8d))) :order 5) (:name Today's Schedule :time-grid t :order 2) (:name Tests and Quizzes :tag (test quiz assessment conference) :order 3) (:name Upcoming Schoolwork/Homework :and (:tag (school homework) :deadline future) :order 6) (:name Personal Habits :and (:tag personal :habit t) :order 8) (:name Personal TODO list :tag (personal) :order 7) (:name Emails :tag email :order 8) (:name Scheduled work :scheduled t :order 10) (:time-grid t) (:discard (:tag drill)))))) (alltodo  ((org-agenda-overriding-header PROJECTS) (org-agenda-prefix-format  %?-3t %?-11s %3e ) (org-super-agenda-groups '((:discard (:todo SOMEDAY :not (:tag PROJECT))) (:auto-outline-path t) (:discard (:anything)))))) (alltodo  ((org-agenda-overriding-header Other) (org-agenda-prefix-format  %?-3t %3e ) (org-super-agenda-groups '((:name Bucket List :and (:todo SOMEDAY :tag PERSONAL) :order 1) (:name Someday Maybe :todo SOMEDAY :order 10) (:name Everything Else :anything t :order 20)))))) | nil | nil |
-| n | Agenda and all TODOs | ((agenda  nil) (alltodo  nil))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | nil |     |
-
+| g | Good agenda          | ((agenda  ((org-agenda-overriding-header Agenda and Tonight's Homework) (org-agenda-sorting-strategy '(time-up deadline-up todo-state-down priority-down effort-down scheduled-down)))) (alltodo  ((org-agenda-overriding-header PROJECTS) (org-agenda-prefix-format  %?-3t %?-11s %3e ) (org-super-agenda-groups '((:discard (:todo SOMEDAY :not (:tag PROJECT))) (:auto-outline-path t) (:discard (:anything)))))) (alltodo  ((org-agenda-overriding-header Other) (org-agenda-prefix-format  %?-3t %3e ) (org-super-agenda-groups '((:name Bucket List :and (:todo SOMEDAY :tag PERSONAL) :order 1) (:name Someday Maybe :todo SOMEDAY :order 10) (:name Everything Else :anything t :order 20)))))) | nil | nil |
+| n | Agenda and all TODOs | ((agenda  nil) (alltodo  nil))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | nil |     |
+ 
 *** Org-mobile
 :PROPERTIES:
 :ID:       81bf30cd-8137-4f6a-aa76-7f79eaa72e63
@@ -1210,15 +1184,15 @@ The agenda files are maintained by customize-variable, and are not defined or ma
     (setq org-super-agenda-header-map (make-sparse-keymap))
     (setq org-super-agenda-groups
           `(
+            (:name "Today's Schedule" :time-grid t :order 2)
             (:name "Meetings" :tag "meeting" :tag "clubs" :tag "club" :order 2)
             (:name "OVERDUE" :discard
-                   (:todo "SOMEDAY")
+                   (:todo "SOMEDAY" :todo "DONE" :todo "CNCL" :todo "FAIL")
                    :deadline past :order 1)
             (:name "School Habits" :and (:tag "school" :tag "habit") :order 4)
             (:name "Homework"
                    :and (:tag "school" :tag "homework" :deadline (before ,(org-read-date nil nil "+8d")))
                    :order 5 )
-            (:name "Today's Schedule" :time-grid t :order 2)
             (:name "Tests and Quizzes" :tag
                    ("test" "quiz" "assessment" "conference")
                    :order 3)

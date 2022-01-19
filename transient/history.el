@@ -1,8 +1,13 @@
 ((magit-branch nil)
  (magit-commit
-  ("--all"))
+	("--all")
+	nil)
+ (magit-diff
+	("--no-ext-diff" "--stat"))
+ (magit-dispatch nil)
+ (magit-gitignore nil)
  (magit-merge
-  ("--ff-only"))
+	("--ff-only"))
  (magit-push nil)
  (magit-stash
-  ("--include-untracked")))
+	("--include-untracked")))
