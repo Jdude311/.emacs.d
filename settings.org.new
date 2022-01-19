@@ -1,0 +1,98 @@
+* Use-package
+#+begin_src elisp
+  (require 'use-package)
+  (setq use-package-always-ensure t)
+#+end_src
+
+* Emacs Behavior
+** Text editing
+Don't keep any trailing whitespace:
+#+begin_src elisp
+  (add-hook 'before-save-hook #'whitespace-cleanup)
+#+end_src
+
+One space after a period:
+#+begin_src elisp
+  (setq-default sentence-end-double-space nil)
+#+end_src
+
+Minor mode that allows you to jump from word to word in a better way, such as by detecting camelCase words:
+#+begin_src elisp
+  (global-subword-mode 1)
+#+end_src
+
+** Keep directories clean
+Emacs keeps its backup files by default in the same directory as the regular files. This is stupid. Keep them in a different file that only Emacs uses:
+#+begin_src elisp
+(setq backup-directory-alist `(("." . ,"~/.emacs.d/backups/")))
+#+end_src
+
+** Asking things
+It's annoying to have to type out the entire word. Define an alias:
+#+begin_src elisp
+(defalias 'yes-or-no-p 'y-or-n-p)
+#+end_src
+
+It's not nice when your file gets automatically reverted and your buffer changes aren't saved, now is it?
+#+begin_src elisp
+  (global-auto-rever-mode 1)
+#+end_src
+
+* Emacs Configuration
+** Personal Information
+Let Emacs know what my name is, presumably for exports and stuff:
+#+begin_src elisp
+  (setq user-full-name "Jaden Cermak-Hosein"
+        user-real-login-name "Jaden Cermak-Hosein"
+        user-login-name "jadench"
+        user-mail-address "jadenjohn.ch@gmail.com")
+#+end_src
+
+** Visual
+Visual feedback when I do something Emacs wants to complain about:
+#+begin_src elisp
+(setq visible-bell t)
+#+end_src
+
+Stretch the cursor over characters:
+#+begin_src elisp
+(setq x-stretch-cursor t)
+#+end_src
+
+See a single-character ellipse when things are truncated:
+#+begin_src elisp
+(setq truncate-string-ellipsis "…")
+#+end_src
+
+* Programming
+** Line numbers
+Right now, you can just use the default one that's included in Emacs, since it works perfectly fine.
+#+begin_src elisp
+(add-hook prog-mode-hook #'display-line-numbers-mode))
+#+end_src
+
+** Folding code
+Use ~hs-minor-mode~. It works fine.
+#+begin_src elisp
+  (add-hook 'prog-mode-hook 'hs-minor-mode)
+#+end_src
+
+Add HTML tag support (mostly):
+#+begin_src elisp
+  (defun mhtml-forward (arg)
+    (interactive "P")
+    (pcase (get-text-property (point) 'mhtml-submode)
+      ('nil (sgml-skip-tag-forward 1))
+      (submode (forward-sexp))))
+
+  ;; Adds the tag and curly-brace detection to hs-minor-mode for mhtml.
+  (add-to-list 'hs-special-modes-alist
+               '(mhtml-mode
+                 "{\\|<[^/>]+?"
+                 "}\\|</[^/>]*[^/]>"
+                 "<!--"
+                 mhtml-forward
+                 nil))
+#+end_src
+
+* Looks
