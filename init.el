@@ -33,7 +33,6 @@
   (load (concat (file-name-directory load-file-name) "early-init")
         nil t))
 
-(setq doom-private-dir "~/.emacs.d/.doom.d/")
 ;; Ensure Doom's core libraries are properly initialized, autoloads file is
 ;; loaded, and hooks set up for an interactive session.
 (doom-initialize)

@@ -1,0 +1,1 @@
+/home/jadench/.doom.d
