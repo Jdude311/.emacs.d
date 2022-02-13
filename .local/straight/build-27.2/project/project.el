@@ -1,0 +1,1 @@
+/home/jadench/.emacs.d/.local/straight/repos/project/project.el

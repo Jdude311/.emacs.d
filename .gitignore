@@ -1,0 +1,11 @@
+elpa
+auto-save-list
+*.~undo-tree~
+recentf
+recentf~
+org-roam.db
+.cache
+url
+org-gcal-secret-stuff.el
+.emacs.desktop
+.emacs.desktop.lock
