@@ -49,6 +49,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+(package! persp-mode)
 (package! doom-modeline)
 (package! org-superstar)
 (package! olivetti)

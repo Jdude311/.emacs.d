@@ -135,212 +135,224 @@
            ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
 
-(use-package! org-roam-bibtex
-  :after org-roam
-  :hook (org-roam-mode . org-roam-bibtex-mode)
-  :config (require 'org-ref)
-  (org-roam-bibtex-mode t))
+  (use-package! org-roam-bibtex
+    :after org-roam
+    :hook (org-roam-mode . org-roam-bibtex-mode)
+    :config (require 'org-ref)
+    (org-roam-bibtex-mode t))
 
 (after! org
   (add-hook! org-mode #'evil-better-visual-line-on))
 
-(use-package! org-ref
-  :after org-cite
-  :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-  :init
-  (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
-  :bind ("C-c r i" . org-ref-cite-insert-helm))
+  (use-package! org-ref
+    :after org
+    :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+    :init
+    (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
+    :bind ("C-c r i" . org-ref-cite-insert-helm))
 
-;;; ox-extra.el --- Convenience functions for org export
+    ;;; ox-extra.el --- Convenience functions for org export
 
-  ;; Copyright (C) 2014  Aaron Ecay
+    ;; Copyright (C) 2014  Aaron Ecay
 
-  ;; Author: Aaron Ecay <aaronecay@gmail.com>
+    ;; Author: Aaron Ecay <aaronecay@gmail.com>
 
-  ;; This program is free software; you can redistribute it and/or modify
-  ;; it under the terms of the GNU General Public License as published by
-  ;; the Free Software Foundation, either version 3 of the License, or
-  ;; (at your option) any later version.
+    ;; This program is free software; you can redistribute it and/or modify
+    ;; it under the terms of the GNU General Public License as published by
+    ;; the Free Software Foundation, either version 3 of the License, or
+    ;; (at your option) any later version.
 
-  ;; This program is distributed in the hope that it will be useful,
-  ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ;; GNU General Public License for more details.
+    ;; This program is distributed in the hope that it will be useful,
+    ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+    ;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ;; GNU General Public License for more details.
 
-  ;; You should have received a copy of the GNU General Public License
-  ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    ;; You should have received a copy of the GNU General Public License
+    ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-  ;;; Commentary:
+    ;;; Commentary:
 
-  ;; This file contains some convenience functions for org export, which
-  ;; are not part of org's core.  Call `ox-extras-activate' passing a
-  ;; list of symbols naming extras, which will be installed globally in
-  ;; your org session.
-  ;;
-  ;; For example, you could include the following in your .emacs file:
-  ;;
-  ;;    (require 'ox-extra)
-  ;;    (ox-extras-activate '(latex-header-blocks ignore-headlines))
-  ;;
+    ;; This file contains some convenience functions for org export, which
+    ;; are not part of org's core.  Call `ox-extras-activate' passing a
+    ;; list of symbols naming extras, which will be installed globally in
+    ;; your org session.
+    ;;
+    ;; For example, you could include the following in your .emacs file:
+    ;;
+    ;;    (require 'ox-extra)
+    ;;    (ox-extras-activate '(latex-header-blocks ignore-headlines))
+    ;;
 
-  ;; Currently available extras:
+    ;; Currently available extras:
 
-  ;; - `latex-header-blocks' -- allow the use of latex blocks, the
-  ;; contents of which which will be interpreted as #+latex_header lines
-  ;; for export.  These blocks should be tagged with #+header: :header
-  ;; yes.  For example:
-  ;; #+header: :header yes
-  ;; #+begin_export latex
-  ;;   ...
-  ;; #+end_export
+    ;; - `latex-header-blocks' -- allow the use of latex blocks, the
+    ;; contents of which which will be interpreted as #+latex_header lines
+    ;; for export.  These blocks should be tagged with #+header: :header
+    ;; yes.  For example:
+    ;; #+header: :header yes
+    ;; #+begin_export latex
+    ;;   ...
+    ;; #+end_export
 
-  ;; - `ignore-headlines' -- allow a headline (but not its children) to
-  ;; be ignored.  Any headline tagged with the 'ignore' tag will be
-  ;; ignored (i.e. will not be included in the export), but any child
-  ;; headlines will not be ignored (unless explicitly tagged to be
-  ;; ignored), and will instead have their levels promoted by one.
+    ;; - `ignore-headlines' -- allow a headline (but not its children) to
+    ;; be ignored.  Any headline tagged with the 'ignore' tag will be
+    ;; ignored (i.e. will not be included in the export), but any child
+    ;; headlines will not be ignored (unless explicitly tagged to be
+    ;; ignored), and will instead have their levels promoted by one.
 
-  ;; TODO:
-  ;; - add a function to org-mode-hook that looks for a ox-extras local
-  ;;   variable and activates the specified extras buffer-locally
-  ;; - allow specification of desired extras to be activated via
-  ;;   customize
+    ;; TODO:
+    ;; - add a function to org-mode-hook that looks for a ox-extras local
+    ;;   variable and activates the specified extras buffer-locally
+    ;; - allow specification of desired extras to be activated via
+    ;;   customize
 
-  ;;; Code:
+    ;;; Code:
 
-  (require 'ox)
-  (eval-when-compile (require 'cl))
+    (require 'ox)
+    (eval-when-compile (require 'cl))
 
-  (defun org-latex-header-blocks-filter (backend)
-    (when (org-export-derived-backend-p backend 'latex)
-      (let ((positions
-       (org-element-map (org-element-parse-buffer 'greater-element nil) 'export-block
-         (lambda (block)
-           (when (and (string= (org-element-property :type block) "LATEX")
-          (string= (org-export-read-attribute
-              :header block :header)
-             "yes"))
-       (list (org-element-property :begin block)
-             (org-element-property :end block)
-             (org-element-property :post-affiliated block)))))))
-        (mapc (lambda (pos)
-          (goto-char (nth 2 pos))
-          (destructuring-bind
-        (beg end &rest ignore)
-        (org-edit-src-find-region-and-lang)
-      (let ((contents-lines (split-string
-                 (buffer-substring-no-properties beg end)
-                 "\n")))
-        (delete-region (nth 0 pos) (nth 1 pos))
-        (dolist (line contents-lines)
-          (insert (concat "#+latex_header: "
-              (replace-regexp-in-string "\\` *" "" line)
-              "\n"))))))
-        ;; go in reverse, to avoid wrecking the numeric positions
-        ;; earlier in the file
-        (reverse positions)))))
+    (defun org-latex-header-blocks-filter (backend)
+      (when (org-export-derived-backend-p backend 'latex)
+        (let ((positions
+         (org-element-map (org-element-parse-buffer 'greater-element nil) 'export-block
+           (lambda (block)
+             (when (and (string= (org-element-property :type block) "LATEX")
+            (string= (org-export-read-attribute
+                :header block :header)
+               "yes"))
+         (list (org-element-property :begin block)
+               (org-element-property :end block)
+               (org-element-property :post-affiliated block)))))))
+          (mapc (lambda (pos)
+            (goto-char (nth 2 pos))
+            (destructuring-bind
+          (beg end &rest ignore)
+          (org-edit-src-find-region-and-lang)
+        (let ((contents-lines (split-string
+                   (buffer-substring-no-properties beg end)
+                   "\n")))
+          (delete-region (nth 0 pos) (nth 1 pos))
+          (dolist (line contents-lines)
+            (insert (concat "#+latex_header: "
+                (replace-regexp-in-string "\\` *" "" line)
+                "\n"))))))
+          ;; go in reverse, to avoid wrecking the numeric positions
+          ;; earlier in the file
+          (reverse positions)))))
 
 
-  ;; During export headlines which have the "ignore" tag are removed
-  ;; from the parse tree.  Their contents are retained (leading to a
-  ;; possibly invalid parse tree, which nevertheless appears to function
-  ;; correctly with most export backends) all children headlines are
-  ;; retained and are promoted to the level of the ignored parent
-  ;; headline.
-  ;;
-  ;; This makes it possible to add structure to the original Org-mode
-  ;; document which does not effect the exported version, such as in the
-  ;; following examples.
-  ;;
-  ;; Wrapping an abstract in a headline
-  ;;
-  ;;     * Abstract                        :ignore:
-  ;;     #+LaTeX: \begin{abstract}
-  ;;     #+HTML: <div id="abstract">
-  ;;
-  ;;     ...
-  ;;
-  ;;     #+HTML: </div>
-  ;;     #+LaTeX: \end{abstract}
-  ;;
-  ;; Placing References under a headline (using ox-bibtex in contrib)
-  ;;
-  ;;     * References                     :ignore:
-  ;;     #+BIBLIOGRAPHY: dissertation plain
-  ;;
-  ;; Inserting an appendix for LaTeX using the appendix package.
-  ;;
-  ;;     * Appendix                       :ignore:
-  ;;     #+LaTeX: \begin{appendices}
-  ;;     ** Reproduction
-  ;;     ...
-  ;;     ** Definitions
-  ;;     #+LaTeX: \end{appendices}
-  ;;
-  (defun org-export-ignore-headlines (data backend info)
-    "Remove headlines tagged \"ignore\" retaining contents and promoting children.
-  Each headline tagged \"ignore\" will be removed retaining its
-  contents and promoting any children headlines to the level of the
-  parent."
-    (org-element-map data 'headline
-      (lambda (object)
-        (when (member "ignore" (org-element-property :tags object))
-          (let ((level-top (org-element-property :level object))
-                level-diff)
-            (mapc (lambda (el)
-                    ;; recursively promote all nested headlines
-                    (org-element-map el 'headline
-                      (lambda (el)
-                        (when (equal 'headline (org-element-type el))
-                          (unless level-diff
-                            (setq level-diff (- (org-element-property :level el)
-                                                level-top)))
-                          (org-element-put-property el
-                            :level (- (org-element-property :level el)
-                                      level-diff)))))
-                    ;; insert back into parse tree
-                    (org-element-insert-before el object))
-                  (org-element-contents object)))
-          (org-element-extract-element object)))
-      info nil)
-    data)
+    ;; During export headlines which have the "ignore" tag are removed
+    ;; from the parse tree.  Their contents are retained (leading to a
+    ;; possibly invalid parse tree, which nevertheless appears to function
+    ;; correctly with most export backends) all children headlines are
+    ;; retained and are promoted to the level of the ignored parent
+    ;; headline.
+    ;;
+    ;; This makes it possible to add structure to the original Org-mode
+    ;; document which does not effect the exported version, such as in the
+    ;; following examples.
+    ;;
+    ;; Wrapping an abstract in a headline
+    ;;
+    ;;     * Abstract                        :ignore:
+    ;;     #+LaTeX: \begin{abstract}
+    ;;     #+HTML: <div id="abstract">
+    ;;
+    ;;     ...
+    ;;
+    ;;     #+HTML: </div>
+    ;;     #+LaTeX: \end{abstract}
+    ;;
+    ;; Placing References under a headline (using ox-bibtex in contrib)
+    ;;
+    ;;     * References                     :ignore:
+    ;;     #+BIBLIOGRAPHY: dissertation plain
+    ;;
+    ;; Inserting an appendix for LaTeX using the appendix package.
+    ;;
+    ;;     * Appendix                       :ignore:
+    ;;     #+LaTeX: \begin{appendices}
+    ;;     ** Reproduction
+    ;;     ...
+    ;;     ** Definitions
+    ;;     #+LaTeX: \end{appendices}
+    ;;
+    (defun org-export-ignore-headlines (data backend info)
+      "Remove headlines tagged \"ignore\" retaining contents and promoting children.
+    Each headline tagged \"ignore\" will be removed retaining its
+    contents and promoting any children headlines to the level of the
+    parent."
+      (org-element-map data 'headline
+        (lambda (object)
+          (when (member "ignore" (org-element-property :tags object))
+            (let ((level-top (org-element-property :level object))
+                  level-diff)
+              (mapc (lambda (el)
+                      ;; recursively promote all nested headlines
+                      (org-element-map el 'headline
+                        (lambda (el)
+                          (when (equal 'headline (org-element-type el))
+                            (unless level-diff
+                              (setq level-diff (- (org-element-property :level el)
+                                                  level-top)))
+                            (org-element-put-property el
+                              :level (- (org-element-property :level el)
+                                        level-diff)))))
+                      ;; insert back into parse tree
+                      (org-element-insert-before el object))
+                    (org-element-contents object)))
+            (org-element-extract-element object)))
+        info nil)
+      data)
 
-  (defconst ox-extras
-    '((latex-header-blocks org-latex-header-blocks-filter org-export-before-parsing-hook)
-      (ignore-headlines org-export-ignore-headlines org-export-filter-parse-tree-functions))
-    "A list of org export extras that can be enabled.
-  Should be a list of items of the form (NAME FN HOOK).  NAME is a
-  symbol, which can be passed to `ox-extras-activate'.  FN is a
-  function which will be added to HOOK.")
+    (defconst ox-extras
+      '((latex-header-blocks org-latex-header-blocks-filter org-export-before-parsing-hook)
+        (ignore-headlines org-export-ignore-headlines org-export-filter-parse-tree-functions))
+      "A list of org export extras that can be enabled.
+    Should be a list of items of the form (NAME FN HOOK).  NAME is a
+    symbol, which can be passed to `ox-extras-activate'.  FN is a
+    function which will be added to HOOK.")
 
-  (defun ox-extras-activate (extras)
-    "Activate certain org export extras.
-  EXTRAS should be a list of extras (defined in `ox-extras') which
-  should be activated."
-    (dolist (extra extras)
-      (let* ((lst (assq extra ox-extras))
-       (fn (nth 1 lst))
-       (hook (nth 2 lst)))
-        (when (and fn hook)
-    (add-hook hook fn)))))
+    (defun ox-extras-activate (extras)
+      "Activate certain org export extras.
+    EXTRAS should be a list of extras (defined in `ox-extras') which
+    should be activated."
+      (dolist (extra extras)
+        (let* ((lst (assq extra ox-extras))
+         (fn (nth 1 lst))
+         (hook (nth 2 lst)))
+          (when (and fn hook)
+      (add-hook hook fn)))))
 
-  (defun ox-extras-deactivate (extras)
-    "Deactivate certain org export extras.
-  This function is the opposite of `ox-extras-activate'.  EXTRAS
-  should be a list of extras (defined in `ox-extras') which should
-  be activated."
-    (dolist (extra extras)
-      (let* ((lst (assq extra ox-extras))
-       (fn (nth 1 lst))
-       (hook (nth 2 lst)))
-        (when (and fn hook)
-    (remove-hook hook fn)))))
+    (defun ox-extras-deactivate (extras)
+      "Deactivate certain org export extras.
+    This function is the opposite of `ox-extras-activate'.  EXTRAS
+    should be a list of extras (defined in `ox-extras') which should
+    be activated."
+      (dolist (extra extras)
+        (let* ((lst (assq extra ox-extras))
+         (fn (nth 1 lst))
+         (hook (nth 2 lst)))
+          (when (and fn hook)
+      (remove-hook hook fn)))))
 
-(ox-extras-activate '(ignore-headlines))
+  (ox-extras-activate '(ignore-headlines))
 
 (require 'org-ref-scopus)
 (require 'org-ref-pubmed)
 (require 'org-ref-sci-id)
+
+(setq org-ref-csl-default-style "~/.emacs.doom/tex/csl/association-for-computing-machinery.csl")
+
+(setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+(setq reftex-default-bibliography "~/notes/pages/sources.bib")
+(setq org-export-with-broken-links t)
+(setq latex-run-command "xelatex")
+(setq bibtex-dialect 'biblatex)
+(setq org-cite-export-processors nil)
+;(setq org-cite-biblatex-options "backend=bibtex,sortcites=true,citestyle=numeric-comp,defernumbers=true") isn't usedanymore ecause not processing with org-cite
+(setq org-latex-pdf-process
+'("%latex -interaction nonstopmode -output-directory %o %f" "bibtex %b" "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f"))
 
 (setq org-latex-default-packages-alist '(("AUTO" "inputenc" t
                                      ('latex-run-command))
@@ -348,7 +360,8 @@
                                      ('latex-run-command))
                                         (#1="" "graphicx" t)
                                         (#1# "grffile" t)
-                                        (#1# "cite" t)
+                                        ("backend=bibtex,sortcites=true,style=numeric-comp,defernumbers=true" "biblatex" t)
+                                        ;("numbers,sort&compress" "natbib" t)
                                         (#1# "longtable" nil)
                                         (#1# "wrapfig" nil)
                                         (#1# "rotating" nil)
@@ -361,10 +374,10 @@
 
 (use-package! ox-pandoc)
 
-(use-package! org-noter-pdftools)
-(use-package! org-noter
-  :config
-  (require 'org-noter-pdftools))
+  (use-package! org-noter-pdftools)
+  (use-package! org-noter
+    :config
+    (require 'org-noter-pdftools))
 
 (setq
  bibtex-autokey-titlewords 3
@@ -431,8 +444,8 @@
             (alltodo "" nil))
            nil))))
 
-(setq org-agenda-files
-	'("~/notes/pages/20220204195459-english_essay_the_black_cat_due_2022_02_11.org" "~/Documents/personal.org" "~/notes/pages/Science Research CO2 Monitor Project Proposal.org" "~/notes/pages/20220120165322-meeting_with_dr_van_essen_2022_01_20.org" "~/notes/pages/20220112171535-english_top_nine_writing_2022_01_12.org" "~/notes/pages/20211121135742-health_stress_poster.org" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/notes/pages/20211111211405-meeting_with_dr_van_essen_2021_11_11.org" "~/notes/journals/2021-11-01.org" "/home/jadench/notes/journals/2021-10-17.org" "/home/jadench/notes/journals/2021_09_20.org" "/home/jadench/notes/pages/20210921110418-how_to_science_research_presentations.org" "/home/jadench/notes/pages/20210921110743-science_research_co2_monitor_project_presentation.org" "/home/jadench/notes/pages/20210928124526-abigail_finan_psilocybin_presentation_notes.org" "/home/jadench/notes/pages/20210929180741-something.org" "/home/jadench/notes/pages/20211005212814-sketching_polynomials.org" "/home/jadench/notes/pages/20211005212849-math.org" "/home/jadench/notes/pages/20211005213010-synthetic_division.org" "/home/jadench/notes/pages/20211005213056-polynomial_long_division.org" "/home/jadench/notes/pages/20211005213445-multiplicity_polynomials.org" "/home/jadench/notes/pages/20211005214032-rational_root_theorem.org" "/home/jadench/notes/pages/20211005215139-remainder_theorem.org" "/home/jadench/notes/pages/20211005215907-complex_numbers.org" "/home/jadench/notes/pages/20211007174547-columbia_science_honors_program.org" "/home/jadench/notes/pages/20211007181548-computer_science_club.org" "/home/jadench/notes/pages/20211009100017-columbia_shp_introduction_to_algorithms.org" "/home/jadench/notes/pages/20211009101036-insertion_sort.org" "/home/jadench/notes/pages/20211009101111-algorithm.org" "/home/jadench/notes/pages/20211009101307-computers.org" "/home/jadench/notes/pages/20211009101319-programming.org" "/home/jadench/notes/pages/20211009101702-sorting_problem.org" "/home/jadench/notes/pages/20211009101920-substring_matching_problem.org" "/home/jadench/notes/pages/20211009102140-shortest_path_problem.org" "/home/jadench/notes/pages/20211009102410-largest_common_substring.org" "/home/jadench/notes/pages/20211009102514-dynamic_programming.org" "/home/jadench/notes/pages/20211009102622-topological_sort_problem.org" "/home/jadench/notes/pages/20211009110344-bubble_sort.org" "/home/jadench/notes/pages/20211009111219-in_place_sorting.org" "/home/jadench/notes/pages/20211009111627-worst_case_analysis.org" "/home/jadench/notes/pages/20211009111859-average_case_analysis.org" "/home/jadench/notes/pages/20211009114137-selection_sort_algorithm.org" "/home/jadench/notes/pages/20211009114325-merge_sort_algorithm.org" "/home/jadench/notes/pages/20211009114412-quick_sort_algorithm.org" "/home/jadench/notes/pages/20211009114620-heap_sort_algorithm.org" "/home/jadench/notes/pages/20211009114652-counting_sort_algorithm.org" "/home/jadench/notes/pages/20211009114717-radix_sort_algorithm.org" "/home/jadench/notes/pages/20211009114729-bucket_sort_algorithm.org" "/home/jadench/notes/pages/20211010144854-keyboard_lubrication.org" "/home/jadench/notes/pages/20211010144923-mechanical_keyboards.org" "/home/jadench/notes/pages/20211010144952-computer_projects.org" "/home/jadench/notes/pages/20211010145035-mechanical_keyswitches.org" "/home/jadench/notes/pages/20211010155257-gaming.org" "/home/jadench/notes/pages/20211010155325-hobbies.org" "/home/jadench/notes/pages/20211015140410-test_file.org" "/home/jadench/notes/pages/20211017151707-yes.org" "/home/jadench/notes/pages/20211023094336-big_o_notation.org" "/home/jadench/notes/pages/20211023101235-lower_bound_of_sorting.org" "/home/jadench/notes/pages/20211023101517-solving_recursions.org" "/home/jadench/notes/pages/20211023104904-master_s_theorem.org" "/home/jadench/notes/pages/20211023141802-sketching_rational_expressions.org" "/home/jadench/notes/pages/20211023151759-rational_expression.org" "/home/jadench/notes/pages/20211025183045-head_tracking.org" "/home/jadench/notes/pages/How To_ Science Research Project Proposals.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/Science Research CO2 Monitor Project.org" "/home/jadench/notes/pages/Science Research.org" "/home/jadench/notes/pages/asdfadsfasdf.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "~/notes/pages/20211023101517-solving_recursions.org" "/home/jadench/notes/daily/2021-10-07.org" "/home/jadench/notes/daily/2021-10-08.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "/home/jadench/Dropbox/todo-two.org" "/home/jadench/Dropbox/APCSP/apcsp.org" "/home/jadench/Dropbox/non_school_academics.org" "/home/jadench/.emacs.d/settings.org"))
+ (setq org-agenda-files
+	 '("~/notes/pages/20220204195459-english_essay_the_black_cat_due_2022_02_11.org" "~/Documents/personal.org" "~/notes/pages/Science Research CO2 Monitor Project Proposal.org" "~/notes/pages/20220120165322-meeting_with_dr_van_essen_2022_01_20.org" "~/notes/pages/20220112171535-english_top_nine_writing_2022_01_12.org" "~/notes/pages/20211121135742-health_stress_poster.org" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/notes/pages/20211111211405-meeting_with_dr_van_essen_2021_11_11.org" "~/notes/journals/2021-11-01.org" "/home/jadench/notes/journals/2021-10-17.org" "/home/jadench/notes/journals/2021_09_20.org" "/home/jadench/notes/pages/20210921110418-how_to_science_research_presentations.org" "/home/jadench/notes/pages/20210921110743-science_research_co2_monitor_project_presentation.org" "/home/jadench/notes/pages/20210928124526-abigail_finan_psilocybin_presentation_notes.org" "/home/jadench/notes/pages/20210929180741-something.org" "/home/jadench/notes/pages/20211005212814-sketching_polynomials.org" "/home/jadench/notes/pages/20211005212849-math.org" "/home/jadench/notes/pages/20211005213010-synthetic_division.org" "/home/jadench/notes/pages/20211005213056-polynomial_long_division.org" "/home/jadench/notes/pages/20211005213445-multiplicity_polynomials.org" "/home/jadench/notes/pages/20211005214032-rational_root_theorem.org" "/home/jadench/notes/pages/20211005215139-remainder_theorem.org" "/home/jadench/notes/pages/20211005215907-complex_numbers.org" "/home/jadench/notes/pages/20211007174547-columbia_science_honors_program.org" "/home/jadench/notes/pages/20211007181548-computer_science_club.org" "/home/jadench/notes/pages/20211009100017-columbia_shp_introduction_to_algorithms.org" "/home/jadench/notes/pages/20211009101036-insertion_sort.org" "/home/jadench/notes/pages/20211009101111-algorithm.org" "/home/jadench/notes/pages/20211009101307-computers.org" "/home/jadench/notes/pages/20211009101319-programming.org" "/home/jadench/notes/pages/20211009101702-sorting_problem.org" "/home/jadench/notes/pages/20211009101920-substring_matching_problem.org" "/home/jadench/notes/pages/20211009102140-shortest_path_problem.org" "/home/jadench/notes/pages/20211009102410-largest_common_substring.org" "/home/jadench/notes/pages/20211009102514-dynamic_programming.org" "/home/jadench/notes/pages/20211009102622-topological_sort_problem.org" "/home/jadench/notes/pages/20211009110344-bubble_sort.org" "/home/jadench/notes/pages/20211009111219-in_place_sorting.org" "/home/jadench/notes/pages/20211009111627-worst_case_analysis.org" "/home/jadench/notes/pages/20211009111859-average_case_analysis.org" "/home/jadench/notes/pages/20211009114137-selection_sort_algorithm.org" "/home/jadench/notes/pages/20211009114325-merge_sort_algorithm.org" "/home/jadench/notes/pages/20211009114412-quick_sort_algorithm.org" "/home/jadench/notes/pages/20211009114620-heap_sort_algorithm.org" "/home/jadench/notes/pages/20211009114652-counting_sort_algorithm.org" "/home/jadench/notes/pages/20211009114717-radix_sort_algorithm.org" "/home/jadench/notes/pages/20211009114729-bucket_sort_algorithm.org" "/home/jadench/notes/pages/20211010144854-keyboard_lubrication.org" "/home/jadench/notes/pages/20211010144923-mechanical_keyboards.org" "/home/jadench/notes/pages/20211010144952-computer_projects.org" "/home/jadench/notes/pages/20211010145035-mechanical_keyswitches.org" "/home/jadench/notes/pages/20211010155257-gaming.org" "/home/jadench/notes/pages/20211010155325-hobbies.org" "/home/jadench/notes/pages/20211015140410-test_file.org" "/home/jadench/notes/pages/20211017151707-yes.org" "/home/jadench/notes/pages/20211023094336-big_o_notation.org" "/home/jadench/notes/pages/20211023101235-lower_bound_of_sorting.org" "/home/jadench/notes/pages/20211023101517-solving_recursions.org" "/home/jadench/notes/pages/20211023104904-master_s_theorem.org" "/home/jadench/notes/pages/20211023141802-sketching_rational_expressions.org" "/home/jadench/notes/pages/20211023151759-rational_expression.org" "/home/jadench/notes/pages/20211025183045-head_tracking.org" "/home/jadench/notes/pages/How To_ Science Research Project Proposals.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/Science Research CO2 Monitor Project.org" "/home/jadench/notes/pages/Science Research.org" "/home/jadench/notes/pages/asdfadsfasdf.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "~/notes/pages/20211023101517-solving_recursions.org" "/home/jadench/notes/daily/2021-10-07.org" "/home/jadench/notes/daily/2021-10-08.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "/home/jadench/Dropbox/todo-two.org" "/home/jadench/Dropbox/APCSP/apcsp.org" "/home/jadench/Dropbox/non_school_academics.org" "/home/jadench/.emacs.d/settings.org"))
 
 (use-package! org-super-agenda)
 (setq org-super-agenda-header-map (make-sparse-keymap)
@@ -468,7 +481,7 @@
 (add-hook! org-agenda-before-finalize #'org-super-agenda-mode)
 (org-super-agenda-mode)
 
-(global-set-key (kbd "C-c c") 'org-capture)
+  (global-set-key (kbd "C-c c") 'org-capture)
   (setq org-capture-templates
         '(("p" "Personal TODO" entry
            (file+headline "~/Documents/personal.org" "Personal TODO list")
@@ -517,9 +530,9 @@ DEADLINE: %^{Deadline}t ENTERED %U
 :END:
   " :prepend t :time-prompt t)))
 
-(use-package! org-autolist
-  :after org
-  :hook (org-mode. org-autolist-mode))
+  (use-package! org-autolist
+    :after org
+    :hook (org-mode. org-autolist-mode))
 
 (after! org (setq org-list-demote-modify-bullet '(("-" . "+") ("+" . "*") ("*" . "*"))))
 
@@ -527,14 +540,3 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :demand t
   :config
   (ivy-mode t))
-
-(setq org-ref-csl-default-style "~/.emacs.doom/tex/csl/association-for-computing-machinery.csl")
-
-(setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-(setq reftex-default-bibliography "~/notes/pages/sources.bib")
-(setq org-export-with-broken-links t)
-(setq latex-run-command "pdflatex")
-(setq bibtex-dialect 'BibTeX)
-(setq org-cite-export-processors nil)
-(setq org-latex-pdf-process
-'("%latex -interaction nonstopmode -output-directory %o %f" "bibtex %b" "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f"))

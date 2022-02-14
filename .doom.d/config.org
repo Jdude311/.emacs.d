@@ -66,7 +66,7 @@ The best programming font I know of is Cascadia Code.
 #+end_src
 
 #+RESULTS:
-| org-variable-pitch--enable | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) | (lambda nil (global-display-line-numbers-mode -1)) | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
+| (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | er/add-org-mode-expansions | evil-better-visual-line-on | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | org-ref-prettify-mode | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) | (lambda nil (global-display-line-numbers-mode -1)) | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
 
 *** Variable-pitch font
 #+begin_src elisp
@@ -241,7 +241,7 @@ Org-roam-bibtex:
 ** Org-ref
 #+begin_src elisp
   (use-package! org-ref
-    :after org-cite
+    :after org
     :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
     :init
     (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
@@ -249,6 +249,7 @@ Org-roam-bibtex:
 #+end_src
 
 #+RESULTS:
+: org-ref-cite-insert-helm
 
 ** Exporting
 
@@ -475,11 +476,13 @@ Set up the default bibliography and export variables:
 (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
 (setq reftex-default-bibliography "~/notes/pages/sources.bib")
 (setq org-export-with-broken-links t)
-(setq latex-run-command "pdflatex")
-(setq bibtex-dialect 'BibTeX)
+(setq latex-run-command "xelatex")
+(setq bibtex-dialect 'biblatex)
 (setq org-cite-export-processors nil)
+;(setq org-cite-biblatex-options "backend=bibtex,sortcites=true,citestyle=numeric-comp,defernumbers=true") isn't usedanymore ecause not processing with org-cite
 (setq org-latex-pdf-process
 '("%latex -interaction nonstopmode -output-directory %o %f" "bibtex %b" "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f"))
+
 #+end_src
 
 #+RESULTS:
@@ -493,7 +496,8 @@ Always use these packages in latex exports.
                                      ('latex-run-command))
                                         (#1="" "graphicx" t)
                                         (#1# "grffile" t)
-                                        (#1# "cite" t)
+                                        ("backend=bibtex,sortcites=true,style=numeric-comp,defernumbers=true" "biblatex" t)
+                                        ;("numbers,sort&compress" "natbib" t)
                                         (#1# "longtable" nil)
                                         (#1# "wrapfig" nil)
                                         (#1# "rotating" nil)
@@ -507,20 +511,20 @@ Always use these packages in latex exports.
 #+end_src
 
 #+RESULTS:
-| AUTO     | inputenc  | t   | ('latex-run-command) |
-| T1       | fontenc   | t   | ('latex-run-command) |
-|          | graphicx  | t   |                      |
-|          | grffile   | t   |                      |
-|          | cite      | t   |                      |
-|          | longtable | nil |                      |
-|          | wrapfig   | nil |                      |
-|          | rotating  | nil |                      |
-| normalem | ulem      | t   |                      |
-|          | amsmath   | t   |                      |
-|          | textcomp  | t   |                      |
-|          | amssymb   | t   |                      |
-|          | capt-of   | nil |                      |
-|          | hyperref  | nil |                      |
+| AUTO                                                               | inputenc  | t   | ('latex-run-command) |
+| T1                                                                 | fontenc   | t   | ('latex-run-command) |
+|                                                                    | graphicx  | t   |                      |
+|                                                                    | grffile   | t   |                      |
+| backend=bibtex,sortcites=true,style=numeric-comp,defernumbers=true | biblatex  | t   |                      |
+|                                                                    | longtable | nil |                      |
+|                                                                    | wrapfig   | nil |                      |
+|                                                                    | rotating  | nil |                      |
+| normalem                                                           | ulem      | t   |                      |
+|                                                                    | amsmath   | t   |                      |
+|                                                                    | textcomp  | t   |                      |
+|                                                                    | amssymb   | t   |                      |
+|                                                                    | capt-of   | nil |                      |
+|                                                                    | hyperref  | nil |                      |
 
 *** Pandoc
 #+begin_src elisp

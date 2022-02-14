@@ -1,1 +1,0 @@
-/home/jadench/.emacs.d/.local/straight/repos/helpful/helpful.el

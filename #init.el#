@@ -33,7 +33,6 @@
   (load (concat (file-name-directory load-file-name) "early-init")
         nil t))
 
-
 ;; Ensure Doom's core libraries are properly initialized, autoloads file is
 ;; loaded, and hooks set up for an interactive session.
 (doom-initialize)
@@ -53,5 +52,4 @@
 ;;   `window-setup-hook'
 ;;
 ;; And then we're good to go!
-(setq doom-private-dir "~/.emacs.d/.doom.d/")
 (doom-initialize-modules)
