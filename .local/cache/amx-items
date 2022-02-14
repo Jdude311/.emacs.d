@@ -1,13 +1,13 @@
 
 ;; ----- amx-history -----
 (
+ server-start
  describe-variable
  org-cite-insert
  org-ref
  package-delete
  describe-function
  save-buffers-kill-emacs
- org-ref-bibtex-file/bibtex-validate-and-exit
 )
 
 ;; ----- amx-data -----
@@ -17,7 +17,7 @@
  (evil-visual-line . 1)
  (org-mode-restart . 2)
  (org-indent-mode . 4)
- (describe-variable . 32)
+ (describe-variable . 33)
  (describe-function . 2)
  (org-ref . 4)
  (revert-buffer . 1)
@@ -26,4 +26,5 @@
  (org-ref-bibtex-file/bibtex-validate-and-exit . 1)
  (package-delete . 1)
  (org-cite-insert . 2)
+ (server-start . 1)
 )
