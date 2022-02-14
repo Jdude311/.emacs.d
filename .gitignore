@@ -9,4 +9,3 @@ url
 org-gcal-secret-stuff.el
 .emacs.desktop
 .emacs.desktop.lock
-.local/straight/*
