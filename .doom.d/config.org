@@ -139,7 +139,6 @@ Make org-ref look pretty.
 #+begin_src elisp
 (use-package! org-ref-prettify
   :after org
-  :hook (org-mode . org-ref-prettify-mode)
   :bind ("C-c r p" . org-ref-prettify-mode))
 #+end_src
 
@@ -154,19 +153,6 @@ Apparently according to someone on the internet evil-better-visual-line is bette
 #+end_src
 
 * Org-mode tweaks
-
-** Blank line on headlines
-It's nice to have some space before and after headlines.
-#+begin_src elisp
-(after! org
-  (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
-        org-ascii-headline-spacing '(1 . 2))
-  (map! :map evil-org-mode-map
-        :desc "<C-return>"
-        :nvi "<C-return>" #'evil-org-org-insert-heading-respect-content-below))
-#+end_src
-
-#+RESULTS:
 
 ** Roam
 Base roam package:
@@ -186,9 +172,9 @@ Base roam package:
   (setq org-roam-capture-templates
         '(("d" "default" plain "%?" :target
            (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
-  ,#+filetags:
-  ,#+title: ${title}
-  - Links ::
+,#+filetags:
+,#+title: ${title}
+- Links ::
 
 
       ")
@@ -218,6 +204,9 @@ Base roam package:
            ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
 #+end_src
+
+#+RESULTS:
+: t
 
 Org-roam-bibtex:
 #+begin_src elisp
@@ -510,22 +499,6 @@ Always use these packages in latex exports.
 
 #+end_src
 
-#+RESULTS:
-| AUTO                                                               | inputenc  | t   | ('latex-run-command) |
-| T1                                                                 | fontenc   | t   | ('latex-run-command) |
-|                                                                    | graphicx  | t   |                      |
-|                                                                    | grffile   | t   |                      |
-| backend=bibtex,sortcites=true,style=numeric-comp,defernumbers=true | biblatex  | t   |                      |
-|                                                                    | longtable | nil |                      |
-|                                                                    | wrapfig   | nil |                      |
-|                                                                    | rotating  | nil |                      |
-| normalem                                                           | ulem      | t   |                      |
-|                                                                    | amsmath   | t   |                      |
-|                                                                    | textcomp  | t   |                      |
-|                                                                    | amssymb   | t   |                      |
-|                                                                    | capt-of   | nil |                      |
-|                                                                    | hyperref  | nil |                      |
-
 *** Pandoc
 #+begin_src elisp
 (use-package! ox-pandoc)
@@ -666,9 +639,6 @@ Always use these packages in latex exports.
 (org-super-agenda-mode)
 #+end_src
 
-#+RESULTS:
-: t
-
 *** Capture Templates
 :PROPERTIES:
 :ID:       2698de88-4357-4b92-b7b7-e252794cae20
@@ -726,11 +696,13 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 #+RESULTS:
 | p | Personal TODO | entry | (file+headline ~/Documents/personal.org Personal TODO list) | * TODO %^{Headline} :personal:%^{Tags}: |
+
 ** Auto list
+
 #+begin_src elisp
   (use-package! org-autolist
     :after org
-    :hook (org-mode. org-autolist-mode))
+    :config (add-hook 'org-mode-hook (lambda () (org-autolist-mode t))))
 #+end_src
 
 ** List promotion and demotion
@@ -740,6 +712,19 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 #+RESULTS:
 : ((- . +) (+ . *) (* . *))
+
+** Blank line on headlines
+It's nice to have some space before and after headlines.
+#+begin_src elisp
+(after! org
+  (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
+        org-ascii-headline-spacing '(1 . 2))
+  (map! :map evil-org-mode-map
+        :desc "<C-return>"
+        :nvi "<C-return>" #'evil-org-org-insert-heading-respect-content-below))
+#+end_src
+
+#+RESULTS:
 
 * Completion
 

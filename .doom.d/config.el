@@ -78,15 +78,7 @@
 
 (use-package! org-ref-prettify
   :after org
-  :hook (org-mode . org-ref-prettify-mode)
   :bind ("C-c r p" . org-ref-prettify-mode))
-
-(after! org
-  (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
-        org-ascii-headline-spacing '(1 . 2))
-  (map! :map evil-org-mode-map
-        :desc "<C-return>"
-        :nvi "<C-return>" #'evil-org-org-insert-heading-respect-content-below))
 
 (use-package org-roam
   :hook ((after-init . org-roam-setup)
@@ -103,9 +95,9 @@
   (setq org-roam-capture-templates
         '(("d" "default" plain "%?" :target
            (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org" "
-  #+filetags:
-  #+title: ${title}
-  - Links ::
+#+filetags:
+#+title: ${title}
+- Links ::
 
 
       ")
@@ -532,9 +524,16 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
   (use-package! org-autolist
     :after org
-    :hook (org-mode. org-autolist-mode))
+    :config (add-hook 'org-mode-hook (lambda () (org-autolist-mode t))))
 
 (after! org (setq org-list-demote-modify-bullet '(("-" . "+") ("+" . "*") ("*" . "*"))))
+
+(after! org
+  (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
+        org-ascii-headline-spacing '(1 . 2))
+  (map! :map evil-org-mode-map
+        :desc "<C-return>"
+        :nvi "<C-return>" #'evil-org-org-insert-heading-respect-content-below))
 
 (use-package! ivy
   :demand t
