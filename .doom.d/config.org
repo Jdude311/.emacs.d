@@ -12,7 +12,10 @@ The best programming font I know of is Cascadia Code.
 (doom/reload-font)
 #+end_src
 
-#+RESULTS:
+Also, add some line spacing.
+#+begin_src elisp
+(setq line-spacing 5)
+#+end_src
 
 *** Helm text un-enlargement
 #+begin_src elisp
