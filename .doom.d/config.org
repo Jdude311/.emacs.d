@@ -719,12 +719,12 @@ DEADLINE: %^{Deadline}t ENTERED %U
 ** Blank line on headlines
 It's nice to have some space before and after headlines.
 #+begin_src elisp
-(after! org
+(after! evil-org
   (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
         org-ascii-headline-spacing '(1 . 2))
   (map! :map evil-org-mode-map
-        :desc "<C-return>"
-        :nvi "<C-return>" #'evil-org-org-insert-heading-respect-content-below))
+        :desc "Insert heading, respecting content below"
+        :nvi "<C-return>" 'evil-org-org-insert-heading-respect-content-below))
 #+end_src
 
 #+RESULTS:

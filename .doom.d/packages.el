@@ -67,3 +67,4 @@
 (package! helm-bibtex)
 (package! org-autolist)
 (package! org-ref-prettify)
+(package! org-download)
