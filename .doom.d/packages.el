@@ -68,3 +68,7 @@
 (package! org-autolist)
 (package! org-ref-prettify)
 (package! org-download)
+(package! org-ql)
+(package! helm-org-ql)
+(package! org-pomodoro)
+(package! vala-mode)

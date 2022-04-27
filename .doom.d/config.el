@@ -1,7 +1,7 @@
 (setq doom-font (font-spec :family "Cascadia Code" :size 16))
 (doom/reload-font)
 
-(setq line-spacing 5)
+(setq-default line-spacing 5)
 
 (setq +helm-posframe-text-scale 0)
 
@@ -536,6 +536,8 @@ DEADLINE: %^{Deadline}t ENTERED %U
   (map! :map evil-org-mode-map
         :desc "Insert heading, respecting content below"
         :nvi "<C-return>" 'evil-org-org-insert-heading-respect-content-below))
+
+(setq! org-use-fast-tag-selection 't)
 
 (use-package! ivy
   :demand t

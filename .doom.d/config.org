@@ -14,8 +14,11 @@ The best programming font I know of is Cascadia Code.
 
 Also, add some line spacing.
 #+begin_src elisp
-(setq line-spacing 5)
+(setq-default line-spacing 5)
 #+end_src
+
+#+RESULTS:
+: 5
 
 *** Helm text un-enlargement
 #+begin_src elisp
@@ -728,6 +731,14 @@ It's nice to have some space before and after headlines.
 #+end_src
 
 #+RESULTS:
+
+** Quick tagging
+#+begin_src elisp
+(setq! org-use-fast-tag-selection 't)
+#+end_src
+
+#+RESULTS:
+: t
 
 * Completion
 
