@@ -240,11 +240,12 @@ Org-roam-bibtex:
     :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
     :init
     (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
-    :bind ("C-c r i" . org-ref-cite-insert-helm))
+    :bind ("C-c r i" . org-ref-cite-insert-helm)
+    :bind ("C-c r o" . org-ref-bibtex-hydra/body))
 #+end_src
 
 #+RESULTS:
-: org-ref-cite-insert-helm
+: org-ref-bibtex-hydra/body
 
 ** Exporting
 
