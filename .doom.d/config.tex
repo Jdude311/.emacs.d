@@ -1,4 +1,4 @@
-% Created 2022-02-12 Sat 11:48
+% Created 2022-08-04 Thu 15:59
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -13,33 +13,31 @@
 \usepackage{textcomp}
 \usepackage{amssymb}
 \usepackage{capt-of}
-\usepackage{bibtex}
-\usepackage{cite}
-\author{Jaden CH}
+\usepackage{biblatex}
+
+\usepackage{hyperref}
 \date{\today}
 \title{}
 \hypersetup{
- pdfauthor={Jaden CH},
+ pdfauthor={},
  pdftitle={},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 27.2 (Org mode 9.6)}, 
+ pdfcreator={Emacs 28.1 (Org mode 9.6)}, 
  pdflang={English}}
-\usepackage{biblatex}
-
 \begin{document}
 
 \tableofcontents
 
 
 \section{Visual}
-\label{sec:org607de42}
+\label{sec:orgfc7fa45}
 
 \subsection{Tweaks}
-\label{sec:org216e678}
+\label{sec:orge613a0f}
 
 \subsubsection{Font}
-\label{sec:org0e4c778}
+\label{sec:orgaa51b99}
 The best programming font I know of is Cascadia Code.
 \begin{verbatim}
 (setq doom-font (font-spec :family "Cascadia Code" :size 16))
@@ -47,30 +45,30 @@ The best programming font I know of is Cascadia Code.
 \end{verbatim}
 
 \subsubsection{Helm text un-enlargement}
-\label{sec:org0e0dccb}
+\label{sec:org9aae88d}
 \begin{verbatim}
 (setq +helm-posframe-text-scale 0)
 \end{verbatim}
 
 \subsubsection{Doom Modeline}
-\label{sec:org005e481}
+\label{sec:org83ba106}
 \begin{verbatim}
 (doom-modeline-mode t)
 (setq doom-modeline-height 36)
 \end{verbatim}
 
 \subsection{Theme}
-\label{sec:org6b6f3a6}
+\label{sec:orga9f0ae4}
 \begin{verbatim}
 (setq doom-theme 'doom-one)
 (load-theme 'doom-gruvbox t)
 \end{verbatim}
 
 \subsection{Org}
-\label{sec:orge494ad1}
+\label{sec:org285ff57}
 
 \subsubsection{Superstar}
-\label{sec:org194dcc8}
+\label{sec:orgc37496b}
 \begin{verbatim}
 (use-package! org-superstar
   :hook (org-mode . org-superstar-mode))
@@ -84,7 +82,7 @@ The best programming font I know of is Cascadia Code.
 \end{verbatim}
 
 \subsubsection{Olivetti}
-\label{sec:org858a2d8}
+\label{sec:orgd34c3a3}
 \begin{verbatim}
 (use-package! olivetti
   :config
@@ -95,7 +93,7 @@ The best programming font I know of is Cascadia Code.
 \end{verbatim}
 
 \subsubsection{Variable-pitch font}
-\label{sec:org08bf678}
+\label{sec:org7989e08}
 \begin{verbatim}
 (use-package! org-variable-pitch
   :config
@@ -128,7 +126,7 @@ The best programming font I know of is Cascadia Code.
 \end{verbatim}
 
 \subsubsection{Don't enable line number  or hl-line-mode in org}
-\label{sec:org534b8a8}
+\label{sec:org972b886}
 Please stop messing with my faces and stuff I can't write this code Pl
 \begin{verbatim}
 (global-hl-line-mode -1)
@@ -143,7 +141,7 @@ Please stop messing with my faces and stuff I can't write this code Pl
 \end{verbatim}
 
 \subsubsection{Large heading fonts}
-\label{sec:org5a7b629}
+\label{sec:org16225b2}
 \begin{verbatim}
 (after! org
   (let (var (heading-scale 1.25))
@@ -157,8 +155,17 @@ Please stop messing with my faces and stuff I can't write this code Pl
     (set-face-attribute 'org-level-8 nil :height heading-scale :extend t)))
 \end{verbatim}
 
+\subsubsection{Make org-ref citations look pretty}
+\label{sec:orge1e8389}
+Make org-ref look pretty.
+\begin{verbatim}
+(use-package! org-ref-prettify
+  :after org
+  :hook (org-mode . org-ref-prettify-mode))
+\end{verbatim}
+
 \subsection{Word wrap}
-\label{sec:orgee03dc7}
+\label{sec:orgcfef031}
 Apparently according to someone on the internet evil-better-visual-line is better than regular visual line.
 \begin{verbatim}
 (use-package! evil-better-visual-line
@@ -166,18 +173,22 @@ Apparently according to someone on the internet evil-better-visual-line is bette
 \end{verbatim}
 
 \section{Org-mode tweaks}
-\label{sec:org5af30b0}
+\label{sec:orge4b1477}
 
-\subsection{Blank line}
-\label{sec:org6e38c83}
+\subsection{Blank line on headlines}
+\label{sec:org8105273}
 It's nice to have some space before and after headlines.
 \begin{verbatim}
-(setq org-blank-before-new-entry '((heading . always) (plain-list-item))
-      org-ascii-headline-spacing '(1 . 2))
+(after! org
+  (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
+        org-ascii-headline-spacing '(1 . 2))
+  (map! :map evil-org-mode-map
+        :desc "<C-return>"
+        :nvi "<C-return>" #'evil-org-org-insert-heading-respect-content-below))
 \end{verbatim}
 
 \subsection{Roam}
-\label{sec:org53f63b1}
+\label{sec:org4b9b90b}
 Base roam package:
 \begin{verbatim}
 (use-package org-roam
@@ -238,9 +249,10 @@ Org-roam-bibtex:
 \end{verbatim}
 
 \subsection{Org-ref}
-\label{sec:org76e6a25}
+\label{sec:org9b9496f}
 \begin{verbatim}
-  (use-package org-ref
+  (use-package! org-ref
+    ;; :after org-cite
     :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
     :init
     (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
@@ -248,10 +260,10 @@ Org-roam-bibtex:
 \end{verbatim}
 
 \subsection{Exporting}
-\label{sec:orgb4cc177}
+\label{sec:org3be3e5b}
 
 \subsubsection{Only export the content of headlines tagged as ``ignore''}
-\label{sec:org8d90e74}
+\label{sec:org8934a2a}
 \begin{verbatim}
     ;;; ox-extra.el --- Convenience functions for org export
 
@@ -443,10 +455,10 @@ Org-roam-bibtex:
 \end{verbatim}
 
 \subsubsection{Latex Configuration}
-\label{sec:org6ff04e7}
+\label{sec:org0569a01}
 Always use these packages in latex exports.
 \begin{verbatim}
-(setq org-latex-default-packages-alist (("AUTO" "inputenc" t
+(setq org-latex-default-packages-alist '(("AUTO" "inputenc" t
                                      ("pdflatex"))
                                         ("T1" "fontenc" t
                                      ("pdflatex"))
@@ -460,8 +472,8 @@ Always use these packages in latex exports.
                                         (#1# "textcomp" t)
                                         (#1# "amssymb" t)
                                         (#1# "capt-of" nil)
-                                        (#1# "hyperref" nil))
-      )
+                                        (#1# "biblatex" nil)
+                                        (#1# "hyperref" nil)))
 
 \end{verbatim}
 
@@ -470,7 +482,6 @@ These are necessary for something, I'm not sure why but I'll keep them anyway.
 (require 'org-ref-scopus)
 (require 'org-ref-pubmed)
 (require 'org-ref-sci-id)
-(require 'ox-bibtex)
 \end{verbatim}
 
 CSL styles are found under \url{file:///home/jadench/.emacs.doom/.local/straight/repos/org-ref/citeproc/csl-styles/}
@@ -492,35 +503,21 @@ Set up the default bibliography and export variables:
 \begin{verbatim}
 (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
 (setq reftex-default-bibliography "~/notes/pages/sources.bib")
-(setq bibtex-dialect 'bibtex)
-(setq tex-bibtex-command "bibtex")
 (setq org-export-with-broken-links t)
+(setq latex-run-command "pdflatex")
+(setq bibtex-dialect 'biblatex)
 (setq org-latex-pdf-process
-      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "bibtex %b"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-\end{verbatim}
-
-\texttt{org-ref-csl-preprocess-buffer} must be run on exports because I can't get the stupid bibtex to properly process shit.
-\begin{verbatim}
-;(add-hook! org-export-before-parsing #'org-ref-csl-preprocess-buffer)
-\end{verbatim}
-
-Make org-ref look pretty.
-\begin{verbatim}
-(use-package! org-ref-prettify
-  :hook (org-mode . org-ref-prettify-mode))
+'("%latex -shell-escape -interaction nonstopmode -output-directory %o %b" "biber %b" "makeindex %b" "%latex -shell-escape -interaction nonstopmode -output-directory %o %b" "%latex -shell-escape -interaction nonstopmode -output-directory %o %b"))
 \end{verbatim}
 
 \subsubsection{Pandoc}
-\label{sec:orgfbffd64}
+\label{sec:orgaf0b0f4}
 \begin{verbatim}
 (use-package! ox-pandoc)
 \end{verbatim}
 
 \subsection{Org-noter}
-\label{sec:org808be98}
+\label{sec:org48433a8}
 \begin{verbatim}
   (use-package! org-noter-pdftools)
   (use-package! org-noter
@@ -528,10 +525,10 @@ Make org-ref look pretty.
     (require 'org-noter-pdftools))
 \end{verbatim}
 \subsection{Scientific Writing}
-\label{sec:org9174e93}
+\label{sec:org464e323}
 
 \subsubsection{Bibliography stuff}
-\label{sec:orgcba434b}
+\label{sec:orgfafcf8c}
 \begin{verbatim}
 (setq
  bibtex-autokey-titlewords 3
@@ -543,10 +540,10 @@ Make org-ref look pretty.
 \end{verbatim}
 
 \subsection{Agenda}
-\label{sec:orgf962fdc}
+\label{sec:org923429b}
 
 \subsubsection{Misc config}
-\label{sec:org904d503}
+\label{sec:org2f989f5}
 \begin{verbatim}
 (add-hook! org-agenda #'org-agenda-to-appt)
 (map! :map global :m "C-c a" 'org-agenda)
@@ -607,14 +604,14 @@ Make org-ref look pretty.
 \end{verbatim}
 
 \subsubsection{Agenda files}
-\label{sec:org112393d}
+\label{sec:org79dcf62}
 \begin{verbatim}
  (setq org-agenda-files
 	 '("~/notes/pages/20220204195459-english_essay_the_black_cat_due_2022_02_11.org" "~/Documents/personal.org" "~/notes/pages/Science Research CO2 Monitor Project Proposal.org" "~/notes/pages/20220120165322-meeting_with_dr_van_essen_2022_01_20.org" "~/notes/pages/20220112171535-english_top_nine_writing_2022_01_12.org" "~/notes/pages/20211121135742-health_stress_poster.org" "~/notes/pages/20211121134239-science_research_presentation_2021_11_22.org" "~/notes/pages/20211111211405-meeting_with_dr_van_essen_2021_11_11.org" "~/notes/journals/2021-11-01.org" "/home/jadench/notes/journals/2021-10-17.org" "/home/jadench/notes/journals/2021_09_20.org" "/home/jadench/notes/pages/20210921110418-how_to_science_research_presentations.org" "/home/jadench/notes/pages/20210921110743-science_research_co2_monitor_project_presentation.org" "/home/jadench/notes/pages/20210928124526-abigail_finan_psilocybin_presentation_notes.org" "/home/jadench/notes/pages/20210929180741-something.org" "/home/jadench/notes/pages/20211005212814-sketching_polynomials.org" "/home/jadench/notes/pages/20211005212849-math.org" "/home/jadench/notes/pages/20211005213010-synthetic_division.org" "/home/jadench/notes/pages/20211005213056-polynomial_long_division.org" "/home/jadench/notes/pages/20211005213445-multiplicity_polynomials.org" "/home/jadench/notes/pages/20211005214032-rational_root_theorem.org" "/home/jadench/notes/pages/20211005215139-remainder_theorem.org" "/home/jadench/notes/pages/20211005215907-complex_numbers.org" "/home/jadench/notes/pages/20211007174547-columbia_science_honors_program.org" "/home/jadench/notes/pages/20211007181548-computer_science_club.org" "/home/jadench/notes/pages/20211009100017-columbia_shp_introduction_to_algorithms.org" "/home/jadench/notes/pages/20211009101036-insertion_sort.org" "/home/jadench/notes/pages/20211009101111-algorithm.org" "/home/jadench/notes/pages/20211009101307-computers.org" "/home/jadench/notes/pages/20211009101319-programming.org" "/home/jadench/notes/pages/20211009101702-sorting_problem.org" "/home/jadench/notes/pages/20211009101920-substring_matching_problem.org" "/home/jadench/notes/pages/20211009102140-shortest_path_problem.org" "/home/jadench/notes/pages/20211009102410-largest_common_substring.org" "/home/jadench/notes/pages/20211009102514-dynamic_programming.org" "/home/jadench/notes/pages/20211009102622-topological_sort_problem.org" "/home/jadench/notes/pages/20211009110344-bubble_sort.org" "/home/jadench/notes/pages/20211009111219-in_place_sorting.org" "/home/jadench/notes/pages/20211009111627-worst_case_analysis.org" "/home/jadench/notes/pages/20211009111859-average_case_analysis.org" "/home/jadench/notes/pages/20211009114137-selection_sort_algorithm.org" "/home/jadench/notes/pages/20211009114325-merge_sort_algorithm.org" "/home/jadench/notes/pages/20211009114412-quick_sort_algorithm.org" "/home/jadench/notes/pages/20211009114620-heap_sort_algorithm.org" "/home/jadench/notes/pages/20211009114652-counting_sort_algorithm.org" "/home/jadench/notes/pages/20211009114717-radix_sort_algorithm.org" "/home/jadench/notes/pages/20211009114729-bucket_sort_algorithm.org" "/home/jadench/notes/pages/20211010144854-keyboard_lubrication.org" "/home/jadench/notes/pages/20211010144923-mechanical_keyboards.org" "/home/jadench/notes/pages/20211010144952-computer_projects.org" "/home/jadench/notes/pages/20211010145035-mechanical_keyswitches.org" "/home/jadench/notes/pages/20211010155257-gaming.org" "/home/jadench/notes/pages/20211010155325-hobbies.org" "/home/jadench/notes/pages/20211015140410-test_file.org" "/home/jadench/notes/pages/20211017151707-yes.org" "/home/jadench/notes/pages/20211023094336-big_o_notation.org" "/home/jadench/notes/pages/20211023101235-lower_bound_of_sorting.org" "/home/jadench/notes/pages/20211023101517-solving_recursions.org" "/home/jadench/notes/pages/20211023104904-master_s_theorem.org" "/home/jadench/notes/pages/20211023141802-sketching_rational_expressions.org" "/home/jadench/notes/pages/20211023151759-rational_expression.org" "/home/jadench/notes/pages/20211025183045-head_tracking.org" "/home/jadench/notes/pages/How To_ Science Research Project Proposals.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/Science Research CO2 Monitor Project.org" "/home/jadench/notes/pages/Science Research.org" "/home/jadench/notes/pages/asdfadsfasdf.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "~/notes/pages/20211023101517-solving_recursions.org" "/home/jadench/notes/daily/2021-10-07.org" "/home/jadench/notes/daily/2021-10-08.org" "/home/jadench/notes/pages/How-To--Research Project Proposals.org" "/home/jadench/notes/pages/contents.org" "/home/jadench/notes/pages/somethingasdfasdfasdfasdfasdf.org" "/home/jadench/notes/pages/test.org" "/home/jadench/Dropbox/todo-two.org" "/home/jadench/Dropbox/APCSP/apcsp.org" "/home/jadench/Dropbox/non_school_academics.org" "/home/jadench/.emacs.d/settings.org"))
 \end{verbatim}
 
 \subsubsection{Org-super-agenda}
-\label{sec:org961aabb}
+\label{sec:orgdfd4cee}
 \begin{verbatim}
 (use-package! org-super-agenda)
 (setq org-super-agenda-header-map (make-sparse-keymap)
@@ -652,7 +649,7 @@ Make org-ref look pretty.
 \end{verbatim}
 
 \subsubsection{Capture Templates}
-\label{sec:org6b90d90}
+\label{sec:org3638a66}
 \begin{verbatim}
   (global-set-key (kbd "C-c c") 'org-capture)
   (setq org-capture-templates
@@ -704,7 +701,7 @@ DEADLINE: %^{Deadline}t ENTERED %U
   " :prepend t :time-prompt t)))
 \end{verbatim}
 \subsection{Auto list}
-\label{sec:orgbab64a6}
+\label{sec:org9d4ac9a}
 \begin{verbatim}
   (use-package! org-autolist
     :after org
@@ -712,8 +709,20 @@ DEADLINE: %^{Deadline}t ENTERED %U
 \end{verbatim}
 
 \subsection{List promotion and demotion}
-\label{sec:org1508759}
+\label{sec:org1228362}
 \begin{verbatim}
 (after! org (setq org-list-demote-modify-bullet '(("-" . "+") ("+" . "*") ("*" . "*"))))
+\end{verbatim}
+
+\section{Completion}
+\label{sec:orgfb7bdb5}
+
+\subsection{Ivy}
+\label{sec:org6ff5288}
+\begin{verbatim}
+(use-package! ivy
+  :demand t
+  :config
+  (ivy-mode t))
 \end{verbatim}
 \end{document}

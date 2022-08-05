@@ -227,11 +227,12 @@ Org-roam-bibtex:
 #+end_src
 
 #+RESULTS:
+| org-roam-bibtex-mode |
 
 ** Org-ref
 #+begin_src elisp
   (use-package! org-ref
-    :after org-cite
+    ;; :after org-cite
     :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
     :init
     (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
@@ -435,7 +436,7 @@ Org-roam-bibtex:
 
 *** Latex Configuration
 Always use these packages in latex exports.
-#+begin_src elisp
+#+begin_src elisp :tangle no
 (setq org-latex-default-packages-alist '(("AUTO" "inputenc" t
                                      ("pdflatex"))
                                         ("T1" "fontenc" t
@@ -450,6 +451,7 @@ Always use these packages in latex exports.
                                         (#1# "textcomp" t)
                                         (#1# "amssymb" t)
                                         (#1# "capt-of" nil)
+                                        (#1# "cite" nil)
                                         (#1# "hyperref" nil)))
 
 #+end_src
@@ -467,6 +469,7 @@ Always use these packages in latex exports.
 |          | textcomp  | t   |            |
 |          | amssymb   | t   |            |
 |          | capt-of   | nil |            |
+|          | cite      | nil |            |
 |          | hyperref  | nil |            |
 
 These are necessary for something, I'm not sure why but I'll keep them anyway.
@@ -488,7 +491,7 @@ Possibilities are:
 - ~apa-numeric-superscript-brackets.csl~
  
 I also have my own styles in [[~/.emacs.doom/tex/csl/]]. More can be found online at https://github.com/citation-style-language/styles
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 (setq org-ref-csl-default-style "~/.emacs.doom/tex/csl/association-for-computing-machinery.csl")
 #+end_src
 
@@ -501,12 +504,16 @@ Set up the default bibliography and export variables:
 (setq reftex-default-bibliography "~/notes/pages/sources.bib")
 (setq org-export-with-broken-links t)
 (setq latex-run-command "pdflatex")
+(setq bibtex-dialect 'biblatex)
+(setq org-cite-export-processors '((t csl)))
+;; (setq org-latex-pdf-process
+;; '("%latex -shell-escape -interaction nonstopmode %f" "bibtex %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
 (setq org-latex-pdf-process
-'("%latex -interaction nonstopmode -output-directory %o %f" "bibtex %b" "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f"))
+'("latexmk -pdf -bibtex %f -f "))
 #+end_src
 
 #+RESULTS:
-| %latex -interaction nonstopmode -output-directory %o %f | bibtex %b | %latex -interaction nonstopmode -output-directory %o %f | %latex -interaction nonstopmode -output-directory %o %f |
+| latexmk -pdf -bibtex %f -f |
 
 *** Pandoc
 #+begin_src elisp

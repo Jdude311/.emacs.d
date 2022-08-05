@@ -141,7 +141,7 @@
     (org-roam-bibtex-mode t))
 
   (use-package! org-ref
-    :after org-cite
+    ;; :after org-cite
     :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
     :init
     (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
@@ -334,34 +334,20 @@
 
   (ox-extras-activate '(ignore-headlines))
 
-(setq org-latex-default-packages-alist '(("AUTO" "inputenc" t
-                                     ("pdflatex"))
-                                        ("T1" "fontenc" t
-                                     ("pdflatex"))
-                                        (#1="" "graphicx" t)
-                                        (#1# "grffile" t)
-                                        (#1# "longtable" nil)
-                                        (#1# "wrapfig" nil)
-                                        (#1# "rotating" nil)
-                                        ("normalem" "ulem" t)
-                                        (#1# "amsmath" t)
-                                        (#1# "textcomp" t)
-                                        (#1# "amssymb" t)
-                                        (#1# "capt-of" nil)
-                                        (#1# "hyperref" nil)))
-
 (require 'org-ref-scopus)
 (require 'org-ref-pubmed)
 (require 'org-ref-sci-id)
-
-(setq org-ref-csl-default-style "~/.emacs.doom/tex/csl/association-for-computing-machinery.csl")
 
 (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
 (setq reftex-default-bibliography "~/notes/pages/sources.bib")
 (setq org-export-with-broken-links t)
 (setq latex-run-command "pdflatex")
+(setq bibtex-dialect 'biblatex)
+(setq org-cite-export-processors '((t csl)))
+;; (setq org-latex-pdf-process
+;; '("%latex -shell-escape -interaction nonstopmode %f" "bibtex %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
 (setq org-latex-pdf-process
-'("%latex -interaction nonstopmode -output-directory %o %f" "bibtex %b" "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f"))
+'("latexmk -pdf -bibtex %f -f "))
 
 (use-package! ox-pandoc)
 
