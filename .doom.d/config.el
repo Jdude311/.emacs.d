@@ -343,11 +343,11 @@
 (setq org-export-with-broken-links t)
 (setq latex-run-command "pdflatex")
 (setq bibtex-dialect 'biblatex)
-(setq org-cite-export-processors '((t csl)))
-;; (setq org-latex-pdf-process
-;; '("%latex -shell-escape -interaction nonstopmode %f" "bibtex %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
+(setq org-cite-export-processors '((t biblatex)))
 (setq org-latex-pdf-process
-'("latexmk -pdf -bibtex %f -f "))
+'("%latex -shell-escape -interaction nonstopmode %f" "biber %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
+;; (setq org-latex-pdf-process
+;; '("latexmk -pdf -bibtex %f -f "))
 
 (use-package! ox-pandoc)
 
