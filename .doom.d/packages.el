@@ -66,3 +66,6 @@
 (package! helm-bibtex)
 (package! org-autolist)
 (package! org-ref-prettify)
+(package! dockerfile-mode)
+(package! docker)
+(package! yaml-mode)
