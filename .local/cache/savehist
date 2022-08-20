@@ -12,10 +12,9 @@
 (setq evil-ex-history '(#("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("ewas" 0 1 (ex-index 1) 1 2 (ex-index 2) 2 3 (ex-index 3) 3 4 (ex-index 4)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("W" 0 1 (ex-index 1)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1))))
 (setq file-name-history '(#("/home/jadench/.config/i3/config" 0 31 (ivy-index 0)) #("/home/jadench/.emacs.d/.doom.d/" 0 31 (ivy-index 0)) #("/home/jadench/.emacs.d/" 0 23 (ivy-index 0)) #("/home/jadench/.emacs.d/.doom.d/packages.el" 0 42 (ivy-index 0)) #("/home/jadench/.config/i3blocks/cpu/cpu_info.sh" 0 46 (ivy-index 2)) #("/home/jadench/.config/i3blocks/config" 0 37 (ivy-index 0)) #("/home/jadench/.config/picom/config" 0 34 (ivy-index 0)) #("/home/jadench/.zshrc" 0 20 (ivy-index 0)) #("/home/jadench/.config/alacritty/alacritty.yml" 0 45 (ivy-index 0))))
 (setq tablist-named-filter 'nil)
-(setq projectile-project-command-history '#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ()))
 (setq evil-jumps-history 'nil)
 (setq counsel-compile-history 'nil)
-(setq kill-ring '(" instance=\"xfce4-panel\" " "panel" "-" "Xfce4" "for_window [ class=\"Xfce4-panel\" instance=\"xfce4-panel\" ] floating enable
+(setq kill-ring '("	" " instance=\"xfce4-panel\" " "panel" "-" "Xfce4" "for_window [ class=\"Xfce4-panel\" instance=\"xfce4-panel\" ] floating enable
 " "#
 " "#
 " "/home/jadench/.emacs.d/.local/straight/build-28.1/pdf-tools/build/server/autobuild -i /home/jadench/.emacs.d/.local/straight/build-28.1/pdf-tools/" "repair skill, " "technological " "math, spatial reasongi" "fields
@@ -33,7 +32,7 @@
 
 " "
 " "This is something here.
-" "g"))
+"))
 (setq register-alist '((48 . "for_window [ class=\"Xfce4-panel\" instance=\"xfce4-panel\" ] floating enable
 ")))
 (setq mark-ring 'nil)
