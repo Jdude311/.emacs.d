@@ -12,8 +12,6 @@ The best programming font I know of is Cascadia Code.
 (doom/reload-font)
 #+end_src
 
-#+RESULTS:
-
 *** Helm text un-enlargement
 #+begin_src elisp
 (setq +helm-posframe-text-scale 0)
@@ -66,7 +64,7 @@ The best programming font I know of is Cascadia Code.
 #+end_src
 
 #+RESULTS:
-| org-variable-pitch--enable | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) | (lambda nil (global-display-line-numbers-mode -1)) | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
+| org-variable-pitch--enable | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) |   | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
 
 *** Variable-pitch font
 #+begin_src elisp
@@ -105,9 +103,9 @@ The best programming font I know of is Cascadia Code.
 *** Don't enable line number  or hl-line-mode in org
 Please stop messing with my faces and stuff I can't write this code Pl
 #+begin_src elisp
-(global-hl-line-mode -1)
+(setq! global-hl-line-mode nil)
 (setq doom--hl-line-mode -1)
-(global-display-line-numbers-mode -1)
+(setq! global-display-line-numbers-mode nil)
 (add-hook! 'prog-mode #'display-line-numbers-mode)
 (add-hook! 'prog-mode #'hl-line-mode)
 
@@ -158,7 +156,8 @@ It's nice to have some space before and after headlines.
 #+begin_src elisp
 (after! org
   (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
-        org-ascii-headline-spacing '(1 . 2))
+        org-ascii-headline-spacing '(1 . 2)))
+(add-hook! evil-org-mode
   (map! :map evil-org-mode-map
         :desc "<C-return>"
         :nvi "<C-return>" #'evil-org-org-insert-heading-respect-content-below))
