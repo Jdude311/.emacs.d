@@ -3,38 +3,47 @@
 
 (setq savehist-minibuffer-history-variables '(read-from-kill-ring-history extended-command-history minibuffer-history counsel-M-x-history org-tags-history org-roam-node-history empty-history magit-revision-history evil-ex-search-history ivy-history evil-ex-history file-name-history))
 (setq extended-command-history '("pdf-tools-uninstall" "pdf-tools-install" "pdf-tools-uninstall" "pdf-tools-install"))
-(setq counsel-M-x-history '(#("pdf-tools-install" 0 17 (ivy-index 0)) #("pdf " 0 4 (ivy-index 0)) #("package-install" 0 15 (ivy-index 0)) #("doom upgrade" 0 12 (ivy-index 0)) "doom/upgrade" "doom/upgrade" #("db " 0 3 (ivy-index 0)) "org-roam-db-sync" #("org roam db " 0 12 (ivy-index 0)) "org-roam-db-sync" #("org roam ui" 0 11 (ivy-index 1)) "org-roam-ui-mode" #("normal " 0 7 (ivy-index 0)) "normal-mode" #("org-roam-db-sync" 0 16 (ivy-index 1)) #("org roam db" 0 11 (ivy-index 1)) "org-roam-db-clear-all" #("org roam sync" 0 13 (ivy-index 0))))
+(setq minibuffer-history '("english" "#"))
+(setq counsel-M-x-history '(#("save kill" 0 9 (ivy-index 0)) "save-buffers-kill-emacs" #("evil org mode" 0 13 (ivy-index 0)) "evil-org-mode" #("evil org " 0 9 (ivy-index 0)) "evil-org-mode" "evil-org-mode" "evil-org-mode" #("evil next " 0 10 (ivy-index 0)) "evil-next-visual-line" #("evil next visual " 0 17 (ivy-index 0)) "evil-next-visual-line" #("evil better" 0 11 (ivy-index 0)) "evil-better-visual-line-on" #("describe-variable" 0 17 (ivy-index 0)) #("describe" 0 8 (ivy-index 0)) #("d" 0 1 (ivy-index 0)) "evil-org-mode" "evil-org-mode" #("undo tree redo" 0 14 (ivy-index 0)) "undo-tree-redo" #("undo tree undo" 0 14 (ivy-index 2)) "undo-tree-undo" #("undo-tree" 0 9 (ivy-index 0)) "undo-tree-mode" #("doom/reload" 0 11 (ivy-index 0)) #("doom reload" 0 11 (ivy-index 0)) #("des" 0 3 (ivy-index 0)) #("flyspell" 0 8 (ivy-index 4)) "flyspell-mode" #("flyspell " 0 9 (ivy-index 1)) "flyspell-buffer" "flyspell-mode!" "flyspell-buffer" "flyspell-lazy-check-buffer" "flyspell-lazy-check-buffer" #("flyspel" 0 7 (ivy-index 0)) "flyspell-buffer" "flyspell-buffer" #("flyspell buffer" 0 15 (ivy-index 0)) "flyspell-buffer" #("flyspell word" 0 13 (ivy-index 0)) "flyspell-word" #("flys" 0 4 (ivy-index 0)) "flyspell-mode!" "flyspell-mode!" #("flyspell-mode" 0 13 (ivy-index 0)) #("change diction" 0 14 (ivy-index 0)) "ispell-change-dictionary" #("better line " 0 12 (ivy-index 0)) "evil-better-visual-line-on" #("org mode" 0 8 (ivy-index 0)) "org-mode" #("pdf-tools-install" 0 17 (ivy-index 0)) #("pdf " 0 4 (ivy-index 0)) #("package-install" 0 15 (ivy-index 0)) #("doom upgrade" 0 12 (ivy-index 0)) "doom/upgrade" "doom/upgrade" #("db " 0 3 (ivy-index 0)) "org-roam-db-sync" #("org roam db " 0 12 (ivy-index 0)) "org-roam-db-sync" #("org roam ui" 0 11 (ivy-index 1)) "org-roam-ui-mode" #("normal " 0 7 (ivy-index 0)) "normal-mode" #("org-roam-db-sync" 0 16 (ivy-index 1)) #("org roam db" 0 11 (ivy-index 1)) "org-roam-db-clear-all" #("org roam sync" 0 13 (ivy-index 0))))
 (setq org-tags-history '("roam_exclude"))
-(setq org-roam-node-history '("College Essay" "College" "college" "essay" "ADHD" "adhd" "college essay" "college esay" "college " "Lower Hudson is straight"))
+(setq org-roam-node-history '("College Essay" "college " "College" "college" "essay" "ADHD" "adhd" "college essay" "college esay" "Lower Hudson is straight"))
 (setq magit-revision-history '("desktop" "main"))
-(setq evil-ex-search-history '("vsync" "14" "font"))
-(setq ivy-history '(#("config" 0 6 (ivy-index 0)) #("config<2>" 0 9 (ivy-index 0))))
-(setq evil-ex-history '(#("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("ewas" 0 1 (ex-index 1) 1 2 (ex-index 2) 2 3 (ex-index 3) 3 4 (ex-index 4)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("W" 0 1 (ex-index 1)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1))))
-(setq file-name-history '(#("/home/jadench/.config/i3/config" 0 31 (ivy-index 0)) #("/home/jadench/.emacs.d/.doom.d/" 0 31 (ivy-index 0)) #("/home/jadench/.emacs.d/" 0 23 (ivy-index 0)) #("/home/jadench/.emacs.d/.doom.d/packages.el" 0 42 (ivy-index 0)) #("/home/jadench/.config/i3blocks/cpu/cpu_info.sh" 0 46 (ivy-index 2)) #("/home/jadench/.config/i3blocks/config" 0 37 (ivy-index 0)) #("/home/jadench/.config/picom/config" 0 34 (ivy-index 0)) #("/home/jadench/.zshrc" 0 20 (ivy-index 0)) #("/home/jadench/.config/alacritty/alacritty.yml" 0 45 (ivy-index 0))))
+(setq evil-ex-search-history '("insert" "undo" "vsync" "14" "font"))
+(setq ivy-history '(#("20220816161257-college_essay.org" 0 32 (ivy-index 0)) #("config.org" 0 10 (ivy-index 0)) #("undo-tree-timer" 0 15 (ivy-index 43)) #("evil-undo-system" 0 16 (ivy-index 0)) #("~/.emacs.d/undo-tree/" 0 21 (ivy-index 0)) #("undo-tree-auto-save-history" 0 27 (ivy-index 1)) #("config" 0 6 (ivy-index 0)) #("config<2>" 0 9 (ivy-index 0))))
+(setq evil-ex-history '(#("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("Lw" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("q" 0 1 (ex-index 1)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("ewas" 0 1 (ex-index 1) 1 2 (ex-index 2) 2 3 (ex-index 3) 3 4 (ex-index 4)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("W" 0 1 (ex-index 1)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wq" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1)) #("wa" 0 1 (ex-index 1) 1 2 (ex-index 2)) #("w" 0 1 (ex-index 1))))
+(setq file-name-history '(#("/home/jadench/.emacs.d/undo-tree/" 0 33 (ivy-index 0)) #("/home/jadench/.emacs.d/.doom.d/init.el" 0 38 (ivy-index 7)) #("/home/jadench/.emacs.d/.doom.d/packages.el" 0 42 (ivy-index 0)) #("/home/jadench/.emacs.d/.doom.d/config.org" 0 41 (ivy-index 0)) #("/home/jadench/.config/pulse/default.pa" 0 38 (ivy-index 0)) "/home/jadench/.config/pulse/daemon.conf" #("/home/jadench/.config/i3/config" 0 31 (ivy-index 0)) #("/home/jadench/.emacs.d/.doom.d/" 0 31 (ivy-index 0)) #("/home/jadench/.emacs.d/" 0 23 (ivy-index 0)) #("/home/jadench/.config/i3blocks/cpu/cpu_info.sh" 0 46 (ivy-index 2)) #("/home/jadench/.config/i3blocks/config" 0 37 (ivy-index 0)) #("/home/jadench/.config/picom/config" 0 34 (ivy-index 0)) #("/home/jadench/.zshrc" 0 20 (ivy-index 0)) #("/home/jadench/.config/alacritty/alacritty.yml" 0 45 (ivy-index 0))))
 (setq tablist-named-filter 'nil)
-(setq evil-jumps-history 'nil)
+(setq projectile-project-command-history '#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ()))
+(setq evil-jumps-history '((32524 "/home/jadench/.emacs.d/.doom.d/config.org") (5337 "/home/jadench/.emacs.d/.doom.d/config.org") (1980 "/home/jadench/notes/pages/20220816161257-college_essay.org") (32457 "/home/jadench/.emacs.d/.doom.d/config.org") (32431 "/home/jadench/.emacs.d/.doom.d/config.org") (1982 "/home/jadench/notes/pages/20220816161257-college_essay.org") (5520 "/home/jadench/.emacs.d/.doom.d/config.org") (25164 "/home/jadench/.emacs.d/.doom.d/config.org") (15393 "/home/jadench/.emacs.d/.doom.d/config.org") (1981 "/home/jadench/notes/pages/20220816161257-college_essay.org") (32391 "/home/jadench/.emacs.d/.doom.d/config.org") (1 "/home/jadench/.emacs.d/undo-tree/") (32391 "/home/jadench/.emacs.d/.doom.d/config.org") (1 "/home/jadench/.emacs.d/undo-tree/") (32376 "/home/jadench/.emacs.d/.doom.d/config.org") (3630 "/home/jadench/.emacs.d/.doom.d/init.el") (1 "/home/jadench/.emacs.d/.doom.d/init.el") (83 "/home/jadench/.emacs.d/.doom.d/config.org") (30211 "/home/jadench/.emacs.d/.doom.d/config.org") (2646 "/home/jadench/.emacs.d/.doom.d/packages.el") (1 "/home/jadench/.emacs.d/.doom.d/packages.el")))
 (setq counsel-compile-history 'nil)
-(setq kill-ring '("	" " instance=\"xfce4-panel\" " "panel" "-" "Xfce4" "for_window [ class=\"Xfce4-panel\" instance=\"xfce4-panel\" ] floating enable
-" "#
-" "#
-" "/home/jadench/.emacs.d/.local/straight/build-28.1/pdf-tools/build/server/autobuild -i /home/jadench/.emacs.d/.local/straight/build-28.1/pdf-tools/" "repair skill, " "technological " "math, spatial reasongi" "fields
-  + examples" "from each perspec" "like to apply experiences from each " "learned " "projects
-" "Learn about a lot of " "-
-" "- ADHD brain gets interestd in things and I follow through on those interests
-" "- Take very deep 
-" "My brian " "- ADHD makes me want to do things
-" "- actually create things
-" "d oa lot " "perspective " "stuff" "Learn a lot from projects" "of " "
-" "- end up working on projects like that
-" "work with " "i live for research" "i livek " "C" "from stracth" "from scratch " "buisinens" "epdf " "I do a " "Talk" "science " "abilities " "elarn" "Varied and driven t" "Driven to learn " "They make " "me sort of " "has come " "Since that's the " "demosntrates these " "challen" "First part of " "  - :: 
-" "
-" "package " "find noselect" "
-
-" "
-" "This is something here.
-"))
-(setq register-alist '((48 . "for_window [ class=\"Xfce4-panel\" instance=\"xfce4-panel\" ] floating enable
-")))
+(setq kill-ring '("i" "i" "** jjjjjj
+" "jj
+" "unbind" "evil unbind" "key un" "unmap " "key unmap" "unb" "dsec" "unbin" "evil unbind " "
+" "** 
+" "** 
+" "** 
+" "** 
+" "** 
+" "** 
+" "next" ")" "  (map! :map evil-org-mode-map
+        :desc \"j\"
+        :nvi \"j\" #'evil-next-visual-line))
+" "e" "vil-org-org-insert-heading-respect-content-below" "n" "<" "C-return>" ">" "<" "-" "C" "return" "
+" "(add-hook! evil-org-mode
+  (map! :map evil-org-mode-map
+        :desc \"<C-return>\"
+        :nvi \"<C-return>\" #'evil-org-org-insert-heading-respect-content-below))
+" "(evil-better-visual-line-on)
+" "up" "this is a nice thing to do somethimne. I would like to do this thing sometimes. wblkajsdf ljasdf sd lfkaklhsd fkjh  lkjhf, a,s d,jasd ,jasd,jf ;. .a sdf.ak sdfljahskjdlfh w;e s. 
+" "insert" "
+" "* 
+" "setq " "udn" "evil " "fun" "function" "evil undo " "evil undo" "
+" "* 
+" "evil mode " "* 
+" "** 
+" " " "t" "setq " "(use-package! )
+" "bett" "Evil " "is a dense "))
+(setq register-alist '((48 . "i")))
 (setq mark-ring 'nil)
 (setq search-ring 'nil)
 (setq regexp-search-ring 'nil)

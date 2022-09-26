@@ -518,3 +518,32 @@ DEADLINE: %^{Deadline}t ENTERED %U
   :demand t
   :config
   (ivy-mode t))
+
+(use-package! undo-tree
+  :demand t
+  :config
+  (global-undo-tree-mode t)
+  (setq undo-tree-auto-save-history nil)
+  (setq evil-undo-system "undo-tree"))
+
+(add-hook! evil-org-mode
+  (map! :map evil-org-mode-map
+        :desc "j"
+        :nv "j" #'evil-next-visual-line)
+  (map! :map evil-org-mode-map
+        :desc "k"
+        :nv "k" #'evil-previous-visual-line))
+
+(add-hook! 'prog-mode #'lsp)
+(add-hook! 'prog-mode #'lsp-ui-peek-mode)
+(add-hook! 'prog-mode #'lsp-ui-mode)
+(add-hook! 'prog-mode #'lsp-ui-sideline-mode)
+(map! :map prog-mode-map
+      :desc "SPC c p"
+      :nv "SPC c p" #'lsp-ui-peek-find-references)
+(map! :map prog-mode-map
+      :desc "SPC c P"
+      :nv "SPC c P" #'lsp-ui-peek-find-definitions)
+(map! :map prog-mode-map
+      :desc "SPC c d"
+      :nv "SPC c d" #'lsp-ui-doc-show)

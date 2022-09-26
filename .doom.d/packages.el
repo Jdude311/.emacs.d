@@ -69,3 +69,4 @@
 (package! dockerfile-mode)
 (package! docker)
 (package! yaml-mode)
+(package! undo-tree)
