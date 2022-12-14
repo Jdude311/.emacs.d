@@ -1,12 +1,14 @@
 (setq doom-font (font-spec :family "Cascadia Code" :size 16))
 (doom/reload-font)
 
+(setq-default line-spacing 3)
+
 (setq +helm-posframe-text-scale 0)
 
 (doom-modeline-mode t)
 (setq doom-modeline-height 36)
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 (load-theme 'doom-gruvbox t)
 
 (use-package! org-superstar
@@ -14,16 +16,18 @@
 
 (after! org-superstar
   (setq org-superstar-headline-bullets-list '(9679 9673 9675))
-  (setq org-superstar-item-bullet-alist '((42 . 9642) (43 . 9702) (45 . 8226)))
+  (setq org-superstar-item-bullet-alist '((42 . 9642) (43 . 9702) (45 . 8226 )))
   (setq org-superstar-leading-bullet "-")
   (setq org-superstar-special-todo-items t)
   (org-superstar-restart))
 
 (use-package! olivetti
+  :demand t
   :config
-  (setq olivetti-body-width '100
-        olivetti-margin-width '20
-        olivetti-style t)
+  (setq! olivetti-body-width 100)
+  (setq! olivetti-margin-width 20)
+  (setq-default fringe-mode 50)
+  (setq! olivetti-style 'fancy)
   :hook (org-mode . olivetti-mode))
 
 (use-package! org-variable-pitch
@@ -53,7 +57,9 @@
           org-tag
           org-target))
   :hook ((org-mode) . org-variable-pitch-minor-mode))
-(set-face-attribute 'variable-pitch nil :family "Noto Serif")
+(set-face-attribute 'variable-pitch nil :family "Latin Modern Roman" :weight 'normal)
+;; (set-face-attribute 'variable-pitch nil :family "Latin Modern Mono" :weight 'medium)
+;; (set-face-attribute 'variable-pitch nil :family "Latin Modern Mono" :weight 'medium)
 
 (setq! global-hl-line-mode nil)
 (setq doom--hl-line-mode -1)
@@ -76,9 +82,26 @@
     (set-face-attribute 'org-level-7 nil :height heading-scale :extend t)
     (set-face-attribute 'org-level-8 nil :height heading-scale :extend t)))
 
+(setq! org-pretty-mode t)
+
 (use-package! org-ref-prettify
   :after org
   :hook (org-mode . org-ref-prettify-mode))
+
+(setq evil-respect-visual-line-mode t)
+(evil-better-visual-line-on)
+(map! :map evil-org-mode-map
+    :desc "0"
+    :nvr "0" #'evil-beginning-of-visual-line)
+(map! :map evil-org-mode-map
+    :desc "$"
+    :nvr "$" #'evil-end-of-visual-line)
+(map! :map evil-ex-map
+    :desc "0"
+    :nvr "0" #'evil-beginning-of-visual-line)
+(map! :map evil-ex-map
+    :desc "$"
+    :nvr "$" #'evil-end-of-visual-line)
 
 (after! org
   (setq org-blank-before-new-entry '((heading . always) (plain-list-item))
@@ -136,7 +159,7 @@
 (org-roam-db-autosync-mode)
 
   (use-package! org-roam-bibtex
-    :after org-roam
+    :after org-ref
     :hook (org-roam-mode . org-roam-bibtex-mode)
     :config (require 'org-ref)
     (org-roam-bibtex-mode t))
@@ -444,16 +467,19 @@
         (:name "Upcoming Schoolwork/Homework"
          :and (:tag ("school" "homework") :deadline future)
          :order 6)
+        (:name "Extracurriculars/College"
+         :and (:tag "extracurricular")
+         :order 7 )
         (:name "Personal Habits"
          :and (:tag "personal" :habit t)
-         :order 8)
+         :order 9)
         (:name "Personal TODO list"
          :tag ("personal")
-         :order 7)
+         :order 8)
         (:name "Emails" :tag "email" :order 8)
         (:name "Scheduled work"
          :scheduled t
-         :order 10)
+         :order 11)
         (:time-grid t)
         (:discard (:tag "drill"))))
 (add-hook! org-agenda-before-finalize #'org-super-agenda-mode)
@@ -469,6 +495,15 @@ SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t
 :EFFORT: %^{Effort}
 :END:
   ")
+          ("E" "Extracurricular/College" entry
+           (file+headline "~/Documents/personal.org" "Extracurricular/College")
+           "* TODO %^{Headline} :extracurricular:%^{Tags}:
+SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t
+:PROPERTIES:
+:EFFORT: %^{Effort}
+:END:
+  ")
+
           ("H" "Habit" entry
            (file+headline "~/Documents/personal.org" "Personal TODO list")
            "* TODO %^{Headline} :personal:habit:%^{Tags}:

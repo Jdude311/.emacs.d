@@ -12,6 +12,14 @@ The best programming font I know of is Cascadia Code.
 (doom/reload-font)
 #+end_src
 
+*** Line Spacing
+#+begin_src elisp
+(setq-default line-spacing 3)
+#+end_src
+
+#+RESULTS:
+: 3
+
 *** Helm text un-enlargement
 #+begin_src elisp
 (setq +helm-posframe-text-scale 0)
@@ -31,9 +39,12 @@ The best programming font I know of is Cascadia Code.
 
 ** Theme
 #+begin_src elisp
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 (load-theme 'doom-gruvbox t)
 #+end_src
+
+#+RESULTS:
+: t
 
 ** Org
 
@@ -44,7 +55,7 @@ The best programming font I know of is Cascadia Code.
 
 (after! org-superstar
   (setq org-superstar-headline-bullets-list '(9679 9673 9675))
-  (setq org-superstar-item-bullet-alist '((42 . 9642) (43 . 9702) (45 . 8226)))
+  (setq org-superstar-item-bullet-alist '((42 . 9642) (43 . 9702) (45 . 8226 )))
   (setq org-superstar-leading-bullet "-")
   (setq org-superstar-special-todo-items t)
   (org-superstar-restart))
@@ -56,15 +67,17 @@ The best programming font I know of is Cascadia Code.
 *** Olivetti
 #+begin_src elisp
 (use-package! olivetti
+  :demand t
   :config
-  (setq olivetti-body-width '100
-        olivetti-margin-width '20
-        olivetti-style t)
+  (setq! olivetti-body-width 100)
+  (setq! olivetti-margin-width 20)
+  (setq-default fringe-mode 50)
+  (setq! olivetti-style 'fancy)
   :hook (org-mode . olivetti-mode))
 #+end_src
 
 #+RESULTS:
-| org-variable-pitch--enable | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) |   | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
+| er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | org-ref-prettify-mode | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) | (lambda nil (global-display-line-numbers-mode -1)) | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
 
 *** Variable-pitch font
 #+begin_src elisp
@@ -95,12 +108,14 @@ The best programming font I know of is Cascadia Code.
           org-tag
           org-target))
   :hook ((org-mode) . org-variable-pitch-minor-mode))
-(set-face-attribute 'variable-pitch nil :family "Noto Serif")
+(set-face-attribute 'variable-pitch nil :family "Latin Modern Roman" :weight 'normal)
+;; (set-face-attribute 'variable-pitch nil :family "Latin Modern Mono" :weight 'medium)
+;; (set-face-attribute 'variable-pitch nil :family "Latin Modern Mono" :weight 'medium)
 #+end_src
 
 #+RESULTS:
 
-*** Don't enable line number  or hl-line-mode in org
+*** Don't enable line number or hl-line-mode in org
 Please stop messing with my faces and stuff I can't write this code Pl
 #+begin_src elisp
 (setq! global-hl-line-mode nil)
@@ -132,6 +147,14 @@ Please stop messing with my faces and stuff I can't write this code Pl
 
 #+RESULTS:
 
+*** Prettify org in general
+#+begin_src elisp
+(setq! org-pretty-mode t)
+#+end_src
+
+#+RESULTS:
+: t
+
 *** Make org-ref citations look pretty
 Make org-ref look pretty.
 #+begin_src elisp
@@ -146,8 +169,28 @@ Make org-ref look pretty.
 Apparently according to someone on the internet evil-better-visual-line is better than regular visual line.
 #+begin_src elisp :tangle no
 (use-package! evil-better-visual-line
-  :hook (org-mode . evil-better-visual-line-on))
+  :hook (org-mode . evil-better-visual-line-on) )
 #+end_src
+
+** Better visual line
+#+begin_src elisp
+(setq evil-respect-visual-line-mode t)
+(evil-better-visual-line-on)
+(map! :map evil-org-mode-map
+    :desc "0"
+    :nvr "0" #'evil-beginning-of-visual-line)
+(map! :map evil-org-mode-map
+    :desc "$"
+    :nvr "$" #'evil-end-of-visual-line)
+(map! :map evil-ex-map
+    :desc "0"
+    :nvr "0" #'evil-beginning-of-visual-line)
+(map! :map evil-ex-map
+    :desc "$"
+    :nvr "$" #'evil-end-of-visual-line)
+#+end_src
+
+#+RESULTS:
 
 * Org-mode tweaks
 
@@ -219,7 +262,7 @@ Base roam package:
 Org-roam-bibtex:
 #+begin_src elisp
   (use-package! org-roam-bibtex
-    :after org-roam
+    :after org-ref
     :hook (org-roam-mode . org-roam-bibtex-mode)
     :config (require 'org-ref)
     (org-roam-bibtex-mode t))
@@ -635,16 +678,19 @@ Set up the default bibliography and export variables:
         (:name "Upcoming Schoolwork/Homework"
          :and (:tag ("school" "homework") :deadline future)
          :order 6)
+        (:name "Extracurriculars/College"
+         :and (:tag "extracurricular")
+         :order 7 )
         (:name "Personal Habits"
          :and (:tag "personal" :habit t)
-         :order 8)
+         :order 9)
         (:name "Personal TODO list"
          :tag ("personal")
-         :order 7)
+         :order 8)
         (:name "Emails" :tag "email" :order 8)
         (:name "Scheduled work"
          :scheduled t
-         :order 10)
+         :order 11)
         (:time-grid t)
         (:discard (:tag "drill"))))
 (add-hook! org-agenda-before-finalize #'org-super-agenda-mode)
@@ -669,6 +715,15 @@ SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t
 :EFFORT: %^{Effort}
 :END:
   ")
+          ("E" "Extracurricular/College" entry
+           (file+headline "~/Documents/personal.org" "Extracurricular/College")
+           "* TODO %^{Headline} :extracurricular:%^{Tags}:
+SCHEDULED: %^{Scheduled}t DEADLINE: %^{Deadline}t
+:PROPERTIES:
+:EFFORT: %^{Effort}
+:END:
+  ")
+
           ("H" "Habit" entry
            (file+headline "~/Documents/personal.org" "Personal TODO list")
            "* TODO %^{Headline} :personal:habit:%^{Tags}:
