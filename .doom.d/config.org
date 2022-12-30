@@ -66,18 +66,24 @@ The best programming font I know of is Cascadia Code.
 
 *** Olivetti
 #+begin_src elisp
+(setq fringe-mode 50)
 (use-package! olivetti
-  :demand t
   :config
-  (setq! olivetti-body-width 100)
-  (setq! olivetti-margin-width 20)
-  (setq-default fringe-mode 50)
-  (setq! olivetti-style 'fancy)
-  :hook (org-mode . olivetti-mode))
+  (setq olivetti-body-width 100)
+  (setq olivetti-margin-width 10)
+  (setq olivetti-minimum-body-width 20)
+  (setq olivetti-style 'fancy)
+  (set-face-attribute 'olivetti-fringe nil :inherit 'org-block)
+  :hook ((org-mode . olivetti-mode)
+        (olivetti-mode-on . (lambda () (org-indent-mode -1)))
+        (olivetti-mode-on . (lambda () (company-mode -1)))
+        (olivetti-mode-on . (lambda () (flyspell-lazy-mode -1)))
+        (olivetti-mode-on . (lambda () (flyspell-mode 1)))
+        (olivetti-mode-on . adaptive-wrap-prefix-mode)))
 #+end_src
 
 #+RESULTS:
-| er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | org-ref-prettify-mode | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) | (lambda nil (global-display-line-numbers-mode -1)) | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
+| adaptive-wrap-prefix-mode | (lambda nil (flyspell-mode 1)) | (lambda nil (flyspell-lazy-mode -1)) | (lambda nil (company-mode -1)) | (lambda nil (org-indent-mode -1)) |
 
 *** Variable-pitch font
 #+begin_src elisp
@@ -115,21 +121,30 @@ The best programming font I know of is Cascadia Code.
 
 #+RESULTS:
 
+*** Make org pretty
+#+begin_src elisp
+(add-hook 'org-mode-hook #'+org-pretty-mode)
+#+end_src
+
+#+RESULTS:
+| +org-pretty-mode | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | org-ref-prettify-mode | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) | (lambda nil (global-display-line-numbers-mode -1)) | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
+
 *** Don't enable line number or hl-line-mode in org
 Please stop messing with my faces and stuff I can't write this code Pl
 #+begin_src elisp
 (setq! global-hl-line-mode nil)
 (setq doom--hl-line-mode -1)
 (setq! global-display-line-numbers-mode nil)
-(add-hook! 'prog-mode #'display-line-numbers-mode)
-(add-hook! 'prog-mode #'hl-line-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'hl-line-mode)
 
 (remove-hook! text-mode #'display-line-numbers-mode)
-(add-hook! org-mode #'(lambda () (global-display-line-numbers-mode -1)))
-(add-hook! org-mode #'(lambda () (global-hl-line-mode -1)))
+(add-hook 'org-mode-hook #'(lambda () (global-display-line-numbers-mode -1)))
+(add-hook 'org-mode-hook #'(lambda () (global-hl-line-mode -1)))
 #+end_src
 
 #+RESULTS:
+| (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | er/add-org-mode-expansions | org-ref-org-menu | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | org-ref-prettify-mode | +lookup--init-org-mode-handlers-h | (closure ((hook . org-mode-hook) (--dolist-tail--) t) (&rest _) (add-hook 'before-save-hook 'org-encrypt-entries nil t)) | #[0 \301\211\207 [imenu-create-index-function org-imenu-get-tree] 2] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-show-all append local] 5] | #[0 \300\301\302\303\304$\207 [add-hook change-major-mode-hook org-babel-show-result-all append local] 5] | org-babel-result-hide-spec | org-babel-hide-all-hashes | (lambda nil (global-hl-line-mode -1)) | (lambda nil (global-display-line-numbers-mode -1)) | org-variable-pitch-minor-mode | olivetti-mode | org-superstar-mode | doom-disable-show-paren-mode-h | doom-disable-show-trailing-whitespace-h | +org-enable-auto-reformat-tables-h | +org-enable-auto-update-cookies-h | +org-make-last-point-visible-h | evil-org-mode | toc-org-enable | flyspell-mode | embrace-org-mode-hook | org-eldoc-load | +literate-enable-recompile-h |
 
 *** Large heading fonts
 #+begin_src elisp
@@ -827,10 +842,20 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 ** LSP configuration
 #+begin_src elisp
-(add-hook! 'prog-mode #'lsp)
-(add-hook! 'prog-mode #'lsp-ui-peek-mode)
-(add-hook! 'prog-mode #'lsp-ui-mode)
-(add-hook! 'prog-mode #'lsp-ui-sideline-mode)
+(use-package! lsp-ui :demand t)
+(setq lsp-ui-imenu-enable t)
+(add-hook 'prog-mode-hook #'lsp)
+(add-hook 'lsp-after-open-hook #'lsp-ui-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-peek-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-sideline-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-doc-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-imenu)
+(add-hook 'lsp-after-open-hook #'lsp-ui-imenu-buffer-mode)
+
+
+(setq lsp-ui-doc-show-with-cursor t
+      lsp-ui-doc-position "top")
+
 (map! :map prog-mode-map
       :desc "SPC c p"
       :nv "SPC c p" #'lsp-ui-peek-find-references)

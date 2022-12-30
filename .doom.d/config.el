@@ -21,14 +21,20 @@
   (setq org-superstar-special-todo-items t)
   (org-superstar-restart))
 
+(setq fringe-mode 50)
 (use-package! olivetti
-  :demand t
   :config
-  (setq! olivetti-body-width 100)
-  (setq! olivetti-margin-width 20)
-  (setq-default fringe-mode 50)
-  (setq! olivetti-style 'fancy)
-  :hook (org-mode . olivetti-mode))
+  (setq olivetti-body-width 100)
+  (setq olivetti-margin-width 10)
+  (setq olivetti-minimum-body-width 20)
+  (setq olivetti-style 'fancy)
+  (set-face-attribute 'olivetti-fringe nil :inherit 'org-block)
+  :hook ((org-mode . olivetti-mode)
+        (olivetti-mode-on . (lambda () (org-indent-mode -1)))
+        (olivetti-mode-on . (lambda () (company-mode -1)))
+        (olivetti-mode-on . (lambda () (flyspell-lazy-mode -1)))
+        (olivetti-mode-on . (lambda () (flyspell-mode 1)))
+        (olivetti-mode-on . adaptive-wrap-prefix-mode)))
 
 (use-package! org-variable-pitch
   :config
@@ -61,15 +67,17 @@
 ;; (set-face-attribute 'variable-pitch nil :family "Latin Modern Mono" :weight 'medium)
 ;; (set-face-attribute 'variable-pitch nil :family "Latin Modern Mono" :weight 'medium)
 
+(add-hook 'org-mode-hook #'+org-pretty-mode)
+
 (setq! global-hl-line-mode nil)
 (setq doom--hl-line-mode -1)
 (setq! global-display-line-numbers-mode nil)
-(add-hook! 'prog-mode #'display-line-numbers-mode)
-(add-hook! 'prog-mode #'hl-line-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'hl-line-mode)
 
 (remove-hook! text-mode #'display-line-numbers-mode)
-(add-hook! org-mode #'(lambda () (global-display-line-numbers-mode -1)))
-(add-hook! org-mode #'(lambda () (global-hl-line-mode -1)))
+(add-hook 'org-mode-hook #'(lambda () (global-display-line-numbers-mode -1)))
+(add-hook 'org-mode-hook #'(lambda () (global-hl-line-mode -1)))
 
 (after! org
   (let (var (heading-scale 1.25))
@@ -569,10 +577,20 @@ DEADLINE: %^{Deadline}t ENTERED %U
         :desc "k"
         :nv "k" #'evil-previous-visual-line))
 
-(add-hook! 'prog-mode #'lsp)
-(add-hook! 'prog-mode #'lsp-ui-peek-mode)
-(add-hook! 'prog-mode #'lsp-ui-mode)
-(add-hook! 'prog-mode #'lsp-ui-sideline-mode)
+(use-package! lsp-ui :demand t)
+(setq lsp-ui-imenu-enable t)
+(add-hook 'prog-mode-hook #'lsp)
+(add-hook 'lsp-after-open-hook #'lsp-ui-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-peek-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-sideline-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-doc-mode)
+(add-hook 'lsp-after-open-hook #'lsp-ui-imenu)
+(add-hook 'lsp-after-open-hook #'lsp-ui-imenu-buffer-mode)
+
+
+(setq lsp-ui-doc-show-with-cursor t
+      lsp-ui-doc-position "top")
+
 (map! :map prog-mode-map
       :desc "SPC c p"
       :nv "SPC c p" #'lsp-ui-peek-find-references)
