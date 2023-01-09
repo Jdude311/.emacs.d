@@ -61,9 +61,6 @@ The best programming font I know of is Cascadia Code.
   (org-superstar-restart))
 #+end_src
 
-#+RESULTS:
-: t
-
 *** Olivetti
 #+begin_src elisp
 (setq fringe-mode 50)
@@ -274,29 +271,49 @@ Base roam package:
 (org-roam-db-autosync-mode)
 #+end_src
 
-Org-roam-bibtex:
-#+begin_src elisp
-  (use-package! org-roam-bibtex
-    :after org-ref
-    :hook (org-roam-mode . org-roam-bibtex-mode)
-    :config (require 'org-ref)
-    (org-roam-bibtex-mode t))
-#+end_src
+** Scientific Writing
 
-#+RESULTS:
-| org-roam-bibtex-mode |
-
-** Org-ref
+*** Org-ref
 #+begin_src elisp
   (use-package! org-ref
     ;; :after org-cite
-    :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-    :init
-    (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
+    :config
+    (setq
+        bibtex-autokey-titlewords 3
+        bibtex-completion-bibliography '("~/notes/pages/sources.bib")
+        bibtex-completion-library-path '("~/notes/pages/bibtex-pdfs/")
+        bibtex-completion-notes-path "~/notes/pages"
+        bibtex-completion-additional-search-fields '(keywords))
+        ;; bibtex-completion-display-formats
+        ;; '((article       . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${journal:40}")
+        ;;     (inbook        . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
+        ;;     (incollection  . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+        ;;     (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+        ;;     (t             . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*}"))
+        ;;     bibtex-completion-pdf-open-function
+        ;;     (lambda (fpath)
+        ;;         (call-process "open" nil 0 nil fpath)))
+
     :bind ("C-c r i" . org-ref-cite-insert-helm))
+
+(use-package! helm-bibtex
+  :after org-ref)
 #+end_src
 
 #+RESULTS:
+: helm-bibtex
+
+*** Org-roam-bibtex
+#+begin_src elisp
+  (use-package! org-roam-bibtex
+    :after org-ref
+    :config (require 'org-ref)
+    (setq bibtex-completion-edit-notes-function 'orb-edit-citation-note))
+(org-roam-bibtex-mode t)
+#+end_src
+
+#+RESULTS:
+: t
 
 ** Exporting
 
@@ -494,40 +511,26 @@ Org-roam-bibtex:
 *** Latex Configuration
 Always use these packages in latex exports.
 #+begin_src elisp :tangle no
-(setq org-latex-default-packages-alist '(("AUTO" "inputenc" t
-                                     ("pdflatex"))
-                                        ("T1" "fontenc" t
-                                     ("pdflatex"))
-                                        (#1="" "graphicx" t)
-                                        (#1# "grffile" t)
-                                        (#1# "longtable" nil)
-                                        (#1# "wrapfig" nil)
-                                        (#1# "rotating" nil)
-                                        ("normalem" "ulem" t)
-                                        (#1# "amsmath" t)
-                                        (#1# "textcomp" t)
-                                        (#1# "amssymb" t)
-                                        (#1# "capt-of" nil)
-                                        (#1# "cite" nil)
-                                        (#1# "hyperref" nil)))
+;; (setq org-latex-default-packages-alist '(("AUTO" "inputenc" t
+;;                                      ("pdflatex"))
+;;                                         ("T1" "fontenc" t
+;;                                      ("pdflatex"))
+;;                                         (#1="" "graphicx" t)
+;;                                         (#1# "grffile" t)
+;;                                         (#1# "longtable" nil)
+;;                                         (#1# "wrapfig" nil)
+;;                                         (#1# "rotating" nil)
+;;                                         ("normalem" "ulem" t)
+;;                                         (#1# "amsmath" t)
+;;                                         (#1# "textcomp" t)
+;;                                         (#1# "amssymb" t)
+;;                                         (#1# "capt-of" nil)
+;;                                         (#1# "cite" nil)
+;;                                         (#1# "hyperref" nil)))
 
 #+end_src
 
 #+RESULTS:
-| AUTO     | inputenc  | t   | (pdflatex) |
-| T1       | fontenc   | t   | (pdflatex) |
-|          | graphicx  | t   |            |
-|          | grffile   | t   |            |
-|          | longtable | nil |            |
-|          | wrapfig   | nil |            |
-|          | rotating  | nil |            |
-| normalem | ulem      | t   |            |
-|          | amsmath   | t   |            |
-|          | textcomp  | t   |            |
-|          | amssymb   | t   |            |
-|          | capt-of   | nil |            |
-|          | cite      | nil |            |
-|          | hyperref  | nil |            |
 
 These are necessary for something, I'm not sure why but I'll keep them anyway.
 #+begin_src elisp
@@ -549,7 +552,7 @@ Possibilities are:
  
 I also have my own styles in [[~/.emacs.doom/tex/csl/]]. More can be found online at https://github.com/citation-style-language/styles
 #+begin_src emacs-lisp :tangle no
-(setq org-ref-csl-default-style "~/.emacs.doom/tex/csl/association-for-computing-machinery.csl")
+;; (setq org-ref-csl-default-style "~/.emacs.doom/tex/csl/association-for-computing-machinery.csl")
 #+end_src
 
 #+RESULTS:
@@ -557,20 +560,20 @@ I also have my own styles in [[~/.emacs.doom/tex/csl/]]. More can be found onlin
 
 Set up the default bibliography and export variables:
 #+begin_src emacs-lisp :tangle yes
-(setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-(setq reftex-default-bibliography "~/notes/pages/sources.bib")
-(setq org-export-with-broken-links t)
-(setq latex-run-command "pdflatex")
-(setq bibtex-dialect 'biblatex)
-(setq org-cite-export-processors '((t biblatex)))
-(setq org-latex-pdf-process
-'("%latex -shell-escape -interaction nonstopmode %f" "biber %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
+;; (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+;; (setq reftex-default-bibliography "~/notes/pages/sources.bib")
+;; (setq org-export-with-broken-links t)
+;; (setq latex-run-command "pdflatex")
+   (setq bibtex-dialect 'biblatex)
+;; (setq org-cite-export-processors '((t bibtex)))
 ;; (setq org-latex-pdf-process
-;; '("latexmk -pdf -bibtex %f -f "))
+;; '("%latex -shell-escape -interaction nonstopmode %f" "biber %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
+(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+;;(setq org-latex-pdf-process (list "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f"))
 #+end_src
 
 #+RESULTS:
-| %latex -shell-escape -interaction nonstopmode %f | biber %f | %latex -shell-escape -interaction nonstopmode %f | %latex -shell-escape -interaction nonstopmode %f |
+| latexmk -shell-escape -bibtex -f -pdf %f |
 
 *** Pandoc
 #+begin_src elisp
@@ -584,22 +587,6 @@ Set up the default bibliography and export variables:
     :config
     (require 'org-noter-pdftools))
 #+end_src
-** Scientific Writing
-
-*** Bibliography stuff
-#+begin_src elisp
-(setq
- bibtex-autokey-titlewords 3
- bibtex-completion-bibliography '("~/notes/pages/sources.bib")
- bibtex-completion-library-path '("~/notes/pages/bibtex-pdfs/"))
-
-(use-package! helm-bibtex
-  :after org-ref)
-#+end_src
-
-#+RESULTS:
-| ~/notes/pages/bibtex-pdfs/ |
-
 ** Agenda
 
 *** Misc config
@@ -799,6 +786,14 @@ DEADLINE: %^{Deadline}t ENTERED %U
 #+RESULTS:
 : ((- . +) (+ . *) (* . *))
 
+* Pdf-tools margin fix
+#+begin_src elisp
+(setq pdf-view-bounding-box-margin 1)
+#+end_src
+
+#+RESULTS:
+: 1
+
 * Completion
 
 ** Ivy
@@ -844,13 +839,14 @@ DEADLINE: %^{Deadline}t ENTERED %U
 #+begin_src elisp
 (use-package! lsp-ui :demand t)
 (setq lsp-ui-imenu-enable t)
-(add-hook 'prog-mode-hook #'lsp)
+;;(add-hook 'prog-mode-hook #'lsp)
 (add-hook 'lsp-after-open-hook #'lsp-ui-mode)
 (add-hook 'lsp-after-open-hook #'lsp-ui-peek-mode)
 (add-hook 'lsp-after-open-hook #'lsp-ui-sideline-mode)
 (add-hook 'lsp-after-open-hook #'lsp-ui-doc-mode)
-(add-hook 'lsp-after-open-hook #'lsp-ui-imenu)
-(add-hook 'lsp-after-open-hook #'lsp-ui-imenu-buffer-mode)
+;(add-hook 'lsp-after-open-hook #'lsp-ui-imenu)
+;(add-hook 'lsp-after-open-hook #'lsp-ui-imenu-buffer-mode)
+(setq lsp-json-use-lists t)
 
 
 (setq lsp-ui-doc-show-with-cursor t

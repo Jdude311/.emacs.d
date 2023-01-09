@@ -166,18 +166,35 @@
            ("C-c n l" . org-roam-buffer-toggle)))))
 (org-roam-db-autosync-mode)
 
-  (use-package! org-roam-bibtex
-    :after org-ref
-    :hook (org-roam-mode . org-roam-bibtex-mode)
-    :config (require 'org-ref)
-    (org-roam-bibtex-mode t))
-
   (use-package! org-ref
     ;; :after org-cite
-    :config (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-    :init
-    (setq bibtex-completion-bibliography "~/notes/pages/sources.bib")
+    :config
+    (setq
+        bibtex-autokey-titlewords 3
+        bibtex-completion-bibliography '("~/notes/pages/sources.bib")
+        bibtex-completion-library-path '("~/notes/pages/bibtex-pdfs/")
+        bibtex-completion-notes-path "~/notes/pages"
+        bibtex-completion-additional-search-fields '(keywords))
+        ;; bibtex-completion-display-formats
+        ;; '((article       . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${journal:40}")
+        ;;     (inbook        . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} Chapter ${chapter:32}")
+        ;;     (incollection  . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+        ;;     (inproceedings . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*} ${booktitle:40}")
+        ;;     (t             . "${=has-pdf=:1}${=has-note=:1} ${year:4} ${author:36} ${title:*}"))
+        ;;     bibtex-completion-pdf-open-function
+        ;;     (lambda (fpath)
+        ;;         (call-process "open" nil 0 nil fpath)))
+
     :bind ("C-c r i" . org-ref-cite-insert-helm))
+
+(use-package! helm-bibtex
+  :after org-ref)
+
+  (use-package! org-roam-bibtex
+    :after org-ref
+    :config (require 'org-ref)
+    (setq bibtex-completion-edit-notes-function 'orb-edit-citation-note))
+(org-roam-bibtex-mode t)
 
     ;;; ox-extra.el --- Convenience functions for org export
 
@@ -370,16 +387,16 @@
 (require 'org-ref-pubmed)
 (require 'org-ref-sci-id)
 
-(setq org-ref-default-bibliography "~/notes/pages/sources.bib")
-(setq reftex-default-bibliography "~/notes/pages/sources.bib")
-(setq org-export-with-broken-links t)
-(setq latex-run-command "pdflatex")
-(setq bibtex-dialect 'biblatex)
-(setq org-cite-export-processors '((t biblatex)))
-(setq org-latex-pdf-process
-'("%latex -shell-escape -interaction nonstopmode %f" "biber %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
+;; (setq org-ref-default-bibliography "~/notes/pages/sources.bib")
+;; (setq reftex-default-bibliography "~/notes/pages/sources.bib")
+;; (setq org-export-with-broken-links t)
+;; (setq latex-run-command "pdflatex")
+   (setq bibtex-dialect 'biblatex)
+;; (setq org-cite-export-processors '((t bibtex)))
 ;; (setq org-latex-pdf-process
-;; '("latexmk -pdf -bibtex %f -f "))
+;; '("%latex -shell-escape -interaction nonstopmode %f" "biber %f" "%latex -shell-escape -interaction nonstopmode %f" "%latex -shell-escape -interaction nonstopmode %f"))
+(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+;;(setq org-latex-pdf-process (list "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f" "%latex -interaction nonstopmode -output-directory %o %f"))
 
 (use-package! ox-pandoc)
 
@@ -387,14 +404,6 @@
   (use-package! org-noter
     :config
     (require 'org-noter-pdftools))
-
-(setq
- bibtex-autokey-titlewords 3
- bibtex-completion-bibliography '("~/notes/pages/sources.bib")
- bibtex-completion-library-path '("~/notes/pages/bibtex-pdfs/"))
-
-(use-package! helm-bibtex
-  :after org-ref)
 
 (add-hook! org-agenda #'org-agenda-to-appt)
 (map! :map global :m "C-c a" 'org-agenda)
@@ -557,6 +566,8 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 (after! org (setq org-list-demote-modify-bullet '(("-" . "+") ("+" . "*") ("*" . "*"))))
 
+(setq pdf-view-bounding-box-margin 1)
+
 (use-package! ivy
   :demand t
   :config
@@ -579,13 +590,14 @@ DEADLINE: %^{Deadline}t ENTERED %U
 
 (use-package! lsp-ui :demand t)
 (setq lsp-ui-imenu-enable t)
-(add-hook 'prog-mode-hook #'lsp)
+;;(add-hook 'prog-mode-hook #'lsp)
 (add-hook 'lsp-after-open-hook #'lsp-ui-mode)
 (add-hook 'lsp-after-open-hook #'lsp-ui-peek-mode)
 (add-hook 'lsp-after-open-hook #'lsp-ui-sideline-mode)
 (add-hook 'lsp-after-open-hook #'lsp-ui-doc-mode)
-(add-hook 'lsp-after-open-hook #'lsp-ui-imenu)
-(add-hook 'lsp-after-open-hook #'lsp-ui-imenu-buffer-mode)
+;(add-hook 'lsp-after-open-hook #'lsp-ui-imenu)
+;(add-hook 'lsp-after-open-hook #'lsp-ui-imenu-buffer-mode)
+(setq lsp-json-use-lists t)
 
 
 (setq lsp-ui-doc-show-with-cursor t
